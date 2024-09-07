@@ -1,43 +1,18 @@
-'use client'
+import React from 'react'
+import { ExpertiseData } from '../data/ExpertiseData';
 
-import React, { useEffect, useState } from 'react';
-import supabaseClient from '@/app/lib/supabaseClient';
-
-const MyComponent = () => {
-  const [expertise, setExpertise] = useState([]);
-
-  useEffect(() => {
-    const fetchExpertise = async () => {
-      try {
-        const { data, error } = await supabaseClient
-          .from('LochmannWeb')
-          .select('expertise')
-          .order('id', { ascending: true});
-
-        if (error) {
-          throw error;
-        }
-
-        setExpertise(data); // Opdaterer komponentens state med de hentede titler
-      } catch (error) {
-        console.error('Something went wrong at expertise:', error.message);
-      }
-    };
-
-    fetchExpertise();
-  }, []);
-
+const Expertise = () => {
   return (
     <div>
-      <ul>
-        {expertise.map((item, index) => (
-          <li key={index}>
-            <h1>{item.expertise}</h1>
-          </li>
-        ))}
-      </ul>
+      <h1>{ExpertiseData.title}</h1>
+      <h2>{ExpertiseData.content}</h2>
+        <div>
+        <h2>{ExpertiseData.expertise1}</h2>
+        <h2>{ExpertiseData.expertise2}</h2>
+        <h2>{ExpertiseData.expertise3}</h2>
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default MyComponent;
+export default Expertise

@@ -1,41 +1,17 @@
-'use client'
+import React from 'react'
+import { ErfaringData } from '../data/ErfaringData';
 
-import React, { useEffect, useState } from 'react';
-import supabaseClient from '@/app/lib/supabaseClient';
-
-const MyComponent = () => {
-  const [erfaring, setErfaring] = useState([]);
-
-  useEffect(() => {
-    const fetchErfaring = async () => {
-      try {
-        const { data, error } = await supabaseClient
-          .from('LochmannWeb')
-          .select('erfaring')
-          .order('id', { ascending: true });
-
-        if (error) {
-          throw error;
-        }
-
-        setErfaring(data); // Opdaterer komponentens state med de hentede titler
-      } catch (error) {
-        console.error('Error fetching titles:', error.message);
-      }
-    };
-
-    fetchErfaring();
-  }, []);
-
+const Erfaring = () => {
   return (
     <div>
-      <ul>
-        {erfaring.map((item, index) => (
-          <li key={index}>{item.erfaring}</li>
-        ))}
-      </ul>
+      <h1>{ErfaringData.title}</h1>
+      <div>
+        <h2>{ErfaringData.manager}</h2>
+        <h2>{ErfaringData.intership}</h2>
+        <h2>{ErfaringData.uddannelse}</h2>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default MyComponent;
+export default Erfaring

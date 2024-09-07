@@ -1,11 +1,15 @@
-const AboutData = {
-    Title: "About",
-    Vision: {
-        Title: "Vision",
-        Content: "Kort beskrivelse om vision"
+export const AboutData = {
+    title: "About",
+    vision: {
+        title: "Vision",
+        content: "Kort beskrivelse om vision"
     },
-    Mission: {
-        Title: "Mission",
-        Content: "Kort beskrivelse om mission"
+    mission: {
+        title: "Mission",
+        content: "Kort beskrivelse om mission"
     }
+}
+
+export const AboutContent = {
+    title: "Hello"
 }

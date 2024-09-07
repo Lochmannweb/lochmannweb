@@ -2,10 +2,17 @@ import { AboutData } from "@/app/data/AboutData"
 import React from 'react'
 
 const About = () => {
-
   return (
     <div>
-      {AboutData.Title}
+      <h1>{AboutData.title}</h1>
+      <div>
+        <h2>{AboutData.vision.title}</h2>
+        <p>{AboutData.vision.content}</p>
+      </div>
+      <div>
+        <h2>{AboutData.mission.title}</h2>
+        <p>{AboutData.mission.content}</p>
+      </div>
     </div>
   )
 }

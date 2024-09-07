@@ -1,30 +1,12 @@
-// import React from 'react'
+import React from 'react'
+import { AboutContent } from '../data/AboutData'
 
-// function AboutG(props) {
-//   const message = "Hej fra AboutP"; 
-  
-//   return (
-//     <div>
-//       <p>{props.message}</p>
-//     </div>
-//   )
-// }
+const About = () => {
+  return (
+    <div>
+        <h1>{AboutContent.title}</h1>
+    </div>
+  )
+}
 
-// function AboutC(props) {
-//   return (
-//     <div>
-//       <AboutG message={props.message}/>
-//     </div>
-//   )
-// }
-
-
-// function AboutP() {
-  
-
-//   return (
-//     <div>
-//       <AboutC message={message} />
-//     </div>
-//   )
-// }
+export default About
