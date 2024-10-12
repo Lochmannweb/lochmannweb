@@ -2,7 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: black;
+body {
+  background-image: url('/smoke-bg.png');
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
   color: white;
+}
+
+/* Media query for mobil - skjuler baggrundsbilledet */
+@media (max-width: 768px) {
+  body {
+    background-image: none; 
+    background-color: black;
+  }
 }

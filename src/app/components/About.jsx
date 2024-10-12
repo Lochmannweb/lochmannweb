@@ -1,24 +1,34 @@
 import { AboutData } from "@/app/data/AboutData"
+import Image from "next/image"
 import React from 'react'
 
 const About = () => {
   return (
-    <div>
-      <h1>{AboutData.title}</h1>
+    <section className="grid w-80 md:flex md:justify-center md:gap-3 backdrop-blur-md border-solid border-2 md:p-10 rounded-2xl md:mb-56">
       <div>
-        <h2>{AboutData.vision.title}</h2>
-        <p>{AboutData.vision.content}</p>
+        <Image         
+        src="/pf-about.png"
+        alt='profil'
+        width={200}
+        height={200}
+        className='mt-10 mb-10' />
       </div>
-      <div>
-        <h2>{AboutData.mission.title}</h2>
-        <p>{AboutData.mission.content}</p>
+
+      <div className="text-start">
+        <h1 className="text-xs">{AboutData.title}</h1>        
+        <h2 className="text-2xl ">{AboutData.subheader}</h2>
+        <h3 className="text-md ">{AboutData.content}</h3>
       </div>
-    </div>
+    </section>
   )
 }
 
 export default About
 
+
+
+
+// Dynmatisk hjemmeside
 
 // 'use client'
 

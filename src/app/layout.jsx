@@ -1,6 +1,6 @@
 import "./globals.css";
 import Menu from "@/app/components/Menu";
-import Contact from "./components/Contact";
+import CustomerInformation from "./components/CustomerInformation";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,12 +11,12 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="">
+      <body>
         <Menu />
-          <main className="max-w-6xl mx-auto py-10">
+          <main className="max-w-6xl mx-auto">
           {children}
           </main>
-        <Contact />
+        <CustomerInformation />
       </body>
     </html>
   );
