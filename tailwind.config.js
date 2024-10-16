@@ -9,6 +9,7 @@ module.exports = {
     colors: {
       'menu-bg': '#0000008e',
       'contact': 'rgba(0, 0, 0, 0.49)',
+      'stagesProces': 'rgba(43, 0, 0, 0.40)',
     },
     extend: {
       backgroundImage: {

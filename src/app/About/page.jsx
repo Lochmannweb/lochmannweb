@@ -1,12 +1,40 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useState } from 'react'
 import { AboutContent } from '../data/AboutData'
-import { AboutData } from '../data/AboutData'
 import About from '@/app/components/About'
 
+const classes = {
+  container: {
+    display: 'grid',
+    gap: '2rem',
+    padding: '20px',
+  },
+  aboutComponent: {
+    paddingLeft: '3rem',
+  },
+};
+
 const Aboutpage = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 599);
+    };
+    
+    handleResize(); // set Initial value
+    window.addEventListener("resize", handleResize);
+  
+  return () => {
+    window.removeEventListener("resize", handleResize)
+  }
+
+ }, []);
+
   return (
-    <div className='grid gap-5 p-20' >
-      <div className='py-36'>
+    <div style={classes.container} >
+      <div style={classes.aboutComponent}>
         <About />
       </div>
 

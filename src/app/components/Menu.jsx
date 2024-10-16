@@ -1,10 +1,40 @@
 
 'use client'
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+const getClasses = (isMobile) => ({
+  lukketMenu: {
+    display: "flex",
+    backgroundColor: '#0000008e',
+    zIndex: '50',
+    height: '6rem',
+    justifyContent: 'center',
+  },
+  åbenMenu: {
+
+  },
+});
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); 
+
+  useEffect(() => {
+    // Check if window exists (only on the client side)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 599);
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const classes = getClasses(isMobile);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -13,7 +43,7 @@ function App() {
   return (
     <>
 {/* lukket  */}
-<nav className='bg-menu-bg z-50 w-full h-20'>
+<nav style={classes.lukketMenu}>
   <div className='flex justify-between p-5 '>
     <div className='flex items-center uppercase'>
       <a href="/" prefetch={false}>LochmannWeb</a>
@@ -32,9 +62,9 @@ function App() {
       className="grid gap-2 "
       onClick={toggleMenu}>
         <>
-          <div className='decoration-white w-32 '><hr /></div>
-          <div className='decoration-white w-24 '><hr /></div>
-          <div className='decoration-white w-10 '><hr /></div>
+          <div className='decoration-white w-32 ml-auto'><hr /></div>
+          <div className='decoration-white w-24 ml-auto'><hr /></div>
+          <div className='decoration-white w-10 ml-auto'><hr /></div>
         </>
       </button>
     </div>
@@ -46,7 +76,7 @@ function App() {
   <div className='flex justify-end p-5'>
     <div className='flex'>
       <ul>
-        <li className='grid md:flex md:justify-end md:pr-10 text-center gap-5 text-xl'>
+        <li className='grid md:flex md:justify-end md:pr-10 text-center gap-5 text-xl bg-menu-bg'>
           <a href="/" prefetch={false}>Home</a>
           <a href="/About" prefetch={false}>About</a>
           <a href="/MyWork" prefetch={false}>My Work</a>

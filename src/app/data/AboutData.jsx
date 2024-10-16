@@ -1,6 +1,6 @@
 export const AboutData = {
     title: "WHO AM I",
-    subheader: "I’m a Front end Developer ",
+    subheader: "I’m a Front-end Developer ",
     content: "Hi, my name is Line, I’m a currently at KEA studying Multimedia Designer. I have a deep passion for developing unic and responsive web designs. I am driven to continually improve my skills and knowledge.",
     button: "Get in touch",
 }
