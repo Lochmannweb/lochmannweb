@@ -1,19 +1,26 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { AboutContent } from '../data/AboutData'
 import About from '@/app/components/About'
+import Services from '@/app/components/About/services'
+import Experience from '@/app/components/About/Experience';
 
-const classes = {
+const getClasses = (isMobile) => ({
   container: {
-    display: 'grid',
-    gap: '2rem',
-    padding: '20px',
+    display: isMobile ? '' : 'grid',
+    gap: isMobile ? '' : '2rem',
+    padding: isMobile ? '' : '20px',
+    marginTop: isMobile ? '' : '8rem',
+    marginBottom: isMobile ? '' : '8rem',
   },
   aboutComponent: {
-    paddingLeft: '3rem',
+    paddingLeft: isMobile ? '' : '3rem',
   },
-};
+  aboutContainer: {
+    marginTop: isMobile ? '' : '0rem',
+    display: isMobile ? '' : 'grid',
+  },
+});
 
 const Aboutpage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,35 +39,14 @@ const Aboutpage = () => {
 
  }, []);
 
+ const classes = getClasses(isMobile);
+
   return (
     <div style={classes.container} >
-      <div style={classes.aboutComponent}>
+      <div style={classes.aboutContainer}>
         <About />
-      </div>
-
-      <div className=''>
-        <h2 className='md:text-4xl'>{AboutContent.kea.title}</h2>
-        <h2>{AboutContent.kea.content}</h2>
-      </div>
-
-      <div className='text-end'>
-        <h2 className='md:text-4xl'>{AboutContent.ThirdSemester.title}</h2>
-        <h2 className=''>{AboutContent.ThirdSemester.content}</h2>
-      </div>
-
-      <div>
-        <h2 className='md:text-4xl'>{AboutContent.Foursemester.title}</h2>
-        <h2>{AboutContent.Foursemester.content}</h2>
-      </div>
-
-      <div className='text-end'>
-        <h2 className='md:text-4xl'>{AboutContent.passion.title}</h2>
-        <h2>{AboutContent.passion.content}</h2>
-      </div>
-
-      <div>
-        <h2 className='md:text-4xl'>{AboutContent.work.title}</h2>
-        <h2>{AboutContent.work.content}</h2>
+        <Services />
+        <Experience />
       </div>
     </div>
   )

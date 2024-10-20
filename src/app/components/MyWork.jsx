@@ -25,11 +25,11 @@ const getClasses = (isMobile) => ({
   },
   myWorkContainer: {
     padding: isMobile ? '5px' : '10px',
-    // borderRadius: isMobile ? '10px' : '25px',
-    // borderWidth: 'thin',
-    // borderColor: 'white',
-    // backdropFilter: 'blur(20%)',
     padding: isMobile ? '1rem' : '3rem',
+    borderRadius: isMobile ? '10px' : '25px',
+    borderWidth: 'thin',
+    borderColor: 'white',
+    backdropFilter: 'blur(20px)',
   },
   myWork: {
     display: 'grid',
@@ -38,7 +38,21 @@ const getClasses = (isMobile) => ({
     backdropFilter: 'blur(0%)',
   },
   projects: {
-    height: '1rem',
+    borderRadius: isMobile ? '10px' : '25px',
+    borderWidth: 'thin',
+    borderColor: 'white',
+    backgroundColor: 'black',
+    textAlign: 'start',
+    gap: '10px',
+  },
+  image: {
+    borderTopLeftRadius: isMobile ? '10px' : '25px',
+    borderTopRightRadius: isMobile ? '10px' : '25px',
+    marginBottom: '5px',
+  },
+  titleProjcet: {
+    fontSize: '',
+    padding: '1rem',
   },
 });
 
@@ -75,53 +89,45 @@ const MyWork = () => {
           <div style={classes.projects}>
             <Image         
                src="/foofest-project.png"
-               alt='profil'
-               width={isMobile ? 50 : 300}
-               height={isMobile ? 50 : 300}
-               style={classes.imageContainer}
+               alt='profil' 
+               style={classes.image}
+               width={1000}
+               height={1000}
             />
-            <h3 className='backdrop-blur-md border-solid border-2 md:p-10 rounded-2xl'>
-              {MyWorkData.project1.title}
-            </h3>
+            <h3 style={classes.titleProjcet}>{MyWorkData.project1.title}</h3>
           </div>
 
           <div style={classes.projects}>
             <Image         
                src="/cgc-project.png"
                alt='profil'
-               width={isMobile ? 50 : 300}
-               height={isMobile ? 50 : 300}
-               style={classes.imageContainer}
+               style={classes.image}
+               width={1000}
+               height={1000}
             />
-            <h3 className='backdrop-blur-md border-solid border-2 md:p-10 rounded-2xl'>
-              {MyWorkData.project1.title}
-            </h3>
+            <h3 style={classes.titleProjcet}>{MyWorkData.project2.title}</h3>
           </div>
 
           <div style={classes.projects}>
             <Image         
                src="/ca-project.png"
                alt='profil'
-               width={isMobile ? 50 : 300}
-               height={isMobile ? 50 : 300}
-               style={classes.imageContainer}
+               style={classes.image}
+               width={1000}
+               height={1000}
             />
-            <h3 className='backdrop-blur-md border-solid border-2 md:p-10 rounded-2xl'>
-              {MyWorkData.project1.title}
-            </h3>
+            <h3 style={classes.titleProjcet}>{MyWorkData.project3.title}</h3>
           </div>
 
           <div style={classes.projects}>
             <Image         
                src="/charlietango-project.png"
                alt='profil'
-               width={isMobile ? 50 : 300}
-               height={isMobile ? 50 : 300}
-               style={classes.imageContainer}
+               style={classes.image}
+               width={1000}
+               height={1000}
             />
-            <h3 className='backdrop-blur-md border-solid border-2 md:p-10 rounded-2xl'>
-              {MyWorkData.project1.title}
-            </h3>
+            <h3 style={classes.titleProjcet}>{MyWorkData.project4.title}</h3>
           </div>
       </div>
       </div>

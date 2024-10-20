@@ -5,14 +5,39 @@ import React, { useEffect, useState } from 'react';
 
 const getClasses = (isMobile) => ({
   lukketMenu: {
-    display: "flex",
     backgroundColor: '#0000008e',
     zIndex: '50',
     height: '6rem',
     justifyContent: 'center',
   },
+  container: {
+    paddingLeft: isMobile ? '1rem' : '3rem',
+    paddingRight: isMobile ? '1rem' : '3rem',
+    paddingTop: '1.2rem',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   åbenMenu: {
-
+    position: 'fixed',
+    width: '40%',
+    marginLeft: 'auto',
+    top: '0',
+    left: '0',
+    right: '0',
+    bottom: '0',
+    backgroundColor: 'black', 
+    height: isMobile ? '3rem' : '6rem', 
+    zIndex: '50', 
+    textAlign: 'center',
+    alignItems: 'center',
+    paddingTop: '0.8rem',
+  },
+  logo: {
+    textTransform: 'uppercase',
+  },
+  image: {
+    display: isMobile ? 'none' : '',
   },
 });
 
@@ -44,17 +69,18 @@ function App() {
     <>
 {/* lukket  */}
 <nav style={classes.lukketMenu}>
-  <div className='flex justify-between p-5 '>
-    <div className='flex items-center uppercase'>
-      <a href="/" prefetch={false}>LochmannWeb</a>
+  <div style={classes.container}>
+    <div>
+      <a style={classes.logo} href="/" prefetch={false}>LochmannWeb</a>
     </div>
 
     <div>
       <Image         
-      src="/white-circle-lw.png"
+        src="/white-circle-lw.png"
         alt='profil'
-        width={50}
-        height={50} /> 
+        style={classes.image}
+        width={55}
+        height={55} /> 
     </div>
 
     <div className='flex items-center'>
@@ -72,7 +98,7 @@ function App() {
 </nav>
 
 {/* Åben */}
-<nav className={`fixed inset-0 bg-menu-bg md:h-20 h-50 transition-transform transform ${menuOpen ? 'translate-x-50' : 'translate-x-full'} z-50 `}>
+<nav style={classes.åbenMenu} className={`${menuOpen ? 'translate-x-30' : 'translate-x-full'}`}>
   <div className='flex justify-end p-5'>
     <div className='flex'>
       <ul>
@@ -80,7 +106,6 @@ function App() {
           <a href="/" prefetch={false}>Home</a>
           <a href="/About" prefetch={false}>About</a>
           <a href="/MyWork" prefetch={false}>My Work</a>
-          <a href="/Expertise" prefetch={false}>Expertise</a>
           <a href="/Contact" prefetch={false}>Contact</a>
         </li>
       </ul>

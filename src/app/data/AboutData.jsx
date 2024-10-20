@@ -28,3 +28,26 @@ export const AboutContent = {
         content: "Through my project, LochmannWeb - Designer/Developer, my mission is to bring your website dreams to life at a much more affordable price, given my status as a student. I am constantly eager to grow and develop, and I believe that challenges and learning opportunities are the keys to improvement. By working with me, you’ll not only get a high-quality website but also support my journey to becoming the best designer and developer I can be.",
     },
 }
+
+export const ServiceData = {
+    title: "Services",
+    content: "I work primarily with technologies like React, JavaScript, Typescript Tailwind CSS, CSS, Database, Photoshop, Illustrator & 3D Blender to create responsive and visually appealing websites. Whether you need a new site built from scratch or want to breathe new life into an existing one, I am here to help."
+}
+
+export const ExperienceData = {
+    year: "2",
+    title: "Years of experience",
+    experience: {
+        React: "React",
+        ReactContent: "create sophisticated user interfaces.",
+
+        Database: "Database",
+        DatabaseContent: "An organized collection of structured information, or data",
+        
+        Javascript: "JavaScript",
+        JavascriptContent: "is a scripting language used to develop web pages",
+
+        Typescript: "TypeScript",
+        TypescriptContent: "is a programming language that adds extra functionality to JavaScript",
+    }
+}

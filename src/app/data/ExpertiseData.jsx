@@ -4,3 +4,5 @@ export const ExpertiseData = {
     expertise2: "Building dynamic, responsive websites with JavaScript",
     expertise3: "Styling with Tailwind CSS and custom CSS",
 }
+
+

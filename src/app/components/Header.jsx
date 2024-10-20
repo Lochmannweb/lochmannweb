@@ -12,9 +12,9 @@ const getClasses = (isMobile) => ({
     paddingBottom: isMobile ? '6rem' : '10rem',
   },
   title: {
-    fontSize: isMobile ? '35px' : '80px',
+    fontSize: isMobile ? '35px' : '90px',
     lineHeight: isMobile ? '3rem' : '5rem',
-    marginBottom: '40px',
+    marginBottom: '50px',
     textAlign: 'center',
     justifyContent: 'center',
     alignContent: 'center',
@@ -67,7 +67,7 @@ function Header() {
 
   return (
     <div style={classes.container}>
-      <h2 style={classes.title}>{ForsideData.title1} <br /> <span className='animated-text'>{texts[index]}</span> <br />{ForsideData.title3}</h2>
+      <h2 style={classes.title}>{ForsideData.title1} <br /> <span className='animated-text font-serif text-1xl md:text-6xl '>{texts[index]}</span> <br />{ForsideData.title3}</h2>
       <a style={classes.linkButton} href="/Contact">{ForsideData.button}</a>
     </div>
   )
