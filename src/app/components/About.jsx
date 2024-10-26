@@ -2,62 +2,65 @@
 
 import { AboutData } from "@/app/data/AboutData"
 import Image from "next/image"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const container = {
-  display: "grid",
-  justifyContent: "center",
-  backdropFilter: "blur(20px)", //md
-  gap: '45px',
-  border: "solid",
-  borderWidth: "thin",
-  width: "2rem",
-  padding:  "0.5rem",
-  borderRadius: '10px',
-  marginBottom: '1rem',
-  margin: 'auto',
+const styles = {
+  aboutContainer: (isMobile) => ({
+    display: isMobile ? 'grid' : 'flex',
+    borderWidth: 'thin',
+    borderColor: 'white',
+    borderRadius: isMobile ? '15px' : '25px',
+    padding: isMobile ? '1rem' : '3rem',
+    gap: isMobile ? '1rem' : '2rem',
+    marginTop: isMobile ? '3rem' : '',
+    backdropFilter: 'blur(20px)',
+  }),
+  contentContainer: (isMobile) => ({
+    display: isMobile ? '' : 'flow',
+    alignContent: isMobile ? '' : 'center',
+  }),
+  title: (isMobile) => ({
+    fontSize: isMobile ? '10px' : '13px',
+  }),
+  header: (isMobile) => ({
+    fontSize: isMobile ? '25px' : '40px',
+  }),
+  content: (isMobile) => ({
+    fontSize: isMobile ? '15px' : '20px',
+  }),
 }
 
-// const getClasses = (isMobile) => ({
-
-//   imageContainer: {
-//     marginTop: isMobile ? '2px' : '8px',
-//     marginBottom: isMobile ? '2px' : '8px',
-//   },
-//   aboutTextContainer: {
-//     textAlign: 'start',
-//     display: 'flex',
-//     flexDirection: 'column',
-//     justifyContent: 'center',
-//   },
-//   title: {
-//     fontSize: isMobile ? '8px' : '10px',
-//   },
-//   subHeader: {
-//     fontSize: isMobile ? '25px' : '40px',
-//   },
-//   content: {
-//     fontSize: isMobile ? '15px' : '20px',
-//   },
-// });
-
 const About = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 799);
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
-    <section >
+    <section style={styles.aboutContainer(isMobile)}>
       <div>
         <Image         
-        src="/pf-about.png"
-        alt='profil'
-        width={100}
-        height={100}
-       />
+          src="/pf-about.png"
+          width={ isMobile ? '200' : '700'}
+          height={ isMobile ? '200' : '700'}
+          alt='profil'
+        />
       </div>
 
-      <div style={container}>
-        <h1>{AboutData.title}</h1>        
-        <h2>{AboutData.subheader}</h2>
-        <h3>{AboutData.content}</h3>
+      <div style={styles.contentContainer(isMobile)}> 
+        <h1 style={styles.title(isMobile)}>{AboutData.title}</h1>        
+        <h2 style={styles.header(isMobile)}>{AboutData.subheader}</h2>
+        <h3 style={styles.content(isMobile)}>{AboutData.content}</h3>
       </div>
     </section>
   )
