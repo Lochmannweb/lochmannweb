@@ -1,7 +1,6 @@
 "use client"
 
 import { ServiceData } from "@/app/data/AboutData"
-import Image from "next/image"
 import React, { useEffect, useState } from 'react'
 
 const getClasses = (isMobile) => ({
@@ -61,14 +60,6 @@ const About = () => {
           <h1 style={classes.title}>{ServiceData.title}</h1>        
           <h3 style={classes.content}>{ServiceData.content}</h3>
         </div>
-        {/* <div>
-          <Image         
-          src="/pf-about.png"
-          alt='profil'
-          width={isMobile ? 200 : 825}
-          height={isMobile ? 200 : 825}
-          style={classes.imageContainer}/>
-        </div> */}
     </section>
   )
 }
