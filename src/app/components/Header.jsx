@@ -44,20 +44,21 @@ function Header() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 3000); // Skift tekst hvert 2. sekund
+    }, 3000); 
 
     return () => clearInterval(interval); // Ryd op ved komponent unmount
   }, [texts.length  ]);
 
   useEffect(() => {
-    // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 799);
+      if (typeof window !== "undefined") { // Check for client-side rendering
+        setIsMobile(window.innerWidth < 799);
+      }
     };
-
-    handleResize(); // Set initial value
+  
+    handleResize(); // Initial check
     window.addEventListener("resize", handleResize);
-
+  
     return () => {
       window.removeEventListener("resize", handleResize);
     };
