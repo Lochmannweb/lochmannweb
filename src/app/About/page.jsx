@@ -1,9 +1,9 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import About from '@/app/components/About'
-import Services from '@/app/components/About/Services'
-import Experience from '@/app/components/About/Experience';
+import About from '../components/About'
+import Services from '../components/About/Services'
+import Experience from '../components/About/Experience';
 
 const getClasses = (isMobile) => ({
   container: {
