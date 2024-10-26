@@ -3,63 +3,72 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
-const getClasses = (isMobile) => ({
-  lukketMenu: {
-    backgroundColor: '#0000008e',
-    zIndex: '50',
+const styles = {
+  menuLukket: {
+    backgroundColor: 'black',
     height: '6rem',
-    justifyContent: 'center',
   },
-  container: {
-    paddingLeft: isMobile ? '1rem' : '3rem',
-    paddingRight: isMobile ? '1rem' : '3rem',
-    paddingTop: '1.2rem',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  åbenMenu: {
+  openMenu: (isMobile) => ({
     position: 'fixed',
-    width: '40%',
+    width: isMobile ? '100%' : '30%',
     marginLeft: 'auto',
     top: '0',
     left: '0',
     right: '0',
     bottom: '0',
-    backgroundColor: 'black', 
-    height: isMobile ? '3rem' : '6rem', 
-    zIndex: '50', 
+    backgroundColor: 'black',
+    height: isMobile ? '40rem' : '6rem',
+    zIndex: '50',
     textAlign: 'center',
-    alignItems: 'center',
     paddingTop: '0.8rem',
+    padding: '1rem', 
+    display: isMobile ? '' : 'grid',
+    alignItems: isMobile ? '' : 'center',
+  }),
+  desktopMenu: (isMobile) => ({
+    display: isMobile ? 'grid' : 'flex',
+    flexDirection: 'row-reverse',
+  }),
+  menuList: (isMobile) => ({
+    display: isMobile ? 'grid' : 'flex',
+    gap: isMobile ? '1.25rem' : '1rem', 
+    textAlign: isMobile ? 'center' : '',
+    fontSize: isMobile ? '1.25rem' : '', 
+    backgroundColor: 'var(--menu-bg)', 
+  }),
+  closeIcon: {
+    cursor: 'pointer',
+    fill: '#fff',
+    width: '30px',
+    height: '30px',
+    marginLeft: 'auto',
   },
-  logo: {
-    textTransform: 'uppercase',
-  },
-  image: {
-    display: isMobile ? 'none' : '',
-  },
-});
+  container: (isMobile) => ({
+    paddingLeft: isMobile ? '1rem' : '3rem', 
+    paddingRight: isMobile ? '1rem' : '3rem', 
+    paddingTop: '1.2rem', 
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  }),
+}
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); 
 
   useEffect(() => {
-    // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      setIsMobile(window.innerWidth < 799);
     };
 
     handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  const classes = getClasses(isMobile);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -68,20 +77,21 @@ function App() {
   return (
     <>
 {/* lukket  */}
-<nav style={classes.lukketMenu}>
-  <div style={classes.container}>
+<nav style={styles.menuLukket}>
+  <div style={styles.container(isMobile)}>
     <div>
-      <a style={classes.logo} href="/" prefetch={false}>LochmannWeb</a>
+      <a href="/" prefetch={false}>LOCHMANNWEB</a>
     </div>
 
-    <div>
-      <Image         
-        src="/white-circle-lw.png"
-        alt='profil'
-        style={classes.image}
-        width={55}
-        height={55} /> 
-    </div>
+    {!isMobile && (
+      <div>
+        <Image
+          src="/w-logo.png"
+          alt='profil'
+          width={55}
+          height={55} />
+      </div>
+    )}
 
     <div className='flex items-center'>
     <button
@@ -98,28 +108,27 @@ function App() {
 </nav>
 
 {/* Åben */}
-<nav style={classes.åbenMenu} className={`${menuOpen ? 'translate-x-30' : 'translate-x-full'}`}>
-  <div className='flex justify-end p-5'>
-    <div className='flex'>
-      <ul>
-        <li className='grid md:flex md:justify-end md:pr-10 text-center gap-5 text-xl bg-menu-bg'>
-          <a href="/" prefetch={false}>Home</a>
-          <a href="/About" prefetch={false}>About</a>
-          <a href="/MyWork" prefetch={false}>My Work</a>
-          <a href="/Contact" prefetch={false}>Contact</a>
-        </li>
-      </ul>
+<nav style={styles.openMenu(isMobile)} className={`${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+  <div style={styles.desktopMenu(isMobile)}>
+    <svg 
+      style={styles.closeIcon}
+      xmlns="http://www.w3.org/2000/svg"  
+      fill='#fff'
+      viewBox="0 0 50 50" 
+      width="30px" 
+      height="30px"
+      onClick={toggleMenu}>
+        <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/>
+    </svg>
 
-      <svg 
-        xmlns="http://www.w3.org/2000/svg"  
-        fill='#fff'
-        viewBox="0 0 50 50" 
-        width="30px" 
-        height="30px"
-        onClick={toggleMenu}>
-          <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/>
-      </svg>
-    </div>
+    <ul>
+      <li style={styles.menuList(isMobile)}>
+        <a href="/" prefetch={false}>Home</a>
+        <a href="/About" prefetch={false}>About</a>
+        <a href="/MyWork" prefetch={false}>My Work</a>
+        <a href="/Contact" prefetch={false}>Contact</a>
+      </li>
+    </ul>
   </div>
 </nav>
     </>
