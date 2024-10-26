@@ -29,7 +29,7 @@ const getClasses = (isMobile) => ({
   },
   form: {
     display: 'grid',
-    width: '50%',
+    width: isMobile ? '1%' : '50%',
   },
   input: {
     marginBottom: isMobile ? '20px' : '10px',

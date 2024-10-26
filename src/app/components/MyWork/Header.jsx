@@ -7,21 +7,22 @@ const getClasses = (isMobile) => ({
   container: {
     display: 'grid',
     textAlign: 'center',
-    marginTop: '10rem',
+    marginTop: isMobile ? '5rem' : '10rem',
   },
   title: {
-    fontSize: '15px',
+    fontSize: isMobile ? '10px' : '20px',
     fontFamily: 'fantasy',
   },
   header: {
-    fontSize: '50px',
+    fontSize: isMobile ? '20px' : '60px',
     marginTop: '-10px',
     fontFamily: 'auto',
   },
   subheader: {
-    paddingLeft: '16rem',
-    paddingRight: '16rem',
+    paddingLeft: isMobile ? '5px' : '13rem',
+    paddingRight: isMobile ? '5px' : '13rem',
     marginTop: '-10px',
+    fontSize: isMobile ? '10px' : '15px',
   },
   button: {
     borderRadius: '50px',

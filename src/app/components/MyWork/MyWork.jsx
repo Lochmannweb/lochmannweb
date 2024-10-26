@@ -24,15 +24,15 @@ const getClasses = (isMobile) => ({
   title: {
     fontSize: isMobile ? '10px' : '20px',
     fontFamily: 'fantasy',
-    paddingTop: '5rem',
+    paddingTop: isMobile ? '1rem' : '5rem',
   },
   header: {
     fontSize: isMobile ? '20px' : '50px',
     fontFamily: 'auto',
   },
   subheader: {
-    paddingLeft: '16rem',
-    paddingRight: '16rem',
+    paddingLeft: isMobile ? '2rem' : '16rem',
+    paddingRight: isMobile ? '2rem' : '16rem',
   },
   myWorkContainer: {
     padding: isMobile ? '5px' : '10px',
@@ -40,7 +40,7 @@ const getClasses = (isMobile) => ({
   },
   myWork: {
     display: 'grid',
-    gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
+    gridTemplateColumns: isMobile ? 'none' : 'repeat(2, 1fr)',
     gap: isMobile ? '1rem' : '5rem',
     backdropFilter: 'blur(0%)',
   },
@@ -96,6 +96,7 @@ const MyWork = () => {
             <div style={classes.myWork}>
     
               <div style={classes.projects}>
+                <a href="https://foofest-eksamen-line.netlify.app/">
                 <Image         
                    src="/foofest-project.png"
                    alt='profil' 
@@ -104,9 +105,11 @@ const MyWork = () => {
                    height={1000}
                 />
                 <h3 style={classes.titleProjcet}>{MyWorkPageData.project1.title}</h3>
+                </a>
               </div>
     
               <div style={classes.projects}>
+                <a href="https://www.cgc-wargaming.dk/">
                 <Image         
                    src="/cgc-project.png"
                    alt='profil'
@@ -115,9 +118,11 @@ const MyWork = () => {
                    height={1000}
                 />
                 <h3 style={classes.titleProjcet}>{MyWorkPageData.project2.title}</h3>
+                </a>
               </div>
     
               <div style={classes.projects}>
+                <a href="https://tema9.netlify.app/">
                 <Image         
                    src="/ca-project.png"
                    alt='profil'
@@ -126,9 +131,11 @@ const MyWork = () => {
                    height={1000}
                 />
                 <h3 style={classes.titleProjcet}>{MyWorkPageData.project3.title}</h3>
+                </a>
               </div>
     
               <div style={classes.projects}>
+                <a href="https://ct-case-mmd.vercel.app/">
                 <Image         
                    src="/charlietango-project.png"
                    alt='profil'
@@ -137,6 +144,7 @@ const MyWork = () => {
                    height={1000}
                 />
                 <h3 style={classes.titleProjcet}>{MyWorkPageData.project4.title}</h3>
+                </a>
               </div>
           </div>
           </div>
