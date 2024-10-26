@@ -1,10 +1,10 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import Header from '../components/MyWork/Header';
+import Header from '../components/MyWorkComponent/Header';
 import Contact from '../components/Contact';
-import StepByStep from '../components/MyWork/StepByStep';
-import MyWork from '../components/MyWork/MyWork';
+import StepByStep from '../components/MyWorkComponent/StepByStep';
+import MyWork from '../components/MyWorkComponent/MyWork';
 
 const getClasses = (isMobile) => ({
   container: {

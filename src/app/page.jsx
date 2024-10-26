@@ -3,7 +3,7 @@ import About from '@/app/components/About'
 import Contact from './components/Contact'
 import Header from './components/Header'
 import ProcesStages from './components/ProcesStages'
-import MyWork from '@/app/components/MyWork'
+import MyWork from './components/MyWork'
 import FAQ from './components/FAQ'
 
 
