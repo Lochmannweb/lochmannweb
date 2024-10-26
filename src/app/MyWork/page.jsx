@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react'
 import Header from '../components/MyWork/Header';
-import Contact from '../components/Contact'
+import Contact from '../components/Contact';
 import StepByStep from '../components/MyWork/StepByStep';
-import MyWork from '../components/Mywork/MyWork';
+import MyWork from '../components/MyWork/MyWork';
 
 const getClasses = (isMobile) => ({
   container: {
