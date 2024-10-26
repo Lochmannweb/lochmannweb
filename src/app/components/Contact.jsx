@@ -1,68 +1,79 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { ContactFormularData } from '../data/ContactFormular'
 
-// const getClasses = (isMobile) => ({
-//   title: {
-//     fontSize: isMobile ? '40px' : '50px',
-//     lineHeight: isMobile ? '3rem' : '5rem',
-//     marginBottom: '20px',
-//   },
-//   container: {
-//     gap: '8px',
-//     padding: isMobile ? '0rem' : '5rem',
-//     textAlign: 'center',
-//     paddingTop: isMobile ? '5rem' : '10rem',
-//   },
-//   formContainer: {
-//     padding: isMobile ? '2rem' : '3rem',
-//     backdropFilter: 'blur(20px)',
-//     borderColor: 'white',
-//     borderWidth: 'thin',
-//     borderRadius: '25px',
-//     display: isMobile ? 'grid' : 'flex',
-//     justifyContent: 'start',
-//     gap: '5rem',
-//   },
-//   form: {
-//     display: 'grid',
-//     width: isMobile ? '1%' : '50%',
-//   },
-//   input: {
-//     marginBottom: isMobile ? '20px' : '10px',
-//     backgroundColor: '#000',
-//     borderColor: 'grey', 
-//     borderWidth: 'thin',
-//     width: isMobile ? '16rem' : '35rem',
-//   },
-//   formTitle: {
-//     fontSize: '13px',
-//     marginLeft: '8px',
-//   },
-//   button: {
-//     backgroundColor: '#000',
-//     borderColor: 'grey', 
-//     borderWidth: 'thin',
-//     width: isMobile ? '40%' : '20%',
-//     marginLeft: 'auto',
-//     marginTop: '10px',
-//   },
-//   contactContainer: {
-//     display: 'flex',
-//     alignItems: 'center',
-//     gap: '10px',
-//   },
-//   contactSoMe: {
-//     alignContent: 'center',
-//     display: 'grid',
-//     gap: '1rem',
-//     paddingLeft: '3rem',
-//   },
-// });
+const styles = {
+  container: (isMobile) => ({
+    gap: '10px',
+    padding: isMobile ? '1rem' : '5rem',
+    textAlign: 'start',
+    paddingTop: isMobile ? '1rem' : '10rem',
+  }),
+  title: (isMobile) => ({
+    fontSize: isMobile ? '40px' : '50px',
+    lineHeight: isMobile ? '3rem' : '5rem',
+    marginBottom: '20px',
+  }),
+  formContainer: (isMobile) => ({
+    padding: isMobile ? '2rem' : '3rem',
+    backdropFilter: 'blur(20px)',
+    borderColor: 'white',
+    borderWidth: 'thin',
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+    display: isMobile ? 'grid' : 'flex',
+    gap: '5rem',
+  }),
+  form: (isMobile) => ({
+    display: 'grid',
+    width: isMobile ? '' : '50%',
+  }),
+  input: (isMobile) => ({
+    marginBottom: isMobile ? '20px' : '10px',
+    backgroundColor: '#000',
+    borderColor: 'grey', 
+    borderWidth: 'thin',
+    width: isMobile ? '' : '28rem',
+  }),
+  button: (isMobile) => ({
+    backgroundColor: '#000',
+    borderColor: 'grey', 
+    borderWidth: 'thin',
+    width: isMobile ? '40%' : '20%',
+    marginLeft: 'auto',
+    marginTop: '10px',    
+  }),
+  formTitle: (isMobile) => ({
+    fontSize: isMobile ? '15px' : '20px',
+    marginLeft: isMobile ? '5px' : '10px',
+  }),
+  soMeInformations: {
+    display: 'flow',
+    alignContent: 'center',
+  },
+  soMeContainer: {
+    display: 'flex',
+    gap: '1rem',
+    marginBottom: '1rem',
+  },
+}
 
 function ContactForm() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 799);
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const [state, handleSubmit] = useForm("mldrldzl");
   if (state.succeeded) {
@@ -70,20 +81,20 @@ function ContactForm() {
   }
 
   return (
-    <section>
-      <h1 >{ContactFormularData.title}</h1>
+    <section style={styles.container(isMobile)}>
+      <h1 style={styles.title(isMobile)}>{ContactFormularData.title}</h1>
 
-      <div >
-        <form onSubmit={handleSubmit} >
+      <div style={styles.formContainer(isMobile)}>
+        <form onSubmit={handleSubmit} style={styles.form(isMobile)} >
      
-          <label htmlFor="fullname" >
+          <label htmlFor="fullname" style={styles.formTitle(isMobile)}>
             {ContactFormularData.fullname}
           </label>
           <input
             id="fullname"
             type="text" 
             name="text"
-           
+            style={styles.input(isMobile)}
           />
           <ValidationError 
             prefix="text" 
@@ -91,14 +102,14 @@ function ContactForm() {
             errors={state.errors}
           />
      
-          <label htmlFor="phonenr">
+          <label htmlFor="phonenr" style={styles.formTitle(isMobile)}>
             {ContactFormularData.phonenr}
           </label>
           <input
             id="phonenr"
             type="tel" 
             name="tel"
-           
+            style={styles.input(isMobile)}
           />
           <ValidationError 
             prefix="tel" 
@@ -106,14 +117,14 @@ function ContactForm() {
             errors={state.errors}
           />
      
-          <label htmlFor="email">
+          <label htmlFor="email" style={styles.formTitle(isMobile)}>
             {ContactFormularData.mailadress}
           </label>
           <input
             id="email"
             type="email" 
             name="email"
-          
+            style={styles.input(isMobile)}
           />
           <ValidationError 
             prefix="Email" 
@@ -121,13 +132,13 @@ function ContactForm() {
             errors={state.errors}
           />
      
-          <label htmlFor="message" >
+          <label htmlFor="message" style={styles.formTitle(isMobile)}>
             <p>{ContactFormularData.message}</p>
           </label>
           <textarea
             id="message"
             name="message"
-         
+            style={styles.input(isMobile)}
           />
           <ValidationError 
             prefix="Message" 
@@ -135,13 +146,13 @@ function ContactForm() {
             errors={state.errors}
           />
      
-          <button type="submit" disabled={state.submitting} >
+          <button style={styles.button(isMobile)} type="submit" disabled={state.submitting} >
             {ContactFormularData.button}
           </button>
         </form>
      
-        <div >
-          <div >
+        <div style={styles.soMeInformations}>
+          <div style={styles.soMeContainer}>
             <svg 
               version="1.0" 
               xmlns="http://www.w3.org/2000/svg" 
@@ -155,7 +166,7 @@ function ContactForm() {
             <p>{ContactFormularData.mynr}</p>
           </div>
       
-          <div >
+          <div style={styles.soMeContainer}> 
             <svg 
             version="1.0" 
             xmlns="http://www.w3.org/2000/svg" 
@@ -169,7 +180,7 @@ function ContactForm() {
             <p>{ContactFormularData.mymail}</p>
           </div>
       
-          <div>
+          <div style={styles.soMeContainer}>
             <svg 
             version="1.0" 
             xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +196,7 @@ function ContactForm() {
             <p>{ContactFormularData.city}</p>
           </div>
       
-          <div >
+          <div style={styles.soMeContainer}>
             <svg 
             version="1.0" 
             xmlns="http://www.w3.org/2000/svg" 

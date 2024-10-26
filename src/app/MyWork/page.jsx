@@ -6,15 +6,15 @@ import Contact from '../components/Contact';
 import StepByStep from '../components/MyWorkComponent/StepByStep';
 import MyWork from '../components/MyWorkComponent/MyWork';
 
-const getClasses = (isMobile) => ({
+const styles = {
   container: {
-    paddingBottom: '10rem',
+    paddingBottom: '1rem',
   },
   aboutComponent: {
   },
   aboutContainer: {
   },
-});
+};
 
 const Aboutpage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -33,10 +33,8 @@ const Aboutpage = () => {
 
  }, []);
 
- const classes = getClasses(isMobile);
-
   return (
-      <div style={classes.container}>
+      <div style={styles.container}>
         <Header />  
         <StepByStep />
         <MyWork />

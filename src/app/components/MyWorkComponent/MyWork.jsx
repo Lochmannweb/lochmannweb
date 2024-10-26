@@ -1,156 +1,118 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { MyWorkPageData } from '@/app/data/MyWorkData'
+import { MyWorkData } from '../../data/MyWorkData'
 import Image from 'next/image';
 
-
-const getClasses = (isMobile) => ({
-  bg: {
+const styles = {
+  bg: (isMobile) => ({
     backgroundColor: '#0000008e',
-    marginLeft: '-23rem',
-    marginRight: '-23rem',
-  },
-  container: {
-    display: 'grid',
-    gap: '5rem',
-    marginTop: isMobile ? '5px' : '10rem',
-    marginBottom: isMobile ? '5px' : '10rem',
+    marginLeft: isMobile ? '' : '-23rem',
+    marginRight: isMobile ? '' : '-23rem',
+  }),
+  container: (isMobile) => ({
+    display: isMobile ? '' : '',
+    paddingTop: isMobile ? '1rem' : '3rem',
+    paddingBottom: isMobile ? '1rem' : '3rem',
+  }),
+  headerContainer: (isMobile) => ({
     textAlign: 'center',
-    paddingBottom: '5rem',
-    paddingLeft: '23rem',
-    paddingRight: '23rem',
-  },
-  title: {
-    fontSize: isMobile ? '10px' : '20px',
-    fontFamily: 'fantasy',
-    paddingTop: isMobile ? '1rem' : '5rem',
-  },
-  header: {
-    fontSize: isMobile ? '20px' : '50px',
-    fontFamily: 'auto',
-  },
-  subheader: {
-    paddingLeft: isMobile ? '2rem' : '16rem',
-    paddingRight: isMobile ? '2rem' : '16rem',
-  },
-  myWorkContainer: {
-    padding: isMobile ? '5px' : '10px',
-    padding: isMobile ? '1rem' : '3rem',
-  },
-  myWork: {
+    paddingBottom: isMobile ? '1rem' : '1rem',
+  }),
+  title: (isMobile) => ({
+    fontSize: isMobile ? '10px' : '15px',
+  }),
+  content: (isMobile) => ({
+    fontSize: isMobile ? '20px' : '30px',
+  }),
+  myWorkContainer: (isMobile) => ({
     display: 'grid',
     gridTemplateColumns: isMobile ? 'none' : 'repeat(2, 1fr)',
-    gap: isMobile ? '1rem' : '5rem',
-    backdropFilter: 'blur(0%)',
-  },
-  projects: {
-    borderRadius: isMobile ? '10px' : '25px',
+    paddingLeft: isMobile ? '1rem' : '24.5rem',
+    paddingRight: isMobile ? '1rem' : '24.5rem',
+    gap: isMobile ? '1rem' : '3rem',
+  }),
+  myWorkBorder: (isMobile) => ({
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+    padding: isMobile ? '' : '',
     borderWidth: 'thin',
-    borderColor: 'white',
-    backgroundColor: 'black',
-    textAlign: 'start',
-    gap: '10px',
-  },
-  image: {
-    borderTopLeftRadius: isMobile ? '10px' : '25px',
-    borderTopRightRadius: isMobile ? '10px' : '25px',
-    marginBottom: '5px',
-  },
-  titleProjcet: {
-    fontSize: '',
-    padding: '1rem',
-  },
-});
+    borderStyle: 'solid',
+  }),
+  hr: (isMobile) => ({
+    width: isMobile ? '10rem' : '20rem',
+    margin: 'auto',
+  }),
+}
 
 const MyWork = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      setIsMobile(window.innerWidth < 799);
     };
 
     handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  const classes = getClasses(isMobile);
-
   return (
-    <>
-    <div style={classes.bg}>
-        <div style={classes.container}>
-          <div>
-            <h1 style={classes.title}>{MyWorkPageData.title}</h1>
-            <h2 style={classes.header}>{MyWorkPageData.header}</h2>
-            <h3 style={classes.subheader}>{MyWorkPageData.subheader}</h3>
-          </div>
-    
-          <div style={classes.myWorkContainer} >
-            <div style={classes.myWork}>
-    
-              <div style={classes.projects}>
-                <a href="https://foofest-eksamen-line.netlify.app/">
-                <Image         
-                   src="/foofest-project.png"
-                   alt='profil' 
-                   style={classes.image}
-                   width={1000}
-                   height={1000}
-                />
-                <h3 style={classes.titleProjcet}>{MyWorkPageData.project1.title}</h3>
-                </a>
-              </div>
-    
-              <div style={classes.projects}>
-                <a href="https://www.cgc-wargaming.dk/">
-                <Image         
-                   src="/cgc-project.png"
-                   alt='profil'
-                   style={classes.image}
-                   width={1000}
-                   height={1000}
-                />
-                <h3 style={classes.titleProjcet}>{MyWorkPageData.project2.title}</h3>
-                </a>
-              </div>
-    
-              <div style={classes.projects}>
-                <a href="https://tema9.netlify.app/">
-                <Image         
-                   src="/ca-project.png"
-                   alt='profil'
-                   style={classes.image}
-                   width={1000}
-                   height={1000}
-                />
-                <h3 style={classes.titleProjcet}>{MyWorkPageData.project3.title}</h3>
-                </a>
-              </div>
-    
-              <div style={classes.projects}>
-                <a href="https://ct-case-mmd.vercel.app/">
-                <Image         
-                   src="/charlietango-project.png"
-                   alt='profil'
-                   style={classes.image}
-                   width={1000}
-                   height={1000}
-                />
-                <h3 style={classes.titleProjcet}>{MyWorkPageData.project4.title}</h3>
-                </a>
-              </div>
-          </div>
-          </div>
+  <div style={styles.bg(isMobile)}>
+    <div style={styles.container(isMobile)}>
+      <div style={styles.headerContainer(isMobile)}>
+        <h1 style={styles.title(isMobile)}>{MyWorkData.title}</h1>
+        <hr style={styles.hr(isMobile)} />
+        <h2 style={styles.content(isMobile)}>{MyWorkData.content}</h2>
+      </div>
+
+      <div style={styles.myWorkContainer(isMobile)}>
+        <div style={styles.myWorkBorder(isMobile)}>
+          <Image         
+             src="/foofest-project.png"
+             alt='profil' 
+             
+             width={1000}
+             height={1000}
+          />
+          <h3 >{MyWorkData.project1.title}</h3>
         </div>
+        <div style={styles.myWorkBorder(isMobile)}>
+          <Image         
+             src="/cgc-project.png"
+             alt='profil'
+             
+             width={1000}
+             height={1000}
+          />
+          <h3 >{MyWorkData.project2.title}</h3>
+        </div>
+        <div style={styles.myWorkBorder(isMobile)}>
+          <Image         
+             src="/ca-project.png"
+             alt='profil'
+             
+             width={1000}
+             height={1000}
+          />
+          <h3 >{MyWorkData.project3.title}</h3>
+        </div>
+        <div style={styles.myWorkBorder(isMobile)}>
+          <Image         
+             src="/charlietango-project.png"
+             alt='profil'
+             
+             width={1000}
+             height={1000}
+          />
+          <h3 >{MyWorkData.project4.title}</h3>
+        </div>
+      </div>
     </div>
-    </>
+  </div>
   )
 }
 

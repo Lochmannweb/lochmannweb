@@ -10,7 +10,7 @@ const styles = {
     margin: 'auto',
     borderWidth: 'thin',
     borderColor: 'white',
-    borderRadius: isMobile ? '15px' : '25px',
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
     padding: isMobile ? '2rem' : '3rem',
     marginTop: isMobile ? '3rem' : '',
     backdropFilter: 'blur(20px)',

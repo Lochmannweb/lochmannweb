@@ -8,13 +8,14 @@ const styles = {
   aboutContainer: (isMobile) => ({
     display: isMobile ? 'grid' : 'flex',
     borderWidth: 'thin',
-    borderColor: 'white',
-    borderRadius: isMobile ? '15px' : '25px',
+    borderStyle: 'solid',
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', // Border gradient
+    // borderRadius: isMobile ? '15px' : '25px', // Adjust radius based on screen size
     padding: isMobile ? '1rem' : '3rem',
     gap: isMobile ? '1rem' : '2rem',
     marginTop: isMobile ? '3rem' : '',
     backdropFilter: 'blur(20px)',
-  }),
+}),
   contentContainer: (isMobile) => ({
     display: isMobile ? '' : 'flow',
     alignContent: isMobile ? '' : 'center',
