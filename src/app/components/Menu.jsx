@@ -42,9 +42,9 @@ const styles = {
     height: '30px',
     marginLeft: 'auto',
   },
-  container: (isMobile) => ({
-    paddingLeft: isMobile ? '1rem' : '3rem', 
-    paddingRight: isMobile ? '1rem' : '3rem', 
+  container: (isMobile, isTablet) => ({
+    paddingLeft: isMobile ? '1rem' : isTablet ? '1rem' : '3rem', 
+    paddingRight: isMobile ? '1rem' : isTablet ? '1rem' : '3rem', 
     paddingTop: '1.2rem', 
     display: 'flex',
     justifyContent: 'space-between',

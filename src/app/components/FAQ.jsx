@@ -5,8 +5,8 @@ import { faqData } from '../data/faqData'
 
 const styles = {
   container: (isMobile, isTablet) => ({
-    paddingLeft: isMobile ? '' : isTablet ? '' : '5.5rem',
-    paddingRight: isMobile ? '' : isTablet ? '' : '5.5rem',
+    paddingLeft: isMobile ? '1rem' : isTablet ? '1rem' : '5.5rem',
+    paddingRight: isMobile ? '1rem' : isTablet ? '1rem' : '5.5rem',
   }),
   faqTitle: (isMobile, isTablet) => ({
     fontSize: isMobile ? '1.5rem' : isTablet ? '' : '3rem',

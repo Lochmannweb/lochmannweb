@@ -7,9 +7,9 @@ import { ContactFormularData } from '../data/ContactFormular'
 const styles = {
   container: (isMobile, isTablet) => ({
     gap: '10px',
-    padding: isMobile ? '0rem' : isTablet ? '3rem' : '5rem',
+    padding: isMobile ? '1rem' : isTablet ? '1rem' : '5rem',
     textAlign: 'start',
-    paddingTop: isMobile ? '1rem' : '10rem',
+    paddingTop: isMobile ? '1rem' : isTablet ? '1rem' :'10rem',
   }),
   title: (isMobile, isTablet) => ({
     fontSize: isMobile ? '40px' : isTablet ? '45px' : '50px',
@@ -25,16 +25,16 @@ const styles = {
     display: isMobile ? 'grid' : isTablet ? 'grid' :'flex',
     gap: '5rem',
   }),
-  form: (isMobile) => ({
+  form: (isMobile, isTablet) => ({
     display: 'grid',
-    width: isMobile ? '100%' : '50%', // Adjust width for tablet and desktop
+    width: isMobile ? '100%' : isTablet ? '' :  '', // Adjust width for tablet and desktop
   }),
-  input: (isMobile) => ({
-    marginBottom: isMobile ? '20px' : '10px',
+  input: (isMobile, isTablet) => ({
+    marginBottom: isMobile ? '20px' : isTablet ? '' :  '10px',
     backgroundColor: '#000',
     borderColor: 'grey', 
     borderWidth: 'thin',
-    width: isMobile ? '100%' : '28rem',
+    width: isMobile ? '100%' : isTablet ? '' : '',
   }),
   button: (isMobile) => ({
     backgroundColor: '#000',

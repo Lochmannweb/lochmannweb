@@ -11,6 +11,7 @@ const styles = {
     borderStyle: 'solid',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', // Border gradient
     padding: isMobile ? '1rem' : isTablet ? '2rem' : '3rem',
+    margin: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
     gap: isMobile ? '1rem' : '2rem',
     marginTop: isMobile ? '3rem' : '',
     backdropFilter: isMobile ? '' : isTablet ? '' : 'blur(20px)',
