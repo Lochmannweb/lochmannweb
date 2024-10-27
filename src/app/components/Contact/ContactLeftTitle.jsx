@@ -1,51 +1,60 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from 'react';
 
 const styles = {
-  leftContainer: (isMobile) => ({
+  leftContainer: (isMobile, isTablet) => ({
     textAlign: 'center',
-    paddingTop: isMobile ? '5rem' : '10.5rem',
-    paddingBottom: isMobile ? '8rem' : '3rem',
+    paddingTop: isMobile ? '5rem' : isTablet ? '8rem' : '10.5rem',
+    paddingBottom: isMobile ? '8rem' : isTablet ? '5rem' : '3rem',
   }),
-  leftContainerTitle: (isMobile) => ({
-    fontSize: isMobile ? '15px' : '20px',
+  leftContainerTitle: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '15px' : isTablet ? '18px' : '20px',
   }),
-  span: (isMobile) => ({
+  span: (isMobile, isTablet) => ({
     fontFamily: 'emoji',
-    fontSize: isMobile ? '40px' : '70px',
+    fontSize: isMobile ? '40px' : isTablet ? '55px' : '70px',
   }),
 };
 
 function ContactLeftTitle() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [screenType, setScreenType] = useState('desktop');
 
   useEffect(() => {
-    // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      if (width < 600) {
+        setScreenType('mobile'); // Mobile
+      } else if (width < 1024) {
+        setScreenType('tablet'); // Tablet
+      } else {
+        setScreenType('desktop'); // Desktop
+      }
     };
 
     handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
+  const isMobile = screenType === 'mobile';
+  const isTablet = screenType === 'tablet';
+
   return (
-  <>
-    <div style={styles.leftContainer(isMobile)}>
-      <h1 style={styles.leftContainerTitle(isMobile)}>
-        LET&apos;S 
+    <>
+      <div style={styles.leftContainer(isMobile, isTablet)}>
+        <h1 style={styles.leftContainerTitle(isMobile, isTablet)}>
+          LET&apos;S 
           <br /> 
-            <span style={styles.span(isMobile)}>ACHIEVE YOUR</span>
+          <span style={styles.span(isMobile, isTablet)}>ACHIEVE YOUR</span>
           <br /> 
-        VISION
-      </h1> 
-    </div>
-  </>
+          VISION
+        </h1> 
+      </div>
+    </>
   );
 }
 

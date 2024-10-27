@@ -1,28 +1,35 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from 'react';
-import ContactLeftTitle from '../components/Contact/ContactLeftTitle'
-import ContactOplysninger from '../components/Contact/ContactOplysninger'
-import ContactFormular from '../components/Contact/ContactFormular'
+import ContactLeftTitle from '../components/Contact/ContactLeftTitle';
+import ContactOplysninger from '../components/Contact/ContactOplysninger';
+import ContactFormular from '../components/Contact/ContactFormular';
 
 const styles = {
-  container: (isMobile) => ({
-    display: isMobile ? 'grid' : 'flex',
-    justifyContent: isMobile ? '' : 'center',
-    gap: isMobile ? '' : '3rem',
+  container: (screenType) => ({
+    display: screenType === 'mobile' ? 'grid' : 'flex',
+    justifyContent: screenType === 'mobile' ? '' : 'center',
+    gap: screenType === 'mobile' ? '' : '3rem',
   }),
-  hidden: (isMobile) => ({
-    display: isMobile ? 'none' : '',
+  hidden: (screenType) => ({
+    display: screenType === 'mobile' ? 'none' : '',
   }),
 };
 
 function ContactForm() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [screenType, setScreenType] = useState('mobile');
 
   useEffect(() => {
     // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      if (width < 600) {
+        setScreenType('mobile');
+      } else if (width < 1024) {
+        setScreenType('tablet');
+      } else {
+        setScreenType('desktop');
+      }
     };
 
     handleResize(); // Set initial value
@@ -34,19 +41,19 @@ function ContactForm() {
   }, []);
 
   return (
-  <>
-  <section style={styles.container(isMobile)}>
-    <div>
-      <ContactLeftTitle />
-      <div style={styles.hidden(isMobile)}>
-        <ContactOplysninger />
-      </div>
-    </div>
-    <div>
-      <ContactFormular />
-    </div>
-  </section>
-  </>
+    <>
+      <section style={styles.container(screenType)}>
+        <div>
+          <ContactLeftTitle />
+          <div style={styles.hidden(screenType)}>
+            <ContactOplysninger />
+          </div>
+        </div>
+        <div>
+          <ContactFormular />
+        </div>
+      </section>
+    </>
   );
 }
 

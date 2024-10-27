@@ -1,18 +1,18 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from 'react';
-import { ContactFormularData } from '../../data/ContactFormular'
+import { ContactFormularData } from '../../data/ContactFormular';
 
 const styles = {
-  contactOplysninger: (isMobile) => ({
+  contactOplysninger: (view) => ({
     paddingLeft: '2rem',
     paddingRight: '2rem',
     paddingTop: '1rem',
     paddingBottom: '1rem',
-    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
     borderWidth: 'thin',
     display: 'grid',
-    gridTemplateColumns: isMobile ? 'none' : 'repeat(2, 1fr)',
+    gridTemplateColumns: view === 'mobile' ? 'none' : view === 'tablet' ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', // 3 columns for desktop
   }),
   contactContainer: {
     display: 'flex',
@@ -23,12 +23,17 @@ const styles = {
 };
 
 function ContactLeftTitle() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [view, setView] = useState('mobile');
 
   useEffect(() => {
-    // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      if (window.innerWidth < 600) {
+        setView('mobile');
+      } else if (window.innerWidth < 1024) {
+        setView('tablet');
+      } else {
+        setView('desktop');
+      }
     };
 
     handleResize(); // Set initial value
@@ -41,7 +46,7 @@ function ContactLeftTitle() {
 
   return (
   <>
-       <div style={styles.contactOplysninger(isMobile)}> 
+       <div style={styles.contactOplysninger(view)}> 
             <div style={styles.contactContainer}>
               <svg 
                 version="1.0" 

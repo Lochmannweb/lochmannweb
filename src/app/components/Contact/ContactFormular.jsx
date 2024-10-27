@@ -1,54 +1,50 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { ContactFormularData } from '../../data/ContactFormular'
-
+import { ContactFormularData } from '../../data/ContactFormular';
 
 const styles = {
-  formAndContactOplysninger: (isMobile) => ({
-    display: isMobile ? '' : '',
-    gap: isMobile ? '3rem' : '2.6rem',
-    paddingTop: isMobile ? '30px' : '',
-    paddingBottom: isMobile ? '30px' : '',
-  }), 
-  color: (isMobile) => ({
-    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+  formAndContactOplysninger: (deviceType) => ({
+    display: deviceType === 'mobile' ? '' : '',
+    gap: deviceType === 'mobile' ? '3rem' : '2.6rem',
+    paddingTop: deviceType === 'mobile' ? '30px' : '',
+    paddingBottom: deviceType === 'mobile' ? '30px' : '',
+  }),
+  color: (deviceType) => ({
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
     borderWidth: 'thin',
     padding: '1rem',
-    marginRight: isMobile ? '' : '24rem',
+    marginRight: deviceType === 'desktop' ? '24rem' : '',
   }),
-  rightBGContainer: (isMobile) => ({
-    backgroundColor: isMobile ? '' : '#0000008e',
-    paddingLeft: isMobile ? '' : '13rem',
-    paddingBottom: isMobile ? '' : '8rem',
-    marginRight: isMobile ? '' : '-23.5rem',
-    paddingTop: isMobile ? '' : '8.5rem',
-    padding: isMobile ? '1rem' : '',
-  }), 
-  contactTitle: (isMobile) => ({
-    fontSize: isMobile ? '25px' : '40px',
-    paddingBottom: isMobile ? '10px' : '',
+  rightBGContainer: (deviceType) => ({
+    backgroundColor: deviceType === 'desktop' ? '#0000008e' : '',
+    paddingLeft: deviceType === 'desktop' ? '13rem' : '',
+    paddingBottom: deviceType === 'desktop' ? '8rem' : '',
+    marginRight: deviceType === 'desktop' ? '-23.5rem' : '',
+    paddingTop: deviceType === 'desktop' ? '8.5rem' : '',
+    padding: deviceType === 'mobile' ? '1rem' : '',
   }),
-  formBorder: (isMobile) => ({
-    borderImage: isMobile ? 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1' : '', 
-    borderWidth: isMobile ? 'thin' : '',
-    padding: isMobile ? '1rem' : '',
+  contactTitle: (deviceType) => ({
+    fontSize: deviceType === 'mobile' ? '25px' : '40px',
+    paddingBottom: deviceType === 'mobile' ? '10px' : '',
   }),
-  contactTitle: (isMobile) => ({
-    fontSize: isMobile ? '1.5rem' : '3rem',
+  formBorder: (deviceType) => ({
+    borderImage: deviceType === 'mobile' ? 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1' : '',
+    borderWidth: deviceType === 'mobile' ? 'thin' : '',
+    padding: deviceType === 'mobile' ? '1rem' : '',
   }),
   formContainers: {
     display: 'grid',
     paddingBottom: '10px',
   },
-  sendButton: (isMobile) => ({
-    marginLeft: isMobile ? '13.5rem' : '14rem',
+  sendButton: (deviceType) => ({
+    marginLeft: deviceType === 'mobile' ? '13.5rem' : '14rem',
     borderColor: 'white',
     borderWidth: 'thin',
-    padding: isMobile ? '' : '0.5rem',
-    paddingLeft: isMobile ? '' : '2rem',
-    paddingRight: isMobile ? '' : '2rem',
+    padding: deviceType === 'desktop' ? '0.5rem' : '',
+    paddingLeft: deviceType === 'desktop' ? '2rem' : '',
+    paddingRight: deviceType === 'desktop' ? '2rem' : '',
     display: 'grid',
     width: '30%',
     marginTop: '0.5rem',
@@ -58,10 +54,10 @@ const styles = {
     borderColor: 'white',
     borderWidth: 'thin',
   },
-  soMeInformations: (isMobile) => ({
-    display: isMobile ? '' : 'none',
+  soMeInformations: (deviceType) => ({
+    display: deviceType === 'mobile' ? '' : 'none',
     alignContent: 'center',
-    paddingTop: isMobile ? '4rem' : '',
+    paddingTop: deviceType === 'mobile' ? '4rem' : '',
   }),
   soMeContainer: {
     display: 'flex',
@@ -71,12 +67,17 @@ const styles = {
 };
 
 function ContactFormular() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [deviceType, setDeviceType] = useState('desktop');
 
   useEffect(() => {
-    // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      if (window.innerWidth < 600) {
+        setDeviceType('mobile');
+      } else if (window.innerWidth < 1024) {
+        setDeviceType('tablet');
+      } else {
+        setDeviceType('desktop');
+      }
     };
 
     handleResize(); // Set initial value
@@ -95,11 +96,11 @@ function ContactFormular() {
   return (
     <>
    <div>
-    <div style={styles.rightBGContainer(isMobile)}>
-      <div style={styles.color(isMobile)}>
-      <h1 style={styles.contactTitle(isMobile)}>{ContactFormularData.title}</h1>
+    <div style={styles.rightBGContainer(deviceType)}>
+      <div style={styles.color(deviceType)}>
+      <h1 style={styles.contactTitle(deviceType)}>{ContactFormularData.title}</h1>
   
-      <div style={styles.formAndContactOplysninger(isMobile)}> 
+      <div style={styles.formAndContactOplysninger(deviceType)}> 
         <form 
           onSubmit={handleSubmit}>
     
@@ -171,13 +172,13 @@ function ContactFormular() {
           </div>
     
           <div>
-            <button type="submit" style={styles.sendButton(isMobile)} disabled={state.submitting}>
+            <button type="submit" style={styles.sendButton(deviceType)} disabled={state.submitting}>
               {ContactFormularData.button}
             </button>
           </div>
         </form>  
 
-        <div style={styles.soMeInformations(isMobile)}>
+        <div style={styles.soMeInformations(deviceType)}>
           <div style={styles.soMeContainer}>
             <svg 
               version="1.0" 
