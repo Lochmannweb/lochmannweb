@@ -64,7 +64,7 @@ function ContactForm() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 799);
+      setIsMobile(window.innerWidth < 599);
     };
 
     handleResize(); // Set initial value

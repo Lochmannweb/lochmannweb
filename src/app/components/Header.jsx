@@ -1,59 +1,59 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { ForsideData } from "../data/ForsideData";
 
 const styles = {
-  container: (isMobile) => ({
-    paddingTop: isMobile ? '3rem' : '5rem',
-  }),
-  title: (isMobile) => ({
+  container: (device) => ({
+    paddingTop: device === 'mobile' ? '3rem' : device === 'tablet' ? '4rem' : '5rem', // Adjusted padding for mobile, tablet, and desktop
     textAlign: 'center',
-    fontSize: isMobile ? '1.3rem' : '2rem',
+  }),
+  heading: (device) => ({
+    fontSize: device === 'mobile' ? '1.3rem' : device === 'tablet' ? '1.5rem' : '2rem', // Responsive font sizes
+    lineHeight: device === 'mobile' ? '1.2' : device === 'tablet' ? '2.5rem' : '4rem', // Responsive line heights
     fontFamily: 'fantasy',
-    lineHeight: isMobile ? '' : '4rem', 
   }),
-  animatedTextStyle: (isMobile) => ({
-    fontFamily: 'auto',
+  animatedText: (device) => ({
+    fontSize: device === 'mobile' ? '2rem' : device === 'tablet' ? '3rem' : '5rem', // Responsive font sizes
     fontWeight: 'bold',
-    fontSize: isMobile ? '2rem' : '5rem',
-    animation: 'fade 3s infinite',
+    animation: 'pulse 1s infinite', // Animation
   }),
-  linkStyle: (isMobile) => ({
-    padding: isMobile ? '0.3rem' : '10px 20px',
-    borderRadius: '50px',
-    borderWidth: 'thin',
-    borderColor: 'white',
-    textAlign: 'center',
+  button: (device) => ({
     display: 'flex',
-    width: isMobile ? '40%' : '20%',
-    margin: 'auto',
-    marginTop: isMobile ? '1rem' : '2rem',
     justifyContent: 'center',
-    fontSize: isMobile ? '0.8rem' : '1rem',
-  })
-}
-
-const texts = [
-  "The Transformation",
-  "The Magic",
-  "The Strategy",
-];
+    alignItems: 'center',
+    margin: 'auto',
+    marginTop: '1rem', // Consistent margin
+    width: device === 'mobile' ? '40%' : device === 'tablet' ? '30%' : '20%', // Adjusted width for each device
+    padding: device === 'mobile' ? '0.5rem 0' : device === 'tablet' ? '0.5rem 1rem' : '0.5rem 1rem', // Padding adjustments
+    borderRadius: '9999px', // Fully rounded
+    border: '1px solid white',
+    textAlign: 'center',
+    color: 'white',
+  }),
+};
 
 function Header() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [device, setDevice] = useState('desktop'); // Default to desktop
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      if (width < 599) {
+        setDevice('mobile');
+      } else if (width >= 599 && width < 1024) {
+        setDevice('tablet');
+      } else {
+        setDevice('desktop');
+      }
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -65,14 +65,25 @@ function Header() {
     return () => clearInterval(interval); // Clean up interval on unmount
   }, []);
 
+  const texts = [
+    "The Transformation",
+    "The Magic",
+    "The Strategy",
+  ];
+
   return (
-    <div style={styles.container(isMobile)}>
-      <h2 style={styles.title(isMobile)}>
+    <div style={styles.container(device)}>
+      <h2 style={styles.heading(device)}>
         {ForsideData.title1} <br />
-        <span style={styles.animatedTextStyle(isMobile)}>{texts[index]}</span> <br />
+        <span style={styles.animatedText(device)}>
+          {texts[index]}
+        </span> <br />
         {ForsideData.title3}
       </h2>
-      <a style={styles.linkStyle(isMobile)} href="/Contact">
+      <a
+        href="/Contact"
+        style={styles.button(device)}
+      >
         {ForsideData.button}
       </a>
     </div>

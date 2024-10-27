@@ -11,7 +11,7 @@ body {
 }
 
 /* Media query for mobil - skjuler baggrundsbilledet */
-@media (max-width: 768px) {
+@media (max-width: 599px) {
   body {
     background-image: none; 
     background-color: black;

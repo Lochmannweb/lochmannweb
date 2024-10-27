@@ -1,5 +1,4 @@
-
-'use client'
+'use client';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
@@ -8,9 +7,9 @@ const styles = {
     backgroundColor: 'black',
     height: '6rem',
   },
-  openMenu: (isMobile) => ({
+  openMenu: (isMobile, isTablet) => ({
     position: 'fixed',
-    width: isMobile ? '100%' : '30%',
+    width: isMobile ? '100%' : (isTablet ? '50%' : '30%'),
     marginLeft: 'auto',
     top: '0',
     left: '0',
@@ -51,15 +50,18 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
   }),
-}
+};
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 799);
+      const width = window.innerWidth;
+      setIsMobile(width < 600);
+      setIsTablet(width >= 600 && width < 1024);
     };
 
     handleResize(); // Set initial value
@@ -76,61 +78,61 @@ function App() {
 
   return (
     <>
-{/* lukket  */}
-<nav style={styles.menuLukket}>
-  <div style={styles.container(isMobile)}>
-    <div>
-      <a href="/" prefetch={false}>LOCHMANNWEB</a>
-    </div>
+      {/* lukket  */}
+      <nav style={styles.menuLukket}>
+        <div style={styles.container(isMobile)}>
+          <div>
+            <a href="/" prefetch={false}>LOCHMANNWEB</a>
+          </div>
 
-    {!isMobile && (
-      <div>
-        <Image
-          src="/w-logo.png"
-          alt='profil'
-          width={55}
-          height={55} />
-      </div>
-    )}
+          {!isMobile && (
+            <div>
+              <Image
+                src="/w-logo.png"
+                alt='profil'
+                width={55}
+                height={55} />
+            </div>
+          )}
 
-    <div className='flex items-center'>
-    <button
-      className="grid gap-2 "
-      onClick={toggleMenu}>
-        <>
-          <div className='decoration-white w-32 ml-auto'><hr /></div>
-          <div className='decoration-white w-24 ml-auto'><hr /></div>
-          <div className='decoration-white w-10 ml-auto'><hr /></div>
-        </>
-      </button>
-    </div>
-  </div>
-</nav>
+          <div className='flex items-center'>
+            <button
+              className="grid gap-2 "
+              onClick={toggleMenu}>
+              <>
+                <div className='decoration-white w-32 ml-auto'><hr /></div>
+                <div className='decoration-white w-24 ml-auto'><hr /></div>
+                <div className='decoration-white w-10 ml-auto'><hr /></div>
+              </>
+            </button>
+          </div>
+        </div>
+      </nav>
 
-{/* Åben */}
-<nav style={styles.openMenu(isMobile)} className={`${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-  <div style={styles.desktopMenu(isMobile)}>
-    <svg 
-      style={styles.closeIcon}
-      xmlns="http://www.w3.org/2000/svg"  
-      fill='#fff'
-      viewBox="0 0 50 50" 
-      width="30px" 
-      height="30px"
-      onClick={toggleMenu}>
-        <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/>
-    </svg>
+      {/* Åben */}
+      <nav style={styles.openMenu(isMobile, isTablet)} className={`${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div style={styles.desktopMenu(isMobile)}>
+          <svg 
+            style={styles.closeIcon}
+            xmlns="http://www.w3.org/2000/svg"  
+            fill='#fff'
+            viewBox="0 0 50 50" 
+            width="30px" 
+            height="30px"
+            onClick={toggleMenu}>
+            <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/>
+          </svg>
 
-    <ul>
-      <li style={styles.menuList(isMobile)}>
-        <a href="/" prefetch={false}>Home</a>
-        <a href="/About" prefetch={false}>About</a>
-        <a href="/MyWork" prefetch={false}>My Work</a>
-        <a href="/Contact" prefetch={false}>Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+          <ul>
+            <li style={styles.menuList(isMobile)}>
+              <a href="/" prefetch={false}>Home</a>
+              <a href="/About" prefetch={false}>About</a>
+              <a href="/MyWork" prefetch={false}>My Work</a>
+              <a href="/Contact" prefetch={false}>Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </>
   );
 }

@@ -5,38 +5,40 @@ import Image from "next/image"
 import React, { useEffect, useState } from 'react'
 
 const styles = {
-  aboutContainer: (isMobile) => ({
+  aboutContainer: (isMobile, isTablet) => ({
     display: isMobile ? 'grid' : 'flex',
     borderWidth: 'thin',
     borderStyle: 'solid',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', // Border gradient
-    // borderRadius: isMobile ? '15px' : '25px', // Adjust radius based on screen size
-    padding: isMobile ? '1rem' : '3rem',
+    padding: isMobile ? '1rem' : isTablet ? '2rem' : '3rem',
     gap: isMobile ? '1rem' : '2rem',
     marginTop: isMobile ? '3rem' : '',
     backdropFilter: 'blur(20px)',
-}),
-  contentContainer: (isMobile) => ({
+  }),
+  contentContainer: (isMobile, isTablet) => ({
     display: isMobile ? '' : 'flow',
-    alignContent: isMobile ? '' : 'center',
+    alignContent: isMobile ? '' : (isTablet ? 'start' : 'center'),
   }),
-  title: (isMobile) => ({
-    fontSize: isMobile ? '10px' : '13px',
+  title: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '10px' : (isTablet ? '12px' : '13px'),
   }),
-  header: (isMobile) => ({
-    fontSize: isMobile ? '25px' : '40px',
+  header: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '25px' : (isTablet ? '30px' : '40px'),
   }),
-  content: (isMobile) => ({
-    fontSize: isMobile ? '15px' : '20px',
+  content: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '15px' : (isTablet ? '18px' : '20px'),
   }),
 }
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 799);
+      const width = window.innerWidth;
+      setIsMobile(width < 600);
+      setIsTablet(width >= 600 && width < 1024);
     };
 
     handleResize(); // Set initial value
@@ -48,20 +50,20 @@ const About = () => {
   }, []);
 
   return (
-    <section style={styles.aboutContainer(isMobile)}>
+    <section style={styles.aboutContainer(isMobile, isTablet)}>
       <div>
         <Image         
           src="/pf-about.png"
-          width={ isMobile ? '200' : '700'}
-          height={ isMobile ? '200' : '700'}
+          width={isMobile ? '200' : isTablet ? '500' : '700'}
+          height={isMobile ? '200' : isTablet ? '500' : '700'}
           alt='profil'
         />
       </div>
 
-      <div style={styles.contentContainer(isMobile)}> 
-        <h1 style={styles.title(isMobile)}>{AboutData.title}</h1>        
-        <h2 style={styles.header(isMobile)}>{AboutData.subheader}</h2>
-        <h3 style={styles.content(isMobile)}>{AboutData.content}</h3>
+      <div style={styles.contentContainer(isMobile, isTablet)}> 
+        <h1 style={styles.title(isMobile, isTablet)}>{AboutData.title}</h1>        
+        <h2 style={styles.header(isMobile, isTablet)}>{AboutData.subheader}</h2>
+        <h3 style={styles.content(isMobile, isTablet)}>{AboutData.content}</h3>
       </div>
     </section>
   )
