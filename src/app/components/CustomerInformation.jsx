@@ -1,21 +1,22 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { CustomerInformationsData } from '../data/CustomerInformationsData';
 
 const styles = {
-  container: (isMobile) => ({
+  container: (isMobile, isTablet) => ({
     display: isMobile ? 'grid' : 'flex',
-    gap: isMobile ? '1rem' : '1rem',
+    gap: isMobile ? '1rem' : '2rem',
     backgroundColor: 'rgba(0, 0, 0, 0.49)',
     padding: '0.9rem',
-    justifyContent: isMobile ? '' : 'center',
+    justifyContent: isMobile ? '' : isTablet ? 'space-around' : 'center',
+    flexDirection: isTablet ? 'column' : 'row', // Column on tablet, row on desktop
   }),
   hr: (isMobile) => ({
     width: isMobile ? '100%' : '15rem',
   }),
   title: (isMobile) => ({
-    fontSize: '15px',
+    fontSize: isMobile ? '15px' : '18px',
   }),
   linksContainer: (isMobile) => ({
     lineHeight: '1.2rem',
@@ -23,16 +24,19 @@ const styles = {
     marginTop: '10px',
   }),
   a: (isMobile) => ({
-    fontSize: '12px',
+    fontSize: isMobile ? '12px' : '14px',
   }),
 }
 
 const CustomerInformation = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      setIsMobile(width < 599);
+      setIsTablet(width >= 599 && width < 1200); // Tablet size
     };
 
     handleResize(); // Set initial value
@@ -44,8 +48,8 @@ const CustomerInformation = () => {
   }, []);
 
   return (
-    <div style={styles.container(isMobile)}> 
-      <div >
+    <div style={styles.container(isMobile, isTablet)}> 
+      <div>
         <h1 style={styles.title(isMobile)}>{CustomerInformationsData.contact.title}</h1>
         <hr style={styles.hr(isMobile)} />
         <div style={styles.linksContainer(isMobile)}>
@@ -73,7 +77,7 @@ const CustomerInformation = () => {
           <a href='/Ressourcer' style={styles.a(isMobile)}>{CustomerInformationsData.Ressourcer.content3}</a>
           <a href='/Ressourcer' style={styles.a(isMobile)}>{CustomerInformationsData.Ressourcer.content4}</a>
           <a href='/Ressourcer' style={styles.a(isMobile)}>{CustomerInformationsData.Ressourcer.content}</a>
-          </div>
+        </div>
       </div>
 
       <div>
@@ -84,10 +88,10 @@ const CustomerInformation = () => {
           <a href='/Services' style={styles.a(isMobile)}>{CustomerInformationsData.Services.content2}</a>
           <a href='/Services' style={styles.a(isMobile)}>{CustomerInformationsData.Services.content3}</a>
           <a href='/Services' style={styles.a(isMobile)}>{CustomerInformationsData.Services.content4}</a>
-          </div>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default CustomerInformation
+export default CustomerInformation;

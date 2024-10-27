@@ -5,19 +5,19 @@ import { useForm, ValidationError } from '@formspree/react';
 import { ContactFormularData } from '../data/ContactFormular'
 
 const styles = {
-  container: (isMobile) => ({
+  container: (isMobile, isTablet) => ({
     gap: '10px',
-    padding: isMobile ? '0rem' : '5rem',
+    padding: isMobile ? '0rem' : isTablet ? '3rem' : '5rem',
     textAlign: 'start',
     paddingTop: isMobile ? '1rem' : '10rem',
   }),
-  title: (isMobile) => ({
-    fontSize: isMobile ? '40px' : '50px',
-    lineHeight: isMobile ? '3rem' : '5rem',
+  title: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '40px' : isTablet ? '45px' : '50px',
+    lineHeight: isMobile ? '3rem' : isTablet ? '4rem' : '5rem',
     marginBottom: '20px',
   }),
-  formContainer: (isMobile) => ({
-    padding: isMobile ? '1rem' : '3rem',
+  formContainer: (isMobile, isTablet) => ({
+    padding: isMobile ? '1rem' : isTablet ? '2rem' : '3rem',
     backdropFilter: 'blur(20px)',
     borderColor: 'white',
     borderWidth: 'thin',
@@ -27,14 +27,14 @@ const styles = {
   }),
   form: (isMobile) => ({
     display: 'grid',
-    width: isMobile ? '' : '50%',
+    width: isMobile ? '100%' : '50%', // Adjust width for tablet and desktop
   }),
   input: (isMobile) => ({
     marginBottom: isMobile ? '20px' : '10px',
     backgroundColor: '#000',
     borderColor: 'grey', 
     borderWidth: 'thin',
-    width: isMobile ? '' : '28rem',
+    width: isMobile ? '100%' : '28rem',
   }),
   button: (isMobile) => ({
     backgroundColor: '#000',
@@ -61,10 +61,13 @@ const styles = {
 
 function ContactForm() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      setIsMobile(width < 600); // Mobile
+      setIsTablet(width >= 600 && width < 900); // Tablet
     };
 
     handleResize(); // Set initial value
@@ -81,13 +84,13 @@ function ContactForm() {
   }
 
   return (
-    <section style={styles.container(isMobile)}>
-      <h1 style={styles.title(isMobile)}>{ContactFormularData.title}</h1>
+    <section style={styles.container(isMobile, isTablet)}>
+      <h1 style={styles.title(isMobile, isTablet)}>{ContactFormularData.title}</h1>
 
-      <div style={styles.formContainer(isMobile)}>
-        <form onSubmit={handleSubmit} style={styles.form(isMobile)} >
+      <div style={styles.formContainer(isMobile, isTablet)}>
+        <form onSubmit={handleSubmit} style={styles.form(isMobile, isTablet)} >
      
-          <label htmlFor="fullname" style={styles.formTitle(isMobile)}>
+          <label htmlFor="fullname" style={styles.formTitle(isMobile, isTablet)}>
             {ContactFormularData.fullname}
           </label>
           <input
