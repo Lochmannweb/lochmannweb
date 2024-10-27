@@ -5,46 +5,46 @@ import { useForm, ValidationError } from '@formspree/react';
 import { ContactFormularData } from '../../data/ContactFormular';
 
 const styles = {
-  formAndContactOplysninger: (deviceType) => ({
-    display: deviceType === 'mobile' ? '' : '',
-    gap: deviceType === 'mobile' ? '3rem' : '2.6rem',
-    paddingTop: deviceType === 'mobile' ? '30px' : '',
-    paddingBottom: deviceType === 'mobile' ? '30px' : '',
+  formAndContactOplysninger: (isMobile, isTablet) => ({
+    display: isMobile ? '' : isTablet ? '' : '',
+    gap: isMobile ? '' : isTablet ? '3rem' : '2.6rem',
+    paddingTop: isMobile ? '' : isTablet ? '30px' : '',
+    paddingBottom: isMobile ? '' : isTablet ? '30px' : '',
   }),
-  color: (deviceType) => ({
+  color: (isMobile, isTablet) => ({
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
     borderWidth: 'thin',
     padding: '1rem',
-    marginRight: deviceType === 'desktop' ? '24rem' : '',
+    marginRight: isMobile ? '' : isTablet ? '24rem' : '',
   }),
-  rightBGContainer: (deviceType) => ({
-    backgroundColor: deviceType === 'desktop' ? '#0000008e' : '',
-    paddingLeft: deviceType === 'desktop' ? '13rem' : '',
-    paddingBottom: deviceType === 'desktop' ? '8rem' : '',
-    marginRight: deviceType === 'desktop' ? '-23.5rem' : '',
-    paddingTop: deviceType === 'desktop' ? '8.5rem' : '',
-    padding: deviceType === 'mobile' ? '1rem' : '',
+  rightBGContainer: (isMobile, isTablet) => ({
+    backgroundColor: isMobile ? '' : isTablet ? '#0000008e' : '',
+    paddingLeft: isMobile ? '' : isTablet ? '13rem' : '',
+    paddingBottom: isMobile ? '' : isTablet ? '8rem' : '',
+    marginRight: isMobile ? '' : isTablet ? '-23.5rem' : '',
+    paddingTop: isMobile ? '' : isTablet ? '8.5rem' : '',
+    padding: isMobile ? '' : isTablet ? '1rem' : '',
   }),
-  contactTitle: (deviceType) => ({
-    fontSize: deviceType === 'mobile' ? '25px' : '40px',
-    paddingBottom: deviceType === 'mobile' ? '10px' : '',
+  contactTitle: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '' : isTablet ? '25px' : '40px',
+    paddingBottom: isMobile ? '' : isTablet ? '10px' : '',
   }),
-  formBorder: (deviceType) => ({
-    borderImage: deviceType === 'mobile' ? 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1' : '',
-    borderWidth: deviceType === 'mobile' ? 'thin' : '',
-    padding: deviceType === 'mobile' ? '1rem' : '',
+  formBorder: (isMobile, isTablet) => ({
+    borderImage: isMobile ? '' : isTablet ? 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1' : '',
+    borderWidth: isMobile ? '' : isTablet ? 'thin' : '',
+    padding: isMobile ? '' : isTablet ? '1rem' : '',
   }),
   formContainers: {
     display: 'grid',
     paddingBottom: '10px',
   },
-  sendButton: (deviceType) => ({
-    marginLeft: deviceType === 'mobile' ? '13.5rem' : '14rem',
+  sendButton: (isMobile, isTablet) => ({
+    marginLeft: isMobile ? '' : isTablet ? '13.5rem' : '14rem',
     borderColor: 'white',
     borderWidth: 'thin',
-    padding: deviceType === 'desktop' ? '0.5rem' : '',
-    paddingLeft: deviceType === 'desktop' ? '2rem' : '',
-    paddingRight: deviceType === 'desktop' ? '2rem' : '',
+    padding: isMobile ? '' : isTablet ? '0.5rem' : '',
+    paddingLeft: isMobile ? '' : isTablet ? '2rem' : '',
+    paddingRight: isMobile ? '' : isTablet ? '2rem' : '',
     display: 'grid',
     width: '30%',
     marginTop: '0.5rem',
@@ -54,10 +54,10 @@ const styles = {
     borderColor: 'white',
     borderWidth: 'thin',
   },
-  soMeInformations: (deviceType) => ({
-    display: deviceType === 'mobile' ? '' : 'none',
+  soMeInformations: (isMobile, isTablet) => ({
+    display: isMobile ? '' : isTablet ? '' : 'none',
     alignContent: 'center',
-    paddingTop: deviceType === 'mobile' ? '4rem' : '',
+    paddingTop: isMobile ? '' : isTablet ? '4rem' : '',
   }),
   soMeContainer: {
     display: 'flex',
@@ -67,17 +67,14 @@ const styles = {
 };
 
 function ContactFormular() {
-  const [deviceType, setDeviceType] = useState('desktop');
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 600) {
-        setDeviceType('mobile');
-      } else if (window.innerWidth < 1024) {
-        setDeviceType('tablet');
-      } else {
-        setDeviceType('desktop');
-      }
+      const width = window.innerWidth;
+      setIsMobile(width < 600);
+      setIsTablet(width >= 600 && width < 1024);
     };
 
     handleResize(); // Set initial value
@@ -96,11 +93,11 @@ function ContactFormular() {
   return (
     <>
    <div>
-    <div style={styles.rightBGContainer(deviceType)}>
-      <div style={styles.color(deviceType)}>
-      <h1 style={styles.contactTitle(deviceType)}>{ContactFormularData.title}</h1>
+    <div style={styles.rightBGContainer(isMobile, isTablet)}>
+      <div style={styles.color(isMobile, isTablet)}>
+      <h1 style={styles.contactTitle(isMobile, isTablet)}>{ContactFormularData.title}</h1>
   
-      <div style={styles.formAndContactOplysninger(deviceType)}> 
+      <div style={styles.formAndContactOplysninger(isMobile, isTablet)}> 
         <form 
           onSubmit={handleSubmit}>
     
@@ -172,13 +169,13 @@ function ContactFormular() {
           </div>
     
           <div>
-            <button type="submit" style={styles.sendButton(deviceType)} disabled={state.submitting}>
+            <button type="submit" style={styles.sendButton(isMobile, isTablet)} disabled={state.submitting}>
               {ContactFormularData.button}
             </button>
           </div>
         </form>  
 
-        <div style={styles.soMeInformations(deviceType)}>
+        <div style={styles.soMeInformations(isMobile, isTablet)}>
           <div style={styles.soMeContainer}>
             <svg 
               version="1.0" 

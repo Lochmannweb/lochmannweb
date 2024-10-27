@@ -6,30 +6,25 @@ import ContactOplysninger from '../components/Contact/ContactOplysninger';
 import ContactFormular from '../components/Contact/ContactFormular';
 
 const styles = {
-  container: (screenType) => ({
-    display: screenType === 'mobile' ? 'grid' : 'flex',
-    justifyContent: screenType === 'mobile' ? '' : 'center',
-    gap: screenType === 'mobile' ? '' : '3rem',
+  container: (isMobile, isTablet) => ({
+    display: isMobile ? 'grid' : isTablet ? 'grid' : 'flex',
+    justifyContent: isMobile ? '' : isTablet ? '' : 'center',
+    gap: isMobile ? '' : isTablet ? '' : '3rem',
   }),
-  hidden: (screenType) => ({
-    display: screenType === 'mobile' ? 'none' : '',
+  hidden: (isMobile, isTablet)  => ({
+    display: isMobile ? 'none' : isTablet ? 'none' : '',
   }),
 };
 
 function ContactForm() {
-  const [screenType, setScreenType] = useState('mobile');
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    // Check if window exists (only on the client side)
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 600) {
-        setScreenType('mobile');
-      } else if (width < 1024) {
-        setScreenType('tablet');
-      } else {
-        setScreenType('desktop');
-      }
+      setIsMobile(width < 600);
+      setIsTablet(width >= 600 && width < 1024);
     };
 
     handleResize(); // Set initial value
@@ -42,10 +37,10 @@ function ContactForm() {
 
   return (
     <>
-      <section style={styles.container(screenType)}>
+      <section style={styles.container(isMobile, isTablet) }>
         <div>
           <ContactLeftTitle />
-          <div style={styles.hidden(screenType)}>
+          <div style={styles.hidden(isMobile, isTablet)}>
             <ContactOplysninger />
           </div>
         </div>
