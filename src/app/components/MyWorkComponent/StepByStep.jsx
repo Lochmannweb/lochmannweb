@@ -4,19 +4,22 @@ import { StepByStep } from "@/app/data/MyWorkData"
 import React, { useEffect, useState } from 'react'
 
 const styles = {
-  container: (isMobile) => ({
+  container: {
     display: 'grid',
     textAlign: 'center',
     marginTop: '10rem',
     gap: '2rem',
-  }),
+  },
   StepByStep: (isMobile) => ({
     display: 'grid',
     justifyContent: 'center',
     borderRadius: '50px',
     borderWidth: 'thin',
     width: '80%',
-    padding: '2rem',
+    paddingLeft: isMobile ? '0.6rem' : '2rem',
+    paddingRight: isMobile ? '0.6rem' : '2rem',
+    paddingTop: isMobile ? '2rem' : '2rem',
+    paddingBottom: isMobile ? '2rem' : '2rem',
     margin: 'auto',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
   }),
@@ -25,11 +28,11 @@ const styles = {
     fontFamily: 'fantasy',
   }),
   title: (isMobile) => ({
-    fontSize: isMobile ? '15px' : '35px',
+    fontSize: isMobile ? '20px' : '35px',
     fontFamily: 'emoji',
   }),
   content: (isMobile) => ({
-    fontSize: isMobile ? '' : '15px',
+    fontSize: isMobile ? '13px' : '15px',
   }),
   icon: (isMobile) => ({
     color: 'white',
@@ -74,7 +77,7 @@ const Aboutpage = () => {
  }, []);
 
   return (
-    <div style={styles.container(isMobile)}>
+    <div style={styles.container}>
         <div style={styles.ProcesTitle(isMobile)}>
             <h1 style={styles.StepByStepTitle(isMobile)}>{StepByStep.title}</h1>
         </div>

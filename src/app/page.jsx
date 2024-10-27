@@ -6,7 +6,6 @@ import ProcesStages from './components/ProcesStages'
 import MyWork from './components/MyWork'
 import FAQ from './components/FAQ'
 
-
 const page = () => {
   return (
     <div className='grid gap-5'> 

@@ -10,7 +10,3 @@ export const ContactFormularData = {
     city: "2640, Hedehusene. Denmark",
     IG: "Lochmann_web",
 }
-
-export const Contact = {
-    
-}

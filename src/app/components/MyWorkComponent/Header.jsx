@@ -1,6 +1,6 @@
 "use client"
-import { MyWorkHeader } from "@/app/data/MyWorkData"
 
+import { MyWorkHeader } from "@/app/data/MyWorkData"
 import React, { useEffect, useState } from 'react'
 
 const styles = {
@@ -24,7 +24,7 @@ const styles = {
   }),
   subheader: (isMobile) => ({
     marginTop: '-10px',
-    fontSize: isMobile ? '13px' : '20px',
+    fontSize: isMobile ? '10px' : '20px',
   }),
   button: (isMobile) => ({
     borderRadius: '50px',

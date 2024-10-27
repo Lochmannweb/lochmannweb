@@ -2,76 +2,88 @@
 
 import React, { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { ContactFormularData } from '../data/ContactFormular'
+import { ContactFormularData } from '../../data/ContactFormular'
+
 
 const styles = {
-  container: (isMobile) => ({
-    gap: '10px',
-    padding: isMobile ? '0rem' : '5rem',
-    textAlign: 'start',
-    paddingTop: isMobile ? '1rem' : '10rem',
+  formAndContactOplysninger: (isMobile) => ({
+    display: isMobile ? '' : '',
+    gap: isMobile ? '3rem' : '2.6rem',
+    paddingTop: isMobile ? '30px' : '',
+    paddingBottom: isMobile ? '30px' : '',
+  }), 
+  color: (isMobile) => ({
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+    borderWidth: 'thin',
+    padding: '1rem',
+    marginRight: isMobile ? '' : '24rem',
   }),
-  title: (isMobile) => ({
-    fontSize: isMobile ? '40px' : '50px',
-    lineHeight: isMobile ? '3rem' : '5rem',
-    marginBottom: '20px',
+  rightBGContainer: (isMobile) => ({
+    backgroundColor: isMobile ? '' : '#0000008e',
+    paddingLeft: isMobile ? '' : '13rem',
+    paddingBottom: isMobile ? '' : '8rem',
+    marginRight: isMobile ? '' : '-23.5rem',
+    paddingTop: isMobile ? '' : '8.5rem',
+    padding: isMobile ? '1rem' : '',
+  }), 
+  contactTitle: (isMobile) => ({
+    fontSize: isMobile ? '25px' : '40px',
+    paddingBottom: isMobile ? '10px' : '',
   }),
-  formContainer: (isMobile) => ({
-    padding: isMobile ? '1rem' : '3rem',
-    backdropFilter: 'blur(20px)',
+  formBorder: (isMobile) => ({
+    borderImage: isMobile ? 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1' : '', 
+    borderWidth: isMobile ? 'thin' : '',
+    padding: isMobile ? '1rem' : '',
+  }),
+  contactTitle: (isMobile) => ({
+    fontSize: isMobile ? '1.5rem' : '3rem',
+  }),
+  formContainers: {
+    display: 'grid',
+    paddingBottom: '10px',
+  },
+  sendButton: (isMobile) => ({
+    marginLeft: isMobile ? '13.5rem' : '14rem',
     borderColor: 'white',
     borderWidth: 'thin',
-    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
-    display: isMobile ? 'grid' : 'flex',
-    gap: '5rem',
-  }),
-  form: (isMobile) => ({
+    padding: isMobile ? '' : '0.5rem',
+    paddingLeft: isMobile ? '' : '2rem',
+    paddingRight: isMobile ? '' : '2rem',
     display: 'grid',
-    width: isMobile ? '' : '50%',
+    width: '30%',
+    marginTop: '0.5rem',
   }),
-  input: (isMobile) => ({
-    marginBottom: isMobile ? '20px' : '10px',
-    backgroundColor: '#000',
-    borderColor: 'grey', 
+  formInput: {
+    backgroundColor: 'black',
+    borderColor: 'white',
     borderWidth: 'thin',
-    width: isMobile ? '' : '28rem',
-  }),
-  button: (isMobile) => ({
-    backgroundColor: '#000',
-    borderColor: 'grey', 
-    borderWidth: 'thin',
-    width: isMobile ? '40%' : '20%',
-    marginLeft: 'auto',
-    marginTop: '10px',    
-  }),
-  formTitle: (isMobile) => ({
-    fontSize: isMobile ? '15px' : '20px',
-    marginLeft: isMobile ? '5px' : '10px',
-  }),
-  soMeInformations: {
-    display: 'flow',
-    alignContent: 'center',
   },
+  soMeInformations: (isMobile) => ({
+    display: isMobile ? '' : 'none',
+    alignContent: 'center',
+    paddingTop: isMobile ? '4rem' : '',
+  }),
   soMeContainer: {
     display: 'flex',
     gap: '1rem',
     marginBottom: '1rem',
   },
-}
+};
 
-function ContactForm() {
+function ContactFormular() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 799);
+      setIsMobile(window.innerWidth < 599);
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -81,77 +93,91 @@ function ContactForm() {
   }
 
   return (
-    <section style={styles.container(isMobile)}>
-      <h1 style={styles.title(isMobile)}>{ContactFormularData.title}</h1>
+    <>
+   <div>
+    <div style={styles.rightBGContainer(isMobile)}>
+      <div style={styles.color(isMobile)}>
+      <h1 style={styles.contactTitle(isMobile)}>{ContactFormularData.title}</h1>
+  
+      <div style={styles.formAndContactOplysninger(isMobile)}> 
+        <form 
+          onSubmit={handleSubmit}>
+    
+          <div style={styles.formContainers}>
+            <label htmlFor="fullname" className='text-s'>
+              {ContactFormularData.fullname}
+            </label>
+            <input
+              id="fullname"
+              type="text" 
+              name="text"
+              style={styles.formInput}
+            />
+            <ValidationError 
+              prefix="text" 
+              field="text"
+              errors={state.errors}
+            />
+          </div>
+    
+          <div style={styles.formContainers}>
+            <label htmlFor="phonenr">
+              {ContactFormularData.phonenr}
+            </label>
+            <input
+              id="phonenr"
+              type="tel" 
+              name="tel"
+              style={styles.formInput}
+            />
+            <ValidationError 
+              prefix="tel" 
+              field="tel"
+              errors={state.errors}
+            />
+          </div>
+    
+          <div style={styles.formContainers}>
+            <label htmlFor="email">
+              {ContactFormularData.mailadress}
+            </label>
+            <input
+              id="email"
+              type="email" 
+              name="email"
+              style={styles.formInput}
+            />
+            <ValidationError 
+              prefix="Email" 
+              field="email"
+              errors={state.errors}
+            />
+          </div>
+    
+          <div style={styles.formContainers}>
+            <label htmlFor="message">
+              <p>{ContactFormularData.message}</p>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              style={styles.formInput}
+            />
+            <ValidationError 
+              prefix="Message" 
+              field="message"
+              errors={state.errors}
+            />
+          </div>
+    
+          <div>
+            <button type="submit" style={styles.sendButton(isMobile)} disabled={state.submitting}>
+              {ContactFormularData.button}
+            </button>
+          </div>
+        </form>  
 
-      <div style={styles.formContainer(isMobile)}>
-        <form onSubmit={handleSubmit} style={styles.form(isMobile)} >
-     
-          <label htmlFor="fullname" style={styles.formTitle(isMobile)}>
-            {ContactFormularData.fullname}
-          </label>
-          <input
-            id="fullname"
-            type="text" 
-            name="text"
-            style={styles.input(isMobile)}
-          />
-          <ValidationError 
-            prefix="text" 
-            field="text"
-            errors={state.errors}
-          />
-     
-          <label htmlFor="phonenr" style={styles.formTitle(isMobile)}>
-            {ContactFormularData.phonenr}
-          </label>
-          <input
-            id="phonenr"
-            type="tel" 
-            name="tel"
-            style={styles.input(isMobile)}
-          />
-          <ValidationError 
-            prefix="tel" 
-            field="tel"
-            errors={state.errors}
-          />
-     
-          <label htmlFor="email" style={styles.formTitle(isMobile)}>
-            {ContactFormularData.mailadress}
-          </label>
-          <input
-            id="email"
-            type="email" 
-            name="email"
-            style={styles.input(isMobile)}
-          />
-          <ValidationError 
-            prefix="Email" 
-            field="email"
-            errors={state.errors}
-          />
-     
-          <label htmlFor="message" style={styles.formTitle(isMobile)}>
-            <p>{ContactFormularData.message}</p>
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            style={styles.input(isMobile)}
-          />
-          <ValidationError 
-            prefix="Message" 
-            field="message"
-            errors={state.errors}
-          />
-     
-          <button style={styles.button(isMobile)} type="submit" disabled={state.submitting} >
-            {ContactFormularData.button}
-          </button>
-        </form>
-     
-        <div style={styles.soMeInformations}>
+        <div style={styles.soMeInformations(isMobile)}>
           <div style={styles.soMeContainer}>
             <svg 
               version="1.0" 
@@ -214,9 +240,13 @@ function ContactForm() {
             <p>{ContactFormularData.IG}</p>
           </div>
         </div>
+
+        </div>
       </div>
-    </section>
+      </div>
+    </div>
+    </>
   );
 }
 
-export default ContactForm;
+export default ContactFormular;
