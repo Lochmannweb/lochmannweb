@@ -4,42 +4,45 @@ import React, { useEffect, useState } from 'react'
 import { ProcesStagesData } from '../data/ProcesStagesData'
 
 const styles = {
-  container: (isMobile) => ({
-    display: isMobile ? '' : 'flow',
-    gap: isMobile ? '1rem' : '3rem',
+  container: (isMobile, isTablet) => ({
+    display: isMobile ? '' : isTablet ? '' : 'flow',
+    gap: isMobile ? '1rem' : isTablet ? '' : '3rem',
     margin: 'auto',
     borderWidth: 'thin',
     borderColor: 'white',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
-    padding: isMobile ? '2rem' : '3rem',
-    marginTop: isMobile ? '3rem' : '',
+    padding: isMobile ? '2rem' : isTablet ? '' : '3rem',
+    marginTop: isMobile ? '3rem' : isTablet ? '' : '',
     backdropFilter: 'blur(20px)',
   }),
-  title: (isMobile) => ({
-    fontSize: isMobile ? '10px' : '20px',
+  title: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '10px' : isTablet ? '' : '20px',
   }), 
 }
 
 const ProcesStage = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      setIsMobile(width < 799);
+      setIsTablet(width >= 799 && width < 1200);
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <div style={styles.container(isMobile)}>
+    <div style={styles.container(isMobile, isTablet)}>
       <div>
-        <h1 style={styles.title(isMobile)}>{ProcesStagesData.title}</h1>
+        <h1 style={styles.title(isMobile, isTablet)}>{ProcesStagesData.title}</h1>
         <hr />
         <h2>{ProcesStagesData.content}</h2>
       </div>

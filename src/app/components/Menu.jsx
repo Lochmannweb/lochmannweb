@@ -85,7 +85,7 @@ function App() {
             <a href="/" prefetch={false}>LOCHMANNWEB</a>
           </div>
 
-          {!isMobile && (
+          {!isMobile && !isTablet && (
             <div>
               <Image
                 src="/w-logo.png"

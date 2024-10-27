@@ -37,18 +37,17 @@ const About = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 600);
-      setIsTablet(width >= 600 && width < 1024);
+      setIsMobile(width < 799);
+      setIsTablet(width >= 799 && width < 1200);
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
-
   return (
     <section style={styles.aboutContainer(isMobile, isTablet)}>
       <div>

@@ -22,7 +22,7 @@ const styles = {
     borderColor: 'white',
     borderWidth: 'thin',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
-    display: isMobile ? 'grid' : 'flex',
+    display: isMobile ? 'grid' : isTablet ? 'grid' :'flex',
     gap: '5rem',
   }),
   form: (isMobile) => ({

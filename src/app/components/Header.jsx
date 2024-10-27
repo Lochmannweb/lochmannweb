@@ -4,28 +4,28 @@ import React, { useEffect, useState } from "react";
 import { ForsideData } from "../data/ForsideData";
 
 const styles = {
-  container: (device) => ({
-    paddingTop: device === 'mobile' ? '3rem' : device === 'tablet' ? '4rem' : '5rem', // Adjusted padding for mobile, tablet, and desktop
+  container: (isMobile, isTablet) => ({
+    paddingTop: isMobile ? '3rem' : isTablet ? '4rem' : '5rem', // Adjusted padding for mobile, tablet, and desktop
     textAlign: 'center',
   }),
-  heading: (device) => ({
-    fontSize: device === 'mobile' ? '1.3rem' : device === 'tablet' ? '1.5rem' : '2rem', // Responsive font sizes
-    lineHeight: device === 'mobile' ? '1.2' : device === 'tablet' ? '2.5rem' : '4rem', // Responsive line heights
+  heading: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '1.3rem' : isTablet ? '1.5rem' : '2rem', // Responsive font sizes
+    lineHeight: isMobile ? '1.2' : isTablet ? '2.5rem' : '4rem', // Responsive line heights
     fontFamily: 'fantasy',
   }),
-  animatedText: (device) => ({
-    fontSize: device === 'mobile' ? '2rem' : device === 'tablet' ? '3rem' : '5rem', // Responsive font sizes
+  animatedText: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '2rem' : isTablet ? '3rem' : '5rem', // Responsive font sizes
     fontWeight: 'bold',
     animation: 'pulse 1s infinite', // Animation
   }),
-  button: (device) => ({
+  button: (isMobile, isTablet) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     margin: 'auto',
     marginTop: '1rem', // Consistent margin
-    width: device === 'mobile' ? '40%' : device === 'tablet' ? '30%' : '20%', // Adjusted width for each device
-    padding: device === 'mobile' ? '0.5rem 0' : device === 'tablet' ? '0.5rem 1rem' : '0.5rem 1rem', // Padding adjustments
+    width: isMobile ? '40%' : isTablet ? '30%' : '20%', // Adjusted width for each device
+    padding: isMobile ? '0.5rem 0' : isTablet ? '0.5rem 1rem' : '0.5rem 1rem', // Padding adjustments
     borderRadius: '9999px', // Fully rounded
     border: '1px solid white',
     textAlign: 'center',
@@ -34,19 +34,15 @@ const styles = {
 };
 
 function Header() {
-  const [device, setDevice] = useState('desktop'); // Default to desktop
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 599) {
-        setDevice('mobile');
-      } else if (width >= 599 && width < 1024) {
-        setDevice('tablet');
-      } else {
-        setDevice('desktop');
-      }
+      setIsMobile(width < 799);
+      setIsTablet(width >= 799 && width < 1200);
     };
 
     handleResize(); // Set initial value
@@ -72,17 +68,17 @@ function Header() {
   ];
 
   return (
-    <div style={styles.container(device)}>
-      <h2 style={styles.heading(device)}>
+    <div style={styles.container(isMobile, isTablet)}>
+      <h2 style={styles.heading(isMobile, isTablet)}>
         {ForsideData.title1} <br />
-        <span style={styles.animatedText(device)}>
+        <span style={styles.animatedText(isMobile, isTablet)}>
           {texts[index]}
         </span> <br />
         {ForsideData.title3}
       </h2>
       <a
         href="/Contact"
-        style={styles.button(device)}
+        style={styles.button(isMobile, isTablet)}
       >
         {ForsideData.button}
       </a>
