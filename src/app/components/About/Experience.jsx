@@ -4,54 +4,56 @@ import { ExperienceData } from "@/app/data/AboutData"
 import Image from "next/image"
 import React, { useEffect, useState } from 'react'
 
-const getClasses = (isMobile) => ({
-  container: {
-    display: isMobile ? '' : 'grid',
-    gap: isMobile ? '' : '30px',
-    },
-  experienceContainer: {
-    padding: isMobile ? '' : '0.5rem',
-    borderRadius: isMobile ? '10px' : '25px',
+const styles = {
+  container: (isMobile, isTablet) => ({
+    display: isMobile ? '' : isTablet ? '' : 'grid',
+    gap: isMobile ? '' : isTablet ? '' : '30px',
+    }),
+  experienceContainer: (isMobile, isTablet) => ({
+    padding: isMobile ? '' : isTablet ? '' : '0.5rem',
+    borderRadius: isMobile ? '10px' : isTablet ? '' : '25px',
     borderWidth: 'thin',
     borderColor: 'white',
     backdropFilter: "blur(20px)", 
-  },
-  title: {
-    fontSize: isMobile ? '' : isMobile ? '8px' : '20px',
-    textAlign: isMobile ? '' : 'center',
+  }),
+  title: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '' : isMobile ? '8px' : isTablet ? '' : '20px',
+    textAlign: isMobile ? '' : isTablet ? '' : 'center',
     display: isMobile ? '' : 'flex',
-    justifyContent: isMobile ? '' : 'center',
-    alignItems: isMobile ? '' : 'center',
-  },
-  yearsExperience: {
-    fontSize: isMobile ? '' : '40px',
-  },
-  experience: {
-    padding: isMobile ? '' : '3rem',
-    paddingLeft: isMobile ? '' : '10rem',
-    paddingRight: isMobile ? '' : '10rem',
-    borderRadius: isMobile ? '10px' : '25px',
+    justifyContent: isMobile ? '' : isTablet ? '' : 'center',
+    alignItems: isMobile ? '' : isTablet ? '' : 'center',
+  }),
+  yearsExperience: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '' : isTablet ? '' : '40px',
+  }),
+  experience:(isMobile, isTablet) => ( {
+    padding: isMobile ? '' : isTablet ? '' : '3rem',
+    paddingLeft: isMobile ? '' : isTablet ? '' : '10rem',
+    paddingRight: isMobile ? '' : isTablet ? '' : '10rem',
+    borderRadius: isMobile ? '10px' : isTablet ? '' : '25px',
     borderWidth: 'thin',
     borderColor: 'white',
     backdropFilter: "blur(20px)", 
     display: isMobile ? '' : 'grid',
-    gap: isMobile ? '' : '5rem',
-    gridTemplateColumns: isMobile ? '' : '1fr 1fr',
+    gap: isMobile ? '' : isTablet ? '' : '5rem',
+    gridTemplateColumns: isMobile ? '' : isTablet ? '' : '1fr 1fr',
     justifyContent: isMobile ? '' : 'space-between',
-  },
-  ec: {
-    display: isMobile ? '' : 'flex',
-    alignItems: isMobile ? '' : 'center',
-  },
-});
+  }),
+  ec: (isMobile, isTablet) => ({
+    display: isMobile ? '' : isTablet ? '' : 'flex',
+    alignItems: isMobile ? '' : isTablet ? '' : 'center',
+  }),
+};
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    // Check if window exists (only on the client side)
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      setIsMobile(width < 600);
+      setIsTablet(width >= 600 && width < 1024);
     };
 
     handleResize(); // Set initial value
@@ -62,23 +64,21 @@ const About = () => {
     };
   }, []);
 
-  const classes = getClasses(isMobile);
-
   return (
-    <section style={classes.container}>
-        <div style={classes.experienceContainer}>
-            <h1 style={classes.title}> <span style={classes.yearsExperience}>{ExperienceData.year}</span> {ExperienceData.title}</h1> 
+    <section style={styles.container(isMobile, isTablet)}>
+        <div style={styles.experienceContainer(isMobile, isTablet)}>
+            <h1 style={styles.title(isMobile, isTablet)}> <span style={styles.yearsExperience(isMobile, isTablet)}>{ExperienceData.year}</span> {ExperienceData.title}</h1> 
         </div>
 
-        <div style={classes.experience}>
+        <div style={styles.experience(isMobile, isTablet)}>
             <div>
-                <div style={classes.ec}>
+                <div style={styles.ec(isMobile, isTablet)}>
                     <Image         
                     src="/pf-about.png"
                     alt='profil'
                     width={100}
                     height={100}
-                    style={classes.imageContainer}/>
+                    style={styles.imageContainer}/>
                     <h1>{ExperienceData.experience.React}</h1>
                 </div>
                 <hr />
@@ -86,13 +86,13 @@ const About = () => {
             </div>
 
             <div>
-                <div style={classes.ec}>
+                <div style={styles.ec(isMobile, isTablet)}>
                     <Image         
                     src="/pf-about.png"
                     alt='profil'
                     width={100}
                     height={100}
-                    style={classes.imageContainer}/>
+                    style={styles.imageContainer}/>
                     <h1>{ExperienceData.experience.Database}</h1>
                 </div>
                 <hr />
@@ -100,13 +100,13 @@ const About = () => {
             </div>
 
             <div>
-                <div style={classes.ec}>
+                <div style={styles.ec(isMobile, isTablet)}>
                     <Image         
                     src="/pf-about.png"
                     alt='profil'
                     width={100}
                     height={100}
-                    style={classes.imageContainer}/>
+                    style={styles.imageContainer}/>
                     <h1>{ExperienceData.experience.React}</h1>
                 </div>
                 <hr />
@@ -114,13 +114,13 @@ const About = () => {
             </div>
 
             <div>
-                <div style={classes.ec}>
+                <div style={styles.ec(isMobile, isTablet)}>
                     <Image         
                     src="/pf-about.png"
                     alt='profil'
                     width={100}
                     height={100}
-                    style={classes.imageContainer}/>
+                    style={styles.imageContainer}/>
                     <h1>{ExperienceData.experience.Database}</h1>
                 </div>
                 <hr />

@@ -8,8 +8,8 @@ import FAQ from './components/FAQ'
 
 const page = () => {
   return (
-    <div className='grid gap-5'> 
-    <section className='p-5 grid gap-20'>
+    <div> 
+    <section>
     <Header />
     <About />
     <ProcesStages />

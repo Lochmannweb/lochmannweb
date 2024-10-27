@@ -5,29 +5,32 @@ import About from '../components/About'
 import Services from '../components/About/Services'
 import Experience from '../components/About/Experience';
 
-const getClasses = (isMobile) => ({
-  container: {
-    display: isMobile ? '' : 'grid',
-    gap: isMobile ? '' : '2rem',
-    padding: isMobile ? '' : '20px',
-    marginTop: isMobile ? '' : '8rem',
-    marginBottom: isMobile ? '' : '8rem',
-  },
-  aboutComponent: {
-    paddingLeft: isMobile ? '' : '3rem',
-  },
-  aboutContainer: {
-    marginTop: isMobile ? '' : '0rem',
-    display: isMobile ? '' : 'grid',
-  },
-});
+const styles = {
+  container: (isMobile, isTablet) => ({
+    display: isMobile ? '' : isTablet ? '' : 'grid',
+    gap: isMobile ? '0.5rem' : isTablet ? '' : '2rem',
+    padding: isMobile ? '' : isTablet ? '' : '20px',
+    marginTop: isMobile ? '' : isTablet ? '' : '8rem',
+    marginBottom: isMobile ? '' : isTablet ? '' : '8rem',
+  }),
+  aboutComponent: (isMobile, isTablet) => ({
+    paddingLeft: isMobile ? '' : isTablet ? '' :'3rem',
+  }),
+  aboutContainer: (isMobile, isTablet) => ({
+    marginTop: isMobile ? '' : isTablet ? '' : '0rem',
+    display: isMobile ? '' : isTablet ? '' : 'grid',
+  }),
+};
 
 const Aboutpage = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      setIsMobile(width < 600);
+      setIsTablet(width >= 600 && width < 1024);
     };
     
     handleResize(); // set Initial value
@@ -39,11 +42,9 @@ const Aboutpage = () => {
 
  }, []);
 
- const classes = getClasses(isMobile);
-
   return (
-    <div style={classes.container} >
-      <div style={classes.aboutContainer}>
+    <div style={styles.container(isMobile, isTablet)} >
+      <div style={styles.aboutContainer(isMobile, isTablet)}>
         <About />
         <Services />
         <Experience />

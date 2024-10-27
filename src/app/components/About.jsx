@@ -13,7 +13,7 @@ const styles = {
     padding: isMobile ? '1rem' : isTablet ? '2rem' : '3rem',
     gap: isMobile ? '1rem' : '2rem',
     marginTop: isMobile ? '3rem' : '',
-    backdropFilter: 'blur(20px)',
+    backdropFilter: isMobile ? '' : isTablet ? '' : 'blur(20px)',
   }),
   contentContainer: (isMobile, isTablet) => ({
     display: isMobile ? '' : 'flow',

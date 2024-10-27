@@ -10,7 +10,7 @@ const styles = {
     backgroundColor: 'rgba(0, 0, 0, 0.49)',
     padding: '0.9rem',
     justifyContent: isMobile ? '' : isTablet ? 'space-around' : 'center',
-    flexDirection: isTablet ? 'column' : 'row', // Column on tablet, row on desktop
+    flexDirection: isTablet ? 'column' : 'row', 
   }),
   hr: (isMobile) => ({
     width: isMobile ? '100%' : '15rem',
