@@ -6,28 +6,28 @@ import React, { useEffect, useState } from 'react'
 
 const styles = {
   aboutContainer: (isMobile, isTablet) => ({
-    display: isMobile ? 'grid' : 'flex',
+    display: isMobile ? 'grid' : isTablet ? 'grid' : 'flex',
     borderWidth: 'thin',
     borderStyle: 'solid',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', // Border gradient
     padding: isMobile ? '1rem' : isTablet ? '2rem' : '3rem',
     margin: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
-    gap: isMobile ? '1rem' : '2rem',
-    marginTop: isMobile ? '3rem' : '',
+    gap: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
+    marginTop: isMobile ? '3rem' : isTablet ? '' : '',
     backdropFilter: isMobile ? '' : isTablet ? '' : 'blur(20px)',
   }),
   contentContainer: (isMobile, isTablet) => ({
-    display: isMobile ? '' : 'flow',
-    alignContent: isMobile ? '' : (isTablet ? 'start' : 'center'),
+    display: isMobile ? '' : isTablet ? '' : 'flow',
+    alignContent: isMobile ? '' : isTablet ? '' : 'center',
   }),
   title: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '10px' : (isTablet ? '12px' : '13px'),
+    fontSize: isMobile ? '10px' : isTablet ? '12px' : '13px',
   }),
   header: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '25px' : (isTablet ? '30px' : '40px'),
+    fontSize: isMobile ? '25px' : isTablet ? '30px' : '40px',
   }),
   content: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '15px' : (isTablet ? '18px' : '20px'),
+    fontSize: isMobile ? '15px' : isTablet ? '18px' : '20px',
   }),
 }
 

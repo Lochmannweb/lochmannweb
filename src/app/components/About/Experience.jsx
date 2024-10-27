@@ -8,10 +8,11 @@ const styles = {
   container: (isMobile, isTablet) => ({
     display: isMobile ? '' : isTablet ? '' : 'grid',
     gap: isMobile ? '' : isTablet ? '' : '30px',
+    margin: isMobile ? '1rem' : isTablet ? '1rem' : '',
     }),
   experienceContainer: (isMobile, isTablet) => ({
     padding: isMobile ? '' : isTablet ? '' : '0.5rem',
-    borderRadius: isMobile ? '10px' : isTablet ? '' : '25px',
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
     borderWidth: 'thin',
     borderColor: 'white',
     backdropFilter: "blur(20px)", 
@@ -30,7 +31,7 @@ const styles = {
     padding: isMobile ? '' : isTablet ? '' : '3rem',
     paddingLeft: isMobile ? '' : isTablet ? '' : '10rem',
     paddingRight: isMobile ? '' : isTablet ? '' : '10rem',
-    borderRadius: isMobile ? '10px' : isTablet ? '' : '25px',
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
     borderWidth: 'thin',
     borderColor: 'white',
     backdropFilter: "blur(20px)", 

@@ -9,30 +9,30 @@ const styles = {
   },
   openMenu: (isMobile, isTablet) => ({
     position: 'fixed',
-    width: isMobile ? '100%' : (isTablet ? '50%' : '30%'),
+    width: isMobile ? '100%' : isTablet ? '100%' : '30%',
     marginLeft: 'auto',
     top: '0',
     left: '0',
     right: '0',
     bottom: '0',
     backgroundColor: 'black',
-    height: isMobile ? '40rem' : '6rem',
+    height: isMobile ? '45rem' : isTablet ? '45rem' : '6rem',
     zIndex: '50',
     textAlign: 'center',
     paddingTop: '0.8rem',
     padding: '1rem', 
-    display: isMobile ? '' : 'grid',
-    alignItems: isMobile ? '' : 'center',
+    display: isMobile ? 'grid' : isTablet ? 'grid' : 'grid',
+    alignItems: isMobile ? '' : isTablet ? '' : 'center',
   }),
-  desktopMenu: (isMobile) => ({
-    display: isMobile ? 'grid' : 'flex',
+  desktopMenu: (isMobile, isTablet) => ({
+    display: isMobile ? 'grid' : isTablet ? '' : 'flex',
     flexDirection: 'row-reverse',
   }),
-  menuList: (isMobile) => ({
-    display: isMobile ? 'grid' : 'flex',
-    gap: isMobile ? '1.25rem' : '1rem', 
-    textAlign: isMobile ? 'center' : '',
-    fontSize: isMobile ? '1.25rem' : '', 
+  menuList: (isMobile, isTablet) => ({
+    display: isMobile ? 'grid' : isTablet ? 'grid' : 'flex',
+    gap: isMobile ? '1.25rem' : isTablet ? '1.25rem' : '1rem', 
+    textAlign: isMobile ? 'center' : isTablet ? 'center' : '',
+    fontSize: isMobile ? '1.25rem' : isTablet ? '1.25rem' : '', 
     backgroundColor: 'var(--menu-bg)', 
   }),
   closeIcon: {
@@ -43,8 +43,8 @@ const styles = {
     marginLeft: 'auto',
   },
   container: (isMobile, isTablet) => ({
-    paddingLeft: isMobile ? '1rem' : isTablet ? '1rem' : '3rem', 
-    paddingRight: isMobile ? '1rem' : isTablet ? '1rem' : '3rem', 
+    paddingLeft: isMobile ? '1rem' : isTablet ? '1rem' : '1rem', 
+    paddingRight: isMobile ? '1rem' : isTablet ? '1rem' : '1rem', 
     paddingTop: '1.2rem', 
     display: 'flex',
     justifyContent: 'space-between',
@@ -80,7 +80,7 @@ function App() {
     <>
       {/* lukket  */}
       <nav style={styles.menuLukket}>
-        <div style={styles.container(isMobile)}>
+        <div style={styles.container(isMobile, isTablet)}>
           <div>
             <a href="/" prefetch={false}>LOCHMANNWEB</a>
           </div>
@@ -111,7 +111,7 @@ function App() {
 
       {/* Åben */}
       <nav style={styles.openMenu(isMobile, isTablet)} className={`${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div style={styles.desktopMenu(isMobile)}>
+        <div style={styles.desktopMenu(isMobile, isTablet)}>
           <svg 
             style={styles.closeIcon}
             xmlns="http://www.w3.org/2000/svg"  
@@ -124,7 +124,7 @@ function App() {
           </svg>
 
           <ul>
-            <li style={styles.menuList(isMobile)}>
+            <li style={styles.menuList(isMobile, isTablet)}>
               <a href="/" prefetch={false}>Home</a>
               <a href="/About" prefetch={false}>About</a>
               <a href="/MyWork" prefetch={false}>My Work</a>

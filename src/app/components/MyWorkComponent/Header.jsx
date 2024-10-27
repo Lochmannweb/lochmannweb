@@ -4,46 +4,49 @@ import { MyWorkHeader } from "@/app/data/MyWorkData"
 import React, { useEffect, useState } from 'react'
 
 const styles = {
-  container: (isMobile) => ({
+  container: (isMobile, isTablet) => ({
     display: 'grid',
     textAlign: 'center',
-    marginTop: isMobile ? '5rem' : '',
-    paddingLeft: isMobile ? '18px' : '13rem',
-    paddingRight: isMobile ? '18px' : '13rem',
-    paddingTop: isMobile ? '18px' : '13rem',
-    gap: isMobile ? '10px' : '1rem',
+    marginTop: isMobile ? '5rem' : isTablet ? '' : '',
+    paddingLeft: isMobile ? '18px' : isTablet ? '18px' : '13rem',
+    paddingRight: isMobile ? '18px' : isTablet ? '18px' : '13rem',
+    paddingTop: isMobile ? '18px' : isTablet ? '5rem' : '13rem',
+    gap: isMobile ? '10px' : isTablet ? '' : '1rem',
   }),
-  title: (isMobile) => ({
-    fontSize: isMobile ? '15px' : '25px',
+  title: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '15px' : isTablet ? '15px' : '25px',
     fontFamily: 'fantasy',
   }),
-  header: (isMobile) => ({
-    fontSize: isMobile ? '27px' : '59px',
+  header: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '27px' : isTablet ? '27px' : '59px',
     marginTop: '-10px',
     fontFamily: 'auto',
   }),
-  subheader: (isMobile) => ({
+  subheader: (isMobile, isTablet) => ({
     marginTop: '-10px',
-    fontSize: isMobile ? '10px' : '20px',
+    fontSize: isMobile ? '10px' : isTablet ? '10px' : '20px',
   }),
-  button: (isMobile) => ({
+  button: (isMobile, isTablet) => ({
     borderRadius: '50px',
     borderWidth: 'thin',
     borderColor: 'white',
-    width: isMobile ? '60%' : '35%',
+    width: isMobile ? '60%' : isTablet ? '60%' : '35%',
     padding: '0.3rem',
     margin: 'auto',
     marginTop: '2rem',
-    fontSize: isMobile ? '15px' : '15px', 
+    fontSize: isMobile ? '15px' : isTablet ? '' : '15px', 
   }),
 };
 
 const Aboutpage = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 599);
+      const width = window.innerWidth;
+      setIsMobile(width < 600);
+      setIsTablet(width >= 600 && width < 1024);
     };
     
     handleResize(); // set Initial value
@@ -56,11 +59,11 @@ const Aboutpage = () => {
  }, []);
 
   return (
-    <div style={styles.container(isMobile)}>
-        <h1 style={styles.title(isMobile)}>{MyWorkHeader.title}</h1>
-        <h2 style={styles.header(isMobile)}>{MyWorkHeader.header}</h2>
-        <h3 style={styles.subheader(isMobile)}>{MyWorkHeader.subheader}</h3>
-        <a style={styles.button(isMobile)} href="/Contact">{MyWorkHeader.button}</a>
+    <div style={styles.container(isMobile, isTablet)}>
+        <h1 style={styles.title(isMobile, isTablet)}>{MyWorkHeader.title}</h1>
+        <h2 style={styles.header(isMobile, isTablet)}>{MyWorkHeader.header}</h2>
+        <h3 style={styles.subheader(isMobile, isTablet)}>{MyWorkHeader.subheader}</h3>
+        <a style={styles.button(isMobile, isTablet)} href="/Contact">{MyWorkHeader.button}</a>
     </div>
   )
 }
