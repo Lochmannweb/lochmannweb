@@ -13,8 +13,9 @@ const styles = {
     padding: isMobile ? '1rem' : isTablet ? '2rem' : '3rem',
     margin: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
     gap: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
-    marginTop: isMobile ? '3rem' : isTablet ? '' : '',
-    backdropFilter: isMobile ? '' : isTablet ? '' : 'blur(20px)',
+    marginTop: isMobile ? '5rem' : isTablet ? '5rem' : '',
+    marginBottom: isMobile ? '7rem' : isTablet ? '7rem' : '',
+    backdropFilter: isMobile ? 'blur(20px)' : isTablet ? 'blur(20px)' : 'blur(20px)',
   }),
   contentContainer: (isMobile, isTablet) => ({
     display: isMobile ? '' : isTablet ? '' : 'flow',
@@ -24,7 +25,7 @@ const styles = {
     fontSize: isMobile ? '10px' : isTablet ? '12px' : '13px',
   }),
   header: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '25px' : isTablet ? '30px' : '40px',
+    fontSize: isMobile ? '25px' : isTablet ? '25px' : '40px',
   }),
   content: (isMobile, isTablet) => ({
     fontSize: isMobile ? '15px' : isTablet ? '18px' : '20px',

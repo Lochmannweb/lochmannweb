@@ -3,10 +3,10 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 const styles = {
-  menuLukket: {
+  menuLukket: (isMobile, isTablet) => ({
     backgroundColor: 'black',
-    height: '6rem',
-  },
+    height: isMobile ? '4rem' : isTablet ? '4rem' : '6rem',
+  }),
   openMenu: (isMobile, isTablet) => ({
     position: 'fixed',
     width: isMobile ? '100%' : isTablet ? '100%' : '30%',
@@ -79,7 +79,7 @@ function App() {
   return (
     <>
       {/* lukket  */}
-      <nav style={styles.menuLukket}>
+      <nav style={styles.menuLukket(isMobile, isTablet)}>
         <div style={styles.container(isMobile, isTablet)}>
           <div>
             <a href="/" prefetch={false}>LOCHMANNWEB</a>

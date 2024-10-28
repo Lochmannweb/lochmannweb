@@ -12,8 +12,8 @@ const styles = {
     justifyContent: isMobile ? '' : isTablet ? 'space-around' : 'center',
     flexDirection: isTablet ? 'column' : 'row', 
   }),
-  hr: (isMobile) => ({
-    width: isMobile ? '100%' : '15rem',
+  hr: (isMobile, isTablet) => ({
+    width: isMobile ? '100%' : isTablet ? '100%' : '50%',
   }),
   title: (isMobile) => ({
     fontSize: isMobile ? '15px' : '18px',
@@ -51,7 +51,7 @@ const CustomerInformation = () => {
     <div style={styles.container(isMobile, isTablet)}> 
       <div>
         <h1 style={styles.title(isMobile)}>{CustomerInformationsData.contact.title}</h1>
-        <hr style={styles.hr(isMobile)} />
+        <hr style={styles.hr(isMobile, isTablet)} />
         <div style={styles.linksContainer(isMobile)}>
            <a href='/Contact' style={styles.a(isMobile)}>{CustomerInformationsData.contact.content2}</a>
            <a href='/Contact' style={styles.a(isMobile)}>{CustomerInformationsData.contact.content}</a>
@@ -60,7 +60,7 @@ const CustomerInformation = () => {
 
       <div>
         <h1 style={styles.title(isMobile)}>{CustomerInformationsData.about.title}</h1>
-        <hr style={styles.hr(isMobile)} />
+        <hr style={styles.hr(isMobile, isTablet)} />
         <div style={styles.linksContainer(isMobile)}>
            <a href='/About' style={styles.a(isMobile)}>{CustomerInformationsData.about.content}</a>
            <a href='/About' style={styles.a(isMobile)}>{CustomerInformationsData.about.content2}</a>
@@ -71,7 +71,7 @@ const CustomerInformation = () => {
 
       <div>
         <h1 style={styles.title(isMobile)}>{CustomerInformationsData.Ressourcer.title}</h1>
-        <hr style={styles.hr(isMobile)} />
+        <hr style={styles.hr(isMobile, isTablet)} />
         <div style={styles.linksContainer(isMobile)}>
           <a href='/' >{CustomerInformationsData.Ressourcer.content2}</a>
           <a href='/Ressourcer' style={styles.a(isMobile)}>{CustomerInformationsData.Ressourcer.content3}</a>
@@ -82,7 +82,7 @@ const CustomerInformation = () => {
 
       <div>
         <h1 style={styles.title(isMobile)}>{CustomerInformationsData.Services.title}</h1>
-        <hr style={styles.hr(isMobile)} />
+        <hr style={styles.hr(isMobile, isTablet)} />
         <div style={styles.linksContainer(isMobile)}>
           <a href='/Services' style={styles.a(isMobile)}>{CustomerInformationsData.Services.content}</a>
           <a href='/Services' style={styles.a(isMobile)}>{CustomerInformationsData.Services.content2}</a>

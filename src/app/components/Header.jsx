@@ -3,29 +3,30 @@
 import React, { useEffect, useState } from "react";
 import { ForsideData } from "../data/ForsideData";
 
-const styles = {
+const classes = {
   container: (isMobile, isTablet) => ({
-    paddingTop: isMobile ? '3rem' : isTablet ? '4rem' : '5rem', // Adjusted padding for mobile, tablet, and desktop
+    paddingTop: isMobile ? '5rem' : isTablet ? '5rem' : '5rem',
+    paddingBottom: isMobile ? '4rem' : isTablet ? '4rem' : '5rem',
     textAlign: 'center',
   }),
   heading: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '1.3rem' : isTablet ? '1.5rem' : '2rem', // Responsive font sizes
-    lineHeight: isMobile ? '1.2' : isTablet ? '2.5rem' : '4rem', // Responsive line heights
-    fontFamily: 'fantasy',
+    fontSize: isMobile ? '1.5rem' : isTablet ? '1.5rem' : '2rem', // Responsive font sizes
+    lineHeight: isMobile ? '2rem' : isTablet ? '2rem' : '4rem', // Responsive line heights
+    fontFamily: '',
   }),
   animatedText: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '2rem' : isTablet ? '3rem' : '5rem', // Responsive font sizes
-    fontWeight: 'bold',
+    fontSize: isMobile ? '2.5rem' : isTablet ? '2.5rem' : '5rem', // Responsive font sizes
+    fontFamily: 'auto',
     animation: 'pulse 1s infinite', // Animation
   }),
-  button: (isMobile, isTablet) => ({
+  button: (isMobile, isTablet) => ({ 
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     margin: 'auto',
     marginTop: '1rem', // Consistent margin
     width: isMobile ? '40%' : isTablet ? '30%' : '20%', // Adjusted width for each device
-    padding: isMobile ? '0.5rem 0' : isTablet ? '0.5rem 1rem' : '0.5rem 1rem', // Padding adjustments
+    padding: isMobile ? '3px' : isTablet ? '3px' : '0.5rem', // Padding adjustments
     borderRadius: '9999px', // Fully rounded
     border: '1px solid white',
     textAlign: 'center',
@@ -68,17 +69,17 @@ function Header() {
   ];
 
   return (
-    <div style={styles.container(isMobile, isTablet)}>
-      <h2 style={styles.heading(isMobile, isTablet)}>
+    <div style={classes.container(isMobile, isTablet)}>
+      <h2 style={classes.heading(isMobile, isTablet)}>
         {ForsideData.title1} <br />
-        <span style={styles.animatedText(isMobile, isTablet)}>
+        <span style={classes.animatedText(isMobile, isTablet)}>
           {texts[index]}
         </span> <br />
         {ForsideData.title3}
       </h2>
       <a
         href="/Contact"
-        style={styles.button(isMobile, isTablet)}
+        style={classes.button(isMobile, isTablet)}
       >
         {ForsideData.button}
       </a>

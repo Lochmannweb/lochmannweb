@@ -13,7 +13,8 @@ const styles = {
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
     padding: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
     margin: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
-    marginTop: isMobile ? '3rem' : isTablet ? '' : '',
+    marginTop: isMobile ? '' : isTablet ? '' : '',
+    marginBottom: isMobile ? '5rem' : isTablet ? '5rem' : '',
     backdropFilter: 'blur(20px)',
   }),
   title: (isMobile, isTablet) => ({

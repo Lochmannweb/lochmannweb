@@ -10,11 +10,27 @@ body {
   color: white;
 }
 
-/* Media query for mobil - skjuler baggrundsbilledet */
+/* Media query for mobil  */
 @media (max-width: 599px) {
   body {
-    background-image: none; 
-    background-color: black;
+    background-image: url('/smoke-bg.png');
+    background-size: 100%;
+    background-position: top;
+    background-repeat: repeat;
+    height: 200vh;
+    color: white;
+  }
+}
+
+/* Media query for tablets  */
+@media (max-width: 999px) {
+  body {
+    background-image: url('/smoke-bg.png');
+    background-size: 100%;
+    background-position: top;
+    background-repeat: repeat;
+    height: 200vh;
+    color: white;
   }
 }
 

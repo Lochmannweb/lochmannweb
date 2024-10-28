@@ -9,28 +9,28 @@ const styles = {
     gap: '10px',
     padding: isMobile ? '1rem' : isTablet ? '1rem' : '5rem',
     textAlign: 'start',
-    paddingTop: isMobile ? '1rem' : isTablet ? '1rem' :'10rem',
+    paddingTop: isMobile ? '' : isTablet ? '' :'10rem',
+    paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' :'10rem',
   }),
   title: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '40px' : isTablet ? '45px' : '50px',
+    fontSize: isMobile ? '30px' : isTablet ? '30px' : '50px',
     lineHeight: isMobile ? '3rem' : isTablet ? '4rem' : '5rem',
-    marginBottom: '20px',
   }),
   formContainer: (isMobile, isTablet) => ({
-    padding: isMobile ? '1rem' : isTablet ? '2rem' : '3rem',
+    padding: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
     backdropFilter: 'blur(20px)',
     borderColor: 'white',
     borderWidth: 'thin',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
     display: isMobile ? 'grid' : isTablet ? 'grid' :'flex',
-    gap: '5rem',
+    gap: '2rem',
   }),
   form: (isMobile, isTablet) => ({
     display: 'grid',
     width: isMobile ? '100%' : isTablet ? '' :  '', // Adjust width for tablet and desktop
   }),
   input: (isMobile, isTablet) => ({
-    marginBottom: isMobile ? '20px' : isTablet ? '' :  '10px',
+    marginBottom: isMobile ? '20px' : isTablet ? '20px' :  '10px',
     backgroundColor: '#000',
     borderColor: 'grey', 
     borderWidth: 'thin',
@@ -44,9 +44,9 @@ const styles = {
     marginLeft: 'auto',
     marginTop: '10px',    
   }),
-  formTitle: (isMobile) => ({
-    fontSize: isMobile ? '15px' : '20px',
-    marginLeft: isMobile ? '5px' : '10px',
+  formTitle: (isMobile, isTablet) => ({
+    fontSize: isMobile ? '12px' : isTablet ? '12px' : '20px',
+    marginLeft: isMobile ? '5px' : isTablet ? '5px' :  '10px',
   }),
   soMeInformations: {
     display: 'flow',
@@ -97,7 +97,7 @@ function ContactForm() {
             id="fullname"
             type="text" 
             name="text"
-            style={styles.input(isMobile)}
+            style={styles.input(isMobile, isTablet)}
           />
           <ValidationError 
             prefix="text" 
@@ -105,14 +105,14 @@ function ContactForm() {
             errors={state.errors}
           />
      
-          <label htmlFor="phonenr" style={styles.formTitle(isMobile)}>
+          <label htmlFor="phonenr" style={styles.formTitle(isMobile, isTablet) }>
             {ContactFormularData.phonenr}
           </label>
           <input
             id="phonenr"
             type="tel" 
             name="tel"
-            style={styles.input(isMobile)}
+            style={styles.input(isMobile, isTablet)}
           />
           <ValidationError 
             prefix="tel" 
@@ -120,14 +120,14 @@ function ContactForm() {
             errors={state.errors}
           />
      
-          <label htmlFor="email" style={styles.formTitle(isMobile)}>
+          <label htmlFor="email" style={styles.formTitle(isMobile, isTablet) }>
             {ContactFormularData.mailadress}
           </label>
           <input
             id="email"
             type="email" 
             name="email"
-            style={styles.input(isMobile)}
+            style={styles.input(isMobile, isTablet)}
           />
           <ValidationError 
             prefix="Email" 
@@ -135,13 +135,13 @@ function ContactForm() {
             errors={state.errors}
           />
      
-          <label htmlFor="message" style={styles.formTitle(isMobile)}>
+          <label htmlFor="message" style={styles.formTitle(isMobile, isTablet) }>
             <p>{ContactFormularData.message}</p>
           </label>
           <textarea
             id="message"
             name="message"
-            style={styles.input(isMobile)}
+            style={styles.input(isMobile, isTablet)}
           />
           <ValidationError 
             prefix="Message" 
