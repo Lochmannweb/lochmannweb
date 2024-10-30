@@ -2,33 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+/* mobil */
 body {
   background-image: url('/smoke-bg.png');
   background-size: 100%;
   background-position: top;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   color: white;
 }
 
-/* Media query for mobil  */
+/* Media query for mobil 
 @media (max-width: 599px) {
   body {
     background-image: url('/smoke-bg.png');
     background-size: 100%;
     background-position: top;
-    background-repeat: repeat;
+    background-repeat: repeat-x;
+    height: 100vh;
+    color: white;
+  }
+} */
+
+/* Media query for tablets  */
+@media (max-width: 899px) {
+  body {
+    background-image: url('/smoke-bg.png');
+    background-size: 100%;
+    background-position: top;
+    background-repeat: repeat-y;
     height: 200vh;
     color: white;
   }
 }
 
-/* Media query for tablets  */
-@media (max-width: 999px) {
+/* Media query for mini desktop  */
+@media (max-width: 1200px) {
   body {
     background-image: url('/smoke-bg.png');
     background-size: 100%;
     background-position: top;
-    background-repeat: repeat;
+    background-repeat: repeat-y;
     height: 200vh;
     color: white;
   }

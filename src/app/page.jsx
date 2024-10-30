@@ -2,7 +2,7 @@ import React from 'react'
 import About from './components/About'
 import Contact from './components/Contact'
 import Header from './components/Header'
-import ProcesStages from './components/ProcesStages'
+import StepByStepHomePage from './components/Home/StepByStepHomePage'
 import MyWork from './components/MyWork'
 import FAQ from './components/FAQ'
 
@@ -12,7 +12,7 @@ const page = () => {
     <section>
     <Header />
     <About />
-    <ProcesStages />
+    <StepByStepHomePage />
     <MyWork />
     <Contact />
     <FAQ />

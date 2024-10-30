@@ -11,10 +11,10 @@ const styles = {
     borderWidth: 'thin',
     borderColor: 'white',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
-    padding: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
-    margin: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
+    padding: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
+    margin: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
     marginTop: isMobile ? '' : isTablet ? '' : '',
-    marginBottom: isMobile ? '5rem' : isTablet ? '5rem' : '',
+    marginBottom: isMobile ? '5rem' : isTablet ? '5rem' : '6rem',
     backdropFilter: 'blur(20px)',
   }),
   title: (isMobile, isTablet) => ({

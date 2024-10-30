@@ -7,27 +7,27 @@ import { ContactFormularData } from '../data/ContactFormular'
 const styles = {
   container: (isMobile, isTablet) => ({
     gap: '10px',
-    padding: isMobile ? '1rem' : isTablet ? '1rem' : '5rem',
+    padding: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
+    paddingTop: isMobile ? '1rem' : isTablet ? '1rem' : '5rem',
     textAlign: 'start',
-    paddingTop: isMobile ? '' : isTablet ? '' :'10rem',
-    paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' :'10rem',
+    paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' :'5rem',
   }),
   title: (isMobile, isTablet) => ({
     fontSize: isMobile ? '30px' : isTablet ? '30px' : '50px',
     lineHeight: isMobile ? '3rem' : isTablet ? '4rem' : '5rem',
   }),
   formContainer: (isMobile, isTablet) => ({
-    padding: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
+    padding: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
     backdropFilter: 'blur(20px)',
     borderColor: 'white',
     borderWidth: 'thin',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
     display: isMobile ? 'grid' : isTablet ? 'grid' :'flex',
-    gap: '2rem',
+    gap: isMobile ? '' : isTablet ? '' :'4rem',
   }),
   form: (isMobile, isTablet) => ({
     display: 'grid',
-    width: isMobile ? '100%' : isTablet ? '' :  '', // Adjust width for tablet and desktop
+    width: isMobile ? '100%' : isTablet ? '' :  '47%', 
   }),
   input: (isMobile, isTablet) => ({
     marginBottom: isMobile ? '20px' : isTablet ? '20px' :  '10px',
@@ -45,7 +45,7 @@ const styles = {
     marginTop: '10px',    
   }),
   formTitle: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '12px' : isTablet ? '12px' : '20px',
+    fontSize: isMobile ? '12px' : isTablet ? '12px' : '15px',
     marginLeft: isMobile ? '5px' : isTablet ? '5px' :  '10px',
   }),
   soMeInformations: {

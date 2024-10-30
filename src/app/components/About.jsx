@@ -6,15 +6,15 @@ import React, { useEffect, useState } from 'react'
 
 const styles = {
   aboutContainer: (isMobile, isTablet) => ({
-    display: isMobile ? 'grid' : isTablet ? 'grid' : 'flex',
+    display: isMobile ? 'grid' : isTablet ? 'flex' : 'flex',
     borderWidth: 'thin',
     borderStyle: 'solid',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', // Border gradient
-    padding: isMobile ? '1rem' : isTablet ? '2rem' : '3rem',
-    margin: isMobile ? '1rem' : isTablet ? '1rem' : '3rem',
+    padding: isMobile ? '1rem' : isTablet ? '2rem' : '2rem',
+    margin: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
     gap: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
     marginTop: isMobile ? '5rem' : isTablet ? '5rem' : '',
-    marginBottom: isMobile ? '7rem' : isTablet ? '7rem' : '',
+    marginBottom: isMobile ? '7rem' : isTablet ? '7rem' : '6rem',
     backdropFilter: isMobile ? 'blur(20px)' : isTablet ? 'blur(20px)' : 'blur(20px)',
   }),
   contentContainer: (isMobile, isTablet) => ({
@@ -39,8 +39,8 @@ const About = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 799);
-      setIsTablet(width >= 799 && width < 1200);
+      setIsMobile(width < 599);
+      setIsTablet(width > 760 && width < 1200);
     };
 
     handleResize(); // Set initial value
@@ -55,8 +55,8 @@ const About = () => {
       <div>
         <Image         
           src="/pf-about.png"
-          width={isMobile ? '200' : isTablet ? '500' : '700'}
-          height={isMobile ? '200' : isTablet ? '500' : '700'}
+          width={isMobile ? '200' : isTablet ? '700' : '900'}
+          height={isMobile ? '200' : isTablet ? '700' : '900'}
           alt='profil'
         />
       </div>

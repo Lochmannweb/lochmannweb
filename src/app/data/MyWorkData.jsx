@@ -1,7 +1,7 @@
 // Forside
 export const MyWorkData = {
     title: "My Work",
-    content: "Check out previous work",
+    content: "Check out my previous work",
     project1: {
         title: "Foo Festival",
         content: "",

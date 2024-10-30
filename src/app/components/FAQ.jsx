@@ -5,30 +5,48 @@ import { faqData } from '../data/faqData'
 
 const styles = {
   container: (isMobile, isTablet) => ({
-    paddingLeft: isMobile ? '1rem' : isTablet ? '1rem' : '5.5rem',
-    paddingRight: isMobile ? '1rem' : isTablet ? '1rem' : '5.5rem',
-    paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' : '5.5rem',
+    paddingLeft: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
+    paddingRight: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
+    paddingBottom: isMobile ? '3rem' : isTablet ? '3rem' : '5.5rem',
   }),
   faqTitle: (isMobile, isTablet) => ({
     fontSize: isMobile ? '1.5rem' : isTablet ? '' : '3rem',
     display: 'flex',
     justifyContent: 'center',
-    marginBottom: '1rem',
+    marginBottom: '0.5rem',
   }),
   faqContainer: (isMobile, isTablet) => ({
-    padding: isMobile ? '1rem' : isTablet ? '' : '1.5rem',
+    padding: isMobile ? '0rem' : isTablet ? '0rem' : '0rem',
+    display: isMobile ? 'grid' : isTablet ? 'grid' : 'grid',
+    gap: '1rem',
+    // marginBottom: isMobile ? '1rem' : isTablet ? '' : '1rem',
+    // paddingLeft: isMobile ? '1rem' : isTablet ? '' : '3rem',
+  }),
+  faq: (isMobile, isTablet) => ({
     backdropFilter: 'blur(20px)',
     borderColor: 'white',
     borderWidth: 'thin',
+    padding: '1rem',
+    paddingLeft: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
+    lineHeight: '2rem',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
-    display: isMobile ? 'grid' : isTablet ? '' : 'flex',
-    gap: '5rem',
-    marginBottom: isMobile ? '1rem' : isTablet ? '' : '1rem',
-    paddingLeft: isMobile ? '1rem' : isTablet ? '' : '3rem',
   }),
 }
 
-function FAQ() {
+const FAQ = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <h3 onClick={() => setIsOpen(!isOpen)} style={{ cursor: 'pointer' }}>
+        {question}
+      </h3>
+      {isOpen && <p>{answer}</p>}
+    </div>
+  );
+};
+
+const FAQList = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
@@ -47,23 +65,27 @@ function FAQ() {
     };
   }, []);
 
+  const faqs = [
+    { question: "Hvad er JSX?", answer: "JSX er en syntaxudvidelse til JavaScript." },
+    { question: "Hvordan bruger jeg React?", answer: "Du kan bruge React ved at oprette komponenter." },
+    { question: "Hvordan bruger jeg React???", answer: "Du kan bruge React ved at oprette komponenter." }
+  ];
+
   return (
     <div style={styles.container(isMobile, isTablet)}>
-        <h1 style={styles.faqTitle(isMobile, isTablet)}>{faqData.faqtitle}</h1>
+      <h1 style={styles.faqTitle(isMobile, isTablet)}>{faqData.faqtitle}</h1>
 
-        <div style={styles.faqContainer(isMobile, isTablet)}>
-            <p>{faqData.faq1}</p>
-        </div>
-
-        <div style={styles.faqContainer(isMobile, isTablet)}>
-           <p >{faqData.faq2}</p>
-        </div>
-
-        <div style={styles.faqContainer(isMobile, isTablet)}> 
-            <p >{faqData.faq3}</p>
-        </div>
+      <div style={styles.faqContainer(isMobile, isTablet)}>
+          {faqs.map((faq, index) => (
+            <>
+              <h2 style={styles.faq(isMobile, isTablet)}>
+                <FAQ key={index} question={faq.question} answer={faq.answer} />
+              </h2>
+            </>
+          ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQList;

@@ -9,14 +9,14 @@ const styles = {
   }),
   openMenu: (isMobile, isTablet) => ({
     position: 'fixed',
-    width: isMobile ? '100%' : isTablet ? '100%' : '30%',
+    width: isMobile ? '' : isTablet ? '' : '19.5%',
     marginLeft: 'auto',
     top: '0',
     left: '0',
     right: '0',
     bottom: '0',
     backgroundColor: 'black',
-    height: isMobile ? '45rem' : isTablet ? '45rem' : '6rem',
+    height: isMobile ? '' : isTablet ? '' : '10%',
     zIndex: '50',
     textAlign: 'center',
     paddingTop: '0.8rem',
@@ -25,14 +25,14 @@ const styles = {
     alignItems: isMobile ? '' : isTablet ? '' : 'center',
   }),
   desktopMenu: (isMobile, isTablet) => ({
-    display: isMobile ? 'grid' : isTablet ? '' : 'flex',
+    display: isMobile ? '' : isTablet ? '' : 'flex',
     flexDirection: 'row-reverse',
   }),
   menuList: (isMobile, isTablet) => ({
     display: isMobile ? 'grid' : isTablet ? 'grid' : 'flex',
     gap: isMobile ? '1.25rem' : isTablet ? '1.25rem' : '1rem', 
     textAlign: isMobile ? 'center' : isTablet ? 'center' : '',
-    fontSize: isMobile ? '1.25rem' : isTablet ? '1.25rem' : '', 
+    fontSize: isMobile ? '19px' : isTablet ? '19px' : '19px', 
     backgroundColor: 'var(--menu-bg)', 
   }),
   closeIcon: {
