@@ -8,8 +8,8 @@ const styles = {
   container: (isMobile, isTablet) => ({
     display: isMobile ? '' : isTablet ? '' : '',
     paddingTop: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
-    paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' : '5rem',
-    padding: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
+    paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' : '0rem',
+    padding: isMobile ? '1rem' : isTablet ? '0rem' : '0rem',
   }),
   headerContainer: (isMobile) => ({
     textAlign: 'center',
@@ -24,7 +24,7 @@ const styles = {
     // padding: '5px',
   }),
   header: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '1.9rem' : isTablet ? '1.9rem' : '40px',
+    fontSize: isMobile ? '20px' : isTablet ? '35px' : '35px',
     paddingBottom: isMobile ? '' : isTablet ? '' : '0px',
   }),
   myWorkContainer: (isMobile, isTablet) => ({
@@ -37,6 +37,8 @@ const styles = {
     borderStyle: 'solid',
     borderRadius: '25px',
     backdropFilter: isMobile ? 'blur(20px)' : isTablet ? 'blur(20px)' : 'blur(20px)',
+    marginLeft: isMobile ? '0rem' : isTablet ? '7rem' : '0rem',
+    marginRight: isMobile ? '0rem' : isTablet ? '7rem' : '0rem',
   }),
   myWorkBorder: (isMobile, isTablet) => ({
     // borderImage: 'linear-gradient(90deg, #840000, #FFF, #000, #FFF, #840000) 1',

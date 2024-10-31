@@ -8,9 +8,10 @@ const styles = {
     paddingLeft: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
     paddingRight: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
     paddingBottom: isMobile ? '3rem' : isTablet ? '3rem' : '5.5rem',
+    paddingTop: isMobile ? '2rem' : isTablet ? '2rem' : '0rem',
   }),
   faqTitle: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '1.5rem' : isTablet ? '' : '3rem',
+    fontSize: isMobile ? '20px' : isTablet ? '40px' : '40px',
     display: 'flex',
     justifyContent: 'center',
     marginBottom: '0.5rem',
@@ -66,9 +67,9 @@ const FAQList = () => {
   }, []);
 
   const faqs = [
-    { question: "Hvad er JSX?", answer: "JSX er en syntaxudvidelse til JavaScript." },
-    { question: "Hvordan bruger jeg React?", answer: "Du kan bruge React ved at oprette komponenter." },
-    { question: "Hvordan bruger jeg React???", answer: "Du kan bruge React ved at oprette komponenter." }
+    { question: [faqData.faq1], answer: "JSX er en syntaxudvidelse til JavaScript." },
+    { question: [faqData.faq2], answer: "Du kan bruge React ved at oprette komponenter." },
+    { question: [faqData.faq3], answer: "Du kan bruge React ved at oprette komponenter." }
   ];
 
   return (

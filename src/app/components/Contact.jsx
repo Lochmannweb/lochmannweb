@@ -8,6 +8,8 @@ const styles = {
   container: (isMobile, isTablet) => ({
     gap: '10px',
     padding: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
+    marginLeft: isMobile ? '0rem' : isTablet ? '0rem' : '0rem',
+    marginRight: isMobile ? '0rem' : isTablet ? '0rem' : '0rem',
     paddingTop: isMobile ? '1rem' : isTablet ? '1rem' : '5rem',
     textAlign: 'start',
     paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' :'5rem',

@@ -1,6 +1,6 @@
 export const faqData = {
     faqtitle: "Anything you have in mind?",
-    faq1: "FAQ 1",
-    faq2: "FAQ 2",
-    faq3: "FAQ 3",
+    faq1: "Test",
+    faq2: "Test 2",
+    faq3: "Test 3",
 }

@@ -33,28 +33,28 @@ export const MyWorkHeader = {
 export const StepByStep = {
     title: "Step-by-Step Proces",
     contact: {
-        title: "Første kontakt og kravsindsamling",
-        content: "Vi starter med en samtale for at forstå dine behov og vision.",
+        title: "First contact & requirements collection",
+        content: "We start with a conversation to understand the user's needs and vision.",
     },
     tilbudKontrakt: {
-        title: "Tilbud og kontrakt",
-        content: "Du modtager et klart og detaljeret tilbud, så vi kan komme i gang.",
+        title: "Offer & contract",
+        content: "You receive a clear and detailed offer so we can get started.",
     },
     planlægning: {
-        title: "Planlægning og design",
-        content: "Jeg skitserer og designer din hjemmeside, så du kan give feedback.",
+        title: "Planning & design",
+        content: "Jeg vil skitserer og designer din hjemmeside, hvor feedback eller andre ideer kan komme i spil.",
     },
     udvikling: {
-        title: "Udvikling",
-        content: "Koden skrives, og vi bygger din hjemmeside fra bunden eller et redesign.",
+        title: "Development",
+        content: "Website is developed, where it is either built from scratch or redesigned.",
     },
     testAfWebsite: {
-        title: "Test og lancering",
-        content: "Vi tester din hjemmeside grundigt, inden den går live.",
+        title: "Testing & launch",
+        content: "I thoroughly test your website before it goes live.",
     },
     vedligeholdelse: {
-        title: "Vedligeholdelse og support",
-        content: "Jeg sikrer, at din hjemmeside holdes opdateret og fungerer optimalt.",
+        title: "Maintenance & support",
+        content: "Based on the contract, I ensure that the website meets the customer's requirements, if it is not to be updated continuously, if it is to be updated continuously, updates will work optimally.",
     },
     button: "Let's get started",
 }

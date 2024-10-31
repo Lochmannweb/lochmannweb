@@ -14,7 +14,7 @@ const styles = {
     margin: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
     gap: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
     marginTop: isMobile ? '5rem' : isTablet ? '5rem' : '',
-    marginBottom: isMobile ? '7rem' : isTablet ? '7rem' : '6rem',
+    marginBottom: isMobile ? '3rem' : isTablet ? '7rem' : '6rem',
     backdropFilter: isMobile ? 'blur(20px)' : isTablet ? 'blur(20px)' : 'blur(20px)',
   }),
   contentContainer: (isMobile, isTablet) => ({
