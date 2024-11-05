@@ -7,8 +7,8 @@ const styles = {
   container: (isMobile, isTablet) => ({
     paddingLeft: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
     paddingRight: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
-    paddingBottom: isMobile ? '3rem' : isTablet ? '3rem' : '5.5rem',
-    paddingTop: isMobile ? '2rem' : isTablet ? '2rem' : '0rem',
+    // paddingBottom: isMobile ? '3rem' : isTablet ? '3rem' : '5.5rem',
+    // paddingTop: isMobile ? '2rem' : isTablet ? '2rem' : '0rem',
   }),
   faqTitle: (isMobile, isTablet) => ({
     fontSize: isMobile ? '20px' : isTablet ? '40px' : '40px',

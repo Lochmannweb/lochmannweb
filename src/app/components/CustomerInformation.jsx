@@ -36,8 +36,8 @@ const CustomerInformation = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 599);
-      setIsTablet(width >= 599 && width < 1200); // Tablet size
+      setIsMobile(width > 599);
+      setIsTablet(width < 760 && width < 1200); 
     };
 
     handleResize(); // Set initial value

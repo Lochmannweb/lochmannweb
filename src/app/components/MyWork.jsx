@@ -7,8 +7,8 @@ import Image from 'next/image';
 const styles = {
   container: (isMobile, isTablet) => ({
     display: isMobile ? '' : isTablet ? '' : '',
-    paddingTop: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
-    paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' : '0rem',
+    // paddingTop: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
+    // paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' : '0rem',
     padding: isMobile ? '1rem' : isTablet ? '0rem' : '0rem',
   }),
   headerContainer: (isMobile) => ({
@@ -66,8 +66,8 @@ const MyWork = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 599);
-      setIsTablet(width >= 799 && width < 1200);
+      setIsMobile(width > 599);
+      setIsTablet(width < 799 && width < 1200);
     };
 
     handleResize(); // Set initial value

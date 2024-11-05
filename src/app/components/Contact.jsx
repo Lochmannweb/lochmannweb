@@ -10,9 +10,9 @@ const styles = {
     padding: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
     marginLeft: isMobile ? '0rem' : isTablet ? '0rem' : '0rem',
     marginRight: isMobile ? '0rem' : isTablet ? '0rem' : '0rem',
-    paddingTop: isMobile ? '1rem' : isTablet ? '1rem' : '5rem',
+    // paddingTop: isMobile ? '1rem' : isTablet ? '1rem' : '5rem',
     textAlign: 'start',
-    paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' :'5rem',
+    // paddingBottom: isMobile ? '5rem' : isTablet ? '5rem' :'5rem',
   }),
   title: (isMobile, isTablet) => ({
     fontSize: isMobile ? '30px' : isTablet ? '30px' : '50px',
@@ -68,8 +68,8 @@ function ContactForm() {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 600); // Mobile
-      setIsTablet(width >= 600 && width < 900); // Tablet
+      setIsMobile(width > 599); 
+      setIsTablet(width < 760 && width < 1200); 
     };
 
     handleResize(); // Set initial value

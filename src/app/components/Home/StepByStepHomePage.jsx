@@ -9,7 +9,7 @@ const styles = {
     margin: isMobile ? '1rem' : isTablet ? '1rem' : '',
     gridTemplateColumns: isMobile ? 'none' : isTablet ? 'none' : '1fr 1fr',
     textAlign: 'center',
-    marginTop: isMobile ? '0rem' : isTablet ? '0rem' : '1rem',
+    // marginTop: isMobile ? '0rem' : isTablet ? '0rem' : '1rem',
     gap: isMobile ? '1rem' : isTablet ? '1rem' : '1rem',
     paddingLeft: isMobile ? '0rem' : isTablet ? '6rem' : '0rem',
     paddingRight: isMobile ? '0rem' : isTablet ? '6rem' : '0rem',
@@ -69,7 +69,7 @@ const styles = {
     width: isMobile ? '35%' : isTablet ? '25%' : '15%',
     padding: '0.3rem',
     marginTop: isMobile ? '0.3rem' : isTablet ? '' : '2rem',
-    marginBottom: isMobile ? '3rem' : isTablet ? '' : '5rem',
+    // marginBottom: isMobile ? '3rem' : isTablet ? '' : '5rem',
   }),
 };
 
@@ -80,8 +80,8 @@ const Aboutpage = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 600);
-      setIsTablet(width >= 600 && width < 1024);
+      setIsMobile(width > 599);
+      setIsTablet(width > 760 && width < 1024);
     };
     
     handleResize(); // set Initial value
@@ -95,7 +95,9 @@ const Aboutpage = () => {
 
   return (
     <>
+    <div>
     <h1 style={styles.StepByStepTitle(isMobile, isTablet)}>{StepByStep.title}</h1>
+
     <div style={styles.container(isMobile, isTablet)}>
         <div style={styles.StepByStep(isMobile, isTablet)}> 
             <div>
@@ -250,11 +252,13 @@ const Aboutpage = () => {
                 <h1 style={styles.title(isMobile, isTablet)}>{StepByStep.vedligeholdelse.title}</h1>
             </div>
         </div>
-    </div>  
+     
 
-    <div style={styles.buttonContainer}>
-        <button style={styles.button(isMobile, isTablet)}>{StepByStep.button}</button>
-    </div>
+      <div style={styles.buttonContainer}>
+          <button style={styles.button(isMobile, isTablet)}>{StepByStep.button}</button>
+      </div>
+      </div>
+    </div> 
     </>
   )
 }

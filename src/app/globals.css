@@ -4,10 +4,10 @@
 
 /* mobil */
 body {
-  background-image: url('/smoke-bg.png');
+  background-image: url('/star-bg.png');
   background-size: 100%;
   background-position: top;
-  background-repeat: repeat;
+  background-repeat: repeat-y;
   color: white;
 }
 
@@ -24,19 +24,19 @@ body {
 } */
 
 /* Media query for tablets  */
-@media (max-width: 899px) {
+/* @media (max-width: 899px) {
   body {
-    background-image: url('/smoke-bg.png');
+    background-image: url('');
     background-size: 100%;
     background-position: top;
     background-repeat: repeat-y;
     height: 200vh;
     color: white;
   }
-}
+} */
 
 /* Media query for mini desktop  */
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   body {
     background-image: url('/smoke-bg.png');
     background-size: 100%;
@@ -45,7 +45,7 @@ body {
     height: 200vh;
     color: white;
   }
-}
+} */
 
 /* TextAnimation.css */
 .text-container {

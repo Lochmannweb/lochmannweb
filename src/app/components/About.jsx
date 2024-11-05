@@ -6,15 +6,15 @@ import React, { useEffect, useState } from 'react'
 
 const styles = {
   aboutContainer: (isMobile, isTablet) => ({
-    display: isMobile ? 'grid' : isTablet ? 'flex' : 'flex',
+    display: isMobile ? 'grid' : isTablet ? 'grid' : 'flex',
     borderWidth: 'thin',
     borderStyle: 'solid',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', // Border gradient
     padding: isMobile ? '1rem' : isTablet ? '2rem' : '2rem',
     margin: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
     gap: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
-    marginTop: isMobile ? '5rem' : isTablet ? '5rem' : '',
-    marginBottom: isMobile ? '3rem' : isTablet ? '7rem' : '6rem',
+    // marginTop: isMobile ? '5rem' : isTablet ? '5rem' : '',
+    // marginBottom: isMobile ? '3rem' : isTablet ? '7rem' : '6rem',
     backdropFilter: isMobile ? 'blur(20px)' : isTablet ? 'blur(20px)' : 'blur(20px)',
   }),
   contentContainer: (isMobile, isTablet) => ({
@@ -39,7 +39,7 @@ const About = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 599);
+      setIsMobile(width > 599);
       setIsTablet(width > 760 && width < 1200);
     };
 
