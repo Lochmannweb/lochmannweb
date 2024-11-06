@@ -61,24 +61,8 @@ export const StepByStep = {
 
 
 // My Work Page 
-export const MyWorkPageData = {
-    title: "Previous projects ",
-    header: "Have a look at my previous projects",
+export const MyWorkDesignData = {
+    title: "I Redesign, Brands & websites from scratch",
     subheader: "I help startups and businesses design and develop modern, user-friendly websites, whether starting from scratch or through a complete redesign, ensuring they align perfectly with your goals and vision.",
-    project1: {
-        title: "Foo Festival",
-        content: "",
-    },
-    project2: {
-        title: "CGC-WARGAMING",
-        content: "",
-    },
-    project3: {
-        title: "CA",
-        content: "",
-    },
-    project4: {
-        title: "Diversa",
-        content: "",
-    },
+    button: "Check it out",
 }
