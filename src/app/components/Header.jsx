@@ -10,13 +10,14 @@ import Spline from '@splinetool/react-spline';
 const Container = styled.div({
   display: 'grid',
   padding: '30px',
+  position: 'relative',
 });
 
 const SplineContainer = styled.div({
   width: '100%',
   height: '100vh',
-  marginTop: '0rem',
-  position: 'absolute',
+  marginTop: '-14rem',
+  // position: 'abosulte',
 });
 
 const SplineObject = () => { 
@@ -71,12 +72,12 @@ export default function Header() {
          {ForsideData.subheader}<span> {texts[index]} </span>{ForsideData.subheader2}
       </h2>
     </Container>
-    <SplineObject />
     <GetStartedButtonContainer >
       <GetStartedButton href="/Contact">
           {ForsideData.button}
       </GetStartedButton>
     </GetStartedButtonContainer>
+    <SplineObject />
     </>
   );
 }

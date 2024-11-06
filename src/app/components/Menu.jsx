@@ -15,6 +15,7 @@ const Container = styled.div({
     bottom: '0',
     width: '100%',
     boxShadow: '0px 29px 46px #ffffff',
+    zIndex: '50',
 });
 
 const OpenMenu = styled.div`
@@ -28,6 +29,7 @@ const OpenMenu = styled.div`
   width: 100%; 
   padding-bottom: 15px;
   box-shadow: 0px 29px 46px;
+  z-index: 50;
 `;
 
 const Links = styled.div({
