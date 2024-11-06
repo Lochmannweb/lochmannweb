@@ -2,66 +2,52 @@
 
 import React, { useEffect, useState } from "react";
 import { ForsideData } from "../data/ForsideData";
+import styled from '@emotion/styled';
+import { useTheme } from '@mui/material/styles';
+import Spline from '@splinetool/react-spline';
 
-const classes = {
-  container: (screenSize) => ({
-    textAlign: 'center',
-    paddingTop: screenSize === 'mobile' ? '5rem' : screenSize === 'tablet' ? '5rem' : '10rem',
-    paddingBottom: screenSize === 'mobile' ? '4rem' : screenSize === 'tablet' ? '4rem' : '10rem',
-  }),
-  heading: (screenSize) => ({
-    fontSize: screenSize === 'mobile' ? '10px' : screenSize === 'tablet' ? '20px' : '40px',
-    lineHeight: screenSize === 'mobile' ? '2rem' : screenSize === 'tablet' ? '3rem' : '4rem',
-    fontFamily: '',
-  }),
-  animatedText: (screenSize) => ({
-    fontSize: screenSize === 'mobile' ? '40px' : screenSize === 'tablet' ? '40px' : '90px',
-    fontFamily: 'auto',
-    animation: 'pulse 1s infinite',
-  }),
-  button: (screenSize) => ({
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 'auto',
-    marginTop: '1rem',
-    width: screenSize === 'mobile' ? '27%' : screenSize === 'tablet' ? '15%' : '13%',
-    padding: screenSize === 'mobile' ? '3px' : screenSize === 'tablet' ? '3px' : '0.5rem',
-    fontSize: screenSize === 'mobile' ? '10px' : screenSize === 'tablet' ? '10px' : '15px',
-    borderRadius: '25px',
-    border: '1px solid white',
-    textAlign: 'center',
-    color: 'white',
-  }),
+
+const Container = styled.div({
+  display: 'grid',
+  padding: '30px',
+});
+
+const SplineContainer = styled.div({
+  width: '100%',
+  height: '100vh',
+  marginTop: '0rem',
+  position: 'absolute',
+});
+
+const SplineObject = () => { 
+  return (
+      <SplineContainer>
+        <Spline scene="https://prod.spline.design/Uv9lybWz39z64b-w/scene.splinecode" />
+      </SplineContainer>
+  );
 };
 
-const useScreenSize = () => {
-  const [screenSize, setScreenSize] = useState('desktop');
+const GetStartedButton = styled.div({
+  background: '#000',
+  boxShadow: '1px 0px 18px 1px #DB92F8',
+  padding: '10px',
+  width: '40%',
+  display: 'flex',
+  justifyContent: 'center',
+  position: 'absolute',
+  bottom: '90px',
+  borderRadius: '25px',
+});
 
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
+const GetStartedButtonContainer = styled.div({
+  display: 'flex',
+  justifyContent: 'center',
+});
 
-      if (width <= 599) {
-        setScreenSize('mobile');
-      } else if (width <= 760) {
-        setScreenSize('tablet');
-      } else {
-        setScreenSize('desktop');
-      }
-    };
 
-    handleResize(); // Set initial value on load
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return screenSize;
-};
 
 export default function Header() {
-  const screenSize = useScreenSize();
+  const theme = useTheme();
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -73,26 +59,24 @@ export default function Header() {
   }, []);
 
   const texts = [
-    "The Transformation",
-    "The Magic",
-    "The Strategy",
+    "Unique",
+    "Thinking",
   ];
 
   return (
-    <div style={classes.container(screenSize)}>
-      <h2 style={classes.heading(screenSize)}>
-        {ForsideData.title1} <br />
-        <span style={classes.animatedText(screenSize)}>
-          {texts[index]}
-        </span> <br />
-        {ForsideData.title3}
+    <>
+    <Container>
+      <h1 className="text-xs">{ForsideData.title1}</h1>
+      <h2 className="text-4xl">
+         {ForsideData.subheader}<span> {texts[index]} </span>{ForsideData.subheader2}
       </h2>
-      <a
-        href="/Contact"
-        style={classes.button(screenSize)}
-      >
-        {ForsideData.button}
-      </a>
-    </div>
+    </Container>
+    <SplineObject />
+    <GetStartedButtonContainer >
+      <GetStartedButton href="/Contact">
+          {ForsideData.button}
+      </GetStartedButton>
+    </GetStartedButtonContainer>
+    </>
   );
 }

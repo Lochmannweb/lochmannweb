@@ -39,6 +39,7 @@ const Page = () => {
 
   return (
     <div style={classes.grid(isMobile, isTablet)}> 
+    <Header />
     </div> 
   )
 }

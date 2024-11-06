@@ -1,31 +1,49 @@
 'use client';
+
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 
-const styles = {
-  menuLukket: (theme) => css({
-    // Stil til lukket menu (kan være tom eller tilpasset)
-  }),
-  container: css({
-    display: 'flex', // Sørg for at bruge flex
+const Container = styled.div({
+    display: 'flex', 
     justifyContent: 'space-between',
     padding: '1rem',
     backgroundColor: 'black',
     position: 'fixed',
     bottom: '0',
     width: '100%',
-  }),
-  openMenu: css({
-    // Åben menu stil
-    transition: 'transform 0.3s ease',
-  }),
-  menuList: css({
-    // Tilføj menu stil her
-  }),
-};
+    boxShadow: '0px 29px 46px #ffffff',
+});
+
+const OpenMenu = styled.div`
+  transform: ${props => (props.menuOpen ? 'translateX(0)' : 'translateX(100%)')};
+  transition: transform 0.3s ease; 
+  position: fixed;
+  left: 0;
+  bottom: 0px; 
+  padding: 1rem;
+  background-color: black; 
+  width: 100%; 
+  padding-bottom: 15px;
+  box-shadow: 0px 29px 46px;
+`;
+
+const Links = styled.div({
+  display: 'grid',
+  paddingBottom: '20px',
+  gap: '10px',
+});
+
+const OpenMenuLogoAndIcon = styled.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+});
+
+const A = styled.div({
+  fontSize: '13px',
+});
 
 function App() {
   const theme = useTheme();
@@ -34,14 +52,14 @@ function App() {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    console.log('Menu state changed to:', !menuOpen); // Log ændring af menu tilstand
+    console.log('Menu state changed to:', !menuOpen); 
   };
 
   return (
     <>
-      {/* Lukket Menu */}
-      <nav css={styles.menuLukket}>
-        <div css={styles.container}>
+      {/* Navigation Bar */}
+      <nav>
+        <Container>
           <div>
             <a href="/" prefetch={false}>LOCHMANNWEB</a>
           </div>
@@ -64,33 +82,45 @@ function App() {
               <div className="decoration-white w-10 ml-auto"><hr /></div>
             </button>
           </div>
-        </div>
+        </Container>
       </nav>
 
-      {/* Åben Menu */}
-      <nav
-        css={[styles.openMenu, menuOpen ? css`transform: translateX(0);` : css`transform: translateX(100%);`]}
-      >
-        <div css={styles.desktopMenu}>
-          <svg
-            css={styles.closeIcon}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 50 50"
-            onClick={toggleMenu}
-          >
-            <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z" />
-          </svg>
+      {/* Open Menu */}
+      {menuOpen && ( // Render OpenMenu only when menuOpen is true
+        <OpenMenu menuOpen={menuOpen}>
+          <div>
+            <div>
+                <ul>
+                  <Links>
+                    <A href="/" prefetch={false}>Home</A>
+                    <A href="/About" prefetch={false}>About</A>
+                    <A href="/MyWork" prefetch={false}>My Work</A>
+                    <A href="/Contact" prefetch={false}>Contact</A>
+                  </Links>
+                </ul>
+            </div>
 
-          <ul>
-            <li css={styles.menuList}>
-              <a href="/" prefetch={false}>Home</a>
-              <a href="/About" prefetch={false}>About</a>
-              <a href="/MyWork" prefetch={false}>My Work</a>
-              <a href="/Contact" prefetch={false}>Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+            <OpenMenuLogoAndIcon>
+                <div>
+                  <a href="/" prefetch={false}>LOCHMANNWEB</a>
+                </div>
+
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 50 50"
+                    fill='white'
+                    height={25}
+                    width={25}
+                    onClick={toggleMenu}
+                  >
+                    <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z" />
+                  </svg>
+                </div>
+            </OpenMenuLogoAndIcon>
+          </div>
+        </OpenMenu>
+      )}
     </>
   );
 }
