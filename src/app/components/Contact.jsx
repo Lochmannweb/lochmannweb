@@ -5,7 +5,8 @@ import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
 import { ContactFormularData } from '../data/ContactFormular'
 import Spline from '@splinetool/react-spline/next';
-import { FormControl } from '@mui/material';
+import { Button, FormControl } from '@mui/material';
+import { useForm, ValidationError } from '@formspree/react';
 
 
 const Container = styled.div({
@@ -60,6 +61,10 @@ const StyledInput = styled.div({
 
 function App() {
   const theme = useTheme();
+  const [state, handleSubmit] = useForm("mldrldzl");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
 
   return (
     <>
@@ -68,7 +73,7 @@ function App() {
         <Header>
             <h1 className='text-3xl'>{ContactFormularData.title} <span>{ContactFormularData.span}</span> {ContactFormularData.title2} </h1>
         </Header>
-        <FormControl defaultValue="" required>
+        <FormControl defaultValue="" onSubmit={handleSubmit} required>
           <div>
             <Label>Full name</Label>
             <StyledInput placeholder='Write your name here' />
@@ -85,9 +90,9 @@ function App() {
             <Label>Message</Label>
             <StyledInput placeholder='Write your name here' />
           </div>
-          {/* <div>
-            <Button />
-          </div> */}
+          <Button type="submit" disabled={state.submitting}>
+            Submit
+          </Button>
         </FormControl>
     </Container>
     </>

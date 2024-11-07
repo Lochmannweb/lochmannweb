@@ -18,7 +18,7 @@ const Title = styled.div({
 const LinksContainer = styled.div ({
     lineHeight: '1.2rem',
     display: 'grid',
-    marginTop: '10px',
+    marginBottom: '10px',
     color: 'grey',
   });
 
