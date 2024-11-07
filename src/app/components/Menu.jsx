@@ -98,6 +98,7 @@ function App() {
                     <A href="/About" prefetch={false}>About</A>
                     <A href="/MyWork" prefetch={false}>My Work</A>
                     <A href="/Contact" prefetch={false}>Contact</A>
+                    <A href="/" prefetch={false}>Social Media</A>
                   </Links>
                 </ul>
             </div>

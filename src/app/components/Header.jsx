@@ -10,20 +10,24 @@ import Spline from '@splinetool/react-spline';
 const Container = styled.div({
   display: 'grid',
   padding: '30px',
-  position: 'relative',
+  position: 'absolute',
 });
 
 const SplineContainer = styled.div({
   width: '100%',
   height: '100vh',
-  marginTop: '-14rem',
+  marginTop: '-3rem',
   // position: 'abosulte',
+});
+
+const Logo = styled.div({
+  display: 'none',
 });
 
 const SplineObject = () => { 
   return (
       <SplineContainer>
-        <Spline scene="https://prod.spline.design/Uv9lybWz39z64b-w/scene.splinecode" />
+        <Spline className="Logo" scene="https://prod.spline.design/Uv9lybWz39z64b-w/scene.splinecode" />
       </SplineContainer>
   );
 };
@@ -66,6 +70,7 @@ export default function Header() {
 
   return (
     <>
+    <SplineObject />
     <Container>
       <h1 className="text-xs">{ForsideData.title1}</h1>
       <h2 className="text-4xl">
@@ -77,7 +82,6 @@ export default function Header() {
           {ForsideData.button}
       </GetStartedButton>
     </GetStartedButtonContainer>
-    <SplineObject />
     </>
   );
 }

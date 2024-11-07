@@ -32,22 +32,22 @@ const Topic = styled.div({
     alignItems: 'center',
 });
 
-const SplineContainer = styled.div({
-    width: '100%',
-    height: '100vh',
-    marginTop: '-16.5rem',
-    marginLeft: '-15rem',
-    position: 'abosulte',
-    filter: 'drop-shadow(-24px -1px 26px grey)',
-  });
+// const SplineContainer = styled.div({
+//     width: '100%',
+//     height: '100vh',
+//     marginTop: '-16.5rem',
+//     marginLeft: '14rem',
+//     position: 'abosulte',
+//     filter: 'drop-shadow(13px 1px 22px darkgrey)',
+//   });
 
-const SplineObject = () => { 
-    return (
-        <SplineContainer>
-            <Spline scene="https://prod.spline.design/rO1O43-jPFqvU09W/scene.splinecode" />
-        </SplineContainer>
-    );
-  };
+// const SplineObject = () => { 
+//     return (
+//         <SplineContainer>
+//             <Spline scene="https://prod.spline.design/rO1O43-jPFqvU09W/scene.splinecode" />
+//         </SplineContainer>
+//     );
+//   };
 
 function App() {
   const theme = useTheme();
@@ -65,7 +65,7 @@ function App() {
             <Topic><p>{TechData.Security.title}</p><p className='text-sm'>{TechData.Security.content}</p></Topic>
             <Topic ><p>{TechData.CICD.title}</p><p className='text-sm'>{TechData.CICD.content}</p></Topic>
         </TopicContainer>
-        <SplineObject />
+        {/* <SplineObject /> */}
     </Container>
     </>
   );
