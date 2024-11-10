@@ -1,11 +1,8 @@
 
-
 import React from 'react';
 import styled from '@emotion/styled';
-import { useTheme } from '@mui/material/styles';
 import { ContactFormularData } from '../data/ContactFormular'
 import Spline from '@splinetool/react-spline/next';
-import { Button } from '@mui/material';
 import { useForm, ValidationError } from '@formspree/react';
 
 
@@ -49,7 +46,6 @@ const Label = styled.div({
 });
 
 function App() {
-  const theme = useTheme();
   const [state, handleSubmit] = useForm("mldrldzl");
   if (state.succeeded) {
       return <p>Thanks for joining!</p>;
@@ -65,29 +61,35 @@ function App() {
         <form onSubmit={handleSubmit}>
           <Form>
             <Label htmlFor="text">Full name</Label>
-            <input className='bg-black' name="Text" id="text" type="text" placeholder='Write your name here'></input>
+            <input 
+              className='bg-input w-full text-sm p-1 border-zinc-700 border-2' 
+              name="Text" 
+              id="text" 
+              type="text" 
+              placeholder='Write your name here'>
+            </input>
             <ValidationError prefix="Text" field="text" errors={state.errors} />
           </Form>
 
           <Form>
             <Label htmlFor="tel">Phone number</Label>
-            <input className='bg-black' name="Tel" id="tel" type="tel" placeholder='Write your phone number here'></input>
+            <input className='bg-input w-full text-sm p-1 border-zinc-700 border-2' name="Tel" id="tel" type="tel" placeholder='Write your phone number here'></input>
             <ValidationError prefix="Tel" field="tel" errors={state.errors} />
           </Form>
 
           <Form>
             <Label htmlFor="email">Mail adress</Label>
-            <input className='bg-black' name="Email" id="email" type="email" placeholder='Write your mail adress here'></input>
+            <input className='bg-input w-full text-sm p-1 border-zinc-700 border-2' name="Email" id="email" type="email" placeholder='Write your mail adress here'></input>
             <ValidationError prefix="Email" field="email" errors={state.errors} />
           </Form>
 
           <Form>
             <Label htmlFor="message">Message</Label>
-            <input className='bg-black' name="Message" id="message" type="message" placeholder='Write your message here'></input>
+            <input className='bg-input w-full text-sm p-1 h-20 border-zinc-700 border-2' name="Message" id="message" type="message" placeholder='Write your message here'></input>
             <ValidationError prefix="Message" field="message" errors={state.errors} />
           </Form>
 
-          <button type="submit" disabled={state.submitting}>
+          <button className='border-zinc-700 border-2 m-auto p-2' type="submit" disabled={state.submitting}>
             Submit
           </button>
         </form>

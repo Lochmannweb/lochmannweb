@@ -34,21 +34,33 @@ const SplineObject = () => {
 };
 
 const GetStartedButton = styled.div({
-  background: '#000',
-  boxShadow: '1px 0px 18px 1px #DB92F8',
+  // background: '#000',
+  // boxShadow: '1px 0px 20px -5px #ffff',
+  borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+  borderWidth: 'thin',
   padding: '10px',
   width: '40%',
   display: 'flex',
   justifyContent: 'center',
   position: 'absolute',
   bottom: '90px',
-  borderRadius: '25px',
+  // borderRadius: '25px',
 });
 
 const GetStartedButtonContainer = styled.div({
   display: 'flex',
   justifyContent: 'center',
 });
+
+const Title = styled.div`
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(#000, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+`;
 
 
 
@@ -73,7 +85,7 @@ export default function Header() {
     <>
     <SplineObject />
     <Container>
-      <h1 className="text-xs">{ForsideData.title1}</h1>
+      <Title>{ForsideData.title1}</Title>
       <h2 className="text-4xl">
          {ForsideData.subheader}<span> {texts[index]} </span>{ForsideData.subheader2}
       </h2>

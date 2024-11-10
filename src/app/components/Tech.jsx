@@ -25,9 +25,8 @@ const TopicContainer = styled.div({
 const Topic = styled.div({
     display: 'flex',
     gap: '20px',
+    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
     borderWidth: 'thin',
-    borderColor: 'purple',
-    borderRadius: '15px',
     padding: '10px',
     alignItems: 'center',
 });
