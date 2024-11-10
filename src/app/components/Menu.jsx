@@ -43,10 +43,6 @@ const OpenMenuLogoAndIcon = styled.div({
   justifyContent: 'space-between',
 });
 
-const A = styled.div({
-  fontSize: '13px',
-});
-
 function App() {
   const theme = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -94,11 +90,11 @@ function App() {
             <div>
                 <ul>
                   <Links>
-                    <A href="/" prefetch={false}>Home</A>
-                    <A href="/About" prefetch={false}>About</A>
-                    <A href="/MyWork" prefetch={false}>My Work</A>
-                    <A href="/Contact" prefetch={false}>Contact</A>
-                    <A href="/" prefetch={false}>Social Media</A>
+                    <a className='text-sm' href="/" prefetch={false}>Home</a>
+                    <a className='text-sm' href="/About" prefetch={false}>My jurney</a>
+                    <a className='text-sm' href="/MyWork" prefetch={false}>Work / Experience</a>
+                    <a className='text-sm' href="/Contact" prefetch={false}>Contact</a>
+                    <a className='text-sm' href="/" prefetch={false}>Social Media</a>
                   </Links>
                 </ul>
             </div>

@@ -1,32 +1,12 @@
-// Forside
-export const MyWorkData = {
-    title: "My Work",
-    content: "Check out my previous work",
-    project1: {
-        title: "Foo Festival",
-        content: "",
-    },
-    project2: {
-        title: "CGC-WARGAMING",
-        content: "",
-    },
-    project3: {
-        title: "CA",
-        content: "",
-    },
-    project4: {
-        title: "Diversa",
-        content: "",
-    },
-}
-
 
 // My work page
 export const MyWorkHeader = {
-    title: "Follow the proces ",
+    title: "The proces",
     header: "From idea to the finish product",
     subheader: "I help startups and businesses design and develop modern, user-friendly websites, whether starting from scratch or through a complete redesign, ensuring they align perfectly with your goals and vision.",
-    button: "Get a free consultation",
+    content1: "I am available to assist both startups and larger companies with brand development, redesigns, or custom-built websites from scratch.",
+    content2: "With over two years of experience as a developer, my expertise includes JavaScript, Tailwind CSS, CSS, and React.jsx.",
+    content3: "Additionally, I have experience working with HTML, Astro, and Typescript.",
 }
 
 // Step by step
@@ -63,6 +43,7 @@ export const StepByStep = {
 // My Work Page 
 export const MyWorkDesignData = {
     title: "I Redesign, Brands & websites from scratch",
+    title2: "From brands to graphic to new designed website",
     subheader: "I help startups and businesses design and develop modern, user-friendly websites, whether starting from scratch or through a complete redesign, ensuring they align perfectly with your goals and vision.",
     button: "Check it out",
 }

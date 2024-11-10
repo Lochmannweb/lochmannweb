@@ -1,53 +1,27 @@
+
 export const AboutData = {
-    title: "WHO AM I",
-    subheader: "I’m a Front-end Developer ",
-    content: "Hi, my name is Line, I’m a currently at KEA studying Multimedia Designer. I have a deep passion for developing unic and responsive web designs. I am driven to continually improve my skills and knowledge.",
-    button: "Get in touch",
-}
-
-export const AboutContent = {
-    title: "Hi! I'm Line",
-    kea: {
-        title: "How it all started",
-        content: "In 2023, I began to studie as a Multimedia Designer at the Copenhagen School of Design and Technology (KEA). The program spans four semesters, each expanding on different aspects of digital media, design, and development.",
+    title: "Everyone",
+    subheder: "starts from scratch",
+    aboutResume: "Line Lochmann er en kvinde med viljestyrke der altid er frisk på nye udfordringer.",
+    journey: {
+        title: "Begyndelsen på min rejse:",
+        content1: "Jeg har en HF, Industri tekniker og multimediedesigner uddannelse udover det venter jeg en ny rejse inden for web applikation (bachelor).",
+        content2: "Jeg har altid elsket at opnå udfordringer, som er givet til mig, eller dem jeg selv har kæmpe for.",
+        content3: "Jeg tror på at der aldrig er et tag over ens hoved som sætter grænser for hvor meget viden man kan opnå, men at man altid kan lærer nye ting, det handler bare om hvor nysgerrig man er.",
+        content4: "Jeg fik en åbenbaring på mit nuværende studie, ugen efter vi startede, hvor jeg blev mere og mere nysgerrig inden for programmering, jeg vidste det ville være en hård tur, men jeg vidste fra starten at det var nok til at motiverer mig fremadrettet.",
     },
-    ThirdSemester: {
-        title: "My passion for development",
-        content: "During my 3rd semester, I developed a strong passion for web development, focusing on technologies like React, JavaScript, and Tailwind CSS. This phase allowed me to hone my skills in creating user-friendly, interactive web applications while also deepening my understanding of front-end/back-end development.",
+    firstStep: {
+        title: "Mit første arbejde som site manager (studentermedhjælper)",
+        content1: "Jeg fik min første stilling indenfor udvikling hos 3, teleselskabet. Hvor jeg sad med HTML og CSS fra starten med min mentor.",
+        content2: "Med tiden, blev det gamle system skiftet ud med et nyrer, men som ikke længere bestod af kodning.",
+        content3: "Det gjorde at jeg fik en måde at gå i dybden som UX/UI, ud fra min viden med front-end, kunne jeg relaterer mere til hvad der ville være muligt at designe hen over længere periode.",
     },
-    Foursemester: {
-        title: "My currenlty position", 
-        content: "Currently, in my 4th semester, my internship at the phone company 3, with a consultant team from Novataris, where my development knowledge to real-world projects can grow professional. This hands-on experience has been essential in bridging the gap between theoretical learning and practical application.",
+    internship: {
+        title: "Min praktikophold (samarbejde med et konsulentteam fra Novataris)",
+        content1: "Min tid sammen med konsulentent teamet, gav mig en åbenbaring for hvor meget jeg har savnet at kode, og hvor nysgerrig jeg er efter at lærer ny kodesprog.",
     },
-    passion: {
-        title: "Who am I",
-        content: "I’m a passionate, perfectionistic, and determined individual with a strong will to succeed. I’m full of energy and approach every task with enthusiasm. My welcoming and smiling nature reflects my readiness for any adventure—especially in the digital world. I’m not only capable of developing websites but also designing them, thanks to the comprehensive skills I’ve gained through my education."
-    },   
-    work: {
-        title: "My purpose",
-        content: "Through my project, LochmannWeb - Designer/Developer, my mission is to bring your website dreams to life at a much more affordable price, given my status as a student. I am constantly eager to grow and develop, and I believe that challenges and learning opportunities are the keys to improvement. By working with me, you’ll not only get a high-quality website but also support my journey to becoming the best designer and developer I can be.",
-    },
-}
-
-export const ServiceData = {
-    title: "Services",
-    content: "I work primarily with technologies like React, JavaScript, Typescript Tailwind CSS, CSS, Database, Photoshop, Illustrator & 3D Blender to create responsive and visually appealing websites. Whether you need a new site built from scratch or want to breathe new life into an existing one, I am here to help."
-}
-
-export const ExperienceData = {
-    year: "2",
-    title: "Years of experience",
-    experience: {
-        React: "React",
-        ReactContent: "create sophisticated user interfaces.",
-
-        Database: "Database",
-        DatabaseContent: "An organized collection of structured information, or data",
-        
-        Javascript: "JavaScript",
-        JavascriptContent: "is a scripting language used to develop web pages",
-
-        Typescript: "TypeScript",
-        TypescriptContent: "is a programming language that adds extra functionality to JavaScript",
+    now: {
+        title: "Nuværende position",
+        content1: "Jeg er i gang med at lave mit eget startups virksomhed som selvstændig udvikler, som gerne vil hjælpe andre virksomheder med at opnå deres mål, ved at forbedre deres hjemmesider og give deres kunder en bedre brugere oplevelse på deres hjemmeside.",
     }
 }

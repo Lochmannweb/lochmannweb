@@ -6,7 +6,6 @@ import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
 import Spline from '@splinetool/react-spline';
 
-
 const Container = styled.div({
   display: 'grid',
   padding: '30px',
@@ -26,9 +25,11 @@ const Logo = styled.div({
 
 const SplineObject = () => { 
   return (
+    <>
       <SplineContainer>
         <Spline className="Logo" scene="https://prod.spline.design/Uv9lybWz39z64b-w/scene.splinecode" />
       </SplineContainer>
+    </>
   );
 };
 

@@ -1,20 +1,28 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Header from '../components/MyWorkComponent/Header';
-import Contact from '../components/Contact';
 import StepByStep from '../components/MyWorkComponent/StepByStep';
 import MyWork from '../components/MyWorkComponent/MyWork';
+import styled from '@emotion/styled';
+
+const Container = styled.div({
+  paddingTop: '5rem',
+  paddingBottom: '5rem',
+  paddingLeft: '1rem',
+  paddingRight: '1rem',
+});
 
 const Aboutpage = () => {
 
   return (
-      <div>
+    <>
+      <Container>
         <Header />  
         <StepByStep />
         <MyWork />
-        <Contact />
-      </div>
+      </Container>
+    </>
   )
 }
 

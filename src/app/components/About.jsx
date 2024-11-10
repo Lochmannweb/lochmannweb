@@ -2,71 +2,95 @@
 
 import { AboutData } from "@/app/data/AboutData"
 import Image from "next/image"
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import styled from '@emotion/styled';
 
-const styles = {
-  aboutContainer: (isMobile, isTablet) => ({
-    display: isMobile ? 'grid' : isTablet ? 'grid' : 'flex',
-    borderWidth: 'thin',
-    borderStyle: 'solid',
-    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', // Border gradient
-    padding: isMobile ? '1rem' : isTablet ? '2rem' : '2rem',
-    margin: isMobile ? '1rem' : isTablet ? '7rem' : '0rem',
-    gap: isMobile ? '1rem' : isTablet ? '1rem' : '2rem',
-    // marginTop: isMobile ? '5rem' : isTablet ? '5rem' : '',
-    // marginBottom: isMobile ? '3rem' : isTablet ? '7rem' : '6rem',
-    backdropFilter: isMobile ? 'blur(20px)' : isTablet ? 'blur(20px)' : 'blur(20px)',
-  }),
-  contentContainer: (isMobile, isTablet) => ({
-    display: isMobile ? '' : isTablet ? '' : 'flow',
-    alignContent: isMobile ? '' : isTablet ? '' : 'center',
-  }),
-  title: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '10px' : isTablet ? '12px' : '13px',
-  }),
-  header: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '25px' : isTablet ? '25px' : '40px',
-  }),
-  content: (isMobile, isTablet) => ({
-    fontSize: isMobile ? '15px' : isTablet ? '18px' : '20px',
-  }),
-}
+const AboutContainer = styled.div({
+    display: 'grid',
+    // borderWidth: 'thin',
+    // borderStyle: 'solid',
+    // borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', // Border gradient
+    paddingLeft: '3rem',
+    paddingRight: '3rem',
+    paddingTop: '5rem',
+    paddingBottom: '5rem',
+    gap: '1rem',
+    // margin: '1rem',
+    // backdropFilter: 'blur(20px)',
+  });
+
+const Title = styled.div({
+    fontSize: '30px',
+});
+
+const Header = styled.div({
+    fontSize: '15px',
+});
+
+const Content = styled.div({
+    fontSize: '15px',
+    display: 'grid',
+    gap: '1rem',
+});
+
 
 const About = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      setIsMobile(width > 599);
-      setIsTablet(width > 760 && width < 1200);
-    };
-
-    handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
-    <section style={styles.aboutContainer(isMobile, isTablet)}>
-      <div>
-        <Image         
-          src="/pf-about.png"
-          width={isMobile ? '200' : isTablet ? '700' : '900'}
-          height={isMobile ? '200' : isTablet ? '700' : '900'}
-          alt='profil'
-        />
-      </div>
+    <AboutContainer>
+        <Title>{AboutData.title} <br /> {AboutData.subheder}</Title>        
+        <Header>{AboutData.aboutResume}</Header>
+        <div>
+          <Content><strong>{AboutData.journey.title}</strong></Content>
+          <Content>
+            <div>
+              {AboutData.journey.content1}
+            </div>
+            <div>
+              {AboutData.journey.content2}
+            </div>
+            <div>
+              {AboutData.journey.content3}
+            </div>
+            <div>
+              {AboutData.journey.content4}
+            </div>
+          </Content>
+        </div>
 
-      <div style={styles.contentContainer(isMobile, isTablet)}> 
-        <h1 style={styles.title(isMobile, isTablet)}>{AboutData.title}</h1>        
-        <h2 style={styles.header(isMobile, isTablet)}>{AboutData.subheader}</h2>
-        <h3 style={styles.content(isMobile, isTablet)}>{AboutData.content}</h3>
-      </div>
-    </section>
+        <div>
+        <Content><strong>{AboutData.firstStep.title}</strong></Content>
+          <Content>
+            <div>
+              {AboutData.firstStep.content1}
+            </div>
+            <div>
+              {AboutData.firstStep.content2}
+            </div>
+            <div>
+              {AboutData.firstStep.content3}
+            </div>
+          </Content>
+        </div>
+
+        <div>
+        <Content><strong>{AboutData.internship.title}</strong></Content>
+          <Content>
+            <div>
+              {AboutData.internship.content1}
+            </div>
+          </Content>
+        </div>
+
+        <div>
+        <Content><strong>{AboutData.now.title}</strong></Content>
+          <Content>
+            <div>
+              {AboutData.now.content1}
+            </div>
+          </Content>
+        </div>
+    </AboutContainer>
   )
 }
 

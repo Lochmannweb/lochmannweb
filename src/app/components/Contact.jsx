@@ -1,11 +1,11 @@
-'use client';
+
 
 import React from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
 import { ContactFormularData } from '../data/ContactFormular'
 import Spline from '@splinetool/react-spline/next';
-import { Button, FormControl } from '@mui/material';
+import { Button } from '@mui/material';
 import { useForm, ValidationError } from '@formspree/react';
 
 
@@ -21,14 +21,8 @@ const Header = styled.div({
 
 });
 
-const FormContainer = styled.div({
-    display: 'grid',
-    gap: '10px',
-});
-
-const FormInput = styled.div({
-  display: 'grid',
-  gap: '5px',
+const Form = styled.div({
+  marginBottom: '1rem',
 });
 
 const SplineContainer = styled.div({
@@ -50,13 +44,8 @@ const SplineObject = () => {
   };
 
 const Label = styled.div({
-  
-});
-
-const StyledInput = styled.div({
-  borderWidth: 'thin',
-  borderRadius: '15px',
-  height: '40px',
+  fontSize: '10px',
+  marginLeft: '5px',
 });
 
 function App() {
@@ -73,30 +62,61 @@ function App() {
         <Header>
             <h1 className='text-3xl'>{ContactFormularData.title} <span>{ContactFormularData.span}</span> {ContactFormularData.title2} </h1>
         </Header>
-        <FormControl defaultValue="" onSubmit={handleSubmit} required>
-          <div>
-            <Label>Full name</Label>
-            <StyledInput placeholder='Write your name here' />
-          </div>
-          <div>
-            <Label>Phone number</Label>
-            <StyledInput placeholder='Write your name here' />
-          </div>
-          <div>
-            <Label>Mail adress</Label>
-            <StyledInput placeholder='Write your name here' />
-          </div>
-          <div>
-            <Label>Message</Label>
-            <StyledInput placeholder='Write your name here' />
-          </div>
-          <Button type="submit" disabled={state.submitting}>
+        <form onSubmit={handleSubmit}>
+          <Form>
+            <Label htmlFor="text">Full name</Label>
+            <input className='bg-black' name="Text" id="text" type="text" placeholder='Write your name here'></input>
+            <ValidationError prefix="Text" field="text" errors={state.errors} />
+          </Form>
+
+          <Form>
+            <Label htmlFor="tel">Phone number</Label>
+            <input className='bg-black' name="Tel" id="tel" type="tel" placeholder='Write your phone number here'></input>
+            <ValidationError prefix="Tel" field="tel" errors={state.errors} />
+          </Form>
+
+          <Form>
+            <Label htmlFor="email">Mail adress</Label>
+            <input className='bg-black' name="Email" id="email" type="email" placeholder='Write your mail adress here'></input>
+            <ValidationError prefix="Email" field="email" errors={state.errors} />
+          </Form>
+
+          <Form>
+            <Label htmlFor="message">Message</Label>
+            <input className='bg-black' name="Message" id="message" type="message" placeholder='Write your message here'></input>
+            <ValidationError prefix="Message" field="message" errors={state.errors} />
+          </Form>
+
+          <button type="submit" disabled={state.submitting}>
             Submit
-          </Button>
-        </FormControl>
+          </button>
+        </form>
     </Container>
     </>
   );
 }
 
 export default App;
+
+{/* <FormControl action="https://formspree.io/f/{form_id}" method="post" defaultValue="" onSubmit={handleSubmit} required>
+<Form >
+  <Label htmlFor="email">Full name</Label>
+  <StyledInput name="Email" id="email" type="email" placeholder='Write your name here' />
+  <ValidationError prefix="Email" field="email" errors={state.errors} />
+</Form>
+<Form>
+  <Label>Phone number</Label>
+  <StyledInput id="email" type="email" name="email" placeholder='Write your name here' />
+</Form>
+<Form>
+  <Label>Mail adress</Label>
+  <StyledInput placeholder='Write your name here' />
+</Form>
+<Form>
+  <Label>Message</Label>
+  <StyledInput placeholder='Write your name here' />
+</Form>
+<Button type="submit" disabled={state.submitting}>
+  Submit
+</Button>
+</FormControl> */}
