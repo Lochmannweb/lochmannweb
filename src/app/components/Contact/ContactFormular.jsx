@@ -76,7 +76,8 @@ function ContactFormular() {
               id="fullname"
               type="text" 
               name="text"
-              
+              placeholder='Write your name here'
+              className='bg-input w-full text-sm p-1 h-10 border-zinc-700 border-2'
             />
             <ValidationError 
               prefix="text" 
@@ -93,7 +94,8 @@ function ContactFormular() {
               id="phonenr"
               type="tel" 
               name="tel"
-              
+              laceholder='Write your phone number here'
+              className='bg-input w-full text-sm p-1 h-10 border-zinc-700 border-2'
             />
             <ValidationError 
               prefix="tel" 
@@ -110,7 +112,8 @@ function ContactFormular() {
               id="email"
               type="email" 
               name="email"
-              
+              laceholder='Write your email here'
+              className='bg-input w-full text-sm p-1 h-10 border-zinc-700 border-2'
             />
             <ValidationError 
               prefix="Email" 
@@ -126,7 +129,8 @@ function ContactFormular() {
             <textarea
               id="message"
               name="message"
-              className="h-10"
+              className="h-20 bg-input w-full text-sm p-1 border-zinc-700 border-2"
+              laceholder='Write a message here'
             />
             <ValidationError 
               prefix="Message" 

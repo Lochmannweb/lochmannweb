@@ -21,6 +21,7 @@ const Images = styled.div({
 });
 
 const Header = styled.div({
+  marginBottom: '20px',
 });
 
 function App() {
@@ -28,9 +29,7 @@ function App() {
   return (
     <>
       <Container>
-          <div>
-              <Header className='text-3xl'>{MyWorkDesignData.title2}</Header>
-          </div>
+          <Header className='text-3xl'>{MyWorkDesignData.title2}</Header>
           <ImageContainer>
             <Images><Image className='rounded-lg' src="/foofest.png" width={200} height={200} alt="" /></Images>
             <Images><Image className='rounded-lg' src="/cgc.png" width={200} height={200} alt="" /></Images>

@@ -7,7 +7,7 @@ import { useForm, ValidationError } from '@formspree/react';
 
 
 const Container = styled.div({
-    padding: '30px',
+    padding: '20px',
     display: 'grid',
     gap: '10px',
     background: "url('/star-bg.png') no-repeat center center",
@@ -20,6 +20,12 @@ const Header = styled.div({
 
 const Form = styled.div({
   marginBottom: '1rem',
+});
+
+const Button = styled.div({
+  right: '1.2rem',
+  display: 'flex',
+  position: 'absolute',
 });
 
 const SplineContainer = styled.div({
@@ -45,6 +51,14 @@ const Label = styled.div({
   marginLeft: '5px',
 });
 
+const Span = styled.div`
+  background: linear-gradient(#000, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+`;
+
 function App() {
   const [state, handleSubmit] = useForm("mldrldzl");
   if (state.succeeded) {
@@ -55,9 +69,7 @@ function App() {
     <>
     <SplineObject />
     <Container>
-        <Header>
-            <h1 className='text-3xl'>{ContactFormularData.title} <span>{ContactFormularData.span}</span> {ContactFormularData.title2} </h1>
-        </Header>
+        <Header className='text-3xl'>{ContactFormularData.title} <span>{ContactFormularData.span}</span> {ContactFormularData.title2} </Header>
         <form onSubmit={handleSubmit}>
           <Form>
             <Label htmlFor="text">Full name</Label>
@@ -89,9 +101,11 @@ function App() {
             <ValidationError prefix="Message" field="message" errors={state.errors} />
           </Form>
 
-          <button className='border-zinc-700 border-2 m-auto p-2' type="submit" disabled={state.submitting}>
-            Submit
-          </button>
+          <Button>
+            <button className='border-zinc-500 border-2 px-5' type="submit" disabled={state.submitting}>
+              Submit
+            </button>
+          </Button>
         </form>
     </Container>
     </>
@@ -99,26 +113,3 @@ function App() {
 }
 
 export default App;
-
-{/* <FormControl action="https://formspree.io/f/{form_id}" method="post" defaultValue="" onSubmit={handleSubmit} required>
-<Form >
-  <Label htmlFor="email">Full name</Label>
-  <StyledInput name="Email" id="email" type="email" placeholder='Write your name here' />
-  <ValidationError prefix="Email" field="email" errors={state.errors} />
-</Form>
-<Form>
-  <Label>Phone number</Label>
-  <StyledInput id="email" type="email" name="email" placeholder='Write your name here' />
-</Form>
-<Form>
-  <Label>Mail adress</Label>
-  <StyledInput placeholder='Write your name here' />
-</Form>
-<Form>
-  <Label>Message</Label>
-  <StyledInput placeholder='Write your name here' />
-</Form>
-<Button type="submit" disabled={state.submitting}>
-  Submit
-</Button>
-</FormControl> */}

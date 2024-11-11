@@ -7,8 +7,6 @@ import { ContactPageHeader } from '../data/ContactFormular';
 
 const Container = styled.div({
     display: 'grid',
-    justifyContent: '',
-    gap: '',
     padding: '2rem',
   });
 
@@ -22,8 +20,10 @@ function ContactForm() {
   return (
     <>
       <Container>
+        <div>
           <Header>{ContactPageHeader.title}</Header>
           <ContactFormular />
+        </div>
       </Container>
     </>
   );

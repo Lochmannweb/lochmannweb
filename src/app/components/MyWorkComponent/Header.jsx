@@ -7,10 +7,7 @@ import styled from "styled-components"
 const Container = styled.div({
     display: 'grid',
     textAlign: 'start',
-    // marginTop: '5rem',
-    // paddingLeft: '18px',
-    // paddingRight: '18px',
-    // paddingTop: '18px',
+
     gap: '10px',
 });
 
@@ -21,6 +18,11 @@ const Title = styled.div({
 const Header = styled.div({
     fontSize: '35px',
     marginTop: '-15px',
+    background: 'linear-gradient(90deg, #330707, #ff0000)',
+    webkitBackGroundClip: 'text',
+    webkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
 });
 
 const Content = styled.div({

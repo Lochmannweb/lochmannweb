@@ -7,7 +7,7 @@ import { MyWorkDesignData } from '../data/MyWorkData';
 import Image from 'next/image';
 
 const Container = styled.div({
-    padding: '30px',
+    padding: '20px',
     display: 'grid',
     gap: '10px',
 });

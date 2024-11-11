@@ -21,6 +21,11 @@ const AboutContainer = styled.div({
 
 const Title = styled.div({
     fontSize: '30px',
+    background: 'linear-gradient(90deg, #330707, #ff0000)',
+    webkitBackGroundClip: 'text',
+    webkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
 });
 
 const Header = styled.div({

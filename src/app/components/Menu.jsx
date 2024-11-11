@@ -6,39 +6,74 @@ import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 
+const breakpoints = {
+  md: '768px', // tablet
+  lg: '1024px', // desktop
+};
+
 const Container = styled.div({
-    display: 'flex', 
-    justifyContent: 'space-between',
-    padding: '1rem',
-    backgroundColor: 'black',
-    position: 'fixed',
-    bottom: '0',
-    width: '100%',
-    boxShadow: '0px 29px 46px #ffffff',
-    zIndex: '50',
+  display: 'flex', 
+  justifyContent: 'space-between',
+  padding: '1rem',
+  backgroundColor: 'black',
+  position: 'fixed',
+  bottom: '0', // Default position for mobile
+  width: '100%',
+  boxShadow: '0px 29px 46px #ffffff',
+  zIndex: '50',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    top: '0', 
+    bottom: '', // Disable bottom position
+    boxShadow: '0px -22px 46px', 
+    height: '5.5rem',
+    alignItems: 'center',
+  },
 });
 
-const OpenMenu = styled.div`
-  transform: ${props => (props.menuOpen ? 'translateX(0)' : 'translateX(100%)')};
-  transition: transform 0.3s ease; 
-  position: fixed;
-  left: 0;
-  bottom: 0px; 
-  padding: 1rem;
-  background-color: black; 
-  width: 100%; 
-  padding-bottom: 15px;
-  box-shadow: 0px 29px 46px;
-  z-index: 50;
-`;
+const OpenMenu = styled.div({
+  transform: props => (props.menuOpen ? 'translateX(0)' : 'translateX(100%)'),
+  transition: 'transform 0.3s ease',
+  position: 'fixed',
+  left: 0,
+  bottom: 0,
+  padding: '1rem',
+  backgroundColor: 'black', 
+  width: '100%',
+  paddingBottom: '15px',
+  boxShadow: '0px 29px 46px',
+  zIndex: 50,
+  [`@media (min-width: ${breakpoints.md})`]: {
+    top: '0',
+    gap: '1rem',
+    bottom: '',
+    right: '0',
+    boxShadow: 'none',
+    width: '40%',
+    height: '5.5rem',
+    left: 'inherit',
+    display: 'flex',
+    justifyContent: 'end',
+    alignItems: 'center',
+  },
+});
+
 
 const Links = styled.div({
   display: 'grid',
   paddingBottom: '20px',
   gap: '10px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    display: 'flex',
+    paddingTop: '1rem',
+  },
 });
 
 const OpenMenuLogoAndIcon = styled.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+});
+
+const LinksContainer = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
 });
@@ -84,24 +119,23 @@ function App() {
       </nav>
 
       {/* Open Menu */}
-      {menuOpen && ( // Render OpenMenu only when menuOpen is true
+      {menuOpen && (
         <OpenMenu menuOpen={menuOpen}>
-          <div>
-            <div>
+            <LinksContainer>
                 <ul>
                   <Links>
                     <a className='text-sm' href="/" prefetch={false}>Home</a>
-                    <a className='text-sm' href="/About" prefetch={false}>My jurney</a>
+                    <a className='text-sm' href="/About" prefetch={false}>My journey</a>
                     <a className='text-sm' href="/MyWork" prefetch={false}>Work / Experience</a>
                     <a className='text-sm' href="/Contact" prefetch={false}>Contact</a>
                     <a className='text-sm' href="/" prefetch={false}>Social Media</a>
                   </Links>
                 </ul>
-            </div>
+            </LinksContainer>
 
             <OpenMenuLogoAndIcon>
                 <div>
-                  <a href="/" prefetch={false}>LOCHMANNWEB</a>
+                  <a className='md:hidden' href="/" prefetch={false}>LOCHMANNWEB</a>
                 </div>
 
                 <div>
@@ -117,7 +151,6 @@ function App() {
                   </svg>
                 </div>
             </OpenMenuLogoAndIcon>
-          </div>
         </OpenMenu>
       )}
     </>
