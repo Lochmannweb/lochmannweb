@@ -4,8 +4,11 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
 import { TechData } from '../data/TechData';
-import Spline from '@splinetool/react-spline';
 
+const breakpoints = {
+    md: '768px', // tablet
+    lg: '1024px', // desktop
+  };
 
 const Container = styled.div({
     padding: '20px',
@@ -13,8 +16,20 @@ const Container = styled.div({
     gap: '10px',
 });
 
-const Header = styled.div({
+const HeaderContainer = styled.div({
+});
 
+const Title = styled.div({
+    [`@media (min-width: ${breakpoints.md})`]: {
+        fontSize: '45px',
+        marginBottom: '15px',
+      },
+});
+
+const Header = styled.div({
+    [`@media (min-width: ${breakpoints.md})`]: {
+        fontSize: '22px',
+      },
 });
 
 const TopicContainer = styled.div({
@@ -31,22 +46,19 @@ const Topic = styled.div({
     alignItems: 'center',
 });
 
-// const SplineContainer = styled.div({
-//     width: '100%',
-//     height: '100vh',
-//     marginTop: '-16.5rem',
-//     marginLeft: '14rem',
-//     position: 'abosulte',
-//     filter: 'drop-shadow(13px 1px 22px darkgrey)',
-//   });
+const TopicTitle = styled.div({
+    fontSize: '',
+    [`@media (min-width: ${breakpoints.md})`]: {
+        fontSize: '30px',
+      },
+});
 
-// const SplineObject = () => { 
-//     return (
-//         <SplineContainer>
-//             <Spline scene="https://prod.spline.design/rO1O43-jPFqvU09W/scene.splinecode" />
-//         </SplineContainer>
-//     );
-//   };
+const TopicContent = styled.div({
+    fontSize: '',
+    [`@media (min-width: ${breakpoints.md})`]: {
+        fontSize: '20px',
+      },
+});
 
 function App() {
   const theme = useTheme();
@@ -54,15 +66,15 @@ function App() {
   return (
     <>
     <Container>
-        <Header>
-            <h1 className='text-3xl'>{TechData.title}</h1>
-            <h2 className='text-sm'>{TechData.subheader}</h2>
-        </Header>
+        <HeaderContainer>
+            <Title className='text-3xl'>{TechData.title}</Title>
+            <Header className='text-sm'>{TechData.subheader}</Header>
+        </HeaderContainer>
         <TopicContainer>
-            <Topic><p>{TechData.UXUI.title}</p><p className='text-sm'>{TechData.UXUI.content}</p></Topic>
-            <Topic><p>{TechData.AIML.title}</p><p className='text-sm'>{TechData.AIML.content}</p></Topic>
-            <Topic><p>{TechData.Security.title}</p><p className='text-sm'>{TechData.Security.content}</p></Topic>
-            <Topic ><p>{TechData.CICD.title}</p><p className='text-sm'>{TechData.CICD.content}</p></Topic>
+            <Topic><TopicTitle>{TechData.UXUI.title}</TopicTitle><TopicContent className='text-sm'>{TechData.UXUI.content}</TopicContent></Topic>
+            <Topic><TopicTitle>{TechData.AIML.title}</TopicTitle><TopicContent className='text-sm'>{TechData.AIML.content}</TopicContent></Topic>
+            <Topic><TopicTitle>{TechData.Security.title}</TopicTitle><TopicContent className='text-sm'>{TechData.Security.content}</TopicContent></Topic>
+            <Topic ><TopicTitle>{TechData.CICD.title}</TopicTitle><TopicContent className='text-sm'>{TechData.CICD.content}</TopicContent></Topic>
         </TopicContainer>
         {/* <SplineObject /> */}
     </Container>

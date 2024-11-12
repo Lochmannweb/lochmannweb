@@ -3,7 +3,7 @@
 import React from 'react';
 import ContactFormular from '../components/Contact/ContactFormular';
 import styled from '@emotion/styled';
-import { ContactPageHeader } from '../data/ContactFormular';
+import { ContactPageHeader } from '../data/ContactFormular';  
 
 const Container = styled.div({
     display: 'grid',

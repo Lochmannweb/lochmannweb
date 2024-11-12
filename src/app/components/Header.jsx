@@ -4,38 +4,45 @@ import React, { useEffect, useState } from "react";
 import { ForsideData } from "../data/ForsideData";
 import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
-import Spline from '@splinetool/react-spline';
+import Spline from '../components/Spline';
+
+const breakpoints = {
+  md: '768px', // tablet
+  lg: '1024px', // desktop
+};
 
 const Container = styled.div({
   display: 'grid',
   padding: '30px',
   position: 'absolute',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    paddingTop: '15rem',
+  },
 });
 
-const SplineContainer = styled.div({
-  width: '100%',
-  height: '100vh',
-  marginTop: '-3rem',
-  // position: 'abosulte',
-});
+// const SplineContainer = styled.div({
+//   width: '100%',
+//   height: '100vh',
+//   marginTop: '-3rem',
+//   [`@media (min-width: ${breakpoints.md})`]: {
+//   },
+// });
 
 const Logo = styled.div({
   display: 'none',
 });
 
-const SplineObject = () => { 
-  return (
-    <>
-      <SplineContainer>
-        <Spline className="Logo" scene="https://prod.spline.design/Uv9lybWz39z64b-w/scene.splinecode" />
-      </SplineContainer>
-    </>
-  );
-};
+// const SplineObject = () => { 
+//   return (
+//     <>
+//       <SplineContainer>
+//         <Spline className="Logo" scene="https://prod.spline.design/Uv9lybWz39z64b-w/scene.splinecode" />
+//       </SplineContainer>
+//     </>
+//   );
+// };
 
 const GetStartedButton = styled.div({
-  // background: '#000',
-  // boxShadow: '1px 0px 20px -5px #ffff',
   borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
   borderWidth: 'thin',
   padding: '10px',
@@ -44,7 +51,9 @@ const GetStartedButton = styled.div({
   justifyContent: 'center',
   position: 'absolute',
   bottom: '90px',
-  // borderRadius: '25px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    width: '10%',
+  },
 });
 
 const GetStartedButtonContainer = styled.div({
@@ -52,17 +61,25 @@ const GetStartedButtonContainer = styled.div({
   justifyContent: 'center',
 });
 
-const Title = styled.div`
-  font-size: 15px;
-  font-weight: bold;
-  background: linear-gradient(#000, #ff0000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-`;
+const Title = styled.div({
+  fontSize: '15px',
+  fontWeight: 'bold',
+  background: 'linear-gradient(#000, #ff0000)',
+  webkitBackgroundClip: 'text',
+  webkitTextFillColor: 'transparent',
+  backgroundClip: 'text',
+  textFillColor: 'transparent',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '25px',
+  },
+});
 
-
+const HeaderTitle = styled.div({
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '80px',
+    lineHeight: '5rem',
+  },
+});
 
 export default function Header() {
   const theme = useTheme();
@@ -83,12 +100,12 @@ export default function Header() {
 
   return (
     <>
-    <SplineObject />
+    <Spline />
     <Container>
-      <Title>{ForsideData.title1}</Title>
-      <h2 className="text-4xl">
-         {ForsideData.subheader}<span> {texts[index]} </span>{ForsideData.subheader2}
-      </h2>
+      <div>
+        <Title>{ForsideData.title1}</Title>
+        <HeaderTitle className="text-4xl">{ForsideData.subheader} <br /> <span> {texts[index]} </span>{ForsideData.subheader2}</HeaderTitle>
+      </div>
     </Container>
     <GetStartedButtonContainer >
       <GetStartedButton href="/Contact">

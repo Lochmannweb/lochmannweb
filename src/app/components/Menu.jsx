@@ -19,14 +19,15 @@ const Container = styled.div({
   position: 'fixed',
   bottom: '0', // Default position for mobile
   width: '100%',
-  boxShadow: '0px 29px 46px #ffffff',
+  boxShadow: '0px 29px 46px',
   zIndex: '50',
   [`@media (min-width: ${breakpoints.md})`]: {
     top: '0', 
     bottom: '', // Disable bottom position
-    boxShadow: '0px -22px 46px', 
+    boxShadow: '0px -35px 46px', 
     height: '5.5rem',
     alignItems: 'center',
+    padding: '2rem',
   },
 });
 
