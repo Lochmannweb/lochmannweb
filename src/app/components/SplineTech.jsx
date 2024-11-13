@@ -12,13 +12,13 @@ const breakpoints = {
 const SplineContainer = styled.div({
     width: '100%',
     height: '100vh',
-    marginTop: '-3rem',
-    [`@media (min-width: ${breakpoints.md})`]: {
-        marginLeft: '10rem',
-    },
-    [`@media (min-width: ${breakpoints.lg})`]: {
-        marginLeft: '22rem',
-    },
+    // marginTop: '-3rem',
+    // [`@media (min-width: ${breakpoints.md})`]: {
+    //     marginLeft: '10rem',
+    // },
+    // [`@media (min-width: ${breakpoints.lg})`]: {
+    //     marginLeft: '22rem',
+    // },
 });
 
 const SplineFigure = () => {
@@ -42,7 +42,7 @@ const SplineFigure = () => {
         >
             <Spline 
                 className="Logo"
-                scene="https://prod.spline.design/Uv9lybWz39z64b-w/scene.splinecode"
+                scene="https://prod.spline.design/0fwtALNU2PkpeiRi/scene.splinecode"
                 style={{ pointerEvents: isSplineActive ? 'auto' : 'none' }}
             />
         </SplineContainer>
@@ -50,3 +50,4 @@ const SplineFigure = () => {
 };
 
 export default SplineFigure;
+

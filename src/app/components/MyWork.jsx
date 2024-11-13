@@ -31,16 +31,14 @@ const ImageContainer = styled.div({
 });
 
 const Images = styled.div({
-  borderRadius: '12px',
-  border: '1px solid grey',
-  overflow: 'hidden',
+
+});
+
+const Title = styled.div({
+  fontSize: '20px',
   [`@media (min-width: ${breakpoints.md})`]: {
-    maxWidth: '200%', // Larger on tablet
-    maxHeight: '200%',
-  },
-  [`@media (min-width: ${breakpoints.lg})`]: {
-    maxWidth: '200%', // Even larger on desktop
-    maxHeight: '200%',
+    fontSize: '40px', 
+    marginBottom: '10px',
   },
 });
 
@@ -49,14 +47,14 @@ function App() {
   return (
     <Container>
       <div>
-        <h1 className='text-3xl'>{MyWorkDesignData.title}</h1>
+        <Title className='text-3xl'>{MyWorkDesignData.title}</Title>
       </div>
       <ImageContainer>
         <Images>
-          <Image className='rounded-lg' src="/foofest.png" layout="responsive" width={200} height={200} alt="Foofest image" />
+          <Image className='rounded-lg ' src="/cgc.png"  width={350} height={350} alt="Foofest image" />
         </Images>
         <Images>
-          <Image className='rounded-lg' src="/cgc.png" layout="responsive" width={200} height={200} alt="CGC image" />
+        <Image className='rounded-lg' src="/foofest.png"  width={340} height={340} alt="Foofest image" />
         </Images>
       </ImageContainer>
     </Container>

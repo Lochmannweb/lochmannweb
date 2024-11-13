@@ -4,15 +4,25 @@ import { MyWorkHeader } from "@/app/data/MyWorkData"
 import React from 'react'
 import styled from "styled-components"
 
+const breakpoints = {
+  md: '768px', // tablet
+  lg: '1024px', // desktop
+};
+
 const Container = styled.div({
     display: 'grid',
     textAlign: 'start',
-
     gap: '10px',
+    [`@media (min-width: ${breakpoints.md})`]: {
+      marginTop: '8rem',
+    },
 });
 
 const Title = styled.div({
     fontSize: '15px',
+    [`@media (min-width: ${breakpoints.md})`]: {
+      fontSize: '25px',
+    },
 });
 
 const Header = styled.div({
@@ -23,12 +33,15 @@ const Header = styled.div({
     webkitTextFillColor: 'transparent',
     backgroundClip: 'text',
     textFillColor: 'transparent',
+    [`@media (min-width: ${breakpoints.md})`]: {
+      fontSize: '50px',
+    },
 });
 
 const Content = styled.div({
   fontSize: '15px',
   display: 'grid',
-  gap: '1rem',
+  gap: '0rem',
 });
 
 const Aboutpage = () => {

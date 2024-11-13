@@ -4,10 +4,11 @@
 
 /* mobil */
 body {
-  background-image: url('/star-bg.png');
+  /* background-image: url('/star-bg.png');
   background-size: 100%;
   background-position: top;
-  background-repeat: repeat-y;
+  background-repeat: repeat-y; */
+  background-color: black;
   color: white;
 }
 

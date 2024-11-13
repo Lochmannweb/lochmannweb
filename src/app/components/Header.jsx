@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { ForsideData } from "../data/ForsideData";
 import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
-import Spline from '../components/Spline';
+import SplineHeader from './SplineHHeader';
 
 const breakpoints = {
   md: '768px', // tablet
@@ -63,12 +63,12 @@ const GetStartedButtonContainer = styled.div({
 
 const Title = styled.div({
   fontSize: '15px',
-  fontWeight: 'bold',
-  background: 'linear-gradient(#000, #ff0000)',
-  webkitBackgroundClip: 'text',
-  webkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
-  textFillColor: 'transparent',
+  // fontWeight: 'bold',
+  // background: 'linear-gradient(#fff, #ff0000)',
+  // webkitBackgroundClip: 'text',
+  // webkitTextFillColor: 'transparent',
+  // backgroundClip: 'text',
+  // textFillColor: 'transparent',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '25px',
   },
@@ -100,18 +100,18 @@ export default function Header() {
 
   return (
     <>
-    <Spline />
+    <SplineHeader />
     <Container>
       <div>
         <Title>{ForsideData.title1}</Title>
         <HeaderTitle className="text-4xl">{ForsideData.subheader} <br /> <span> {texts[index]} </span>{ForsideData.subheader2}</HeaderTitle>
       </div>
     </Container>
-    <GetStartedButtonContainer >
+    {/* <GetStartedButtonContainer >
       <GetStartedButton href="/Contact">
           {ForsideData.button}
       </GetStartedButton>
-    </GetStartedButtonContainer>
+    </GetStartedButtonContainer> */}
     </>
   );
 }
