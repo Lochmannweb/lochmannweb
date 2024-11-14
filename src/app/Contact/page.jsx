@@ -14,13 +14,27 @@ const Container = styled.div({
     display: 'grid',
     padding: '2rem',
     [`@media (min-width: ${breakpoints.md})`]: {
-      paddingTop: '10rem',
+      paddingTop: '12rem',
     },
   });
 
 const Header = styled.div({
   fontSize: '30px',
   paddingBottom: '20px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0rem',
+    fontSize: '4rem',
+    fontFamily: 'fantasy',
+  },
+});
+
+const Grid = styled.div({
+  [`@media (min-width: ${breakpoints.md})`]: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+  },
 });
 
 
@@ -29,10 +43,10 @@ function ContactForm() {
   return (
     <>
       <Container>
-        <div>
+        <Grid>
           <Header>{ContactPageHeader.title}</Header>
           <ContactFormular />
-        </div>
+        </Grid>
       </Container>
     </>
   );

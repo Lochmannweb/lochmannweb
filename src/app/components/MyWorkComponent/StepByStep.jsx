@@ -4,6 +4,11 @@ import { StepByStep } from "@/app/data/MyWorkData"
 import React from 'react'
 import styled from '@emotion/styled';
 
+const breakpoints = {
+    md: '768px', // tablet
+    lg: '1024px', // desktop
+  };
+
 const Container = styled.div({
     display: 'grid',
     textAlign: 'center',
@@ -18,11 +23,17 @@ const ProcesTitle = styled.div({
   padding: '1rem',
   // margin: '1rem',
   borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+  [`@media (min-width: ${breakpoints.md})`]: {
+    marginBottom: '3rem',
+  },
 });
 
 const StepByStepTitle = styled.div({
   fontSize: '20px',
   fontFamily: 'fantasy',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '35px',
+  },
 });
 
 const StepByStepContainer = styled.div({
@@ -36,15 +47,25 @@ const StepByStepContainer = styled.div({
     paddingBottom: '2rem',
     // margin: '1rem',
     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+    [`@media (min-width: ${breakpoints.md})`]: {
+        paddingLeft: '5rem',
+        paddingRight: '5rem',
+      },
 });
 
 const Title = styled.div({
     fontSize: '20px',
     fontFamily: 'emoji',
+    [`@media (min-width: ${breakpoints.md})`]: {
+        fontSize: '40px',
+      },
 });
 
 const Content = styled.div({
     fontSize: '13px',
+    [`@media (min-width: ${breakpoints.md})`]: {
+        fontSize: '20px',
+      },
   });
 
 const Button = styled.div({
@@ -56,6 +77,11 @@ const Button = styled.div({
     margin: 'auto',
     marginTop: '0.3rem',
     marginBottom: '3rem',
+    [`@media (min-width: ${breakpoints.md})`]: {
+        width: '20%',
+        padding: '0.8rem',
+        fontSize: '20px',
+      },
   });
 
 const Aboutpage = () => {

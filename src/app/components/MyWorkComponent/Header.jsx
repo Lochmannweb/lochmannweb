@@ -21,7 +21,8 @@ const Container = styled.div({
 const Title = styled.div({
     fontSize: '15px',
     [`@media (min-width: ${breakpoints.md})`]: {
-      fontSize: '25px',
+      fontSize: '20px',
+      margin: 'auto',
     },
 });
 
@@ -35,6 +36,7 @@ const Header = styled.div({
     textFillColor: 'transparent',
     [`@media (min-width: ${breakpoints.md})`]: {
       fontSize: '50px',
+      margin: 'auto',
     },
 });
 
@@ -42,6 +44,10 @@ const Content = styled.div({
   fontSize: '15px',
   display: 'grid',
   gap: '0rem',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
 });
 
 const Aboutpage = () => {

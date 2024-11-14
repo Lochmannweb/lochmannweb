@@ -5,6 +5,11 @@ import { useForm, ValidationError } from '@formspree/react';
 import { ContactFormularData, ContactPageHeader } from '../../data/ContactFormular';
 import styled from '@emotion/styled';
 
+const breakpoints = {
+  md: '768px', // tablet
+  lg: '1024px', // desktop
+};
+
 const FormContainer = styled.div({
     display: '',
     gap: '',
@@ -21,6 +26,11 @@ const SoMeInformations = styled.div({
     display: '',
     alignContent: 'center',
     paddingTop: '2rem',
+    [`@media (min-width: ${breakpoints.md})`]: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      paddingTop: '5rem',
+    },
   });
 
 const SoMeContainer = styled.div({
@@ -31,29 +41,19 @@ const SoMeContainer = styled.div({
 
 const Label = styled.div({
   fontSize: '13px',
-  color: 'grey',
   marginLeft: '5px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '18px',
+  },
 });
 
-// const Input = styled.div({
-//     borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
-//     borderWidth: 'thin',
-//     height: '30px',
-// });
-
-// const Message = styled.div({
-//   borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
-//   borderWidth: 'thin',
-//   height: '60px',
-// });
-
 const SendButton = styled.div({
-  borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
+  // borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
     borderWidth: 'thin',
     display: 'grid',
     width: '30%',
     textAlign: 'center',
-    margin: 'auto',
+    // margin: 'auto',
   });
 
 function ContactFormular() {
@@ -77,7 +77,7 @@ function ContactFormular() {
               type="text" 
               name="text"
               placeholder='Write your name here'
-              className='bg-input w-full text-sm p-1 h-10 border-zinc-700 border-2'
+              className='bg-input w-full text-sm p-1 h-10  md:text-xl'
             />
             <ValidationError 
               prefix="text" 
@@ -94,8 +94,8 @@ function ContactFormular() {
               id="phonenr"
               type="tel" 
               name="tel"
-              laceholder='Write your phone number here'
-              className='bg-input w-full text-sm p-1 h-10 border-zinc-700 border-2'
+              placeholder='Write your phone number here'
+              className='bg-input w-full text-sm md:text-xl p-1 h-10 '
             />
             <ValidationError 
               prefix="tel" 
@@ -112,8 +112,8 @@ function ContactFormular() {
               id="email"
               type="email" 
               name="email"
-              laceholder='Write your email here'
-              className='bg-input w-full text-sm p-1 h-10 border-zinc-700 border-2'
+              placeholder='Write your email here'
+              className='bg-input w-full text-sm p-1 h-10  md:text-xl'
             />
             <ValidationError 
               prefix="Email" 
@@ -129,8 +129,8 @@ function ContactFormular() {
             <textarea
               id="message"
               name="message"
-              className="h-20 bg-input w-full text-sm p-1 border-zinc-700 border-2"
-              laceholder='Write a message here'
+              className="h-20 bg-input w-full text-sm p-1  md:text-xl"
+              placeholder='Write a message here'
             />
             <ValidationError 
               prefix="Message" 

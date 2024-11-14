@@ -63,18 +63,14 @@ const GetStartedButtonContainer = styled.div({
 
 const Title = styled.div({
   fontSize: '15px',
-  // fontWeight: 'bold',
-  // background: 'linear-gradient(#fff, #ff0000)',
-  // webkitBackgroundClip: 'text',
-  // webkitTextFillColor: 'transparent',
-  // backgroundClip: 'text',
-  // textFillColor: 'transparent',
+  fontFamily: 'monospace',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '25px',
+    fontSize: '20px',
   },
 });
 
 const HeaderTitle = styled.div({
+  fontFamily: 'fantasy',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '80px',
     lineHeight: '5rem',

@@ -26,6 +26,7 @@ const HeaderContainer = styled.div({
 });
 
 const Title = styled.div({
+  fontFamily: 'fantasy',
     [`@media (min-width: ${breakpoints.md})`]: {
         fontSize: '50px',
         marginBottom: '20px',
@@ -33,6 +34,7 @@ const Title = styled.div({
 });
 
 const Header = styled.div({
+  fontFamily: 'monospace',
     [`@media (min-width: ${breakpoints.md})`]: {
         fontSize: '20px',
       },
@@ -53,17 +55,18 @@ const Topic = styled.div({
     alignItems: 'center',
     fontSize: '',
     [`@media (min-width: ${breakpoints.md})`]: {
-        borderWidth: 'thin',
+        // borderWidth: 'thin',
         padding: '3rem',
-        borderLeft: 'none',
-        borderRight: 'none',
-        columnGap: '10x',
+        // borderLeft: 'none',
+        // borderRight: 'none',
+        // columnGap: '10x',
         gap: '50px',
       },
 });
 
 const TopicTitle = styled.div({
     fontSize: '',
+    fontFamily: 'monospace',
     [`@media (min-width: ${breakpoints.md})`]: {
         fontSize: '30px',
       },
@@ -71,6 +74,7 @@ const TopicTitle = styled.div({
 
 const TopicContent = styled.div({
     fontSize: '',
+    fontFamily: 'monospace',
     [`@media (min-width: ${breakpoints.md})`]: {
         fontSize: '20px',
       },

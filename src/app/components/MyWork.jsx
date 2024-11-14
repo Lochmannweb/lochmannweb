@@ -23,10 +23,10 @@ const ImageContainer = styled.div({
   justifyContent: 'center',
   gridTemplateColumns: '1fr',
   [`@media (min-width: ${breakpoints.md})`]: {
-    gridTemplateColumns: '1fr 1fr', // Two columns on tablet
+    justifyContent: 'start',
   },
   [`@media (min-width: ${breakpoints.lg})`]: {
-    gridTemplateColumns: 'repeat(3, 1fr)', // Three columns on desktop
+    justifyContent: 'start',
   },
 });
 
@@ -36,9 +36,10 @@ const Images = styled.div({
 
 const Title = styled.div({
   fontSize: '20px',
+  fontFamily: 'fantasy',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '40px', 
-    marginBottom: '10px',
+    fontSize: '50px', 
+    marginBottom: '80px',
   },
 });
 
@@ -51,10 +52,10 @@ function App() {
       </div>
       <ImageContainer>
         <Images>
-          <Image className='rounded-lg ' src="/cgc.png"  width={350} height={350} alt="Foofest image" />
+          <Image className='rounded-lg ' src="/cgc-desktop.png"  width={500} height={500} alt="Foofest image" />
         </Images>
-        <Images>
-        <Image className='rounded-lg' src="/foofest.png"  width={340} height={340} alt="Foofest image" />
+        <Images className='flex flex-row-reverse'>
+        <Image className='rounded-lg' src="/foofest-desktop.png"  width={500} height={500} alt="Foofest image" />
         </Images>
       </ImageContainer>
     </Container>
