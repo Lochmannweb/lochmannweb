@@ -15,6 +15,24 @@ const Container = styled.div({
   padding: '20px',
   display: 'grid',
   gap: '10px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    borderTopLeftRadius: '10rem',
+    borderTopRightRadius: '10rem',
+    background: 'linear-gradient(#02130E, #000000)',
+    marginTop: '-8rem',
+    padding: '8rem',
+    boxShadow: '0px -41px 82px -59px #bfffd678',
+  },
+});
+
+const BackContainer = styled.div({
+  [`@media (min-width: ${breakpoints.md})`]: {
+    background: 'black',
+    padding: '5rem',
+    width: '70%',
+    margin: 'auto',
+    borderRadius: '50px',
+  },
 });
 
 const ImageContainer = styled.div({
@@ -23,15 +41,19 @@ const ImageContainer = styled.div({
   justifyContent: 'center',
   gridTemplateColumns: '1fr',
   [`@media (min-width: ${breakpoints.md})`]: {
-    justifyContent: 'start',
-  },
-  [`@media (min-width: ${breakpoints.lg})`]: {
-    justifyContent: 'start',
+    display: 'flex',
   },
 });
 
 const Images = styled.div({
 
+});
+
+const ProjectTitle = styled.div({
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '25px',
+    paddingTop: '3rem',
+  },
 });
 
 const Title = styled.div({
@@ -40,6 +62,7 @@ const Title = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '50px', 
     marginBottom: '80px',
+    paddingLeft: '10rem',
   },
 });
 
@@ -50,14 +73,18 @@ function App() {
       <div>
         <Title className='text-3xl'>{MyWorkDesignData.title}</Title>
       </div>
-      <ImageContainer>
-        <Images>
-          <Image className='rounded-lg ' src="/cgc-desktop.png"  width={500} height={500} alt="Foofest image" />
-        </Images>
-        <Images className='flex flex-row-reverse'>
-        <Image className='rounded-lg' src="/foofest-desktop.png"  width={500} height={500} alt="Foofest image" />
-        </Images>
-      </ImageContainer>
+      <BackContainer>
+        <ImageContainer>
+          <Images>
+            <Image className='rounded-lg ' src="/cgc-desktop.png"  width={500} height={500} alt="Foofest image" />
+          </Images>
+          <Images className='flex flex-row-reverse'>
+          <Image className='rounded-lg' src="/foofest-desktop.png"  width={500} height={500} alt="Foofest image" />
+          </Images>
+          </ImageContainer>
+          <ProjectTitle>Test</ProjectTitle>
+          <p>Tekst her</p>
+      </BackContainer>
     </Container>
   );
 }

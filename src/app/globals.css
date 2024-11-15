@@ -4,50 +4,14 @@
 
 /* mobil */
 body {
-  background-image: url('/star-bg.png');
+  /* background-image: url('/star-bg.png');
   background-size: 100%;
   background-position: top;
-  background-repeat: repeat-y;
+  background-repeat: repeat-y; */
   /* background-color: #0e0000; */
-  /* background-color: black; */
+  background-color: black;
   color: white;
 }
-
-/* Media query for mobil 
-@media (max-width: 599px) {
-  body {
-    background-image: url('/smoke-bg.png');
-    background-size: 100%;
-    background-position: top;
-    background-repeat: repeat-x;
-    height: 100vh;
-    color: white;
-  }
-} */
-
-/* Media query for tablets  */
-/* @media (max-width: 899px) {
-  body {
-    background-image: url('');
-    background-size: 100%;
-    background-position: top;
-    background-repeat: repeat-y;
-    height: 200vh;
-    color: white;
-  }
-} */
-
-/* Media query for mini desktop  */
-/* @media (max-width: 1200px) {
-  body {
-    background-image: url('/smoke-bg.png');
-    background-size: 100%;
-    background-position: top;
-    background-repeat: repeat-y;
-    height: 200vh;
-    color: white;
-  }
-} */
 
 /* TextAnimation.css */
 .text-container {

@@ -2,12 +2,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { ContactFormularData } from '../data/ContactFormular'
-// import Spline from '@splinetool/react-spline/next';
 import { useForm, ValidationError } from '@formspree/react';
 
 const breakpoints = {
-  md: '768px', // tablet
-  lg: '1024px', // desktop
+  md: '768px', 
+  lg: '1024px', 
 };
 
 
@@ -15,9 +14,11 @@ const Container = styled.div({
     padding: '20px',
     display: 'grid',
     gap: '10px',
-    marginTop: '5rem',
-    // background: "url('/star-bg.png') no-repeat center center",
-    // backgroundSize: 'cover',
+    [`@media (min-width: ${breakpoints.md})`]: {
+      paddingRight: '16rem',
+      paddingBottom: '5rem',
+      marginLeft: 'auto',
+    },
 });
 
 const Header = styled.div({
@@ -38,24 +39,6 @@ const Button = styled.div({
   fontFamily: 'fantasy',
 });
 
-// const SplineContainer = styled.div({
-//     width: '60%',
-//     height: '60vh',
-//     marginTop: '-11rem',
-//     marginBottom: '-7rem',
-//     marginLeft: '0rem',
-//     position: 'abosulte',
-//     // filter: 'drop-shadow(13px 1px 22px darkgrey)',
-//   });
-
-// const SplineObject = () => { 
-//     return (
-//       <SplineContainer> 
-//           <Spline scene="https://prod.spline.design/pdTEeKrLctH22kH8/scene.splinecode"/>
-//       </SplineContainer>
-//     );
-//   };
-
 const Label = styled.div({
   fontSize: '10px',
   marginLeft: '5px',
@@ -65,23 +48,25 @@ const Label = styled.div({
   },
 });
 
-// const Span = styled.div`
-//   background: linear-gradient(#000, #ff0000);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   background-clip: text;
-//   text-fill-color: transparent;
-// `;
+const ThankYouForJoining = styled.div({
+  fontSize: '20px',
+  fontFamily: 'fantasy',
+  margin: 'auto',
+  padding: '2rem',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '40px',
+    padding: '5rem',
+  },
+});
 
 function App() {
   const [state, handleSubmit] = useForm("mldrldzl");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return <ThankYouForJoining>I look forward to see your vision!</ThankYouForJoining>;
   }
 
   return (
     <>
-    {/* <SplineObject /> */}
     <Container>
         <Header className='text-3xl'>{ContactFormularData.title} <span>{ContactFormularData.span}</span> {ContactFormularData.title2} </Header>
         <form onSubmit={handleSubmit} className='w-96'>

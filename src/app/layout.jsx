@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Menu />
-          <main className="max-w-6xl mx-auto">
+          <main>
           {children}
           </main>
         <CustomerInformation />

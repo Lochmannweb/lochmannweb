@@ -7,8 +7,8 @@ import { useTheme } from '@mui/material/styles';
 import SplineHeader from './SplineHHeader';
 
 const breakpoints = {
-  md: '768px', // tablet
-  lg: '1024px', // desktop
+  md: '768px', 
+  lg: '1024px', 
 };
 
 const Container = styled.div({
@@ -17,30 +17,14 @@ const Container = styled.div({
   position: 'absolute',
   [`@media (min-width: ${breakpoints.md})`]: {
     paddingTop: '15rem',
+    paddingLeft: '16rem',
   },
 });
-
-// const SplineContainer = styled.div({
-//   width: '100%',
-//   height: '100vh',
-//   marginTop: '-3rem',
-//   [`@media (min-width: ${breakpoints.md})`]: {
-//   },
-// });
 
 const Logo = styled.div({
   display: 'none',
 });
 
-// const SplineObject = () => { 
-//   return (
-//     <>
-//       <SplineContainer>
-//         <Spline className="Logo" scene="https://prod.spline.design/Uv9lybWz39z64b-w/scene.splinecode" />
-//       </SplineContainer>
-//     </>
-//   );
-// };
 
 const GetStartedButton = styled.div({
   borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
@@ -83,15 +67,20 @@ export default function Header() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % texts.length); // Cycle through texts
-    }, 3000); // Change text every 3 seconds
+      setIndex((prevIndex) => (prevIndex + 1) % texts.length); 
+    }, 3000); 
 
-    return () => clearInterval(interval); // Clean up interval on unmount
+    return () => clearInterval(interval); 
   }, []);
 
   const texts = [
+    "Static",
+    "Dynamic",
+  ];
+
+  const texts2 = [
     "Unique",
-    "Thinking",
+    "Responsive",
   ];
 
   return (
@@ -100,7 +89,10 @@ export default function Header() {
     <Container>
       <div>
         <Title>{ForsideData.title1}</Title>
-        <HeaderTitle className="text-4xl">{ForsideData.subheader} <br /> <span> {texts[index]} </span>{ForsideData.subheader2}</HeaderTitle>
+        <HeaderTitle className="text-4xl">
+          {ForsideData.subheader} <span> {texts[index]} </span> & <br /> 
+          {ForsideData.subheader2} <span>{texts2[index]}</span> {ForsideData.subheader3}
+        </HeaderTitle>
       </div>
     </Container>
     {/* <GetStartedButtonContainer >
