@@ -1,20 +1,19 @@
 export const TechData = {
-    title: "The technologies are always changing",
-    subheader: "Let’s collab so you can be apart of the futeras tech and updates",
-    UXUI: {
-        title: "UX/UI",
-        content: "Responsive, Intuitive, Emotional Design and Interactions",
+    title: "My Expertise",
+    Js: {
+        title: "Js",
+        content: "JavaScript",
     },
-    AIML: {
-        title: "AI/ML",
-        content: "Artificial Intelligence and Machine Learning",
+    TW: {
+        title: "/Tailwind.png",
+        content: "Tailwind CSS / CSS",
     },
-    Security: {
-        title: "Security",
-        content: "Transparent Data Handling and Security Measures in the UI",
+    Ani: {
+        title: "Spline",
+        content: "Spline",
     },
-    CICD: {
-        title: "CI/CD",
-        content: "Agile Development, Updates and Sustainability Optimization",
+    Kode: {
+        title: "/REACT-icon",
+        content: "REACT",
     },
 }

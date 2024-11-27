@@ -1,10 +1,154 @@
+// 'use client';
+
+// import Image from 'next/image';
+// import React, { useState } from 'react';
+// import styled from '@emotion/styled';
+// import { useTheme } from '@mui/material/styles';
+// import { useMediaQuery } from '@mui/material';
+
+// const breakpoints = {
+//   md: '768px', 
+//   lg: '1024px', 
+// };
+
+// const Nav = styled.div({
+//   display: 'flex',
+//   justifyContent: 'center',
+// });
+
+// const Container = styled.div({
+//   display: 'flex', 
+//   justifyContent: 'space-between',
+//   padding: '1rem',
+//   backgroundColor: 'black',
+//   position: 'fixed',
+//   bottom: '0', 
+//   width: '100%',
+//   zIndex: '50',
+//   [`@media (min-width: ${breakpoints.md})`]: {
+//     top: '0', 
+//     width: '70%',
+//     bottom: '', 
+//     height: '4rem',
+//     alignItems: 'center',
+//     padding: '2rem',
+//     marginTop: '2rem',
+//   },
+// });
+
+// const OpenMenu = styled.div({
+//   transform: props => (props.menuOpen ? 'translateX(0)' : 'translateX(100%)'),
+//   transition: 'transform 0.3s ease',
+//   position: 'fixed',
+//   left: 0,
+//   bottom: 0,
+//   padding: '1rem',
+//   backgroundColor: 'black', 
+//   width: '100%',
+//   paddingBottom: '15px',
+//   zIndex: 50,
+//   [`@media (min-width: ${breakpoints.md})`]: {
+//     top: '0',
+//     gap: '1rem',
+//     bottom: '',
+//     right: '16rem',
+//     width: '35%',
+//     height: '3.5rem',
+//     left: 'inherit',
+//     display: 'flex',
+//     justifyContent: 'end',
+//     alignItems: 'center',
+//     marginTop: '2.5rem',
+//   },
+//   [`@media (min-width: ${breakpoints.lg})`]: {
+//     top: '0',
+//     gap: '1rem',
+//     bottom: '',
+//     right: '19rem',
+//     width: '35%',
+//     height: '3.5rem',
+//     left: 'inherit',
+//     display: 'flex',
+//     justifyContent: 'end',
+//     alignItems: 'center',
+//     marginTop: '2.5rem',
+//   },
+// });
+
+
+// const Links = styled.div({
+//   display: 'grid',
+//   paddingBottom: '20px',
+//   gap: '10px',
+//   // fontFamily: 'monospace',
+//   [`@media (min-width: ${breakpoints.md})`]: {
+//     display: 'flex',
+//     paddingTop: '1rem',
+//     gap: '30px',
+//   },
+// });
+
+// const OpenMenuLogoAndIcon = styled.div({
+//   display: 'flex',
+//   justifyContent: 'space-between',
+// });
+
+// const LinksContainer = styled.div({
+//   display: 'flex',
+//   justifyContent: 'space-between',
+// });
+
+
+// function App() {
+//   const theme = useTheme();
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+//   const toggleMenu = () => {
+//     setMenuOpen(!menuOpen);
+//     console.log('Menu state changed to:', !menuOpen); 
+//   };
+
+//   return (
+//     <>
+//       {/* Navigation Bar */}
+//       <Nav>
+//         <Container>
+//           <div className='flex gap-2'>
+//           {!isMobile && (
+//             <div>
+//               <Image
+//                 src="/logo.png"
+//                 alt="profile"
+//                 width={40}
+//                 height={40}
+//               />
+//             </div>
+//           )}
+//             <a className='font-mono flex items-center md:text-lg' href="/" prefetch={false}><strong>LOCHMANNWEB</strong></a>
+//           </div>
+
+//           <div className='flex gap-10'>
+//             <a href='/' prefetch={false}>Journey</a>
+//             <a href='/' prefetch={false}>Skills</a>
+//             <a href='/' prefetch={false}>Projects</a>
+//             <a href="/Contact"><img src="/contact-knap.png" alt="knap" width={100} height={100} /></a>
+//           </div>
+//         </Container>
+//       </Nav>
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
 'use client';
 
 import Image from 'next/image';
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { useTheme } from '@mui/material/styles';
-import { useMediaQuery } from '@mui/material';
 
 const breakpoints = {
   md: '768px', 
@@ -27,12 +171,14 @@ const Container = styled.div({
   zIndex: '50',
   [`@media (min-width: ${breakpoints.md})`]: {
     top: '0', 
-    width: '80%',
+    width: '70%',
     bottom: '', 
-    height: '5.5rem',
+    height: '4rem',
     alignItems: 'center',
-    padding: '3rem',
+    padding: '2rem',
     backgroundColor: '#0b0b0b',
+    borderColor: '#CA8669',
+    borderWidth: 'thin',
     borderRadius: '50px',
     marginTop: '2rem',
   },
@@ -53,31 +199,31 @@ const OpenMenu = styled.div({
     top: '0',
     gap: '1rem',
     bottom: '',
-    right: '11rem',
+    right: '16rem',
     backgroundColor: '#0b0b0b',
     width: '35%',
-    height: '6rem',
+    height: '3.5rem',
     borderRadius: '50px',
     left: 'inherit',
     display: 'flex',
     justifyContent: 'end',
     alignItems: 'center',
-    marginTop: '2rem',
+    marginTop: '2.5rem',
   },
   [`@media (min-width: ${breakpoints.lg})`]: {
     top: '0',
     gap: '1rem',
     bottom: '',
-    right: '14rem',
+    right: '19rem',
     backgroundColor: '#0b0b0b',
     width: '35%',
-    height: '6rem',
+    height: '3.5rem',
     borderRadius: '50px',
     left: 'inherit',
     display: 'flex',
     justifyContent: 'end',
     alignItems: 'center',
-    marginTop: '2rem',
+    marginTop: '2.5rem',
   },
 });
 
@@ -86,11 +232,11 @@ const Links = styled.div({
   display: 'grid',
   paddingBottom: '20px',
   gap: '10px',
-  fontFamily: 'monospace',
+  // fontFamily: 'monospace',
   [`@media (min-width: ${breakpoints.md})`]: {
     display: 'flex',
     paddingTop: '1rem',
-    gap: '20px',
+    gap: '30px',
   },
 });
 
@@ -106,9 +252,7 @@ const LinksContainer = styled.div({
 
 
 function App() {
-  const theme = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -120,26 +264,25 @@ function App() {
       {/* Navigation Bar */}
       <Nav>
         <Container>
-          <div>
-            <a className='font-mono' href="/" prefetch={false}>LOCHMANNWEB</a>
-          </div>
-
-          {!isMobile && (
+          <div className='flex gap-2 items-center'>
+          {(
             <div>
               <Image
-                src="/w-logo.png"
+                src="/logo.png"
                 alt="profile"
-                width={55}
-                height={55}
+                width={25}
+                height={25}
               />
             </div>
           )}
+            <a className='font-mono' href="/" prefetch={false}>LOCHMANNWEB</a>
+          </div>
 
-          <div>
-            <button className="grid gap-2" onClick={toggleMenu}>
-              <div className="decoration-white w-32 ml-auto"><hr /></div>
-              <div className="decoration-white w-24 ml-auto"><hr /></div>
+          <div className='flex items-center'>
+            <button className="grid gap-1" onClick={toggleMenu}>
+              <div className="decoration-white w-16 ml-auto"><hr /></div>
               <div className="decoration-white w-10 ml-auto"><hr /></div>
+              <div className="decoration-white w-5 ml-auto"><hr /></div>
             </button>
           </div>
         </Container>
@@ -151,16 +294,16 @@ function App() {
             <LinksContainer>
                 <ul>
                   <Links>
-                    <a className='text-sm md:text-lg' href="/" prefetch={false}>Home</a>
-                    <a className='text-sm md:text-lg' href="/About" prefetch={false}>My journey</a>
-                    <a className='text-sm md:text-lg' href="/MyWork" prefetch={false}>Work / Experience</a>
+                    {/* <a className='text-sm md:text-lg' href="/" prefetch={false}>Home</a> */}
+                    <a className='text-sm md:text-lg' href="/About" prefetch={false}>Journey & Expertise</a>
+                    <a className='text-sm md:text-lg' href="/MyWork" prefetch={false}>Proces & projects</a>
                     <a className='text-sm md:text-lg' href="/Contact" prefetch={false}>Contact</a>
-                    <a className='text-sm md:text-lg' href="https://www.instagram.com/lochmannweb?igsh=d2lubHY4NmRxOW5y" prefetch={false}>
+                    {/* <a className='text-sm md:text-lg' href="https://www.instagram.com/lochmannweb?igsh=d2lubHY4NmRxOW5y" prefetch={false}>
                       <svg 
                       version="1.0" 
                       xmlns="http://www.w3.org/2000/svg"
-                      width="30" 
-                      height="30" 
+                      width="20" 
+                      height="20" 
                       viewBox="0 0 512.000000 512.000000"
                       preserveAspectRatio="xMidYMid meet">
                         <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
@@ -176,15 +319,25 @@ function App() {
                           -1179 399z m353 -300 c240 -36 444 -139 615 -310 431 -430 431 -1120 0 -1550 -430 -431 -1120 -431 -1550 0 -431 430 -431 1120 0 1550 249 249 591 363 935
                           310z"/></g>
                       </svg>
-                    </a>
+                    </a> */}
                   </Links>
                 </ul>
             </LinksContainer>
 
             <OpenMenuLogoAndIcon>
+            <div className='flex gap-2 items-center'>
+              {(
                 <div>
-                  <a className='md:hidden' href="/" prefetch={false}>LOCHMANNWEB</a>
+                  <Image
+                    src="/logo.png"
+                    alt="profile"
+                    width={25}
+                    height={25}
+                  />
                 </div>
+              )}
+              <a className='font-mono' href="/" prefetch={false}>LOCHMANNWEB</a>
+            </div>
 
                 <div>
                   <svg

@@ -10,9 +10,12 @@ const breakpoints = {
 };
 
 const SplineContainer = styled.div({
-    width: '75%',
-    height: '75vh',
     [`@media (min-width: ${breakpoints.md})`]: {
+        marginTop: '-9rem',
+      },
+      [`@media (min-width: ${breakpoints.lg})`]: {
+        width: '75%',
+        height: '75vh',
         marginTop: '-9rem',
       },
 });

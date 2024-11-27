@@ -1,11 +1,13 @@
 "use client"
 
 import React from 'react'
-import Contact from './components/Contact'
+import ContactBox from './components/ContactBox'
 import Header from './components/Header'
-import MyWork from './components/MyWork'
+import Designemner from './components/Designemner'
 import Tech from './components/Tech'
 import styled from '@emotion/styled';
+import Feedback from '@/app/components/Feedback'
+import Projects from '@/app/components/Projects'
 
 const Container = styled.div({
   display: 'grid',
@@ -14,18 +16,16 @@ const Container = styled.div({
   gap: '50px',
 });
 
-const MyWorkContainer = styled.div({
-  marginTop: '5rem',
-});
-
 const Page = () => {
 
   return (
     <Container> 
       <Header />
+      <Designemner />
       <Tech />
-      <MyWorkContainer><MyWork /></MyWorkContainer>
-      <Contact />
+      <Feedback />
+      <Projects />
+      <ContactBox />
     </Container> 
   )
 }

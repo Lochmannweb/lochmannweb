@@ -1,13 +1,12 @@
 'use client';
 
 import React from 'react';
-import ContactFormular from '../components/Contact/ContactFormular';
-import styled from '@emotion/styled';
-import { ContactPageHeader } from '../data/ContactFormular';  
+import Contact from '../components/Contact'
+import styled from '@emotion/styled'; 
 
 const breakpoints = {
-  md: '768px', // tablet
-  lg: '1024px', // desktop
+  md: '768px', 
+  lg: '1024px', 
 };
 
 const Container = styled.div({
@@ -18,35 +17,13 @@ const Container = styled.div({
     },
   });
 
-const Header = styled.div({
-  fontSize: '30px',
-  paddingBottom: '20px',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '0rem',
-    fontSize: '4rem',
-    fontFamily: 'fantasy',
-  },
-});
-
-const Grid = styled.div({
-  [`@media (min-width: ${breakpoints.md})`]: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-  },
-});
-
 
 function ContactForm() {
 
   return (
     <>
       <Container>
-        <Grid>
-          <Header>{ContactPageHeader.title}</Header>
-          <ContactFormular />
-        </Grid>
+        <Contact />
       </Container>
     </>
   );

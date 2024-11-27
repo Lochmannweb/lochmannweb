@@ -1,8 +1,7 @@
 export const ForsideData = {
-    title1: "Welcome",
-    subheader: "I Develop",
-    subheader2: "Design",
-    subheader3: "websites",
+    title1: "Unique - Thinking - Responsive - Branding",
+    subheader: "Do you have a website in mind?",
+    subheader3: "Let’s make it happen",
     button: "Get started",
 }
 

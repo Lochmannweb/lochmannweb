@@ -1,10 +1,9 @@
-
+"use client"
 
 import React from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@mui/material/styles';
 import { TechData } from '../data/TechData';
-import SplineTech from '@/app/components/SplineTech'
 
 const breakpoints = {
     md: '768px', // tablet
@@ -12,101 +11,113 @@ const breakpoints = {
   };
 
 const Container = styled.div({
-    padding: '20px',
-    display: 'grid',
-    gap: '10px',
-    marginTop: '-10rem',
-    backgroundImage: 'url(/star-bg.png)',
+  padding: '2rem',
     [`@media (min-width: ${breakpoints.md})`]: {
-        marginTop: '-4rem',
-        paddingTop: '10rem',
-        paddingBottom: '10rem',
-        paddingLeft: '16rem',
-        paddingRight: '16rem',
-        gridTemplateColumns: '1fr 1fr',
-        borderTopLeftRadius: '10rem',
-        borderTopRightRadius: '10rem',
-        boxShadow: '0px -41px 82px -59px #292929',
+      margin: 'auto',
       },
-});
-
-const HeaderContainer = styled.div({
-    paddingBottom: '3rem',
 });
 
 const Title = styled.div({
-  fontFamily: 'fantasy',
-    [`@media (min-width: ${breakpoints.md})`]: {
-        fontSize: '40px',
-        marginBottom: '20px',
-      },
+  textAlign: 'center',
+  fontSize: '30px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '40px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
 });
 
-const Header = styled.div({
-  fontFamily: 'monospace',
-    [`@media (min-width: ${breakpoints.md})`]: {
-        fontSize: '18px',
-      },
-});
-
-const TopicContainer = styled.div({
-    display: 'grid',
+const TechContainer = styled.div({
+  display: 'grid',
+  gap: '20px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    gridTemplateColumns: '1fr 1fr',
     gap: '10px',
-    [`@media (min-width: ${breakpoints.md})`]: {
-        gridTemplateColumns: '1fr 1fr',
-      },
+    marginTop: '1rem',
+  },
 });
 
-const Topic = styled.div({
-    display: 'flex',
-    gap: '20px',
-    padding: '10px',
-    alignItems: '',
-    fontSize: '',
-    [`@media (min-width: ${breakpoints.md})`]: {
-        padding: '1rem',
-        gap: '20px',
-      },
+const Tech = styled.div({
+  filter: 'drop-shadow(0 3mm 4mm #000)',
+  background: '#090909',
+  display: 'flex',
+  gap: '30px',
+  padding: '1rem',
+  borderRadius: '20px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    padding: '1rem',
+  },
 });
 
-const TopicTitle = styled.div({
-    fontSize: '',
-    fontFamily: 'monospace',
-    [`@media (min-width: ${breakpoints.md})`]: {
-        fontSize: '20px',
-      },
+const TexhIcon = styled.div({
+  filter: 'drop-shadow(0 3mm 4mm #000)',
+  background: '#090909',
+  borderRadius: '15px',
+  padding: '1rem',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '30px',
+    width: '5rem',
+  },
 });
 
-const TopicContent = styled.div({
-    fontSize: '',
-    fontFamily: 'monospace',
-    [`@media (min-width: ${breakpoints.md})`]: {
-        fontSize: '15px',
-      },
+const TexhTopic = styled.div({
+  background: 'black',
+  borderRadius: '15px',
+  padding: '1rem',
+  width: '13rem',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '20px',
+    width: '17rem',
+  },
 });
 
 function App() {
-  const theme = useTheme();
 
   return (
     <>
     <Container>
-      <div>
-        <SplineTech />
-      </div>
-      <div>
-        <HeaderContainer>
-              <Title className='text-3xl'>{TechData.title}</Title>
-              <Header className='text-sm'>{TechData.subheader}</Header>
-        </HeaderContainer>
-        <TopicContainer>
-            <Topic><TopicTitle>{TechData.UXUI.title}</TopicTitle><TopicContent className='text-sm'>{TechData.UXUI.content}</TopicContent></Topic>
-            <Topic><TopicTitle>{TechData.AIML.title}</TopicTitle><TopicContent className='text-sm'>{TechData.AIML.content}</TopicContent></Topic>
-            <Topic><TopicTitle>{TechData.Security.title}</TopicTitle><TopicContent className='text-sm'>{TechData.Security.content}</TopicContent></Topic>
-            <Topic ><TopicTitle>{TechData.CICD.title}</TopicTitle><TopicContent className='text-sm'>{TechData.CICD.content}</TopicContent></Topic>
-        </TopicContainer>
-      </div>
+      <Title>
+        {TechData.title}
+      </Title>
+      <TechContainer>
+        <Tech>
+          <TexhIcon>
+            {TechData.Js.title}
+          </TexhIcon>
+          <TexhTopic>
+            {TechData.Js.content}
+          </TexhTopic>
+        </Tech>
+
+        <Tech>
+          <TexhIcon>
+            {TechData.Js.title}
+          </TexhIcon>
+          <TexhTopic>
+            {TechData.Js.content}
+          </TexhTopic>
+        </Tech>
+
+        <Tech>
+          <TexhIcon>
+            {TechData.Js.title}
+          </TexhIcon>
+          <TexhTopic>
+            {TechData.Js.content}
+          </TexhTopic>
+        </Tech>
+
+        <Tech>
+          <TexhIcon>
+            {TechData.Js.title}
+          </TexhIcon>
+          <TexhTopic>
+            {TechData.Js.content}
+          </TexhTopic>
+        </Tech>
+      </TechContainer>
     </Container>
+    <button>See All Services</button>
     </>
   );
 }

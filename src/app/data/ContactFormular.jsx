@@ -1,12 +1,12 @@
 export const ContactFormularData = {
-    title: "Let’s make",
-    span: "UNIQUE",
-    title2: "things together",
-    fullname: "Full name",
+    title: "Take the first step into your website",
+    title2: "let’s work together so your dreams can come true",
+    companyName: "Den eksisterende hjemmeside",
+    fullName: "Full Name",
     phonenr: "Phone Number",
     mailadress: "Mail adress",
     message: "Message",
-    button: "Send",
+    button: "Let's begin",
 }
 
 export const ContactPageHeader = {

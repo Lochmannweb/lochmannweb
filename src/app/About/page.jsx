@@ -1,15 +1,11 @@
 "use client"
 
 import React from 'react'
-import About from '../components/About'
 import styled from '@emotion/styled'; 
+import MyStory from '../components/About/MyStory';
+import Expertise from '../components/About/Expertise';
 
 const Container = styled.div({
-    display: '',
-    gap: '0.5rem',
-    padding: '',
-    marginTop: '',
-    marginBottom: '',
 })
 
 const Aboutpage = () => {
@@ -18,7 +14,8 @@ const Aboutpage = () => {
   return (
     <>
       <Container>
-          <About />
+          <MyStory />
+          <Expertise />
       </Container>
     </>
   )
