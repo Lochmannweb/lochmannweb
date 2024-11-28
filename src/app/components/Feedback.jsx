@@ -68,6 +68,7 @@ const breakpoints = {
     fontSize: '20px',
     marginTop: '10px',
     marginBottom: '5px',
+    color: '#A96F59',
     [`@media (min-width: ${breakpoints.md})`]: {
   },
   });
@@ -78,26 +79,40 @@ const breakpoints = {
   },
   });
 
+  const HighlightedText = styled.span({
+    color: '#A96F59', 
+  });
+
 function Feedback() {
+  const highlightWords = ["choose", "me"]; 
+  const subheaderText = FeedbackData.Title.split(" ").map((word, index) => {
+    const cleanWord = word.replace(/[.,!?]/g, ""); 
+    return highlightWords.includes(cleanWord) ? (
+      <HighlightedText key={index}>{word}</HighlightedText>
+    ) : (
+      word
+    );
+  }).reduce((prev, curr) => [prev, ' ', curr]);
+
   return (
     <>
       <Container>
-        <Title>{FeedbackData.Title}</Title>
+        <Title>{subheaderText}</Title>
           <FeedBackContainer>
               <FeedBack>
-                  <IMG src="" alt="" />
+                  <IMG><img src="/project-management_1.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Tech.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Tech.feedback}</FeddbackContent>
               </FeedBack>
   
               <FeedBack>
-                  <IMG src="" alt="" />
+              <IMG><img src="/chat_1.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Feedback.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Feedback.feedback}</FeddbackContent>
               </FeedBack>
   
               <FeedBack>
-                  <IMG src="" alt="" />
+              <IMG><img src="/lowest-price.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Offer.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Offer.feedback}</FeddbackContent>
               </FeedBack>

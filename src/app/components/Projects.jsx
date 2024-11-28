@@ -54,7 +54,7 @@ const Button = styled.div({
     width: '12%',
     padding: '1rem',
     borderRadius: '15px',
-    marginTop: '0.5rem',
+    marginTop: '2rem',
   }
 });
 
@@ -73,7 +73,7 @@ function LatestProjects() {
               <p>Rubrik</p>
             </div>
         </Container>
-      <Button>See All Projects</Button>
+      <Button><a href="/MyWork">See All Projects</a></Button>
     </div> 
     </>
   )

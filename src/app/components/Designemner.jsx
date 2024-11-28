@@ -15,7 +15,7 @@ const Container = styled.div({
     margin: 'auto',
     [`@media (min-width: ${breakpoints.md})`]: {
         display: 'flex',
-        marginTop: '2rem',
+        margin: '0',
     },
 });
 

@@ -1,7 +1,7 @@
 export const TechData = {
     title: "My Expertise",
     Js: {
-        title: "icon",
+        title: "Js",
         content: "JavaScript",
     },
     TW: {

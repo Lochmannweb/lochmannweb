@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled from '@emotion/styled';
-import { useTheme } from '@mui/material/styles';
 import { TechData } from '../data/TechData';
 
 const breakpoints = {
@@ -94,13 +93,26 @@ const Button = styled.div({
   }
 });
 
+const HighlightedText = styled.span({
+  color: '#A96F59', 
+});
+
 function App() {
+  const highlightWords = ["Expertise"]; 
+  const subheaderText = TechData.title.split(" ").map((word, index) => {
+    const cleanWord = word.replace(/[.,!?]/g, ""); 
+    return highlightWords.includes(cleanWord) ? (
+      <HighlightedText key={index}>{word}</HighlightedText>
+    ) : (
+      word
+    );
+  }).reduce((prev, curr) => [prev, ' ', curr]);
 
   return (
     <>
     <Container>
       <Title>
-        {TechData.title}
+        {subheaderText}
       </Title>
       <TechContainer>
         <Tech>
@@ -114,7 +126,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-            {TechData.TW.title}
+            <img src="/tw.svg" alt="tw" />
           </TexhIcon>
           <TexhTopic>
             {TechData.TW.content}
@@ -123,7 +135,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-            {TechData.Ani.title}
+          <img src="/" alt="" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Ani.content}
@@ -132,7 +144,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-            {TechData.Kode.title}
+          <img src="/react.png" alt="react" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Kode.content}
@@ -140,7 +152,7 @@ function App() {
         </Tech>
       </TechContainer>
     </Container>
-    <Button>See All Services</Button>
+    <Button><a href="/About">See All Services</a></Button>
     </>
   );
 }

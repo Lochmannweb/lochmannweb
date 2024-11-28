@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { ForsideData } from "../data/ForsideData";
 import styled from '@emotion/styled';
@@ -30,25 +28,37 @@ const HeaderTitle = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '80px',
     lineHeight: '5rem',
-    paddingRight: '20rem',
+    paddingRight: '55rem',
   },
 });
 
+const HighlightedText = styled.span({
+  color: '#A96F59', 
+});
+
 export default function Header() {
+  const highlightWords = ["website", "happen"]; // Erstat med de ord, du vil farve
+  const subheaderText = ForsideData.subheader.split(" ").map((word, index) => {
+    const cleanWord = word.replace(/[.,!?]/g, ""); // Fjern tegnsætning, hvis nødvendigt
+    return highlightWords.includes(cleanWord) ? (
+      <HighlightedText key={index}>{word}</HighlightedText>
+    ) : (
+      word
+    );
+  }).reduce((prev, curr) => [prev, ' ', curr]);
 
   return (
     <>
     <AbstractHeader />
     <Container>
-        <HeaderTitle className="text-4xl">
-          {ForsideData.subheader} <br /> {ForsideData.subheader3}
+        <HeaderTitle>
+          {subheaderText}
         </HeaderTitle>
         <Designemner />
     </Container>
     </>
   );
 }
-
 
 
 
