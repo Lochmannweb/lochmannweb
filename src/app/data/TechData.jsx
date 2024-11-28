@@ -1,19 +1,19 @@
 export const TechData = {
     title: "My Expertise",
     Js: {
-        title: "Js",
+        title: "icon",
         content: "JavaScript",
     },
     TW: {
-        title: "/Tailwind.png",
+        title: "icon",
         content: "Tailwind CSS / CSS",
     },
     Ani: {
-        title: "Spline",
+        title: "icon",
         content: "Spline",
     },
     Kode: {
-        title: "/REACT-icon",
+        title: "icon",
         content: "REACT",
     },
 }

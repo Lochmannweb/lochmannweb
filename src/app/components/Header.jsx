@@ -1,7 +1,10 @@
+
+
 import React from "react";
 import { ForsideData } from "../data/ForsideData";
 import styled from '@emotion/styled';
 import AbstractHeader from './AbstractHeader';
+import Designemner from '../components/Designemner'
 
 const breakpoints = {
   md: '768px', 
@@ -17,19 +20,13 @@ const Container = styled.div({
     paddingLeft: '20rem',
     textAlign: 'start',
     width: '100%',
+    gap: '20px',
   },
 });
 
-// const Title = styled.div({
-//   fontSize: '15px',
-//   color: '#CA8669',
-//   [`@media (min-width: ${breakpoints.md})`]: {
-//     fontSize: '15px',
-//   },
-// });
-
 const HeaderTitle = styled.div({
   fontFamily: 'fantasy',
+  marginBottom: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '80px',
     lineHeight: '5rem',
@@ -43,10 +40,10 @@ export default function Header() {
     <>
     <AbstractHeader />
     <Container>
-        {/* <Title>{ForsideData.title1}</Title> */}
         <HeaderTitle className="text-4xl">
           {ForsideData.subheader} <br /> {ForsideData.subheader3}
         </HeaderTitle>
+        <Designemner />
     </Container>
     </>
   );

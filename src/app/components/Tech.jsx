@@ -20,10 +20,13 @@ const Container = styled.div({
 const Title = styled.div({
   textAlign: 'center',
   fontSize: '30px',
+  fontWeight: 'bold',
+  marginBottom: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
     textAlign: 'center',
     fontWeight: 'bold',
+    marginBottom: '5rem',
   },
 });
 
@@ -32,7 +35,7 @@ const TechContainer = styled.div({
   gap: '20px',
   [`@media (min-width: ${breakpoints.md})`]: {
     gridTemplateColumns: '1fr 1fr',
-    gap: '10px',
+    gap: '30px',
     marginTop: '1rem',
   },
 });
@@ -41,11 +44,13 @@ const Tech = styled.div({
   filter: 'drop-shadow(0 3mm 4mm #000)',
   background: '#090909',
   display: 'flex',
-  gap: '30px',
-  padding: '1rem',
+  gap: '20px',
+  padding: '0.5rem',
   borderRadius: '20px',
   [`@media (min-width: ${breakpoints.md})`]: {
     padding: '1rem',
+    width: '36rem',
+    alignContent: 'center',
   },
 });
 
@@ -55,8 +60,9 @@ const TexhIcon = styled.div({
   borderRadius: '15px',
   padding: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '30px',
+    fontSize: '20px',
     width: '5rem',
+    textAlign: 'center',
   },
 });
 
@@ -67,8 +73,25 @@ const TexhTopic = styled.div({
   width: '13rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '20px',
-    width: '17rem',
+    width: '29rem',
   },
+});
+
+const Button = styled.div({
+  background: '#59372A',
+  margin: 'auto',
+  padding: '0.5rem',
+  borderRadius: '20px',
+  textAlign: 'center',
+  marginTop: '-3rem',
+  width: '50%',
+  filter: 'drop-shadow(0 3mm 4mm #000)',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    width: '12%',
+    padding: '1rem',
+    borderRadius: '15px',
+    marginTop: '-3rem',
+  }
 });
 
 function App() {
@@ -91,33 +114,33 @@ function App() {
 
         <Tech>
           <TexhIcon>
-            {TechData.Js.title}
+            {TechData.TW.title}
           </TexhIcon>
           <TexhTopic>
-            {TechData.Js.content}
+            {TechData.TW.content}
           </TexhTopic>
         </Tech>
 
         <Tech>
           <TexhIcon>
-            {TechData.Js.title}
+            {TechData.Ani.title}
           </TexhIcon>
           <TexhTopic>
-            {TechData.Js.content}
+            {TechData.Ani.content}
           </TexhTopic>
         </Tech>
 
         <Tech>
           <TexhIcon>
-            {TechData.Js.title}
+            {TechData.Kode.title}
           </TexhIcon>
           <TexhTopic>
-            {TechData.Js.content}
+            {TechData.Kode.content}
           </TexhTopic>
         </Tech>
       </TechContainer>
     </Container>
-    <button>See All Services</button>
+    <Button>See All Services</Button>
     </>
   );
 }

@@ -1,154 +1,10 @@
-// 'use client';
-
-// import Image from 'next/image';
-// import React, { useState } from 'react';
-// import styled from '@emotion/styled';
-// import { useTheme } from '@mui/material/styles';
-// import { useMediaQuery } from '@mui/material';
-
-// const breakpoints = {
-//   md: '768px', 
-//   lg: '1024px', 
-// };
-
-// const Nav = styled.div({
-//   display: 'flex',
-//   justifyContent: 'center',
-// });
-
-// const Container = styled.div({
-//   display: 'flex', 
-//   justifyContent: 'space-between',
-//   padding: '1rem',
-//   backgroundColor: 'black',
-//   position: 'fixed',
-//   bottom: '0', 
-//   width: '100%',
-//   zIndex: '50',
-//   [`@media (min-width: ${breakpoints.md})`]: {
-//     top: '0', 
-//     width: '70%',
-//     bottom: '', 
-//     height: '4rem',
-//     alignItems: 'center',
-//     padding: '2rem',
-//     marginTop: '2rem',
-//   },
-// });
-
-// const OpenMenu = styled.div({
-//   transform: props => (props.menuOpen ? 'translateX(0)' : 'translateX(100%)'),
-//   transition: 'transform 0.3s ease',
-//   position: 'fixed',
-//   left: 0,
-//   bottom: 0,
-//   padding: '1rem',
-//   backgroundColor: 'black', 
-//   width: '100%',
-//   paddingBottom: '15px',
-//   zIndex: 50,
-//   [`@media (min-width: ${breakpoints.md})`]: {
-//     top: '0',
-//     gap: '1rem',
-//     bottom: '',
-//     right: '16rem',
-//     width: '35%',
-//     height: '3.5rem',
-//     left: 'inherit',
-//     display: 'flex',
-//     justifyContent: 'end',
-//     alignItems: 'center',
-//     marginTop: '2.5rem',
-//   },
-//   [`@media (min-width: ${breakpoints.lg})`]: {
-//     top: '0',
-//     gap: '1rem',
-//     bottom: '',
-//     right: '19rem',
-//     width: '35%',
-//     height: '3.5rem',
-//     left: 'inherit',
-//     display: 'flex',
-//     justifyContent: 'end',
-//     alignItems: 'center',
-//     marginTop: '2.5rem',
-//   },
-// });
-
-
-// const Links = styled.div({
-//   display: 'grid',
-//   paddingBottom: '20px',
-//   gap: '10px',
-//   // fontFamily: 'monospace',
-//   [`@media (min-width: ${breakpoints.md})`]: {
-//     display: 'flex',
-//     paddingTop: '1rem',
-//     gap: '30px',
-//   },
-// });
-
-// const OpenMenuLogoAndIcon = styled.div({
-//   display: 'flex',
-//   justifyContent: 'space-between',
-// });
-
-// const LinksContainer = styled.div({
-//   display: 'flex',
-//   justifyContent: 'space-between',
-// });
-
-
-// function App() {
-//   const theme = useTheme();
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-//   const toggleMenu = () => {
-//     setMenuOpen(!menuOpen);
-//     console.log('Menu state changed to:', !menuOpen); 
-//   };
-
-//   return (
-//     <>
-//       {/* Navigation Bar */}
-//       <Nav>
-//         <Container>
-//           <div className='flex gap-2'>
-//           {!isMobile && (
-//             <div>
-//               <Image
-//                 src="/logo.png"
-//                 alt="profile"
-//                 width={40}
-//                 height={40}
-//               />
-//             </div>
-//           )}
-//             <a className='font-mono flex items-center md:text-lg' href="/" prefetch={false}><strong>LOCHMANNWEB</strong></a>
-//           </div>
-
-//           <div className='flex gap-10'>
-//             <a href='/' prefetch={false}>Journey</a>
-//             <a href='/' prefetch={false}>Skills</a>
-//             <a href='/' prefetch={false}>Projects</a>
-//             <a href="/Contact"><img src="/contact-knap.png" alt="knap" width={100} height={100} /></a>
-//           </div>
-//         </Container>
-//       </Nav>
-//     </>
-//   );
-// }
-
-// export default App;
-
-
-
 'use client';
 
 import Image from 'next/image';
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const breakpoints = {
   md: '768px', 
@@ -166,21 +22,16 @@ const Container = styled.div({
   padding: '1rem',
   backgroundColor: 'black',
   position: 'fixed',
-  bottom: '0', 
   width: '100%',
   zIndex: '50',
+  bottom: '0',
   [`@media (min-width: ${breakpoints.md})`]: {
     top: '0', 
-    width: '70%',
     bottom: '', 
-    height: '4rem',
+    height: '6rem',
     alignItems: 'center',
-    padding: '2rem',
-    backgroundColor: '#0b0b0b',
-    borderColor: '#CA8669',
-    borderWidth: 'thin',
-    borderRadius: '50px',
-    marginTop: '2rem',
+    padding: '3rem',
+    backgroundColor: '#060606',
   },
 });
 
@@ -232,11 +83,11 @@ const Links = styled.div({
   display: 'grid',
   paddingBottom: '20px',
   gap: '10px',
-  // fontFamily: 'monospace',
   [`@media (min-width: ${breakpoints.md})`]: {
     display: 'flex',
     paddingTop: '1rem',
     gap: '30px',
+    alignItems: 'center',
   },
 });
 
@@ -253,6 +104,9 @@ const LinksContainer = styled.div({
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -261,32 +115,66 @@ function App() {
 
   return (
     <>
-      {/* Navigation Bar */}
-      <Nav>
-        <Container>
-          <div className='flex gap-2 items-center'>
-          {(
-            <div>
-              <Image
-                src="/logo.png"
-                alt="profile"
-                width={25}
-                height={25}
-              />
+   {/* Desktop version */}
+    {(!isMobile &&
+        <Nav>
+          <Container>
+            <div className='flex gap-2 items-center'>
+            {(
+              <div>
+                <Image
+                  src="/logo.png"
+                  alt="profile"
+                  width={25}
+                  height={25}
+                />
+              </div>
+            )}
+              <a className='' href="/" prefetch={false}>LOCHMANNWEB</a>
             </div>
-          )}
-            <a className='font-mono' href="/" prefetch={false}>LOCHMANNWEB</a>
-          </div>
+  
+            <LinksContainer>
+                <ul>
+                  <Links>
+                    <a className='text-sm md:text-md' href="/About" prefetch={false}>Journey & Expertise</a>
+                    <a className='text-sm md:text-md' href="/MyWork" prefetch={false}>Proces & Projects</a>
+                    <a href="/Contact" prefetch={false}><img src="/kontakt-knap.png" alt="knap" width={150} height={50} /></a>
+                  </Links>
+                </ul>
+            </LinksContainer>
+          </Container>
+        </Nav>
+      )}
 
-          <div className='flex items-center'>
-            <button className="grid gap-1" onClick={toggleMenu}>
-              <div className="decoration-white w-16 ml-auto"><hr /></div>
-              <div className="decoration-white w-10 ml-auto"><hr /></div>
-              <div className="decoration-white w-5 ml-auto"><hr /></div>
-            </button>
-          </div>
-        </Container>
-      </Nav>
+    
+    {/* Mobil version */}
+      {(!!isTablet &&
+        <Nav>
+          <Container>
+            <div className='flex gap-2 items-center'>
+            {(
+              <div>
+                <Image
+                  src="/logo.png"
+                  alt="profile"
+                  width={25}
+                  height={25}
+                />
+              </div>
+            )}
+              <a className='font-mono' href="/" prefetch={false}>LOCHMANNWEB</a>
+            </div>
+  
+            <div className='flex items-center'>
+              <button className="grid gap-1" onClick={toggleMenu}>
+                <div className="decoration-white w-16 ml-auto"><hr /></div>
+                <div className="decoration-white w-10 ml-auto"><hr /></div>
+                <div className="decoration-white w-5 ml-auto"><hr /></div>
+              </button>
+            </div>
+          </Container>
+        </Nav>
+      )}
 
       {/* Open Menu */}
       {menuOpen && (

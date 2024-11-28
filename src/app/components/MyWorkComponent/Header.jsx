@@ -13,16 +13,9 @@ const Container = styled.div({
     display: 'grid',
     textAlign: 'start',
     gap: '10px',
+    marginBottom: '3rem',
     [`@media (min-width: ${breakpoints.md})`]: {
       marginTop: '8rem',
-    },
-});
-
-const Title = styled.div({
-    fontSize: '15px',
-    [`@media (min-width: ${breakpoints.md})`]: {
-      fontSize: '20px',
-      margin: 'auto',
     },
 });
 
@@ -41,12 +34,16 @@ const Header = styled.div({
 });
 
 const Content = styled.div({
-  fontSize: '15px',
+  fontSize: '12px',
   display: 'grid',
   gap: '0rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     justifyContent: 'center',
     textAlign: 'center',
+    paddingLeft: '20rem',
+    paddingRight: '20rem',
+    fontSize: '15px',
+    marginTop: '-1rem',
   },
 });
 
@@ -54,21 +51,12 @@ const Aboutpage = () => {
 
   return (
     <Container>
-      <Title>{MyWorkHeader.title}</Title>
       <Header>{MyWorkHeader.header}</Header>
-      <div>
-        <Content>
-          <div>
-            {MyWorkHeader.content1}
-          </div>
-          <div>
-            {MyWorkHeader.content2}
-          </div>
-          <div>
-            {MyWorkHeader.content3}
-          </div>
-        </Content>
-      </div>
+      <Content>
+        {MyWorkHeader.content1}
+        {MyWorkHeader.content2}
+        {MyWorkHeader.content3}
+      </Content>
     </Container>
   )
 }

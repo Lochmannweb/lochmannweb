@@ -3,7 +3,6 @@
 import React from 'react'
 import ContactBox from './components/ContactBox'
 import Header from './components/Header'
-import Designemner from './components/Designemner'
 import Tech from './components/Tech'
 import styled from '@emotion/styled';
 import Feedback from '@/app/components/Feedback'
@@ -21,7 +20,6 @@ const Page = () => {
   return (
     <Container> 
       <Header />
-      <Designemner />
       <Tech />
       <Feedback />
       <Projects />

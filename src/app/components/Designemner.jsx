@@ -10,14 +10,12 @@ const breakpoints = {
   };
 
 const Container = styled.div({
-    margin: 'auto',
     gap: '1rem',
     display: 'grid',
+    margin: 'auto',
     [`@media (min-width: ${breakpoints.md})`]: {
         display: 'flex',
-        paddingLeft: '10rem',
-        paddingRight: '10rem',
-        marginTop: '-12rem',
+        marginTop: '2rem',
     },
 });
 
@@ -25,8 +23,8 @@ const Emner = styled.div({
     filter: 'drop-shadow(0 3mm 4mm #000)',
     background: '#090909',
     borderRadius: '15px',
-    padding: '0.8rem',
-    width: '20rem',
+    padding: '0.5rem',
+    width: '10rem',
     [`@media (min-width: ${breakpoints.md})`]: {
         padding: '0.7rem',
         width: '12rem',
@@ -39,7 +37,7 @@ const Emner = styled.div({
 const Topic = styled.div({
   textAlign: 'center',
   backgroundColor: 'black',
-  padding: '1rem',
+  padding: '0.5rem',
   boxShaodw: 'inset 0 0 10px #fff',
   borderRadius: '10px',
   [`@media (min-width: ${breakpoints.md})`]: {

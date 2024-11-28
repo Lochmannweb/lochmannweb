@@ -20,7 +20,7 @@ const Aboutpage = () => {
       <Container>
         <Header />  
         <StepByStep />
-        <MyWork />
+        {/* <MyWork /> */}
       </Container>
     </>
   )

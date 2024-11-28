@@ -6,20 +6,29 @@ import React from 'react'
 import styled from '@emotion/styled';
 
 const breakpoints = {
-  md: '768px', // tablet
-  lg: '1024px', // desktop
+  md: '768px', 
+  lg: '1024px',
 };
 
 const Container = styled.div({
-
+  background: '#090909',
+  margin: 'auto',
+  filter: 'drop-shadow(0 3mm 4mm #000)',
     [`@media (min-width: ${breakpoints.md})`]: {
       display: 'flex',
-      justifyContent: 'space-evenly',
+      justifyContent: 'center',
       marginTop: '10rem',
+      width: '40%',
+      borderRadius: '20px',
+      padding: '1rem',
+      gap: '2rem',
     },
 });
 
 const ImageContainer = styled.div({
+  background: '#060606',
+  filter: 'drop-shadow(0 3mm 4mm #000)',
+  margin: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
 
   },
@@ -27,7 +36,9 @@ const ImageContainer = styled.div({
 
 const Content = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
-    width: '15%',
+    width: '50%',
+    marginTop: '3rem',
+
   },
 });
 

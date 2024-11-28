@@ -5,81 +5,76 @@ import React from 'react'
 import styled from '@emotion/styled';
 
 const breakpoints = {
-    md: '768px', // tablet
-    lg: '1024px', // desktop
+    md: '768px', 
+    lg: '1024px', 
   };
 
 const Container = styled.div({
     display: 'grid',
-    textAlign: 'center',
-    marginTop: '5rem',
     gap: '1rem',
-});
-
-const ProcesTitle = styled.div({
-  fontSize: '',
-  borderRadius: '50px',
-  borderWidth: 'thin',
-  padding: '1rem',
-  // margin: '1rem',
-  borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
-  [`@media (min-width: ${breakpoints.md})`]: {
-    marginBottom: '3rem',
-  },
-});
-
-const StepByStepTitle = styled.div({
-  fontSize: '20px',
-  fontFamily: 'fantasy',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '35px',
-  },
+    margin: 'auto',
+    [`@media (min-width: ${breakpoints.md})`]: {
+        width: '60%',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '2rem',
+        marginTop: '2rem'
+    },
 });
 
 const StepByStepContainer = styled.div({
     display: 'grid',
     justifyContent: 'center',
-    borderRadius: '50px',
-    borderWidth: 'thin',
-    paddingLeft: '0.6rem',
-    paddingRight: '0.6rem',
-    paddingTop: '2rem',
-    paddingBottom: '2rem',
-    // margin: '1rem',
-    borderImage: 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1', 
+    filter: 'drop-shadow(0 3mm 4mm #000)',
+    background: '#090909',
+    borderRadius: '25px',
+    textAlign: 'center',
+    padding: '2rem',
     [`@media (min-width: ${breakpoints.md})`]: {
-        paddingLeft: '5rem',
-        paddingRight: '5rem',
+        padding: '2rem',
       },
 });
 
+const Icon = styled.div({
+    filter: 'drop-shadow(0 3mm 4mm #000)',
+    background: 'black',
+    padding: '1rem',
+    width: '25%',
+    margin: 'auto',
+    borderRadius: '10px',
+    marginBottom: '1rem',
+    [`@media (min-width: ${breakpoints.md})`]: {
+        width: '15%',
+      },
+  });
+
 const Title = styled.div({
-    fontSize: '20px',
+    fontSize: '25px',
     fontFamily: 'emoji',
     [`@media (min-width: ${breakpoints.md})`]: {
-        fontSize: '40px',
+        fontSize: '25px',
       },
 });
 
 const Content = styled.div({
-    fontSize: '13px',
+    fontSize: '12px',
     [`@media (min-width: ${breakpoints.md})`]: {
-        fontSize: '20px',
+        fontSize: '15px',
       },
   });
 
 const Button = styled.div({
     borderRadius: '50px',
-    borderWidth: 'thin',
-    borderColor: 'white',
+    backgroundColor: '#59372A',
     width: '50%',
     padding: '0.3rem',
     margin: 'auto',
-    marginTop: '0.3rem',
+    marginTop: '3rem',
     marginBottom: '3rem',
+    textAlign: 'center',
+    filter: 'drop-shadow(0 3mm 4mm #000)',
     [`@media (min-width: ${breakpoints.md})`]: {
-        width: '20%',
-        padding: '0.8rem',
+        width: '13%',
+        padding: '0.5rem',
         fontSize: '20px',
       },
   });
@@ -87,12 +82,10 @@ const Button = styled.div({
 const Aboutpage = () => {
 
   return (
+    <>
     <Container>
-        <ProcesTitle>
-            <StepByStepTitle>{StepByStep.title}</StepByStepTitle>
-        </ProcesTitle>
-
         <StepByStepContainer> 
+            <Icon>
             <svg 
                 version="1.0" 
                 fill="white"
@@ -105,11 +98,13 @@ const Aboutpage = () => {
                     <g fill="#fff" stroke="#000000FF">
                         <path d="M 96.500 2.082 C 92.965 2.599 87.008 4.668 82.000 7.119 C 73.863 11.101 72.325 12.458 45.976 38.889 C 15.721 69.239 12.473 73.486 7.003 89.852 C -8.004 134.752 15.364 212.306 67.310 290.000 C 126.171 378.037 208.809 448.566 300.500 489.021 C 345.186 508.738 390.631 516.880 417.323 509.954 C 436.662 504.935 442.210 500.977 472.504 470.587 C 500.062 442.941 505.649 436.003 509.090 425.150 C 511.733 416.816 511.998 404.682 509.704 397.000 C 506.004 384.608 502.670 380.613 462.031 339.876 C 424.145 301.900 423.354 301.181 414.804 296.990 C 406.901 293.115 405.249 292.682 396.664 292.233 C 385.075 291.627 376.632 293.853 367.065 300.037 C 363.430 302.386 351.540 313.201 339.275 325.315 L 317.837 346.488 308.168 341.497 C 258.069 315.637 191.015 247.704 169.982 201.500 L 167.251 195.500 189.417 173.000 C 201.609 160.625 213.026 148.214 214.788 145.419 C 224.678 129.734 225.011 111.833 215.724 95.000 C 211.390 87.143 136.810 12.552 129.000 8.262 C 118.502 2.496 107.709 0.444 96.500 2.082 M 114.554 29.467 C 118.244 31.307 128.792 41.275 156.087 68.717 C 195.357 108.197 197.000 110.248 197.000 119.793 C 197.000 129.087 193.889 133.288 167.963 159.000 C 154.931 171.925 143.478 184.046 142.512 185.936 C 139.332 192.159 140.766 199.618 147.898 213.958 C 175.849 270.155 241.803 336.128 300.283 366.386 C 311.509 372.194 313.739 373.000 318.583 373.000 C 321.693 373.000 325.495 372.292 327.300 371.376 C 329.060 370.483 341.300 359.093 354.500 346.066 C 381.035 319.878 384.339 317.498 394.000 317.619 C 397.620 317.665 401.038 318.465 404.000 319.961 C 407.046 321.499 420.191 333.905 444.695 358.367 C 484.326 397.930 485.970 400.013 485.990 410.663 C 486.008 420.058 482.291 425.130 455.500 452.265 C 441.443 466.503 429.512 477.727 426.702 479.358 C 414.879 486.216 400.629 488.771 384.005 487.013 C 342.994 482.679 294.757 462.730 240.500 427.666 C 181.078 389.264 125.754 333.431 84.766 270.500 C 58.617 230.352 40.212 189.561 31.298 152.000 C 28.843 141.654 28.568 138.644 28.556 122.000 C 28.544 104.238 28.651 103.230 31.238 96.720 C 32.720 92.991 35.500 87.591 37.415 84.720 C 42.953 76.418 88.622 31.511 94.000 29.079 C 100.390 26.189 108.280 26.338 114.554 29.467 "/></g>
             </svg>
+            </Icon>
             <Title>{StepByStep.contact.title}</Title>
             <Content>{StepByStep.contact.content}</Content>
         </StepByStepContainer>
 
         <StepByStepContainer> 
+            <Icon>
             <svg 
                 version="1.0" 
                 fill="white"
@@ -122,11 +117,13 @@ const Aboutpage = () => {
                     <g fill="#fff" stroke="#000000FF">
                         <path d="M 387.500 17.559 C 386.400 17.812 383.025 18.504 380.000 19.095 C 376.975 19.687 370.675 21.976 366.000 24.182 L 357.500 28.193 215.408 170.347 L 73.316 312.500 45.053 397.929 C 18.229 479.010 16.848 483.549 17.913 487.105 C 19.507 492.423 24.097 496.000 29.327 496.000 C 32.121 496.000 61.422 486.713 118.000 467.895 L 202.500 439.790 343.024 299.145 C 490.989 151.054 487.100 155.178 492.849 140.242 C 495.228 134.063 495.444 132.248 495.444 118.500 C 495.444 104.752 495.228 102.937 492.849 96.758 C 491.422 93.051 488.735 87.433 486.877 84.276 C 482.999 77.682 444.963 38.432 435.500 31.259 C 428.660 26.074 419.460 21.480 411.768 19.411 C 406.269 17.932 390.956 16.763 387.500 17.559 M 380.746 133.246 C 405.636 158.131 426.000 178.944 426.000 179.498 C 426.000 180.051 374.250 232.252 311.000 295.500 L 196.000 410.497 149.751 364.249 L 103.503 318.000 218.500 203.000 C 281.748 139.750 333.946 88.000 334.494 88.000 C 335.043 88.000 355.856 108.361 380.746 133.246 M 412.277 46.821 C 417.462 49.378 422.347 53.775 441.575 73.195 C 466.228 98.093 468.133 100.685 470.287 112.270 C 471.673 119.723 470.215 128.997 466.444 136.704 C 464.763 140.141 460.211 145.882 454.423 151.867 L 445.108 161.500 398.816 115.261 L 352.525 69.022 360.512 60.930 C 375.015 46.236 382.398 42.709 397.277 43.365 C 404.576 43.687 407.102 44.269 412.277 46.821 M 111.937 442.855 C 78.767 453.914 51.440 462.773 51.210 462.543 C 50.833 462.166 89.583 344.700 90.766 342.633 C 91.039 342.156 109.484 359.987 131.754 382.258 L 172.246 422.749 111.937 442.855 "/></g>
             </svg>
+            </Icon>
             <Title>{StepByStep.tilbudKontrakt.title}</Title>
             <Content>{StepByStep.tilbudKontrakt.content}</Content>
         </StepByStepContainer>
 
         <StepByStepContainer> 
+            <Icon>
             <svg 
                version="1.0" 
                fill="white"
@@ -151,11 +148,13 @@ const Aboutpage = () => {
                 <g fill="#fff" stroke="#000000FF">
                 <path d="M 12.315 194.093 C 7.925 195.376 3.258 200.327 1.986 205.053 C -0.150 212.986 4.863 221.757 12.791 223.959 C 18.255 225.476 219.556 225.384 224.101 223.861 C 236.904 219.573 238.887 203.899 227.677 195.592 C 224.858 193.503 224.691 193.500 120.177 193.331 C 57.987 193.231 14.207 193.540 12.315 194.093 "/></g>
             </svg>
+            </Icon>
             <Title>{StepByStep.planlægning.title}</Title>
             <Content>{StepByStep.planlægning.content}</Content>
         </StepByStepContainer>
 
         <StepByStepContainer> 
+            <Icon>
             <svg 
                 version="1.0" 
                 fill="white"
@@ -172,11 +171,13 @@ const Aboutpage = () => {
                 <g fill="#fff" stroke="#000000FF">
                 <path d="M 123.628 151.498 C 119.049 152.677 115.979 155.525 72.810 198.627 C 47.541 223.857 25.996 246.170 24.933 248.210 C 22.400 253.073 22.398 260.921 24.929 265.790 C 25.989 267.830 47.702 290.269 73.179 315.653 C 117.403 359.717 119.714 361.850 124.217 362.775 C 131.873 364.347 139.845 362.034 144.702 356.831 C 149.827 351.343 151.466 341.463 148.455 334.218 C 147.413 331.711 134.960 318.530 110.223 293.750 L 73.536 257.000 110.223 220.250 C 134.960 195.470 147.413 182.289 148.455 179.782 C 149.305 177.737 150.000 174.010 150.000 171.500 C 150.000 157.383 137.521 147.918 123.628 151.498 "/></g>
             </svg>
+            </Icon>
             <Title>{StepByStep.udvikling.title}</Title>
             <Content>{StepByStep.udvikling.content}</Content>
         </StepByStepContainer>
 
         <StepByStepContainer> 
+            <Icon>
             <svg 
             version="1.0" 
             fill="white"
@@ -197,11 +198,13 @@ const Aboutpage = () => {
                 <g fill="#fff" stroke="#000000FF">
                 <path d="M 122.704 282.425 C 114.038 284.755 108.677 291.855 108.677 301.000 C 108.677 310.574 114.597 317.890 123.970 319.900 C 131.131 321.436 249.947 321.419 257.116 319.882 C 260.778 319.096 263.500 317.673 266.255 315.104 C 277.588 304.532 272.279 285.370 257.116 282.118 C 249.227 280.426 129.118 280.700 122.704 282.425 "/></g>
             </svg>
+            </Icon>
             <Title>{StepByStep.testAfWebsite.title}</Title>
             <Content>{StepByStep.testAfWebsite.content}</Content>
         </StepByStepContainer>
 
         <StepByStepContainer> 
+            <Icon>
             <svg 
             version="1.0" 
             fill="white"
@@ -224,12 +227,13 @@ const Aboutpage = () => {
                 <g fill="#fff" stroke="#000000FF">
                 <path d="M 336.589 337.077 C 332.414 342.039 333.558 348.686 339.079 351.541 C 345.746 354.989 353.000 350.539 353.000 343.002 C 353.000 334.468 342.096 330.531 336.589 337.077 "/></g>
             </svg>
+            </Icon>
             <Title>{StepByStep.vedligeholdelse.title}</Title>
             <Content>{StepByStep.vedligeholdelse.content}</Content>
         </StepByStepContainer>
-
-        <Button>{StepByStep.button}</Button>
     </Container>  
+     <Button><a href="/Contact">{StepByStep.button}</a></Button>
+    </>
   )
 }
 

@@ -10,7 +10,11 @@ module.exports = {
       'input': '#0000008e',
       'menu': '#2524244f0',
       'stagesProces': 'rgba(43, 0, 0, 0.40)',
-      'borderImage': 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1'
+      'borderImage': 'linear-gradient(130deg, #840000, #FFF, #000, #FFF, #840000) 1',
+      'input': '#060606',
+      'inputFilter': 'black',
+      'inputBG': '#090909',
+      'brown': '#59372A',
     },
     extend: {
       backgroundImage: {

@@ -3,7 +3,8 @@
 import React from 'react'
 import styled from '@emotion/styled'; 
 import MyStory from '../components/About/MyStory';
-import Expertise from '../components/About/Expertise';
+import UxUiServices from '../components/UxUiServices';
+import CodeServices from '../components/CodeServices';
 
 const Container = styled.div({
 })
@@ -15,7 +16,8 @@ const Aboutpage = () => {
     <>
       <Container>
           <MyStory />
-          <Expertise />
+          <UxUiServices />
+          <CodeServices />
       </Container>
     </>
   )

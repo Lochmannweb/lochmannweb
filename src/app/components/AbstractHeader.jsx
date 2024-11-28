@@ -10,9 +10,9 @@ const breakpoints = {
 };
 
 const SplineContainer = styled.div({
+    marginTop: '0rem',
     width: '100%',
     height: '100vh',
-    marginTop: '0rem',
     [`@media (min-width: ${breakpoints.md})`]: {
         display: 'flex',
         right: '0',
