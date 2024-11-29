@@ -3,6 +3,7 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { ContactFormularData } from '../data/ContactFormular';
+import Image from 'next/image';
 
 const breakpoints = {
     md: '768px',
@@ -60,7 +61,7 @@ function ContactBox() {
                 <Rubrik>{ContactFormularData.title2}</Rubrik>
             </div>
             <div>
-              <a className='md:flex md:mr-24' href="/Contact" prefetch={false}><img src="/kontakt-knap.png" alt="knap" width={250} height={50} /></a>
+              <a className='md:flex md:mr-24' href="/Contact" prefetch={false}><Image src="/kontakt-knap.png" alt="knap" width={250} height={50} /></a>
             </div>
         </Grid>
      </Container>

@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { TechData } from '../data/TechData';
+import Image from 'next/image';
 
 const breakpoints = {
     md: '768px', // tablet
@@ -121,7 +122,7 @@ function App() {
       <TechContainer>
         <Tech>
           <TexhIcon>
-          <img src="/js-icon.svg" alt="tw" />
+          <Image src="/js-icon.svg" alt="tw" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Js.content}
@@ -130,7 +131,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-            <img src="/tailwind-css.svg" alt="tw" />
+            <Image src="/tailwind-css.svg" alt="tw" />
           </TexhIcon>
           <TexhTopic>
             {TechData.TW.content}
@@ -139,7 +140,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-          <img src="/spline-icon.png" alt="" />
+          <Image src="/spline-icon.png" alt="" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Ani.content}
@@ -148,7 +149,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-          <img src="/react-icon.svg" alt="react" />
+          <Image src="/react-icon.svg" alt="react" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Kode.content}

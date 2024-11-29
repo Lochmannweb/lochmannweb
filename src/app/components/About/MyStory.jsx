@@ -1,6 +1,6 @@
 "use client"
 
-import { AboutData } from "@/app/data/AboutData"
+// import { AboutData } from "@/app/data/AboutData"
 import Image from "next/image"
 import React from 'react'
 import styled from '@emotion/styled';
@@ -47,7 +47,7 @@ const MyStory = () => {
   return (
     <Container>
       <ImageContainer>
-        <img src="" alt="" srcset="" width={300} height={300} />
+        <Image src="" alt="" srcset="" width={300} height={300} />
       </ImageContainer>
 
       <Content>

@@ -5,6 +5,7 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { ServicesData } from '@/app/data/ServicesData'
+import Image from 'next/image';
 
 const breakpoints = {
   md: '768px', 
@@ -83,7 +84,7 @@ const MyStory = () => {
         <li className='text-xs'>{ServicesData.UXUI.services4}</li>
       </Content>
       <ImageContainer>
-        <img className='m-auto' src="/uxuidesign.png" alt="img" srcset="" width={300} height={300} />
+        <Image className='m-auto' src="/uxuidesign.png" alt="img" srcset="" width={300} height={300} />
       </ImageContainer>
     </Container>
     </>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { FeedbackData } from '../data/FeedBackData';
+import Image from 'next/image';
 
 const breakpoints = {
     md: '768px', 
@@ -100,19 +101,19 @@ function Feedback() {
         <Title>{subheaderText}</Title>
           <FeedBackContainer>
               <FeedBack>
-                  <IMG><img src="/project-management_1.svg" alt="tech" /></IMG>
+                  <IMG><Image src="/project-management_1.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Tech.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Tech.feedback}</FeddbackContent>
               </FeedBack>
   
               <FeedBack>
-              <IMG><img src="/chat_1.svg" alt="tech" /></IMG>
+              <IMG><Image src="/chat_1.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Feedback.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Feedback.feedback}</FeddbackContent>
               </FeedBack>
   
               <FeedBack>
-              <IMG><img src="/lowest-price.svg" alt="tech" /></IMG>
+              <IMG><Image src="/lowest-price.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Offer.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Offer.feedback}</FeddbackContent>
               </FeedBack>
