@@ -70,10 +70,10 @@ const CustomerInformation = () => {
         <div>
           <Title>{CustomerInformationsData.Services.title}</Title>
           <LinksContainer>
-              <a className='md:text-xs' href='/Services'>{CustomerInformationsData.Services.content}</a>
-              <a className='md:text-xs' href='/Services'>{CustomerInformationsData.Services.content2}</a>
-              <a className='md:text-xs' href='/Services'>{CustomerInformationsData.Services.content3}</a>
-              <a className='md:text-xs' href='/Services'>{CustomerInformationsData.Services.content4}</a>
+              <a className='md:text-xs' href='/'>{CustomerInformationsData.Services.content}</a>
+              <a className='md:text-xs' href='/'>{CustomerInformationsData.Services.content2}</a>
+              <a className='md:text-xs' href='/'>{CustomerInformationsData.Services.content3}</a>
+              <a className='md:text-xs' href='/'>{CustomerInformationsData.Services.content4}</a>
           </LinksContainer>
         </div>
       </Container>

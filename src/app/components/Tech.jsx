@@ -122,7 +122,7 @@ function App() {
       <TechContainer>
         <Tech>
           <TexhIcon>
-          <Image src="/js-icon.svg" alt="tw" />
+          <img src="/js-icon.svg" alt="tw" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Js.content}
@@ -131,7 +131,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-            <Image src="/tailwind-css.svg" alt="tw" />
+            <img src="/tailwind-css.svg" alt="tw" />
           </TexhIcon>
           <TexhTopic>
             {TechData.TW.content}
@@ -140,7 +140,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-          <Image src="/spline-icon.png" alt="" />
+          <img src="/spline-icon.png" alt="" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Ani.content}
@@ -149,7 +149,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-          <Image src="/react-icon.svg" alt="react" />
+          <img src="/react-icon.svg" alt="react" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Kode.content}

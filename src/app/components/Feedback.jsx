@@ -101,19 +101,19 @@ function Feedback() {
         <Title>{subheaderText}</Title>
           <FeedBackContainer>
               <FeedBack>
-                  <IMG><Image src="/project-management_1.svg" alt="tech" /></IMG>
+                  <IMG><img src="/project-management_1.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Tech.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Tech.feedback}</FeddbackContent>
               </FeedBack>
   
               <FeedBack>
-              <IMG><Image src="/chat_1.svg" alt="tech" /></IMG>
+              <IMG><img src="/chat_1.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Feedback.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Feedback.feedback}</FeddbackContent>
               </FeedBack>
   
               <FeedBack>
-              <IMG><Image src="/lowest-price.svg" alt="tech" /></IMG>
+              <IMG><img src="/lowest-price.svg" alt="tech" /></IMG>
                   <FeddbackTitle>{FeedbackData.Offer.title}</FeddbackTitle>
                   <FeddbackContent>{FeedbackData.Offer.feedback}</FeddbackContent>
               </FeedBack>

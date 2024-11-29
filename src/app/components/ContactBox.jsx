@@ -61,7 +61,7 @@ function ContactBox() {
                 <Rubrik>{ContactFormularData.title2}</Rubrik>
             </div>
             <div>
-              <a className='md:flex md:mr-24' href="/Contact" prefetch={false}><Image src="/kontakt-knap.png" alt="knap" width={250} height={50} /></a>
+              <a className='md:flex md:mr-24' href="/Contact" prefetch={false}><img src="/kontakt-knap.png" alt="knap" width={250} height={50} /></a>
             </div>
         </Grid>
      </Container>
@@ -70,14 +70,3 @@ function ContactBox() {
 }
 
 export default ContactBox
-
-{/* <div>
-<h1>{ContactFormularData.title}</h1>
-<p>{ContactFormularData.title2}</p>
-</div>
-
-// {/* <div>
-//  <img src="/contact-knap-sort.png" alt="knap" width={50} height={50}>
-//  {}
-//  </img>
-// </div> */}
