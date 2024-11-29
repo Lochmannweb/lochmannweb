@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from '@emotion/styled';
-import { MyWorkDesignData } from '../data/MyWorkData';
+import { RecentWorkData } from '../data/MyWorkData';
 import CardAnimationProject from '@/app/components/CardAnimationProject'
 
 const breakpoints = {
@@ -64,9 +64,9 @@ const Title = styled.div({
 function App() {
 
   return (
-    <Container>
+    <Container> 
       <div>
-        <Title className='text-3xl'>{MyWorkDesignData.title}</Title>
+        <Title className='text-3xl'>{RecentWorkData.title}</Title>
       </div>
       <BackContainer>
         <ImageContainer>

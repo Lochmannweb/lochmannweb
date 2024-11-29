@@ -3,7 +3,7 @@
 import React from 'react'
 import Header from '../components/MyWorkComponent/Header';
 import StepByStep from '../components/MyWorkComponent/StepByStep';
-import MyWork from '../components/MyWorkComponent/MyWork';
+// import MyWork from '../components/MyWorkComponent/MyWork';
 import styled from '@emotion/styled';
 
 const Container = styled.div({
