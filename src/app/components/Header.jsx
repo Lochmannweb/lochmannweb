@@ -14,8 +14,9 @@ const Container = styled.div({
   padding: '30px',
   position: 'absolute',
   [`@media (min-width: ${breakpoints.md})`]: {
-    paddingTop: '13rem',
-    paddingLeft: '20rem',
+    paddingTop: '18rem',
+    paddingLeft: '22rem',
+    paddingRight: '22rem',
     textAlign: 'start',
     width: '100%',
     gap: '20px',
@@ -26,16 +27,24 @@ const HeaderTitle = styled.div({
   fontFamily: 'fantasy',
   fontSize: '40px',
   marginTop: '-3rem',
-  marginBottom: '3rem',
+  textAlign: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '80px',
     lineHeight: '5rem',
-    paddingRight: '10rem',
     },
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '80px',
     lineHeight: '5rem',
-    paddingRight: '55rem',
+    },
+});
+
+const Content = styled.div({
+  fontSize: '15px',
+  textAlign: 'center',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    marginBottom: '3rem',
+    paddingLeft: '5rem',
+    paddingRight: '5rem',
     },
 });
 
@@ -44,7 +53,7 @@ const HighlightedText = styled.span({
 });
 
 export default function Header() {
-  const highlightWords = ["website", "happen"]; // Erstat med de ord, du vil farve
+  const highlightWords = ["next", "level"]; // Erstat med de ord, du vil farve
   const subheaderText = ForsideData.subheader.split(" ").map((word, index) => {
     const cleanWord = word.replace(/[.,!?]/g, ""); // Fjern tegnsætning, hvis nødvendigt
     return highlightWords.includes(cleanWord) ? (
@@ -61,6 +70,7 @@ export default function Header() {
         <HeaderTitle>
           {subheaderText}
         </HeaderTitle>
+        <Content>{ForsideData.content}</Content>
         <Designemner />
     </Container>
     </>

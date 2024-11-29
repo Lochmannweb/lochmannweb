@@ -28,7 +28,7 @@ const AbstractHeader = () => {
         >
             <Spline 
                 className="Figur"
-                scene="https://prod.spline.design/qQcbXUiaBIoGO67t/scene.splinecode" 
+                scene="https://prod.spline.design/azvPzC0sRGaBdBYW/scene.splinecode" 
                 style={{ pointerEvents: isSplineActive ? 'auto' : 'none' }}
             />
         </SplineContainer>
