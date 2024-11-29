@@ -14,6 +14,7 @@ const Container = styled.div({
   padding: '2rem',
     [`@media (min-width: ${breakpoints.md})`]: {
       margin: 'auto',
+      marginTop: '-9rem',
       },
 });
 
@@ -23,7 +24,7 @@ const Title = styled.div({
   fontWeight: 'bold',
   marginBottom: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '40px',
+    fontSize: '60px',
     textAlign: 'center',
     fontWeight: 'bold',
     marginBottom: '5rem',
@@ -57,7 +58,7 @@ const Tech = styled.div({
 
 const TexhIcon = styled.div({
   filter: 'drop-shadow(0 3mm 4mm #000)',
-  background: '#090909',
+  background: '#000',
   borderRadius: '15px',
   padding: '1rem',
   width: '4rem',
@@ -69,8 +70,8 @@ const TexhIcon = styled.div({
 });
 
 const TexhTopic = styled.div({
-  background: 'black',
-  borderRadius: '15px',
+  // background: 'black',
+  // borderRadius: '15px',
   padding: '1rem',
   width: '13rem',
   fontSize: '15px',

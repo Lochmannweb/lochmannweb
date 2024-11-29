@@ -1,7 +1,7 @@
 export const Categories = {
-    Shop: "Online shop",
-    Branding: "Branding",
-    Events: "Events",
-    Redesign: "Redesign",
-    Designs: "New design",
+    Shop: "ONLINE SHOP",
+    Branding: "BRANDING",
+    Events: "EVENTS",
+    Redesign: "REDESIGN",
+    Designs: "BUILT FROM SCRATCH",
 }

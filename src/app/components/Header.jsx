@@ -42,6 +42,7 @@ const Content = styled.div({
   fontSize: '15px',
   textAlign: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '20px',
     marginBottom: '3rem',
     paddingLeft: '5rem',
     paddingRight: '5rem',

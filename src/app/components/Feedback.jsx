@@ -20,11 +20,23 @@ const breakpoints = {
     fontSize: '30px',
     fontWeight: 'bold',
     [`@media (min-width: ${breakpoints.md})`]: {
-      fontSize: '40px',
+      fontSize: '60px',
       textAlign: 'center',
       fontWeight: 'bold',
-      marginBottom: '3rem',
       marginTop: '5rem',
+    },
+  });
+
+  const Subheader = styled.div({
+    color: 'white',
+    textAlign: 'center',
+    fontSize: '15px',
+    [`@media (min-width: ${breakpoints.md})`]: {
+      fontSize: '18px',
+      textAlign: 'center',
+      marginBottom: '3rem',
+      paddingLeft: '32rem',
+      paddingRight: '32rem',
     },
   });
 
@@ -61,6 +73,8 @@ const breakpoints = {
     margin: 'auto',
     [`@media (min-width: ${breakpoints.md})`]: {
       marginBottom: '1rem',
+      width: '30%',
+      height: '6rem',
   },
   });
 
@@ -71,6 +85,7 @@ const breakpoints = {
     marginBottom: '5px',
     color: '#A96F59',
     [`@media (min-width: ${breakpoints.md})`]: {
+      fontSize: '25px',
   },
   });
 
@@ -99,6 +114,7 @@ function Feedback() {
     <>
       <Container>
         <Title>{subheaderText}</Title>
+        <Subheader>{FeedbackData.Subheader}</Subheader>
           <FeedBackContainer>
               <FeedBack>
                   <IMG><img src="/project-management_1.svg" alt="tech" /></IMG>
