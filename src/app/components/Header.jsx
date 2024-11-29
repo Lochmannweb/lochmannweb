@@ -24,12 +24,19 @@ const Container = styled.div({
 
 const HeaderTitle = styled.div({
   fontFamily: 'fantasy',
-  marginBottom: '1rem',
+  fontSize: '40px',
+  marginTop: '-3rem',
+  marginBottom: '3rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '80px',
     lineHeight: '5rem',
+    paddingRight: '10rem',
+    },
+  [`@media (min-width: ${breakpoints.lg})`]: {
+    fontSize: '80px',
+    lineHeight: '5rem',
     paddingRight: '55rem',
-  },
+    },
 });
 
 const HighlightedText = styled.span({

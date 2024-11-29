@@ -46,6 +46,7 @@ const Tech = styled.div({
   gap: '20px',
   padding: '0.5rem',
   borderRadius: '20px',
+  alignItems: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
     padding: '1rem',
     width: '36rem',
@@ -58,6 +59,7 @@ const TexhIcon = styled.div({
   background: '#090909',
   borderRadius: '15px',
   padding: '1rem',
+  width: '4rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '20px',
     width: '5rem',
@@ -70,9 +72,11 @@ const TexhTopic = styled.div({
   borderRadius: '15px',
   padding: '1rem',
   width: '13rem',
+  fontSize: '15px',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '20px',
     width: '29rem',
+    padding: '1.5rem',
   },
 });
 
@@ -117,7 +121,7 @@ function App() {
       <TechContainer>
         <Tech>
           <TexhIcon>
-            {TechData.Js.title}
+          <img src="/js-icon.svg" alt="tw" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Js.content}
@@ -126,7 +130,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-            <img src="/tw.svg" alt="tw" />
+            <img src="/tailwind-css.svg" alt="tw" />
           </TexhIcon>
           <TexhTopic>
             {TechData.TW.content}
@@ -135,7 +139,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-          <img src="/" alt="" />
+          <img src="/spline-icon.png" alt="" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Ani.content}
@@ -144,7 +148,7 @@ function App() {
 
         <Tech>
           <TexhIcon>
-          <img src="/react.png" alt="react" />
+          <img src="/react-icon.svg" alt="react" />
           </TexhIcon>
           <TexhTopic>
             {TechData.Kode.content}

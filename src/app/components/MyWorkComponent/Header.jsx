@@ -40,8 +40,8 @@ const Content = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
     justifyContent: 'center',
     textAlign: 'center',
-    paddingLeft: '20rem',
-    paddingRight: '20rem',
+    paddingLeft: '26rem',
+    paddingRight: '26rem',
     fontSize: '15px',
     marginTop: '-1rem',
   },

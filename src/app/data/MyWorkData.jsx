@@ -39,11 +39,21 @@ export const StepByStep = {
     button: "Let's get started",
 }
 
-
-// My Work Page 
-export const MyWorkDesignData = {
-    title: "I Redesign, Brands & websites from scratch",
-    title2: "From brands to graphic to new designed website",
-    subheader: "I help startups and businesses design and develop modern, user-friendly websites, whether starting from scratch or through a complete redesign, ensuring they align perfectly with your goals and vision.",
-    button: "Check it out",
-}
+// Home page Recent Work
+export const RecentWorkData = {
+    title: "My Recent Work",
+    header: "From brands to graphic to new designed website",
+    content: "I help startups and businesses design and develop modern, user-friendly websites, whether starting from scratch or through a complete redesign, ensuring they align perfectly with your goals and vision.",
+    button: "See All Projects",
+    projects: [
+      {
+        image: "/cgc-desktop.png",
+      },
+      {
+        image: "/foofest-desktop.png",
+      },
+      {
+        image: "/cgc-desktop.png",
+      },
+    ],
+  };

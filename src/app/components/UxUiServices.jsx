@@ -4,6 +4,7 @@
 // import Image from "next/image"
 import React from 'react'
 import styled from '@emotion/styled';
+import { ServicesData } from '@/app/data/ServicesData'
 
 const breakpoints = {
   md: '768px', 
@@ -37,31 +38,52 @@ const ImageContainer = styled.div({
   background: '#060606',
   filter: 'drop-shadow(0 3mm 4mm #000)',
   margin: '1rem',
+  alignContent: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
-
+    width: '50%',
+    height: '30vh',
+    padding: '2 rem',
   },
 });
 
 const Content = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '50%',
-    marginTop: '3rem',
+    marginTop: '2rem',
     padding: '1rem',
   },
 });
+
+const ContentTitle = styled.div({
+  fontSize: '30px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+  },
+});
+
+const ContentSubheder = styled.div({
+  fontSize: '15px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    marginBottom: '1rem',
+  },
+});
+
 
 const MyStory = () => {
 
   return (
     <>
-    <Title>My Services</Title>
+    <Title>{ServicesData.title}</Title>
     <Container>
       <Content>
-        <h1>Overskrift</h1>
-        <p>Tekst</p>
+        <ContentTitle>{ServicesData.UXUI.title}</ContentTitle>
+        <ContentSubheder>{ServicesData.UXUI.content}</ContentSubheder>
+        <li className='text-xs'>{ServicesData.UXUI.services1}</li>
+        <li className='text-xs'>{ServicesData.UXUI.services2}</li>
+        <li className='text-xs'>{ServicesData.UXUI.services3}</li>
+        <li className='text-xs'>{ServicesData.UXUI.services4}</li>
       </Content>
       <ImageContainer>
-        <img src="" alt="" srcset="" width={300} height={300} />
+        <img className='m-auto' src="/uxuidesign.png" alt="img" srcset="" width={300} height={300} />
       </ImageContainer>
     </Container>
     </>

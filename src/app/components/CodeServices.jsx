@@ -4,6 +4,7 @@ import { AboutData } from "@/app/data/AboutData"
 import Image from "next/image"
 import React from 'react'
 import styled from '@emotion/styled';
+import { ServicesData } from '@/app/data/ServicesData'
 
 const breakpoints = {
   md: '768px', 
@@ -43,6 +44,19 @@ const Content = styled.div({
   },
 });
 
+const ContentTitle = styled.div({
+  fontSize: '30px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+  },
+});
+
+const ContentSubheder = styled.div({
+  fontSize: '15px',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    marginBottom: '1rem',
+  },
+});
+
 const MyStory = () => {
 
   return (
@@ -52,8 +66,15 @@ const MyStory = () => {
         <img src="" alt="" srcset="" width={300} height={300} />
       </ImageContainer>
       <Content>
-        <h1>Overskrift</h1>
-        <p>Tekst</p>
+        <ContentTitle>{ServicesData.Kode.title}</ContentTitle>
+        <ContentSubheder>{ServicesData.Kode.content}</ContentSubheder>
+        <li className="text-xs">{ServicesData.Kode.services1}</li>
+        <li className="text-xs">{ServicesData.Kode.services2}</li>
+        <li className="text-xs">{ServicesData.Kode.services3}</li>
+        <li className="text-xs">{ServicesData.Kode.services4}</li>
+        <li className="text-xs">{ServicesData.Kode.services5}</li>
+        <li className="text-xs">{ServicesData.Kode.services6}</li>
+        <li className="text-xs">{ServicesData.Kode.services7}</li>
       </Content>
     </Container>
     </>
