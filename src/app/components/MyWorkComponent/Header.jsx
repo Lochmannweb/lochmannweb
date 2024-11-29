@@ -5,8 +5,8 @@ import React from 'react'
 import styled from "styled-components"
 
 const breakpoints = {
-  md: '768px', // tablet
-  lg: '1024px', // desktop
+  md: '768px', 
+  lg: '1024px', 
 };
 
 const Container = styled.div({
@@ -27,6 +27,7 @@ const Header = styled.div({
     webkitTextFillColor: 'transparent',
     backgroundClip: 'text',
     textFillColor: 'transparent',
+    fontWeight: 'bold',
     [`@media (min-width: ${breakpoints.md})`]: {
       fontSize: '50px',
       margin: 'auto',
@@ -37,6 +38,7 @@ const Content = styled.div({
   fontSize: '12px',
   display: 'grid',
   gap: '0rem',
+  color: '#aaa',
   [`@media (min-width: ${breakpoints.md})`]: {
     justifyContent: 'center',
     textAlign: 'center',

@@ -32,6 +32,7 @@ const ImageContainer = styled.div({
   background: '#060606',
   filter: 'drop-shadow(0 3mm 4mm #000)',
   margin: '1rem',
+  alignContent: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
 
   },
@@ -63,7 +64,7 @@ const MyStory = () => {
     <>
     <Container>
       <ImageContainer>
-        <Image src="" alt="" srcset="" width={300} height={300} />
+        <Image className='m-auto' src="/programmering.png" alt="kode" width={300} height={300} />
       </ImageContainer>
       <Content>
         <ContentTitle>{ServicesData.Kode.title}</ContentTitle>

@@ -68,9 +68,10 @@ const breakpoints = {
     background: 'black',
     borderRadius: '15px',
     padding: '1rem',
-    width: '20%',
+    width: '25%',
     height: '4rem',
     margin: 'auto',
+    marginBottom: '1.5rem',
     [`@media (min-width: ${breakpoints.md})`]: {
       marginBottom: '1rem',
       width: '30%',

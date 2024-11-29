@@ -22,7 +22,7 @@ export const StepByStep = {
     },
     planlægning: {
         title: "Planning & design",
-        content: "Jeg vil skitserer og designer din hjemmeside, hvor feedback eller andre ideer kan komme i spil.",
+        content: "I will outline and design your website, where feedback or other ideas can come into play.",
     },
     udvikling: {
         title: "Development",

@@ -59,6 +59,8 @@ const Tech = styled.div({
 const TexhIcon = styled.div({
   filter: 'drop-shadow(0 3mm 4mm #000)',
   background: '#000',
+  borderWidth: 'thin',
+  borderColor: '#59372A',
   borderRadius: '15px',
   padding: '1rem',
   width: '4rem',

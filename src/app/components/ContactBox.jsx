@@ -46,6 +46,7 @@ const breakpoints = {
 
   const Rubrik = styled.div({
     fontSize: '13px',
+    color: '#A96F59', 
     [`@media (min-width: ${breakpoints.md})`]: {
     },
   });

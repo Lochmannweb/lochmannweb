@@ -12,10 +12,10 @@ const Title = styled.div({
   textAlign: 'center',
   fontSize: '30px',
   marginTop: '5rem',
+  fontWeight: 'bold',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '60px',
     textAlign: 'center',
-    fontWeight: 'bold',
     marginBottom: '3rem',
     marginTop: '5rem',
   },

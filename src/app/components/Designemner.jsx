@@ -16,7 +16,7 @@ const Container = styled.div({
     [`@media (min-width: ${breakpoints.md})`]: {
         display: 'flex',
         justifyContent: 'center',
-        margin: '0',
+        gap: '2rem',
     },
 });
 
@@ -25,6 +25,7 @@ const Emner = styled.div({
     borderColor: '#59372A',
     borderRadius: '15px',
     padding: '0.3rem',
+    margin: 'auto',
     [`@media (min-width: ${breakpoints.md})`]: {
         padding: '0.3rem',
         borderRadius: '15px',
@@ -45,10 +46,10 @@ function Designemner() {
   return (
     <>
       <Container>
-        <Emner><Topic className='w-48'>{Categories.Branding}</Topic></Emner>
-        <Emner><Topic className='w-48'>{Categories.Shop}</Topic></Emner>
-        <Emner><Topic className='w-48'>{Categories.Redesign}</Topic></Emner>
-        <Emner><Topic className='w-72'>{Categories.Designs}</Topic></Emner>
+        <Emner><Topic className='w-44 md:w-48'>{Categories.Branding}</Topic></Emner>
+        <Emner><Topic className='w-44 md:w-48'>{Categories.Shop}</Topic></Emner>
+        <Emner><Topic className='w-44 md:w-48'>{Categories.Redesign}</Topic></Emner>
+        <Emner><Topic className='w-56 md:w-72'>{Categories.Designs}</Topic></Emner>
       </Container>
     </>
   )

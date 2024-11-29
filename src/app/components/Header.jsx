@@ -13,6 +13,7 @@ const Container = styled.div({
   display: 'grid',
   padding: '30px',
   position: 'absolute',
+  paddingTop: '4rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     paddingTop: '18rem',
     paddingLeft: '22rem',
@@ -28,6 +29,7 @@ const HeaderTitle = styled.div({
   fontSize: '40px',
   marginTop: '-3rem',
   textAlign: 'center',
+  lineHeight: '2.5rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '80px',
     lineHeight: '5rem',
@@ -41,6 +43,8 @@ const HeaderTitle = styled.div({
 const Content = styled.div({
   fontSize: '15px',
   textAlign: 'center',
+  marginBottom: '3rem',
+  color: '#aaa',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '20px',
     marginBottom: '3rem',
@@ -54,9 +58,9 @@ const HighlightedText = styled.span({
 });
 
 export default function Header() {
-  const highlightWords = ["next", "level"]; // Erstat med de ord, du vil farve
+  const highlightWords = ["next", "level"]; 
   const subheaderText = ForsideData.subheader.split(" ").map((word, index) => {
-    const cleanWord = word.replace(/[.,!?]/g, ""); // Fjern tegnsætning, hvis nødvendigt
+    const cleanWord = word.replace(/[.,!?]/g, ""); 
     return highlightWords.includes(cleanWord) ? (
       <HighlightedText key={index}>{word}</HighlightedText>
     ) : (
