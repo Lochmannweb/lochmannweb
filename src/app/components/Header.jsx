@@ -1,7 +1,7 @@
 import React from "react";
 import { ForsideData } from "../data/ForsideData";
 import styled from '@emotion/styled';
-import AbstractHeader from './AbstractHeader';
+// import AbstractHeader from './AbstractHeader';
 import Designemner from '../components/Designemner'
 
 const breakpoints = {
@@ -70,7 +70,7 @@ export default function Header() {
 
   return (
     <>
-    <AbstractHeader />
+    {/* <AbstractHeader /> */}
     <Container>
         <HeaderTitle>
           {subheaderText}
