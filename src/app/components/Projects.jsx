@@ -21,10 +21,11 @@ const Container = styled.div({
 const Title = styled.div({
   fontSize: '25px',
   fontWeight: 'bold',
+  textAlign: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
-    marginBottom: '3rem',
-    marginTop: '5rem',
+    marginTop: '-15rem',
+    marginBottom: '5rem',
   },
 });
 
@@ -32,7 +33,8 @@ const ImageGrid = styled.div({
   display: 'grid',
   gap: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    gridTemplateColumns: '1fr 1fr 1fr'
+    gridTemplateColumns: '1fr 1fr 1fr',
+    marginBottom: '5rem',
   },
 });
 

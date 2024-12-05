@@ -1,5 +1,5 @@
 export const FeedbackData = {
-    Title: "Why choose me?",
+    Title: "Why choose me",
     Subheader: "If you choose me as your permanent web designer or online frontend developer, you don't have to go and bother with sleepless nights or the heart in the throat.",
     Tech: {
         title: "Technology",

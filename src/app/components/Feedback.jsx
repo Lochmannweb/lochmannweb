@@ -10,6 +10,7 @@ const breakpoints = {
   };
 
   const Container = styled.div({
+    margin: '15rem',
     padding: '5rem',
     background: 'white',
     textAlign: 'center',
@@ -62,25 +63,27 @@ function Feedback() {
   return (
     <>
       <Container>
-        <Title>{FeedbackData.Title}</Title>
-        <Subheader>{FeedbackData.Subheader}</Subheader>
+        <div className='md:pl-52 md:pr-52'>
+          <Title>{FeedbackData.Title}</Title>
+          <Subheader>{FeedbackData.Subheader}</Subheader>
+        </div>
         <Content>
           <FeedBackContent>
             <img className='m-auto' src="/settings.svg" alt="svg" width={50} />
             <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Tech.title}</h1> 
-            <p>{FeedbackData.Tech.feedback}</p>
+            <p className='text-sm mt-2'>{FeedbackData.Tech.feedback}</p>
           </FeedBackContent>
 
           <FeedBackContent>
             <img className='m-auto' src="/chat_1.svg" alt="svg" width={50} />
             <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Feedback.title}</h1>
-            <p>{FeedbackData.Feedback.feedback}</p>
+            <p className='text-sm mt-2'>{FeedbackData.Feedback.feedback}</p>
           </FeedBackContent>
 
           <FeedBackContent>
             <img className='m-auto' src="/lowest-price.svg" alt="svg" width={50} />
             <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Offer.title}</h1>
-            <p>{FeedbackData.Offer.feedback}</p>
+            <p className='text-sm mt-2'>{FeedbackData.Offer.feedback}</p>
           </FeedBackContent>
         </Content>
       </Container>

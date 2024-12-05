@@ -13,37 +13,54 @@ const breakpoints = {
 
 const Container = styled.div({
   display: 'grid',
-  marginTop: '15rem',
   padding: '2rem',
+  backgroundColor: '#110000',
     [`@media (min-width: ${breakpoints.md})`]: {
-      display: 'flex',
-      marginTop: '0rem',
+      marginTop: '10rem',
       },
 });
 
 const Title = styled.div({
   fontSize: '25px',
   fontWeight: 'bold',
-  lineHeight: '2rem',
+  color: 'black',
+  textAlign: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
-    textAlign: 'start',
     fontWeight: 'bold',
-    marginBottom: '0.5rem',
   },
 });
 
-const Content = styled.div({
-  position: 'absolute',
-  right: '0',
+const HeaderContent = styled.div({
+  backgroundColor: 'white',
+  margin: 'auto',
   [`@media (min-width: ${breakpoints.md})`]: {
     alignContent: 'center',
-    padding: '15rem',
+    padding: '5rem',
+    marginTop: '-10rem',
   },
 })
 
 const Subheader = styled.div({
-  color: '#aaa',
+  color: 'black',
+  textAlign: 'center',
+})
+
+const Expertise = styled.div({
+  margin: 'auto',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    padding: '2rem',
+    display: 'flex',
+    gap: '5rem',
+  },
+})
+
+const ExpertiseContent = styled.div({
+  alignItems: 'center',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    display: 'flex',
+    gap: '1rem',
+  },
 })
 
 const Button = styled.div({
@@ -55,8 +72,9 @@ const Button = styled.div({
   borderWidth: 'thin',
   fontSize: '13px',
   marginTop: '1rem',
+  margin: 'auto',
   [`@media (min-width: ${breakpoints.md})`]: {
-    width: '18%',
+    width: '10%',
     padding: '0.3rem',
     borderRadius: '15px',
     marginTop: '1rem',
@@ -64,39 +82,40 @@ const Button = styled.div({
   }
 });
 
-const HighlightedText = styled.span({
-  color: '#fff', 
-});
-
 function App() {
-  const theme = useTheme();
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
-
-  const highlightWords = ["Expertise"]; 
-  const subheaderText = TechData.title.split(" ").map((word, index) => {
-    const cleanWord = word.replace(/[.,!?]/g, ""); 
-    return highlightWords.includes(cleanWord) ? (
-      <HighlightedText key={index}>{word}</HighlightedText>
-    ) : (
-      word
-    );
-  }).reduce((prev, curr) => [prev, ' ', curr]);
 
   return (
     <>
     <Container>
-      {(!isTablet && 
-      <div>
-        <img src="/expertise.png" alt="png" width={2000} />
-      </div>
-      )}
-      <Content>
-        <Title>
-          {subheaderText}
-        </Title>
-        <Subheader>{TechData.subheader} <br /> {TechData.subheader2}</Subheader>
-        <Button><a href="/About">See All Services</a></Button>
-      </Content>
+      <HeaderContent>
+        <Title>{TechData.title}</Title>
+        <Subheader>
+          <p>{TechData.subheader}</p>
+          <p>{TechData.subheader2}</p>
+        </Subheader>
+      </HeaderContent>
+      <Expertise>
+        <ExpertiseContent>
+          <img src="/react-icon.svg" alt="svg" width={60} />
+          <p>{TechData.Kode.title}</p>
+        </ExpertiseContent>
+
+        <ExpertiseContent>
+          <img src="/spline.png" alt="png" width={70}  />
+          <p>{TechData.Ani.title}</p>
+        </ExpertiseContent>
+
+        <ExpertiseContent>
+          <img src="js-icon.svg" alt="svg" width={50} />
+          <p>{TechData.Js.title}</p>
+        </ExpertiseContent>
+
+        <ExpertiseContent>
+          <img src="/tailwind-css.svg" alt="svg" width={70} />
+          <p>{TechData.TW.title}</p>
+        </ExpertiseContent>
+      </Expertise>
+      <Button><a href="/About">See All Services</a></Button>
     </Container>
     </>
   );

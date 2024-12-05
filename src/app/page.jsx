@@ -23,7 +23,7 @@ const Page = () => {
       <Tech />
       <Feedback />
       <Projects />
-      <ContactBox />
+      {/* <ContactBox /> */}
     </Container> 
   )
 }
