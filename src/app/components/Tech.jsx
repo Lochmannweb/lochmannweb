@@ -16,7 +16,7 @@ const Container = styled.div({
   padding: '2rem',
   backgroundColor: '#110000',
     [`@media (min-width: ${breakpoints.md})`]: {
-      marginTop: '10rem',
+      marginTop: '15rem',
       },
 });
 

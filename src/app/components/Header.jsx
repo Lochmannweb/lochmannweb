@@ -11,40 +11,45 @@ const breakpoints = {
 
 const Container = styled.div({
   display: 'grid',
-  padding: '30px',
+  padding: '21rem',
   position: 'absolute',
   paddingTop: '4rem',
+  // margin: 'auto',
+  // textAlign: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
     paddingTop: '14rem',
-    paddingLeft: '15rem',
-    paddingRight: '65rem',
-    textAlign: 'start',
+    // paddingLeft: '15rem',
+    // paddingRight: '65rem',
+    // textAlign: 'start',
   },
 });
 
 const HeaderTitle = styled.div({
-  fontFamily: 'fantasy',
   fontSize: '40px',
+  margin: 'auto',
   marginTop: '-3rem',
-  textAlign: 'start',
-  lineHeight: '2.5rem',
+  // textAlign: 'start',
+  // lineHeight: '2.5rem',
+  // textAlign: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '55px',
-    lineHeight: '5rem',
+    // lineHeight: '5rem',
     },
   [`@media (min-width: ${breakpoints.lg})`]: {
-    fontSize: '80px',
-    lineHeight: '5rem',
+    fontSize: '59px',
+    lineHeight: '4.5rem',
     },
 });
 
 const Content = styled.div({
   fontSize: '15px',
-  textAlign: 'start',
+  // textAlign: 'start',
+  // margin: 'auto',
   marginBottom: '3rem',
+  textAlign: 'center',
   color: '#aaa',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '18px',
+    fontSize: '15px',
     marginBottom: '3rem',
     },
 });
@@ -75,18 +80,12 @@ export default function Header() {
     )} */}
 
     {(!isTablet && 
-      <img className="md:-mt-12" src="/Header-bg.png" alt="bg"  />
+      <img className="md:-mt-12" src="/Header-bg.png" alt="bg" width={2000} />
     )}
     
     <Container>
-        <HeaderTitle>
-          {subheaderText}
-        </HeaderTitle>
-        <Content>
-          <p>{ForsideData.content}</p>
-          <p>{ForsideData.content2}</p>
-          <p>{ForsideData.content3}</p>
-        </Content>
+        <HeaderTitle>{subheaderText}</HeaderTitle>
+        <Content>{ForsideData.content}</Content>
     </Container>
     </>
   );
