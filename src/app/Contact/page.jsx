@@ -11,7 +11,9 @@ const breakpoints = {
 
 const Container = styled.div({
     display: 'grid',
+    position: 'absolute',
     padding: '2rem',
+    right: '25rem',
     [`@media (min-width: ${breakpoints.md})`]: {
       paddingTop: '12rem',
     },
@@ -25,6 +27,7 @@ function ContactForm() {
       <Container>
         <Contact />
       </Container>
+      <img src="/contact.png" alt="png" width={2000} />
     </>
   );
 }

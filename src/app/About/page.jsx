@@ -17,6 +17,7 @@ const Aboutpage = () => {
 
   return (
     <>
+    <img src="/about-header-bg.png" alt="png" width={2000} />
       <Container>
           <MyStory />
           <UxUiServices />

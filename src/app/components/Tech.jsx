@@ -14,11 +14,20 @@ const breakpoints = {
 const Container = styled.div({
   display: 'grid',
   padding: '2rem',
-  backgroundColor: '#110000',
     [`@media (min-width: ${breakpoints.md})`]: {
       marginTop: '15rem',
       },
 });
+
+const HeaderContent = styled.div({
+  backgroundColor: 'white',
+  margin: 'auto',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    alignContent: 'center',
+    padding: '4rem',
+    marginTop: '-10rem',
+  },
+})
 
 const Title = styled.div({
   fontSize: '25px',
@@ -30,16 +39,6 @@ const Title = styled.div({
     fontWeight: 'bold',
   },
 });
-
-const HeaderContent = styled.div({
-  backgroundColor: 'white',
-  margin: 'auto',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    alignContent: 'center',
-    padding: '5rem',
-    marginTop: '-10rem',
-  },
-})
 
 const Subheader = styled.div({
   color: 'black',

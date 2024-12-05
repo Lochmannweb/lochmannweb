@@ -1,7 +1,7 @@
 export const ContactFormularData = {
-    title: "Take the first step into your website",
-    title2: "let’s work together so your dreams can come true",
-    companyName: "Den eksisterende hjemmeside",
+    title: "Take the First Step Toward Your Website",
+    title2: "Let’s collaborate to turn your dreams into reality.",
+    companyName: "The Existing Website",
     fullName: "Full Name",
     phonenr: "Phone Number",
     mailadress: "Mail adress",

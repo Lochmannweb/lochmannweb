@@ -3,7 +3,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { ContactFormularData } from '../data/ContactFormular'
 import { useForm, ValidationError } from '@formspree/react';
-import { borderColor } from 'polished';
 
 const breakpoints = {
   md: '768px', 
@@ -15,17 +14,16 @@ const Container = styled.div({
     padding: '20px',
     display: 'grid',
     gap: '10px',
-    background: '#090909',
     filter: 'drop-shadow(0 3mm 4mm #000)',
     margin: 'auto',
     borderRadius: '10px',
     [`@media (min-width: ${breakpoints.md})`]: {
       borderRadius: '25px',
-      paddingTop: '3rem',
+      paddingTop: '4rem',
       paddingLeft: '3rem',
       paddingRight: '3rem',
       marginTop: '-5rem',
-      width: '40%',
+      width: '100%',
     }
 });
 
@@ -33,35 +31,35 @@ const Header = styled.div({
   fontSize: '30px',
   textAlign: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '40px',
+    fontSize: '30px',
   },
 });
 
 const Subheader = styled.div({
-  color: '#A96F59',
+  color: '#aaa',
   textAlign: 'center',
-  paddingBottom: '3rem',
+  paddingBottom: '1rem',
   marginTop: '-1rem',
 });
 
 const Form = styled.div({
   marginBottom: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    marginBottom: '2rem',
+    marginBottom: '1rem',
   },
 });
 
 const Button = styled.div({
   right: '1.2rem',
-  filter: 'drop-shadow(0 3mm 4mm #000)',
   display: 'flex',
-  padding: '0.5rem',
+  padding: '0.3rem',
   borderRadius: '25px',
-  background: '#59372A',
+  background: '#fff',
   margin: 'auto',
-  marginTop: '2rem',
   justifyContent: 'center',
   width: '10rem',
+  color: 'black',
+  fontWeight: 'bold',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '10rem',
   },
@@ -92,9 +90,6 @@ const BoxContainer = styled.div({
 });
 
 const BorderInput = styled.div({
-  borderColor: '#59372A',
-  borderWidth: 'thin',
-  borderRadius: '13px',
 });
 
 function App() {
@@ -114,11 +109,11 @@ function App() {
                <Label htmlFor="text">{ContactFormularData.companyName}</Label>
                <BorderInput>
                   <input 
-                    className='w-full bg-input rounded-xl text-xs p-2' 
+                    className='w-full bg-input rounded-md text-xs p-2' 
                     name="Text" 
                     id="text" 
                     type="text" 
-                    placeholder='Hvis hjemmesiden allerede eksisterer'>
+                    placeholder='If the website exist'>
                   </input>
                </BorderInput>
                <ValidationError prefix="Text" field="text" errors={state.errors} />
@@ -126,32 +121,30 @@ function App() {
    
              <Form> 
                <Label htmlFor="text">{ContactFormularData.fullName}</Label>
-               <BorderInput><input className='w-full rounded-2xl bg-input text-xs p-2' name="Text" id="text" type="text" placeholder=''></input></BorderInput>
+               <BorderInput><input className='w-full rounded-md bg-input text-xs p-2' name="Text" id="text" type="text" placeholder='John James'></input></BorderInput>
                <ValidationError prefix="Text" field="text" errors={state.errors} />
              </Form>
    
              <Form> 
                <Label htmlFor="tel">{ContactFormularData.phonenr}</Label>
-               <BorderInput><input className='w-full bg-input rounded-2xl text-xs p-2' name="Tel" id="tel" type="tel" placeholder=''></input></BorderInput>
+               <BorderInput><input className='w-full bg-input rounded-md text-xs p-2' name="Tel" id="tel" type="tel" placeholder='+xx xx xx xx xx'></input></BorderInput>
                <ValidationError prefix="Tel" field="tel" errors={state.errors} />
              </Form>
    
              <Form>
                <Label htmlFor="email">{ContactFormularData.mailadress}</Label>
-               <BorderInput><input className='w-full bg-input rounded-2xl text-xs p-2' name="Email" id="email" type="email" placeholder=''></input></BorderInput>
+               <BorderInput><input className='w-full bg-input rounded-md text-xs p-2' name="Email" id="email" type="email" placeholder='example@example.com'></input></BorderInput>
                <ValidationError prefix="Email" field="email" errors={state.errors} />
              </Form>
    
              <Form>
                <Label htmlFor="message">{ContactFormularData.message}</Label>
-               <BorderInput><input className='w-full bg-input rounded-2xl text-xs p-2 h-20' name="Message" id="message" type="message" placeholder=''></input></BorderInput>
+               <BorderInput><input className='w-full bg-input rounded-md text-xs p-2 h-20' name="Message" id="message" type="message" placeholder=''></input></BorderInput>
                <ValidationError prefix="Message" field="message" errors={state.errors} />
              </Form>
            </form>
        </Container>
-       <Button type="submit" disabled={state.submitting}>
-         {ContactFormularData.button}
-       </Button>
+       <Button><button type="submit" disabled={state.submitting}>{ContactFormularData.button}</button></Button>
     </BoxContainer>
     </>
   );
