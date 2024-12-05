@@ -9,7 +9,7 @@ const breakpoints = {
 };
 
 const Container = styled.div({
-  padding: '2rem',
+  padding: '15rem',
   width: '80%', 
   overflow: 'hidden', 
   position: 'relative', 
@@ -23,15 +23,23 @@ const Title = styled.div({
   fontWeight: 'bold',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
-    textAlign: 'center',
     marginBottom: '3rem',
     marginTop: '5rem',
+  },
+});
+
+const ImageGrid = styled.div({
+  display: 'grid',
+  gap: '1rem',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    gridTemplateColumns: '1fr 1fr 1fr'
   },
 });
 
 const Button = styled.div({
   borderWidth: 'thin',
   borderColor: 'white',
+  margin: 'auto',
   width: '70%',
   padding: '0.3rem',
   borderRadius: '13px',
@@ -44,28 +52,18 @@ const Button = styled.div({
   },
 });
 
-const HighlightedText = styled.span({
-  color: '#fff',
-});
 
 function LatestProjects() {
-  const highlightWords = ['Recent'];
-  const subheaderText = RecentWorkData.title
-    .split(' ')
-    .map((word, index) => {
-      const cleanWord = word.replace(/[.,!?]/g, '');
-      return highlightWords.includes(cleanWord) ? (
-        <HighlightedText key={index}>{word}</HighlightedText>
-      ) : (
-        word
-      );
-    })
-    .reduce((prev, curr) => [prev, ' ', curr]);
-
   return (
     <>
       <Container>
-        <Title>{subheaderText}</Title>
+        <Title>{RecentWorkData.title}</Title>
+        <ImageGrid>
+          <img src="/foofest-desktop.png" alt="png" width={500} />
+          <img src="/foofest-desktop.png" alt="png" width={500} />
+          <img src="/foofest-desktop.png" alt="png" width={500} />
+          <img src="/foofest-desktop.png" alt="png" width={500} />
+        </ImageGrid>
         <Button>
           <a href="/MyWork">{RecentWorkData.button}</a>
         </Button>

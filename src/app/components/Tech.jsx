@@ -17,11 +17,7 @@ const Container = styled.div({
   padding: '2rem',
     [`@media (min-width: ${breakpoints.md})`]: {
       display: 'flex',
-      justifyContent: 'space-around',
-      gap: '4rem',
       marginTop: '0rem',
-      paddingLeft: '16rem',
-      paddingRight: '9rem',
       },
 });
 
@@ -38,8 +34,11 @@ const Title = styled.div({
 });
 
 const Content = styled.div({
+  position: 'absolute',
+  right: '0',
   [`@media (min-width: ${breakpoints.md})`]: {
     alignContent: 'center',
+    padding: '15rem',
   },
 })
 
@@ -88,14 +87,14 @@ function App() {
     <Container>
       {(!isTablet && 
       <div>
-        <img src="/expertise.jpg" alt="jpg" width={1000} />
+        <img src="/expertise.png" alt="png" width={2000} />
       </div>
       )}
       <Content>
         <Title>
           {subheaderText}
         </Title>
-        <Subheader>{TechData.subheader}</Subheader>
+        <Subheader>{TechData.subheader} <br /> {TechData.subheader2}</Subheader>
         <Button><a href="/About">See All Services</a></Button>
       </Content>
     </Container>

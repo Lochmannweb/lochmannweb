@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { FeedbackData } from '../data/FeedBackData';
-import Image from 'next/image';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
@@ -11,12 +10,10 @@ const breakpoints = {
   };
 
   const Container = styled.div({
-    padding: '2rem',
+    padding: '5rem',
+    background: 'white',
+    textAlign: 'center',
     [`@media (min-width: ${breakpoints.md})`]: {
-      display: 'flex',
-      gap: '5rem',
-      paddingLeft: '15rem',
-      paddingRight: '9rem',
     },
   });
 
@@ -24,16 +21,18 @@ const breakpoints = {
     color: 'white',
     fontSize: '25px',
     fontWeight: 'bold',
+    color: 'black',
     [`@media (min-width: ${breakpoints.md})`]: {
       fontSize: '40px',
       fontWeight: 'bold',
-      marginTop: '5rem',
+      marginTop: '0rem',
     },
   });
 
   const Subheader = styled.div({
     color: 'white',
     fontSize: '15px',
+    color: 'black',
     [`@media (min-width: ${breakpoints.md})`]: {
       fontSize: '18px',
       marginBottom: '3rem', 
@@ -41,41 +40,49 @@ const breakpoints = {
   });
 
   const Content = styled.div({
+    color: 'black',
+    alignContent: 'center',
+    textAlign: 'center',
+    alignItems: 'center',
     [`@media (min-width: ${breakpoints.md})`]: {
-      alignContent: 'center',
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '10rem',
+    },
+  });
+  
+  const FeedBackContent = styled.div({
+    
+    [`@media (min-width: ${breakpoints.md})`]: {
     },
   });
 
-  const HighlightedText = styled.span({
-    color: '#fff', 
-  });
-
 function Feedback() {
-  const theme = useTheme();
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
-
-  const highlightWords = ["choose", "me"]; 
-  const subheaderText = FeedbackData.Title.split(" ").map((word, index) => {
-    const cleanWord = word.replace(/[.,!?]/g, ""); 
-    return highlightWords.includes(cleanWord) ? (
-      <HighlightedText key={index}>{word}</HighlightedText>
-    ) : (
-      word
-    );
-  }).reduce((prev, curr) => [prev, ' ', curr]);
 
   return (
     <>
       <Container>
+        <Title>{FeedbackData.Title}</Title>
+        <Subheader>{FeedbackData.Subheader}</Subheader>
         <Content>
-          <Title>{subheaderText}</Title>
-          <Subheader>{FeedbackData.Subheader}</Subheader>
+          <FeedBackContent>
+            <img className='m-auto' src="/settings.svg" alt="svg" width={50} />
+            <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Tech.title}</h1> 
+            <p>{FeedbackData.Tech.feedback}</p>
+          </FeedBackContent>
+
+          <FeedBackContent>
+            <img className='m-auto' src="/chat_1.svg" alt="svg" width={50} />
+            <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Feedback.title}</h1>
+            <p>{FeedbackData.Feedback.feedback}</p>
+          </FeedBackContent>
+
+          <FeedBackContent>
+            <img className='m-auto' src="/lowest-price.svg" alt="svg" width={50} />
+            <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Offer.title}</h1>
+            <p>{FeedbackData.Offer.feedback}</p>
+          </FeedBackContent>
         </Content>
-        {(!isTablet &&
-        <div>
-          <img src="/feedback.png" alt="png" width={2000} />
-        </div>
-        )}
       </Container>
     </>
   )
