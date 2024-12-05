@@ -1,8 +1,8 @@
 import React from "react";
 import { ForsideData } from "../data/ForsideData";
 import styled from '@emotion/styled';
-// import AbstractHeader from './AbstractHeader';
-import Designemner from '../components/Designemner'
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const breakpoints = {
   md: '768px', 
@@ -15,12 +15,10 @@ const Container = styled.div({
   position: 'absolute',
   paddingTop: '4rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    paddingTop: '18rem',
-    paddingLeft: '22rem',
-    paddingRight: '22rem',
+    paddingTop: '14rem',
+    paddingLeft: '15rem',
+    paddingRight: '65rem',
     textAlign: 'start',
-    width: '100%',
-    gap: '20px',
   },
 });
 
@@ -28,10 +26,10 @@ const HeaderTitle = styled.div({
   fontFamily: 'fantasy',
   fontSize: '40px',
   marginTop: '-3rem',
-  textAlign: 'center',
+  textAlign: 'start',
   lineHeight: '2.5rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '80px',
+    fontSize: '55px',
     lineHeight: '5rem',
     },
   [`@media (min-width: ${breakpoints.lg})`]: {
@@ -42,22 +40,24 @@ const HeaderTitle = styled.div({
 
 const Content = styled.div({
   fontSize: '15px',
-  textAlign: 'center',
+  textAlign: 'start',
   marginBottom: '3rem',
   color: '#aaa',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '20px',
+    fontSize: '18px',
     marginBottom: '3rem',
-    paddingLeft: '5rem',
-    paddingRight: '5rem',
     },
 });
 
 const HighlightedText = styled.span({
-  color: '#A96F59', 
+  color: '#fff', 
 });
 
 export default function Header() {
+  const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   const highlightWords = ["next", "level"]; 
   const subheaderText = ForsideData.subheader.split(" ").map((word, index) => {
     const cleanWord = word.replace(/[.,!?]/g, ""); 
@@ -70,13 +70,23 @@ export default function Header() {
 
   return (
     <>
-    {/* <AbstractHeader /> */}
+    {/* {(!isMobile && 
+      <img className="md:-mt-12" src="/Header-bg.png" alt="bg"  />
+    )} */}
+
+    {(!isTablet && 
+      <img className="md:-mt-12" src="/Header-bg.png" alt="bg"  />
+    )}
+    
     <Container>
         <HeaderTitle>
           {subheaderText}
         </HeaderTitle>
-        <Content>{ForsideData.content}</Content>
-        <Designemner />
+        <Content>
+          <p>{ForsideData.content}</p>
+          <p>{ForsideData.content2}</p>
+          <p>{ForsideData.content3}</p>
+        </Content>
     </Container>
     </>
   );

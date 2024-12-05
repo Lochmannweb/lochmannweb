@@ -8,75 +8,44 @@ const breakpoints = {
   lg: '1024px',
 };
 
+const Container = styled.div({
+  padding: '2rem',
+  width: '80%', 
+  overflow: 'hidden', 
+  position: 'relative', 
+  [`@media (min-width: ${breakpoints.md})`]: {
+    width: '100%',
+  },
+});
+
 const Title = styled.div({
-  textAlign: 'center',
-  fontSize: '30px',
-  marginTop: '5rem',
+  fontSize: '25px',
   fontWeight: 'bold',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '60px',
+    fontSize: '40px',
     textAlign: 'center',
     marginBottom: '3rem',
     marginTop: '5rem',
   },
 });
 
-const Container = styled.div({
-  margin: '2rem auto', // Centrer Container
-  filter: 'drop-shadow(0 3mm 4mm #000)',
-  background: '#090909',
-  borderRadius: '25px',
-  padding: '2rem',
-  width: '80%', 
-  overflow: 'hidden', // Sørg for, at intet går ud over Container
-  position: 'relative', // Holder scroll-indhold indenfor Container
-  [`@media (min-width: ${breakpoints.md})`]: {
-    width: '60%',
-  },
-});
-
-const ProjectContent = styled.div({
-  padding: '0.5rem',
-  color: 'white',
-});
-
-const ScrollWorkTitle = styled.div({
-  marginTop: '1rem',
-  fontSize: '20px',
-  color: '#ffffff',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '25px',
-    marginTop: '2rem',
-  },
-});
-
-const ScrollWorkContent = styled.div({
-  color: '#aaa',
-  fontSize: '14px',
-  marginTop: '0.5rem',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '16px',
-  },
-});
-
-const ScrollWorkButton = styled.div({
-  background: '#59372A',
-  margin: 'auto',
-  width: '50%',
-  padding: '0.5rem',
-  borderRadius: '15px',
+const Button = styled.div({
+  borderWidth: 'thin',
+  borderColor: 'white',
+  width: '70%',
+  padding: '0.3rem',
+  borderRadius: '13px',
   textAlign: 'center',
-  filter: 'drop-shadow(0 3mm 4mm #000)',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '12%',
-    padding: '1rem',
+    padding: '0.3rem',
     borderRadius: '15px',
     marginTop: '2rem',
   },
 });
 
 const HighlightedText = styled.span({
-  color: '#A96F59',
+  color: '#fff',
 });
 
 function LatestProjects() {
@@ -95,19 +64,12 @@ function LatestProjects() {
 
   return (
     <>
-      <div>
+      <Container>
         <Title>{subheaderText}</Title>
-        <Container>
-          <ScrollContainerImages />
-          <ProjectContent>
-            <ScrollWorkTitle>{RecentWorkData.header}</ScrollWorkTitle>
-            <ScrollWorkContent>{RecentWorkData.content}</ScrollWorkContent>
-          </ProjectContent>
-        </Container>
-        <ScrollWorkButton>
+        <Button>
           <a href="/MyWork">{RecentWorkData.button}</a>
-        </ScrollWorkButton>
-      </div>
+        </Button>
+      </Container>
     </>
   );
 }

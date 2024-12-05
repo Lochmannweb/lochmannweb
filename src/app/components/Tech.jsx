@@ -3,109 +3,76 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { TechData } from '../data/TechData';
-import Image from 'next/image';
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const breakpoints = {
-    md: '768px', // tablet
-    lg: '1024px', // desktop
+    md: '768px', 
+    lg: '1024px', 
   };
 
 const Container = styled.div({
+  display: 'grid',
+  marginTop: '15rem',
   padding: '2rem',
     [`@media (min-width: ${breakpoints.md})`]: {
-      margin: 'auto',
-      marginTop: '-9rem',
+      display: 'flex',
+      justifyContent: 'space-around',
+      gap: '4rem',
+      marginTop: '0rem',
+      paddingLeft: '16rem',
+      paddingRight: '9rem',
       },
 });
 
 const Title = styled.div({
-  textAlign: 'center',
-  fontSize: '30px',
+  fontSize: '25px',
   fontWeight: 'bold',
-  marginBottom: '1rem',
+  lineHeight: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '60px',
-    textAlign: 'center',
+    fontSize: '40px',
+    textAlign: 'start',
     fontWeight: 'bold',
-    marginBottom: '5rem',
+    marginBottom: '0.5rem',
   },
 });
 
-const TechContainer = styled.div({
-  display: 'grid',
-  gap: '20px',
+const Content = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
-    gridTemplateColumns: '1fr 1fr',
-    gap: '30px',
-    marginTop: '1rem',
-  },
-});
-
-const Tech = styled.div({
-  filter: 'drop-shadow(0 3mm 4mm #000)',
-  background: '#090909',
-  display: 'flex',
-  gap: '20px',
-  padding: '0.5rem',
-  borderRadius: '20px',
-  alignItems: 'center',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    padding: '1rem',
-    width: '36rem',
     alignContent: 'center',
   },
-});
+})
 
-const TexhIcon = styled.div({
-  filter: 'drop-shadow(0 3mm 4mm #000)',
-  background: '#000',
-  borderWidth: 'thin',
-  borderColor: '#59372A',
-  borderRadius: '15px',
-  padding: '1rem',
-  width: '4rem',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '20px',
-    width: '5rem',
-    textAlign: 'center',
-  },
-});
-
-const TexhTopic = styled.div({
-  // background: 'black',
-  // borderRadius: '15px',
-  padding: '1rem',
-  width: '13rem',
-  fontSize: '15px',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '20px',
-    width: '29rem',
-    padding: '1.5rem',
-  },
-});
+const Subheader = styled.div({
+  color: '#aaa',
+})
 
 const Button = styled.div({
-  background: '#59372A',
-  margin: 'auto',
-  padding: '0.5rem',
+  padding: '0.3rem',
   borderRadius: '20px',
   textAlign: 'center',
-  marginTop: '-3rem',
   width: '50%',
-  filter: 'drop-shadow(0 3mm 4mm #000)',
+  borderColor: 'white',
+  borderWidth: 'thin',
+  fontSize: '13px',
+  marginTop: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    width: '12%',
-    padding: '1rem',
+    width: '18%',
+    padding: '0.3rem',
     borderRadius: '15px',
-    marginTop: '-3rem',
+    marginTop: '1rem',
+    fontSize: '15px',
   }
 });
 
 const HighlightedText = styled.span({
-  color: '#A96F59', 
+  color: '#fff', 
 });
 
 function App() {
+  const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+
   const highlightWords = ["Expertise"]; 
   const subheaderText = TechData.title.split(" ").map((word, index) => {
     const cleanWord = word.replace(/[.,!?]/g, ""); 
@@ -119,48 +86,19 @@ function App() {
   return (
     <>
     <Container>
-      <Title>
-        {subheaderText}
-      </Title>
-      <TechContainer>
-        <Tech>
-          <TexhIcon>
-          <img src="/js-icon.svg" alt="tw" />
-          </TexhIcon>
-          <TexhTopic>
-            {TechData.Js.content}
-          </TexhTopic>
-        </Tech>
-
-        <Tech>
-          <TexhIcon>
-            <img src="/tailwind-css.svg" alt="tw" />
-          </TexhIcon>
-          <TexhTopic>
-            {TechData.TW.content}
-          </TexhTopic>
-        </Tech>
-
-        <Tech>
-          <TexhIcon>
-          <img src="/spline-icon.png" alt="" />
-          </TexhIcon>
-          <TexhTopic>
-            {TechData.Ani.content}
-          </TexhTopic>
-        </Tech>
-
-        <Tech>
-          <TexhIcon>
-          <img src="/react-icon.svg" alt="react" />
-          </TexhIcon>
-          <TexhTopic>
-            {TechData.Kode.content}
-          </TexhTopic>
-        </Tech>
-      </TechContainer>
+      {(!isTablet && 
+      <div>
+        <img src="/expertise.jpg" alt="jpg" width={1000} />
+      </div>
+      )}
+      <Content>
+        <Title>
+          {subheaderText}
+        </Title>
+        <Subheader>{TechData.subheader}</Subheader>
+        <Button><a href="/About">See All Services</a></Button>
+      </Content>
     </Container>
-    <Button><a href="/About">See All Services</a></Button>
     </>
   );
 }

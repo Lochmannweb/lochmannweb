@@ -1,6 +1,8 @@
 export const ForsideData = {
-    subheader: "Take your website to the next level",
-    content: "Tired of poorly responsive sites, business partners who promise more than they deliver. You are not the only one.",
+    subheader: "Let me elevate YOUR website to the next Level",
+    content: "Frustrated with unresponsive websites?",
+    content2: "Disappointed by partners who overpromise and underdeliver?",
+    content3: "You’re not alone — & I'm here to change that",
     button: "Get started",
 }
 

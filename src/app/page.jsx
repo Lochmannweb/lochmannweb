@@ -12,7 +12,7 @@ const Container = styled.div({
   display: 'grid',
   paddingTop: '50px',
   paddingBottom: '50px',
-  gap: '50px',
+  gap: '0px',
 });
 
 const Page = () => {
