@@ -57,11 +57,11 @@ export default function Header() {
   return (
     <>
     {(!isMobile && 
-      <img className="mt-56 -mb-52 md:mb-0 md:-mt-12" src="/header-mobil-bg.png" alt="bg" width={2000} /> 
+      <img className="mt-56 -mb-52 md:mb-0 md:-mt-12" src="/Header-bg.png" alt="bg" width={2000} /> 
     )}
 
     {(isTablet && 
-      <img className="mt-56 -mb-52 md:mb-0 md:-mt-12" src="/Header-bg.png" alt="bg" width={2000} /> 
+      <img className="mt-56 -mb-52 md:mb-0 md:-mt-12" src="/header-mobil-bg.png" alt="bg" width={2000} /> 
     )}
     <Container>
         <HeaderTitle>{ ForsideData.subheader}</HeaderTitle>
