@@ -11,35 +11,40 @@ const breakpoints = {
 
 
 const Container = styled.div({
-    padding: '20px',
     display: 'grid',
     gap: '10px',
     filter: 'drop-shadow(0 3mm 4mm #000)',
-    margin: 'auto',
     borderRadius: '10px',
+    // marginTop: '10rem',
     [`@media (min-width: ${breakpoints.md})`]: {
       borderRadius: '25px',
-      paddingTop: '4rem',
+      // paddingTop: '4rem',
       paddingLeft: '3rem',
       paddingRight: '3rem',
-      marginTop: '-5rem',
+      // marginTop: '-5rem',
       width: '100%',
+      margin: 'auto',
     }
 });
 
 const Header = styled.div({
-  fontSize: '30px',
-  textAlign: 'center',
+  fontSize: '18px',
+  textAlign: 'start',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '30px',
+    textAlign: 'center',
   },
 });
 
 const Subheader = styled.div({
   color: '#aaa',
-  textAlign: 'center',
+  fontSize: '12px',
   paddingBottom: '1rem',
   marginTop: '-1rem',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    textAlign: 'center',
+    fontSize: '12px',
+  },
 });
 
 const Form = styled.div({
@@ -60,6 +65,8 @@ const Button = styled.div({
   width: '10rem',
   color: 'black',
   fontWeight: 'bold',
+  marginBottom: '5rem', 
+  marginTop: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '10rem',
   },
@@ -103,7 +110,7 @@ function App() {
     <BoxContainer>
        <Container>
            <Header>{ContactFormularData.title}</Header>
-           <Subheader className='m-auto'>{ContactFormularData.title2}</Subheader>
+           <Subheader>{ContactFormularData.title2}</Subheader>
            <form onSubmit={handleSubmit}>
              <Form>
                <Label htmlFor="text">{ContactFormularData.companyName}</Label>

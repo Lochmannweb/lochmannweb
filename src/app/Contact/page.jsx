@@ -11,23 +11,36 @@ const breakpoints = {
 
 const Container = styled.div({
     display: 'grid',
-    position: 'absolute',
+    margin: 'auto',
     padding: '2rem',
-    right: '25rem',
     [`@media (min-width: ${breakpoints.md})`]: {
-      paddingTop: '12rem',
+      position: 'unset',
+    },
+    [`@media (min-width: ${breakpoints.lg})`]: {
+      top: '8rem',
+      width: '40%',
+      right: '18rem',
+      margin: 'unset',
+      position: 'absolute',
     },
   });
+
+  const IMG = styled.div({
+
+  });
+
 
 
 function ContactForm() {
 
   return (
     <>
+      <IMG>
+        <img src="/contact.png" alt="png" width={2000} />
+      </IMG>
       <Container>
         <Contact />
       </Container>
-      <img src="/contact.png" alt="png" width={2000} />
     </>
   );
 }
