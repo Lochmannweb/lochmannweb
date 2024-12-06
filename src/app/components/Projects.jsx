@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { RecentWorkData } from '../data/MyWorkData';
-import ScrollContainerImages from '@/app/components/ScrollContainerImages'
 
 const breakpoints = {
   md: '768px', 
@@ -9,12 +8,12 @@ const breakpoints = {
 };
 
 const Container = styled.div({
-  padding: '15rem',
-  width: '80%', 
   overflow: 'hidden', 
   position: 'relative', 
+  padding: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '100%',
+  padding: '15rem',
   },
 });
 
@@ -22,6 +21,7 @@ const Title = styled.div({
   fontSize: '25px',
   fontWeight: 'bold',
   textAlign: 'center',
+  marginBottom: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
     marginTop: '-15rem',
@@ -42,15 +42,15 @@ const Button = styled.div({
   borderWidth: 'thin',
   borderColor: 'white',
   margin: 'auto',
-  width: '70%',
+  width: '60%',
   padding: '0.3rem',
-  borderRadius: '13px',
+  borderRadius: '25px',
   textAlign: 'center',
+  marginTop: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '12%',
     padding: '0.3rem',
     borderRadius: '15px',
-    marginTop: '2rem',
   },
 });
 

@@ -3,8 +3,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { TechData } from '../data/TechData';
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 
 const breakpoints = {
     md: '768px', 
@@ -13,15 +11,17 @@ const breakpoints = {
 
 const Container = styled.div({
   display: 'grid',
-  padding: '2rem',
+  marginTop: '18rem',
     [`@media (min-width: ${breakpoints.md})`]: {
-      marginTop: '15rem',
+      marginTop: '16rem',
       },
 });
 
 const HeaderContent = styled.div({
   backgroundColor: 'white',
   margin: 'auto',
+  alignContent: 'start',
+  padding: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     alignContent: 'center',
     padding: '4rem',
@@ -33,29 +33,38 @@ const Title = styled.div({
   fontSize: '25px',
   fontWeight: 'bold',
   color: 'black',
-  textAlign: 'center',
+  textAlign: 'start',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
+  textAlign: 'start',
     fontWeight: 'bold',
   },
 });
 
 const Subheader = styled.div({
   color: 'black',
+  textAlign: 'start',
+  [`@media (min-width: ${breakpoints.md})`]: {
   textAlign: 'center',
+  },
 })
 
 const Expertise = styled.div({
-  margin: 'auto',
+  display: 'grid',
+  gap: '2rem',
+  padding: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     padding: '2rem',
     display: 'flex',
     gap: '5rem',
+    margin: 'auto',
   },
 })
 
 const ExpertiseContent = styled.div({
   alignItems: 'center',
+  display: 'flex',
+  gap: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     display: 'flex',
     gap: '1rem',
@@ -66,18 +75,19 @@ const Button = styled.div({
   padding: '0.3rem',
   borderRadius: '20px',
   textAlign: 'center',
-  width: '50%',
+  width: '40%',
   borderColor: 'white',
   borderWidth: 'thin',
   fontSize: '13px',
   marginTop: '1rem',
-  margin: 'auto',
+  margin: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '10%',
     padding: '0.3rem',
     borderRadius: '15px',
     marginTop: '1rem',
     fontSize: '15px',
+    margin: 'auto',
   }
 });
 
@@ -100,7 +110,7 @@ function App() {
         </ExpertiseContent>
 
         <ExpertiseContent>
-          <img src="/spline.png" alt="png" width={70}  />
+          <img src="/spline.png" alt="png" width={60}  />
           <p>{TechData.Ani.title}</p>
         </ExpertiseContent>
 
@@ -110,7 +120,7 @@ function App() {
         </ExpertiseContent>
 
         <ExpertiseContent>
-          <img src="/tailwind-css.svg" alt="svg" width={70} />
+          <img src="/tailwind-css.svg" alt="svg" width={60} />
           <p>{TechData.TW.title}</p>
         </ExpertiseContent>
       </Expertise>

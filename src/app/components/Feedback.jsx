@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { FeedbackData } from '../data/FeedBackData';
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 
 const breakpoints = {
     md: '768px', 
@@ -10,11 +8,12 @@ const breakpoints = {
   };
 
   const Container = styled.div({
-    margin: '15rem',
-    padding: '5rem',
+    padding: '2rem',
     background: 'white',
     textAlign: 'center',
     [`@media (min-width: ${breakpoints.md})`]: {
+      padding: '5rem',
+      margin: '18rem',
     },
   });
 
@@ -42,9 +41,9 @@ const breakpoints = {
 
   const Content = styled.div({
     color: 'black',
-    alignContent: 'center',
-    textAlign: 'center',
-    alignItems: 'center',
+    display: 'grid',
+    gap: '3rem',
+    marginTop: '3rem',
     [`@media (min-width: ${breakpoints.md})`]: {
       display: 'flex',
       justifyContent: 'center',
@@ -53,7 +52,7 @@ const breakpoints = {
   });
   
   const FeedBackContent = styled.div({
-    
+    display: 'grid',
     [`@media (min-width: ${breakpoints.md})`]: {
     },
   });

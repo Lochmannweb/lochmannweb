@@ -35,7 +35,7 @@ const ProcesStage = () => {
 
     handleResize(); // Set initial value
     window.addEventListener("resize", handleResize);
-
+ 
     return () => {
       window.removeEventListener("resize", handleResize);
     };

@@ -14,7 +14,6 @@ const Container = styled.div({
 
 const Aboutpage = () => {
 
-
   return (
     <>
     <img src="/about-header-bg.png" alt="png" width={2000} />

@@ -11,9 +11,7 @@ const breakpoints = {
 };
 
 const Container = styled.div({
-  background: '#090909',
   margin: 'auto',
-  filter: 'drop-shadow(0 3mm 4mm #000)',
     [`@media (min-width: ${breakpoints.md})`]: {
       display: 'flex',
       justifyContent: 'center',
@@ -26,8 +24,6 @@ const Container = styled.div({
 });
 
 const ImageContainer = styled.div({
-  background: '#060606',
-  filter: 'drop-shadow(0 3mm 4mm #000)',
   margin: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
 
@@ -42,18 +38,25 @@ const Content = styled.div({
   },
 });
 
+const Title = styled.div({
+  [`@media (min-width: ${breakpoints.md})`]: {
+    width: '50%',
+    marginTop: '3rem',
+
+  },
+});
+
 const MyStory = () => {
 
   return (
-    <Container>
+    <Container> 
+      <Content>
+        <Title>About me</Title>
+        <p>Tekst</p>
+      </Content>
       <ImageContainer>
         <Image src="" alt="" srcset="" width={300} height={300} />
       </ImageContainer>
-
-      <Content>
-        <h1>Overskrift</h1>
-        <p>Tekst</p>
-      </Content>
     </Container>
   )
 }
