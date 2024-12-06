@@ -1,7 +1,7 @@
 export const CustomerInformationsData = {
     contact: {
         title: "Contact",
-        content: "Book a consulation",
+        content: "Free consulation",
         content2: "Social Media",
     },
     about: {
