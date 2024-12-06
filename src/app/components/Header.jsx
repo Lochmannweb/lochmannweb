@@ -48,10 +48,19 @@ const Content = styled.div({
 });
 
 export default function Header() {
+  const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <>
+    {(!isMobile && 
+      <img className="mt-56 -mb-52 md:mb-0 md:-mt-12" src="/header-mobil-bg.png" alt="bg" width={2000} /> 
+    )}
+
+    {(isTablet && 
       <img className="mt-56 -mb-52 md:mb-0 md:-mt-12" src="/Header-bg.png" alt="bg" width={2000} /> 
+    )}
     <Container>
         <HeaderTitle>{ ForsideData.subheader}</HeaderTitle>
         <Content>{ForsideData.content}</Content>
