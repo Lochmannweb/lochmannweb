@@ -139,8 +139,8 @@ function App() {
             <LinksContainer>
                 <ul>
                   <Links>
-                    <a className='text-sm md:text-lg' href="/About" prefetch={false}>Journey & Expertise</a>
-                    <a className='text-sm md:text-lg' href="/MyWork" prefetch={false}>Proces & Projects</a>
+                    <a className='text-base md:text-lg' href="/About" prefetch={false}>Journey & Expertise</a>
+                    <a className='text-base md:text-lg' href="/MyWork" prefetch={false}>Proces & Projects</a>
                     <a href="/Contact" prefetch={false}><Image src="/kontakt-knap.png" alt="knap" width={150} height={50} /></a>
                   </Links>
                 </ul>
