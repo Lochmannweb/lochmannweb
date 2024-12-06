@@ -59,7 +59,7 @@ const CustomerInformation = () => {
             </LinksContainer>
         </div>
   
-        <div>
+        {/* <div>
           <Title>{CustomerInformationsData.Ressourcer.title}</Title>
             <LinksContainer>
               <a className='md:text-xs' href='/' >{CustomerInformationsData.Ressourcer.content2}</a>
@@ -77,7 +77,7 @@ const CustomerInformation = () => {
               <a className='md:text-xs' href='/'>{CustomerInformationsData.Services.content3}</a>
               <a className='md:text-xs' href='/'>{CustomerInformationsData.Services.content4}</a>
           </LinksContainer>
-        </div>
+        </div> */}
       </Container>
     </>
   );
