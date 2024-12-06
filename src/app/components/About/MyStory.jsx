@@ -21,26 +21,25 @@ const Container = styled.div({
     width: '80%',
   },
   [`@media (min-width: ${breakpoints.lg})`]: {
-    marginTop: '10rem',
-    width: '40%',
+    marginTop: '0rem',
+    width: '50%',
   },
 });
 
 const ImageContainer = styled.div({
   margin: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-
+    marginBottom: '3rem',
   },
 });
 
 const Content = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '80%',
-    marginTop: '3rem',
+    alignItems: 'center',
   },
   [`@media (min-width: ${breakpoints.lg})`]: {
     width: '50%',
-    marginTop: '3rem',
   },
 });
 
@@ -72,7 +71,7 @@ const MyStory = () => {
         </Text>
       </Content>
       <ImageContainer>
-        <Image src="" alt="" srcset="" width={300} height={300} />
+        <img src="/pf.jpg" alt="jpg" width={300} />
       </ImageContainer>
     </Container>
   )

@@ -30,8 +30,8 @@ const Title = styled.div({
   },
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',
-    marginTop: '0rem',
-    width: '40%',
+    marginTop: '5rem',
+    width: '50%',
     padding: '2rem',
    },
 });
@@ -45,8 +45,7 @@ const Container = styled.div({
       width: '80%',
       [`@media (min-width: ${breakpoints.lg})`]: {
         marginTop: '3rem',
-        width: '40%',
-        padding: '1rem',
+        width: '50%',
         gap: '2rem',
       },
     },
@@ -63,7 +62,6 @@ const ImageContainer = styled.div({
 const Content = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '50%',
-    marginTop: '2rem',
     padding: '1rem',
   },
 });
@@ -78,7 +76,7 @@ const ContentSubheder = styled.div({
   fontSize: '15px',
   [`@media (min-width: ${breakpoints.md})`]: {
     marginBottom: '1rem',
-    fontSize: '25px',
+    fontSize: '15px',
   },
 });
 
@@ -91,13 +89,13 @@ const MyStory = () => {
     <Container>
       <Content>
         <ContentSubheder>{ServicesData.Kode.content}</ContentSubheder>
-        <li className='md:text-lg'>{ServicesData.Kode.services1}</li>
-        <li className='md:text-lg'>{ServicesData.Kode.services2}</li>
-        <li className='md:text-lg'>{ServicesData.Kode.services3}</li>
-        <li className='md:text-lg'>{ServicesData.Kode.services4}</li>
-        <li className='md:text-lg'>{ServicesData.Kode.services5}</li>
-        <li className='md:text-lg'>{ServicesData.Kode.services6}</li>
-        <li className='md:text-lg'>{ServicesData.Kode.services7}</li>
+        <li className='md:text-base'>{ServicesData.Kode.services1}</li>
+        <li className='md:text-base'>{ServicesData.Kode.services2}</li>
+        <li className='md:text-base'>{ServicesData.Kode.services3}</li>
+        <li className='md:text-base'>{ServicesData.Kode.services4}</li>
+        <li className='md:text-base'>{ServicesData.Kode.services5}</li>
+        <li className='md:text-base'>{ServicesData.Kode.services6}</li>
+        <li className='md:text-base'>{ServicesData.Kode.services7}</li>
       </Content>
       <ImageContainer>
         {/* <Image className='m-auto' src="/uxuidesign.png" alt="img" srcset="" width={300} height={300} /> */}

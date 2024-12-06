@@ -31,7 +31,7 @@ const Title = styled.div({
   [`@media (min-width: ${breakpoints.lg})`]: {
    fontSize: '40px',
    marginTop: '0rem',
-   width: '40%',
+   width: '50%',
    padding: '2rem',
   },
 });
@@ -49,7 +49,7 @@ const Container = styled.div({
       display: 'flex',
       justifyContent: 'center',
       marginTop: '3rem',
-      width: '40%',
+      width: '50%',
       borderRadius: '20px',
       padding: '1rem',
       gap: '2rem',
@@ -68,8 +68,8 @@ const ImageContainer = styled.div({
 const Content = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '50%',
-    marginTop: '2rem',
-    padding: '1rem',
+    marginTop: '0rem',
+    padding: '0rem',
   },
 });
 
@@ -83,7 +83,7 @@ const ContentSubheder = styled.div({
   fontSize: '15px',
   [`@media (min-width: ${breakpoints.md})`]: {
     marginBottom: '1rem',
-    fontSize: '25px',
+    fontSize: '15px',
   },
 });
 
@@ -96,10 +96,13 @@ const MyStory = () => {
     <Container>
       <Content>
         <ContentSubheder>{ServicesData.UXUI.content}</ContentSubheder>
-        <li className='md:text-lg'>{ServicesData.UXUI.services1}</li>
-        <li className='md:text-lg'>{ServicesData.UXUI.services2}</li>
-        <li className='md:text-lg'>{ServicesData.UXUI.services3}</li>
-        <li className='md:text-lg'>{ServicesData.UXUI.services4}</li>
+        <ContentSubheder>{ServicesData.UXUI.content2}</ContentSubheder>
+        <ContentSubheder>{ServicesData.UXUI.content3}</ContentSubheder>
+        <ContentSubheder>{ServicesData.UXUI.content4}</ContentSubheder>
+        <li className='md:text-base'>{ServicesData.UXUI.services1}</li>
+        <li className='md:text-base'>{ServicesData.UXUI.services2}</li>
+        <li className='md:text-base'>{ServicesData.UXUI.services3}</li>
+        <li className='md:text-base'>{ServicesData.UXUI.services4}</li>
       </Content>
       <ImageContainer>
         <Image className='m-auto' src="/uxuidesign.png" alt="img" srcset="" width={300} height={300} />
