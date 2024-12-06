@@ -2,6 +2,7 @@ import React from "react";
 import { ForsideData } from "../data/ForsideData";
 import styled from '@emotion/styled';
 import "@fontsource/keania-one";
+import { useTheme } from '@mui/material/styles';
 
 const breakpoints = {
   md: '768px', 
