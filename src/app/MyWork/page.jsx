@@ -4,6 +4,7 @@ import React from 'react'
 import Header from '../components/MyWorkComponent/Header';
 import StepByStep from '../components/MyWorkComponent/StepByStep';
 import styled from '@emotion/styled';
+import WorkPageProjects from '@/app/components/WorkPageProjects'
 
 const Container = styled.div({
   paddingTop: '5rem',
@@ -20,6 +21,7 @@ const Aboutpage = () => {
       <Container>
         <Header />  
         <StepByStep />
+        <WorkPageProjects />
       </Container>
     </>
   )
