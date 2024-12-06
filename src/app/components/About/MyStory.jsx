@@ -40,9 +40,13 @@ const Content = styled.div({
 
 const Title = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
-    width: '50%',
-    marginTop: '3rem',
+    fontSize: '30px',
+  },
+});
 
+const Text = styled.div({
+  [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '12px',
   },
 });
 
@@ -52,7 +56,11 @@ const MyStory = () => {
     <Container> 
       <Content>
         <Title>About me</Title>
-        <p>Tekst</p>
+        <Text>
+          I began my journey in 2023 as a student at KEA, where I am studying to become a Multimedia Designer with a focus on Frontend and a bit of Backend development. <br /> <br />
+          Once I complete my education, I plan to take the next step by pursuing a Bachelor’s degree in Web Application Development, which will take 1.5 years. <br /> <br />
+          Outside of my studies, I am passionate about exploring new trends in frontend technology, constantly seeking opportunities to grow and enhance my skills for the future.
+        </Text>
       </Content>
       <ImageContainer>
         <Image src="" alt="" srcset="" width={300} height={300} />

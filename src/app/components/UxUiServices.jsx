@@ -13,17 +13,20 @@ const breakpoints = {
 };
 
 const Title = styled.div({
+  backgroundColor: 'white',
+  color: 'black',
+  margin: 'auto',
   [`@media (min-width: ${breakpoints.md})`]: {
    fontSize: '40px',
    textAlign: 'center',
-   marginTop: '10rem',
+   marginTop: '0rem',
+   width: '40%',
+   padding: '2rem',
   },
 });
 
 const Container = styled.div({
-  background: '#090909',
   margin: 'auto',
-  filter: 'drop-shadow(0 3mm 4mm #000)',
     [`@media (min-width: ${breakpoints.md})`]: {
       display: 'flex',
       justifyContent: 'center',
@@ -36,14 +39,10 @@ const Container = styled.div({
 });
 
 const ImageContainer = styled.div({
-  background: '#060606',
-  filter: 'drop-shadow(0 3mm 4mm #000)',
   margin: '1rem',
-  alignContent: 'center',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '50%',
     height: '30vh',
-    padding: '2 rem',
   },
 });
 
@@ -73,10 +72,9 @@ const MyStory = () => {
 
   return (
     <>
-    <Title>{ServicesData.title}</Title>
+    <Title>{ServicesData.UXUI.title}</Title>
     <Container>
       <Content>
-        <ContentTitle>{ServicesData.UXUI.title}</ContentTitle>
         <ContentSubheder>{ServicesData.UXUI.content}</ContentSubheder>
         <li className='text-xs'>{ServicesData.UXUI.services1}</li>
         <li className='text-xs'>{ServicesData.UXUI.services2}</li>

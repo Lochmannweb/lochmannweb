@@ -1,5 +1,4 @@
 export const ServicesData = {
-    title: "My Services",
     UXUI: {
         title: "UX / UI Design",
         content: "Beskrivelse",
