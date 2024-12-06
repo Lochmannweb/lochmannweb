@@ -48,9 +48,9 @@ function LatestProjects() {
         <Title>{RecentWorkData.title}</Title>
         <ImageGrid>
           <img src="/foofest-desktop.png" alt="png" width={500} />
-          <img src="/foofest-desktop.png" alt="png" width={500} />
-          <img src="/foofest-desktop.png" alt="png" width={500} />
-          <img src="/foofest-desktop.png" alt="png" width={500} />
+          <img src="/cgc-desktop.png" alt="png" width={500} />
+          {/* <img src="/foofest-desktop.png" alt="png" width={500} />
+          <img src="/foofest-desktop.png" alt="png" width={500} /> */}
         </ImageGrid>
       </Container>
     </>
