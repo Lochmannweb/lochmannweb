@@ -14,8 +14,10 @@ const Content = styled.div({
   display: 'grid',
   gap: '0rem',
   color: '#aaa',
+  textAlign: 'center',
+  marginTop: '-5rem',
+  paddingBottom: '5rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    justifyContent: 'center',
     textAlign: 'center',
     paddingLeft: '35rem',
     paddingRight: '35rem',

@@ -4,6 +4,7 @@
 import Image from "next/image"
 import React from 'react'
 import styled from '@emotion/styled';
+import { AboutData } from '@/app/data/AboutData'
 
 const breakpoints = {
   md: '768px', 
@@ -39,12 +40,14 @@ const Content = styled.div({
 });
 
 const Title = styled.div({
+  fontSize: '25px',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '30px',
+    fontSize: '40px',
   },
 });
 
 const Text = styled.div({
+  fontSize: '10px',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '12px',
   },
@@ -55,11 +58,11 @@ const MyStory = () => {
   return (
     <Container> 
       <Content>
-        <Title>About me</Title>
+        <Title>{AboutData.title}</Title>
         <Text>
-          I began my journey in 2023 as a student at KEA, where I am studying to become a Multimedia Designer with a focus on Frontend and a bit of Backend development. <br /> <br />
-          Once I complete my education, I plan to take the next step by pursuing a Bachelor’s degree in Web Application Development, which will take 1.5 years. <br /> <br />
-          Outside of my studies, I am passionate about exploring new trends in frontend technology, constantly seeking opportunities to grow and enhance my skills for the future.
+          {AboutData.subheder1} <br /> <br />
+          {AboutData.subheder2} <br /> <br />
+          {AboutData.subheder3} <br /> <br />
         </Text>
       </Content>
       <ImageContainer>

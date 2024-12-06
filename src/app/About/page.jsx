@@ -7,6 +7,7 @@ import UxUiServices from '../components/UxUiServices';
 import CodeServices from '../components/CodeServices';
 
 const Container = styled.div({
+  padding: '2rem',
 })
 
 const Aboutpage = () => {

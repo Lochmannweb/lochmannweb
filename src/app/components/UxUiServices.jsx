@@ -16,9 +16,12 @@ const Title = styled.div({
   backgroundColor: 'white',
   color: 'black',
   margin: 'auto',
+  fontSize: '25px',
+  padding: '1rem',
+  textAlign: 'center',
+  marginBottom: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
    fontSize: '40px',
-   textAlign: 'center',
    marginTop: '0rem',
    width: '40%',
    padding: '2rem',
@@ -40,6 +43,7 @@ const Container = styled.div({
 
 const ImageContainer = styled.div({
   margin: '1rem',
+  marginBottom: '3rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '50%',
     height: '30vh',
