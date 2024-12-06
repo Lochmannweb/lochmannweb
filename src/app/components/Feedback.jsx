@@ -12,6 +12,7 @@ const breakpoints = {
     padding: '2rem',
     background: 'white',
     textAlign: 'center',
+    marginTop: '5rem',
     [`@media (min-width: ${breakpoints.lg})`]: {
       padding: '5rem',
       marginLeft: '24rem',

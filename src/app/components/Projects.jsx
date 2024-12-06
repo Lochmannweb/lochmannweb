@@ -47,7 +47,8 @@ const ImageGrid = styled.div({
 
 const Button = styled.div({
   borderWidth: 'thin',
-  borderColor: 'white',
+  backgroundColor: 'white',
+  color: 'black',
   margin: 'auto',
   width: '60%',
   padding: '0.3rem',

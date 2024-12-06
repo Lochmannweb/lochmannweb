@@ -77,7 +77,8 @@ const Button = styled.div({
         fontSize: '15px',
       },
     [`@media (min-width: ${breakpoints.lg})`]: {
-        width: '13%',
+        width: '12%',
+        fontSize: '20px',
       },
   });
 

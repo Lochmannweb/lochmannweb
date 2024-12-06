@@ -54,11 +54,11 @@ const Expertise = styled.div({
   display: 'grid',
   gap: '2rem',
   padding: '2rem',
+  margin: 'auto',
   [`@media (min-width: ${breakpoints.md})`]: {
     padding: '2rem',
     display: 'flex',
     gap: '5rem',
-    margin: 'auto',
   },
 })
 
@@ -83,11 +83,12 @@ const Button = styled.div({
   borderRadius: '20px',
   textAlign: 'center',
   width: '40%',
-  borderColor: 'white',
   borderWidth: 'thin',
   fontSize: '13px',
   marginTop: '1rem',
-  margin: '2rem',
+  margin: 'auto',
+  color: 'black',
+  backgroundColor: 'white',
   fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
     margin: 'auto',

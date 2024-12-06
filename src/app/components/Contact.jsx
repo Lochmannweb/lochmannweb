@@ -20,7 +20,7 @@ function ContactForm() {
 
       <div className='grid'>
         <label htmlFor="text" className='font-keania'>
-          Firma navn
+          Website Name
         </label>
         <input
           id="text"
