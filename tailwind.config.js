@@ -6,6 +6,9 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      keania: ["'Keania One'", "sans-serif"],
+    },
     colors: {
       'input': '#0000008e',
       'menu': '#2524244f0',

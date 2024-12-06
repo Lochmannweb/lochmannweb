@@ -56,26 +56,6 @@ const Form = styled.div({
   },
 });
 
-const Button = styled.div({
-  right: '1.2rem',
-  display: 'flex',
-  padding: '0.3rem',
-  borderRadius: '25px',
-  background: '#fff',
-  margin: 'auto',
-  justifyContent: 'center',
-  width: '10rem',
-  color: 'black',
-  marginBottom: '5rem', 
-  fontFamily: '"Keania One", sans-serif',
-  marginTop: '2rem',
-  fontSize: '15px',
-  [`@media (min-width: ${breakpoints.md})`]: {
-    width: '10rem',
-    fontSize: '20px',
-  },
-});
-
 const Label = styled.div({
   fontSize: '10px',
   marginLeft: '5px',
@@ -156,7 +136,8 @@ function App() {
              </Form>
            </form>
        </Container>
-       <Button><button type="submit" disabled={state.submitting}>{ContactFormularData.button}</button></Button>
+       <button className='flex p-1 items-center rounded-2xl border-2 m-auto mb-5 w-44 text-base justify-center font-keania' type="submit" disabled={state.submitting}>{ContactFormularData.button}</button>
+
     </BoxContainer>
     </>
   );
