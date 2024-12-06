@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import "@fontsource/keania-one";
 
 const breakpoints = {
   md: '768px', 
@@ -25,6 +26,7 @@ const Container = styled.div({
   width: '100%',
   zIndex: '50',
   bottom: '0',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
     top: '0', 
     bottom: '', 
@@ -83,6 +85,7 @@ const Links = styled.div({
   display: 'grid',
   paddingBottom: '20px',
   gap: '10px',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
     display: 'flex',
     paddingTop: '1rem',
@@ -136,8 +139,8 @@ function App() {
             <LinksContainer>
                 <ul>
                   <Links>
-                    <a className='text-sm md:text-md' href="/About" prefetch={false}>Journey & Expertise</a>
-                    <a className='text-sm md:text-md' href="/MyWork" prefetch={false}>Proces & Projects</a>
+                    <a className='text-sm md:text-lg' href="/About" prefetch={false}>Journey & Expertise</a>
+                    <a className='text-sm md:text-lg' href="/MyWork" prefetch={false}>Proces & Projects</a>
                     <a href="/Contact" prefetch={false}><Image src="/kontakt-knap.png" alt="knap" width={150} height={50} /></a>
                   </Links>
                 </ul>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { FeedbackData } from '../data/FeedBackData';
+import "@fontsource/keania-one";
 
 const breakpoints = {
     md: '768px', 
@@ -13,18 +14,19 @@ const breakpoints = {
     textAlign: 'center',
     [`@media (min-width: ${breakpoints.md})`]: {
       padding: '5rem',
-      margin: '18rem',
+      marginLeft: '24rem',
+      marginRight: '24rem',
+      marginTop: '10rem',
     },
   });
 
   const Title = styled.div({
     color: 'white',
     fontSize: '25px',
-    fontWeight: 'bold',
     color: 'black',
+    fontFamily: '"Keania One", sans-serif',
     [`@media (min-width: ${breakpoints.md})`]: {
       fontSize: '40px',
-      fontWeight: 'bold',
       marginTop: '0rem',
     },
   });
@@ -57,6 +59,12 @@ const breakpoints = {
     },
   });
 
+  const FeedBackContentTtitle = styled.div({
+    fontFamily: '"Keania One", sans-serif',
+    [`@media (min-width: ${breakpoints.md})`]: {
+    },
+  });
+
 function Feedback() {
 
   return (
@@ -69,19 +77,19 @@ function Feedback() {
         <Content>
           <FeedBackContent>
             <img className='m-auto' src="/settings.svg" alt="svg" width={50} />
-            <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Tech.title}</h1> 
+            <FeedBackContentTtitle className=' md:text-xl md:mt-5'>{FeedbackData.Tech.title}</FeedBackContentTtitle> 
             <p className='text-sm mt-2'>{FeedbackData.Tech.feedback}</p>
           </FeedBackContent>
 
           <FeedBackContent>
             <img className='m-auto' src="/chat_1.svg" alt="svg" width={50} />
-            <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Feedback.title}</h1>
+            <FeedBackContentTtitle className=' md:text-xl md:mt-5'>{FeedbackData.Feedback.title}</FeedBackContentTtitle>
             <p className='text-sm mt-2'>{FeedbackData.Feedback.feedback}</p>
           </FeedBackContent>
 
           <FeedBackContent>
             <img className='m-auto' src="/lowest-price.svg" alt="svg" width={50} />
-            <h1 className='font-bold md:text-xl md:mt-5'>{FeedbackData.Offer.title}</h1>
+            <FeedBackContentTtitle className=' md:text-xl md:mt-5'>{FeedbackData.Offer.title}</FeedBackContentTtitle>
             <p className='text-sm mt-2'>{FeedbackData.Offer.feedback}</p>
           </FeedBackContent>
         </Content>

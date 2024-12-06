@@ -3,6 +3,7 @@
 import React from 'react';
 import { CustomerInformationsData } from '../data/CustomerInformationsData';
 import styled from '@emotion/styled';
+import "@fontsource/keania-one";
 
 const breakpoints = {
   md: '768px', 
@@ -24,6 +25,7 @@ const Container = styled.div({
 
 const Title = styled.div({
     fontSize: '15px',
+    fontFamily: '"Keania One", sans-serif',
   });
 
 const LinksContainer = styled.div ({

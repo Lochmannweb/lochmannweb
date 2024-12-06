@@ -6,6 +6,7 @@ import React from 'react'
 import styled from '@emotion/styled';
 import { ServicesData } from '@/app/data/ServicesData'
 import Image from 'next/image';
+import "@fontsource/keania-one";
 
 const breakpoints = {
   md: '768px', 
@@ -20,6 +21,7 @@ const Title = styled.div({
   padding: '1rem',
   textAlign: 'center',
   marginBottom: '1rem',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
    fontSize: '40px',
    marginTop: '0rem',
@@ -67,6 +69,7 @@ const ContentSubheder = styled.div({
   fontSize: '15px',
   [`@media (min-width: ${breakpoints.md})`]: {
     marginBottom: '1rem',
+    fontSize: '25px',
   },
 });
 
@@ -79,13 +82,13 @@ const MyStory = () => {
     <Container>
       <Content>
         <ContentSubheder>{ServicesData.Kode.content}</ContentSubheder>
-        <li className='text-xs'>{ServicesData.Kode.services1}</li>
-        <li className='text-xs'>{ServicesData.Kode.services2}</li>
-        <li className='text-xs'>{ServicesData.Kode.services3}</li>
-        <li className='text-xs'>{ServicesData.Kode.services4}</li>
-        <li className='text-xs'>{ServicesData.Kode.services5}</li>
-        <li className='text-xs'>{ServicesData.Kode.services6}</li>
-        <li className='text-xs'>{ServicesData.Kode.services7}</li>
+        <li className='md:text-lg'>{ServicesData.Kode.services1}</li>
+        <li className='md:text-lg'>{ServicesData.Kode.services2}</li>
+        <li className='md:text-lg'>{ServicesData.Kode.services3}</li>
+        <li className='md:text-lg'>{ServicesData.Kode.services4}</li>
+        <li className='md:text-lg'>{ServicesData.Kode.services5}</li>
+        <li className='md:text-lg'>{ServicesData.Kode.services6}</li>
+        <li className='md:text-lg'>{ServicesData.Kode.services7}</li>
       </Content>
       <ImageContainer>
         {/* <Image className='m-auto' src="/uxuidesign.png" alt="img" srcset="" width={300} height={300} /> */}

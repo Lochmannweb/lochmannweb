@@ -5,6 +5,7 @@ import Image from "next/image"
 import React from 'react'
 import styled from '@emotion/styled';
 import { AboutData } from '@/app/data/AboutData'
+import "@fontsource/keania-one";
 
 const breakpoints = {
   md: '768px', 
@@ -41,6 +42,7 @@ const Content = styled.div({
 
 const Title = styled.div({
   fontSize: '25px',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
   },

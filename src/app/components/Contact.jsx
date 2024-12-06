@@ -3,6 +3,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { ContactFormularData } from '../data/ContactFormular'
 import { useForm, ValidationError } from '@formspree/react';
+import "@fontsource/keania-one";
 
 const breakpoints = {
   md: '768px', 
@@ -30,6 +31,7 @@ const Container = styled.div({
 const Header = styled.div({
   fontSize: '18px',
   textAlign: 'start',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '30px',
     textAlign: 'center',
@@ -64,25 +66,28 @@ const Button = styled.div({
   justifyContent: 'center',
   width: '10rem',
   color: 'black',
-  fontWeight: 'bold',
   marginBottom: '5rem', 
+  fontFamily: '"Keania One", sans-serif',
   marginTop: '2rem',
+  fontSize: '15px',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '10rem',
+    fontSize: '20px',
   },
 });
 
 const Label = styled.div({
   fontSize: '10px',
   marginLeft: '5px',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '14px',
+    fontSize: '15px',
   },
 });
 
 const ThankYouForJoining = styled.div({
   fontSize: '20px',
-  fontFamily: 'fantasy',
+  fontFamily: '"Keania One", sans-serif',
   margin: 'auto',
   padding: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {

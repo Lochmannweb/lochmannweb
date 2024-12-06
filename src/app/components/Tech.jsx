@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { TechData } from '../data/TechData';
+import "@fontsource/keania-one";
 
 const breakpoints = {
     md: '768px', 
@@ -25,19 +26,19 @@ const HeaderContent = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
     alignContent: 'center',
     padding: '4rem',
+    width: '60%',
     marginTop: '-10rem',
   },
 })
 
 const Title = styled.div({
   fontSize: '25px',
-  fontWeight: 'bold',
+  fontFamily: '"Keania One", sans-serif',
   color: 'black',
   textAlign: 'start',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
-  textAlign: 'start',
-    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 
@@ -71,6 +72,12 @@ const ExpertiseContent = styled.div({
   },
 })
 
+const ExpertiseContentText = styled.div({
+  fontFamily: '"Keania One", sans-serif',
+  [`@media (min-width: ${breakpoints.md})`]: {
+  },
+})
+
 const Button = styled.div({
   padding: '0.3rem',
   borderRadius: '20px',
@@ -81,6 +88,7 @@ const Button = styled.div({
   fontSize: '13px',
   marginTop: '1rem',
   margin: '2rem',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '10%',
     padding: '0.3rem',
@@ -106,22 +114,22 @@ function App() {
       <Expertise>
         <ExpertiseContent>
           <img src="/react-icon.svg" alt="svg" width={60} />
-          <p>{TechData.Kode.title}</p>
+          <ExpertiseContentText>{TechData.Kode.title}</ExpertiseContentText>
         </ExpertiseContent>
 
         <ExpertiseContent>
           <img src="/spline.png" alt="png" width={60}  />
-          <p>{TechData.Ani.title}</p>
+          <ExpertiseContentText>{TechData.Ani.title}</ExpertiseContentText>
         </ExpertiseContent>
 
         <ExpertiseContent>
           <img src="js-icon.svg" alt="svg" width={50} />
-          <p>{TechData.Js.title}</p>
+          <ExpertiseContentText>{TechData.Js.title}</ExpertiseContentText>
         </ExpertiseContent>
 
         <ExpertiseContent>
           <img src="/tailwind-css.svg" alt="svg" width={60} />
-          <p>{TechData.TW.title}</p>
+          <ExpertiseContentText>{TechData.TW.title}</ExpertiseContentText>
         </ExpertiseContent>
       </Expertise>
       <Button><a href="/About">See All Services</a></Button>

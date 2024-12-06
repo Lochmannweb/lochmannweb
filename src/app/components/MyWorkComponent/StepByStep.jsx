@@ -3,6 +3,7 @@
 import { StepByStep } from "@/app/data/MyWorkData"
 import React from 'react'
 import styled from '@emotion/styled';
+import "@fontsource/keania-one";
 
 const breakpoints = {
     md: '768px', 
@@ -27,6 +28,7 @@ const Title = styled.div({
     textAlign: 'center',
     margin: 'auto',
     width: '80%',
+    fontFamily: '"Keania One", sans-serif',
     [`@media (min-width: ${breakpoints.md})`]: {
         fontSize: '30px',
         width: '45%',
@@ -62,6 +64,7 @@ const Button = styled.div({
     marginTop: '3rem',
     marginBottom: '3rem',
     textAlign: 'center',
+    fontFamily: '"Keania One", sans-serif',
     [`@media (min-width: ${breakpoints.md})`]: {
         width: '13%',
         padding: '0.5rem',

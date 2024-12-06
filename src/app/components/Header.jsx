@@ -3,6 +3,7 @@ import { ForsideData } from "../data/ForsideData";
 import styled from '@emotion/styled';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import "@fontsource/keania-one";
 
 const breakpoints = {
   md: '768px', 
@@ -22,6 +23,7 @@ const Container = styled.div({
 });
 
 const HeaderTitle = styled.div({
+  fontFamily: '"Keania One", sans-serif',
   fontSize: '40px',
   margin: 'auto',
   marginTop: '-3rem',

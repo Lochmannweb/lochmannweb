@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { RecentWorkData } from '../data/MyWorkData';
+import "@fontsource/keania-one";
 
 const breakpoints = {
   md: '768px', 
@@ -23,6 +24,7 @@ const Title = styled.div({
   fontWeight: 'bold',
   textAlign: 'center',
   marginBottom: '2rem',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
     marginTop: '-15rem',

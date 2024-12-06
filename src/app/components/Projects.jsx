@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { RecentWorkData } from '../data/MyWorkData';
+import "@fontsource/keania-one";
 
 const breakpoints = {
   md: '768px', 
@@ -11,15 +12,17 @@ const Container = styled.div({
   overflow: 'hidden', 
   position: 'relative', 
   padding: '2rem',
+  margin: 'auto',
   [`@media (min-width: ${breakpoints.md})`]: {
-    width: '100%',
-  padding: '15rem',
+    width: '90%',
+    padding: '15rem',
+    marginTop: '10rem',
   },
 });
 
 const Title = styled.div({
   fontSize: '25px',
-  fontWeight: 'bold',
+  fontFamily: '"Keania One", sans-serif',
   textAlign: 'center',
   marginBottom: '2rem',
   [`@media (min-width: ${breakpoints.md})`]: {
@@ -47,6 +50,7 @@ const Button = styled.div({
   borderRadius: '25px',
   textAlign: 'center',
   marginTop: '2rem',
+  fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '12%',
     padding: '0.3rem',
