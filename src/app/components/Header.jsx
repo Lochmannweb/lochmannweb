@@ -14,7 +14,7 @@ const Container = styled.div({
   paddingTop: '4rem',
   textAlign: 'start',
   padding: '2rem',
-  [`@media (min-width: ${breakpoints.md})`]: {
+  [`@media (min-width: ${breakpoints.lg})`]: {
     paddingLeft: '23rem',
     paddingTop: '12rem',
   },
@@ -26,7 +26,8 @@ const HeaderTitle = styled.div({
   margin: 'auto',
   marginTop: '-3rem',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '55px',
+    fontSize: '30px',
+    marginTop: '0rem',
     },
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '59px',

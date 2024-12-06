@@ -23,6 +23,12 @@ const Title = styled.div({
   marginBottom: '1rem',
   fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
+    fontSize: '40px',
+    marginTop: '0rem',
+    width: '80%',
+    padding: '2rem',
+   },
+  [`@media (min-width: ${breakpoints.lg})`]: {
    fontSize: '40px',
    marginTop: '0rem',
    width: '40%',
@@ -34,6 +40,12 @@ const Container = styled.div({
   margin: 'auto',
   // fontFamily: '"Keania One", sans-serif',
     [`@media (min-width: ${breakpoints.md})`]: {
+      display: 'flex',
+      justifyContent: 'center',
+      marginTop: '3rem',
+      width: '80%',
+    },
+    [`@media (min-width: ${breakpoints.lg})`]: {
       display: 'flex',
       justifyContent: 'center',
       marginTop: '3rem',

@@ -90,12 +90,17 @@ const Button = styled.div({
   margin: '2rem',
   fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
+    margin: 'auto',
+    width: '20%',
+    marginBottom: '8rem',
+  },
+  [`@media (min-width: ${breakpoints.lg})`]: {
     width: '10%',
     padding: '0.3rem',
     borderRadius: '15px',
     marginTop: '1rem',
     fontSize: '15px',
-    margin: 'auto',
+    
   }
 });
 

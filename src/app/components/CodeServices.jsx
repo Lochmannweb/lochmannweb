@@ -25,9 +25,15 @@ const Title = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
    fontSize: '40px',
    marginTop: '0rem',
-   width: '40%',
+   width: '80%',
    padding: '2rem',
   },
+  [`@media (min-width: ${breakpoints.lg})`]: {
+    fontSize: '40px',
+    marginTop: '0rem',
+    width: '40%',
+    padding: '2rem',
+   },
 });
 
 const Container = styled.div({
@@ -36,10 +42,13 @@ const Container = styled.div({
       display: 'flex',
       justifyContent: 'center',
       marginTop: '3rem',
-      width: '40%',
-      borderRadius: '20px',
-      padding: '1rem',
-      gap: '2rem',
+      width: '80%',
+      [`@media (min-width: ${breakpoints.lg})`]: {
+        marginTop: '3rem',
+        width: '40%',
+        padding: '1rem',
+        gap: '2rem',
+      },
     },
 });
 

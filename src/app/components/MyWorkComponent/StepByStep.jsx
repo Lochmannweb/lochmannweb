@@ -14,7 +14,7 @@ const Container = styled.div({
     display: 'grid',
     gap: '2rem',
     margin: 'auto',
-    [`@media (min-width: ${breakpoints.md})`]: {
+    [`@media (min-width: ${breakpoints.lg})`]: {
         gap: '4rem',
     },
 });
@@ -31,8 +31,11 @@ const Title = styled.div({
     fontFamily: '"Keania One", sans-serif',
     [`@media (min-width: ${breakpoints.md})`]: {
         fontSize: '30px',
-        width: '45%',
+        width: '65%',
         padding: '2rem',
+      },
+    [`@media (min-width: ${breakpoints.lg})`]: {
+        width: '45%',
       },
 });
 
@@ -48,16 +51,17 @@ const Content = styled.div({
     marginTop: '-1rem',
     [`@media (min-width: ${breakpoints.md})`]: {
         fontSize: '15px',
-        width: '50%',
+        width: '70%',
         padding: '4rem',
         marginTop: '-2rem',
+      },
+    [`@media (min-width: ${breakpoints.lg})`]: {
+        width: '50%',
       },
   });
 
 const Button = styled.div({
     borderRadius: '50px',
-    borderColor: 'white',
-    borderWidth: 'thin',
     width: '50%',
     padding: '0.3rem',
     margin: 'auto',
@@ -65,10 +69,15 @@ const Button = styled.div({
     marginBottom: '3rem',
     textAlign: 'center',
     fontFamily: '"Keania One", sans-serif',
+    backgroundColor: 'white',
+    color: 'black',
     [`@media (min-width: ${breakpoints.md})`]: {
-        width: '13%',
+        width: '25%',
         padding: '0.5rem',
-        fontSize: '20px',
+        fontSize: '15px',
+      },
+    [`@media (min-width: ${breakpoints.lg})`]: {
+        width: '13%',
       },
   });
 

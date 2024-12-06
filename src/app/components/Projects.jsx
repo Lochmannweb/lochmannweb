@@ -14,6 +14,10 @@ const Container = styled.div({
   padding: '2rem',
   margin: 'auto',
   [`@media (min-width: ${breakpoints.md})`]: {
+    padding: '10rem',
+    marginTop: '0rem',
+  },
+  [`@media (min-width: ${breakpoints.lg})`]: {
     width: '90%',
     padding: '15rem',
     marginTop: '10rem',
@@ -25,7 +29,7 @@ const Title = styled.div({
   fontFamily: '"Keania One", sans-serif',
   textAlign: 'center',
   marginBottom: '2rem',
-  [`@media (min-width: ${breakpoints.md})`]: {
+  [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',
     marginTop: '-15rem',
     marginBottom: '5rem',
@@ -52,6 +56,9 @@ const Button = styled.div({
   marginTop: '2rem',
   fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.md})`]: {
+    width: '30%',
+  },
+  [`@media (min-width: ${breakpoints.lg})`]: {
     width: '12%',
     padding: '0.3rem',
     borderRadius: '15px',

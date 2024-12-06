@@ -18,6 +18,10 @@ const Content = styled.div({
   marginTop: '-5rem',
   paddingBottom: '5rem',
   [`@media (min-width: ${breakpoints.md})`]: {
+    paddingLeft: '10rem',
+    paddingRight: '10rem',
+  },
+  [`@media (min-width: ${breakpoints.lg})`]: {
     textAlign: 'center',
     paddingLeft: '35rem',
     paddingRight: '35rem',

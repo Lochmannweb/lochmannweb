@@ -14,15 +14,16 @@ const breakpoints = {
 
 const Container = styled.div({
   margin: 'auto',
-    [`@media (min-width: ${breakpoints.md})`]: {
-      display: 'flex',
-      justifyContent: 'center',
-      marginTop: '10rem',
-      width: '40%',
-      borderRadius: '20px',
-      padding: '1rem',
-      gap: '2rem',
-    },
+  [`@media (min-width: ${breakpoints.md})`]: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '0rem',
+    width: '80%',
+  },
+  [`@media (min-width: ${breakpoints.lg})`]: {
+    marginTop: '10rem',
+    width: '40%',
+  },
 });
 
 const ImageContainer = styled.div({
@@ -34,16 +35,19 @@ const ImageContainer = styled.div({
 
 const Content = styled.div({
   [`@media (min-width: ${breakpoints.md})`]: {
+    width: '80%',
+    marginTop: '3rem',
+  },
+  [`@media (min-width: ${breakpoints.lg})`]: {
     width: '50%',
     marginTop: '3rem',
-
   },
 });
 
 const Title = styled.div({
   fontSize: '25px',
   fontFamily: '"Keania One", sans-serif',
-  [`@media (min-width: ${breakpoints.md})`]: {
+  [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',
   },
 });
