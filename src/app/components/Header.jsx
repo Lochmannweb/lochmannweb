@@ -24,9 +24,10 @@ const Container = styled.div({
 
 const HeaderTitle = styled.div({
   fontFamily: '"Keania One", sans-serif',
-  fontSize: '40px',
+  fontSize: '45px',
   margin: 'auto',
   marginTop: '-3rem',
+  lineHeight: '3rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '30px',
     marginTop: '0rem',
