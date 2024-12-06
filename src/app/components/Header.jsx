@@ -24,7 +24,7 @@ const Container = styled.div({
 
 const HeaderTitle = styled.div({
   fontFamily: '"Keania One", sans-serif',
-  fontSize: '45px',
+  fontSize: '40px',
   margin: 'auto',
   marginTop: '-3rem',
   lineHeight: '3rem',
