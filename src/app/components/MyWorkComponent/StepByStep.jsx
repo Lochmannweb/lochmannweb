@@ -42,8 +42,6 @@ const Title = styled.div({
 
 const Content = styled.div({
     fontSize: '10px',
-    borderColor: 'white',
-    borderWidth: 'thin',
     color: '#aaa',
     padding: '2rem',
     textAlign: 'center',
