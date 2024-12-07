@@ -21,13 +21,14 @@ const Container = styled.div({
 
 const Title = styled.div({
     fontSize: '18px',
-    backgroundColor: 'white',
+    backgroundColor: 'darkslategray',
     fontFamily: 'emoji',
-    color: 'black',
+    color: 'white',
     padding: '1rem',
     textAlign: 'center',
     margin: 'auto',
     width: '80%',
+    borderRadius: '0px 70px',
     fontFamily: '"Keania One", sans-serif',
     [`@media (min-width: ${breakpoints.md})`]: {
         fontSize: '30px',
