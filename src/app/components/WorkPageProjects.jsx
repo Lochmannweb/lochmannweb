@@ -47,8 +47,8 @@ function LatestProjects() {
       <Container>
         <Title>{RecentWorkData.title}</Title>
         <ImageGrid>
-          <img src="/foofest-desktop.png" alt="png" width={500} />
-          <img src="/cgc-desktop.png" alt="png" width={500} />
+          <a href="https://foofest-eksamen-line.netlify.app/" prefetch={false}><img src="/foofest-desktop.png" alt="png" width={500} /></a>
+          <a href="https://www.cgc-wargaming.dk/" prefetch={false}><img src="/cgc-desktop.png" alt="png" width={500} /></a>
           {/* <img src="/foofest-desktop.png" alt="png" width={500} />
           <img src="/foofest-desktop.png" alt="png" width={500} /> */}
         </ImageGrid>
