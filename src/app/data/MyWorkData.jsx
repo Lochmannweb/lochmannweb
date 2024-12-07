@@ -44,7 +44,7 @@ export const RecentWorkData = {
     title: "My Recent Work",
     header: "From brands to graphic to new designed website",
     content: "I help startups and businesses design and develop modern, user-friendly websites, whether starting from scratch or through a complete redesign, ensuring they align perfectly with your goals and vision.",
-    button: "See All Projects",
+    button: "See More",
     projects: [
       {
         image: "/cgc-desktop.png",
