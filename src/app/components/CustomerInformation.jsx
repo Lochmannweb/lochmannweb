@@ -44,7 +44,7 @@ const CustomerInformation = () => {
         <div>
           <Title>{CustomerInformationsData.contact.title}</Title>
             <LinksContainer>
-             <a className='md:text-xs' href='/www.instagram.com/lochmannweb/' prefetch={false} >{CustomerInformationsData.contact.content2}</a>
+             <a className='md:text-xs' href="https://www.instagram.com/lochmannweb" prefetch={false} >{CustomerInformationsData.contact.content2}</a>
              <a className='md:text-xs' href='/Contact'>{CustomerInformationsData.contact.content}</a>
             </LinksContainer>
         </div>
