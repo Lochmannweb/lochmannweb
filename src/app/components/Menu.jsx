@@ -190,7 +190,6 @@ function App() {
                     <a className='text-sm md:text-lg' href="/MyWork" prefetch={false}>Proces & projects</a>
                     <a className='text-sm md:text-lg' href="/Contact" prefetch={false}>Contact</a>
                     <a className='text-sm md:text-lg' href="/https://www.instagram.com/lochmannweb/" prefetch={false}>Instagram</a>
-
                   </Links>
                 </ul>
             </LinksContainer>
