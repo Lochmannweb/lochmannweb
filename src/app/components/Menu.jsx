@@ -189,7 +189,7 @@ function App() {
                     <a className='text-sm md:text-lg' href="/About" prefetch={false}>Journey & Expertise</a>
                     <a className='text-sm md:text-lg' href="/MyWork" prefetch={false}>Proces & projects</a>
                     <a className='text-sm md:text-lg' href="/Contact" prefetch={false}>Contact</a>
-                    <a className='text-sm md:text-lg' href="//https://www.instagram.com/lochmannweb?igsh=d2lubHY4NmRxOW5y" prefetch={false}>Instagram</a>
+                    <a className='text-sm md:text-lg' href="/https://www.instagram.com/lochmannweb/" prefetch={false}>Instagram</a>
 
                   </Links>
                 </ul>
