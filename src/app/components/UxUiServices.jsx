@@ -103,6 +103,7 @@ const MyStory = () => {
         <li className='md:text-base'>{ServicesData.UXUI.services2}</li>
         <li className='md:text-base'>{ServicesData.UXUI.services3}</li>
         <li className='md:text-base'>{ServicesData.UXUI.services4}</li>
+        <li className='md:text-base'>{ServicesData.UXUI.services5}</li>
       </Content>
       <ImageContainer>
         <Image className='m-auto' src="/uxuidesign.png" alt="img" srcset="" width={300} height={300} />

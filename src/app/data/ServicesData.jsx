@@ -9,6 +9,7 @@ export const ServicesData = {
         services2: "User Experience",
         services3: "Illustrator",
         services4: "Photoshop",
+        services5: "Spline",
     },
     Kode: {
         title: "Code",
