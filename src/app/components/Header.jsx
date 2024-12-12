@@ -16,6 +16,11 @@ const Container = styled.div({
   paddingTop: '4rem',
   textAlign: 'start',
   padding: '2rem',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    paddingLeft: '15rem',
+    paddingTop: '10rem',
+    textAlign: 'center',
+  },
   [`@media (min-width: ${breakpoints.lg})`]: {
     paddingLeft: '23rem',
     paddingTop: '12rem',
