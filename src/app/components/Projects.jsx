@@ -31,12 +31,17 @@ const Title = styled.div({
   backgroundColor: '#A100FF',
   color: 'white',
   padding: '0.3rem',
+  margin: 'auto',
   marginBottom: '2rem',
   borderRadius: '0px 70px',
-  [`@media (min-width: ${breakpoints.lg})`]: {
+  [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
-    marginTop: '-15rem',
-    marginBottom: '5rem',
+    width: '70%',
+    marginTop: '-14rem',
+    marginBottom: '3rem',
+  },
+  [`@media (min-width: ${breakpoints.lg})`]: {
+    width: '80%',
   },
 });
 
