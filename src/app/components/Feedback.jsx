@@ -10,7 +10,6 @@ const breakpoints = {
 
   const Container = styled.div({
     padding: '2rem',
-    background: 'white',
     textAlign: 'center',
     marginTop: '3rem',
     [`@media (min-width: ${breakpoints.lg})`]: {
@@ -24,8 +23,10 @@ const breakpoints = {
   const Title = styled.div({
     color: 'white',
     fontSize: '25px',
-    color: 'black',
     fontFamily: '"Keania One", sans-serif',
+    backgroundColor: '#A100FF',
+    padding: '0.3rem',
+    marginBottom: '1rem',
     [`@media (min-width: ${breakpoints.md})`]: {
       fontSize: '40px',
       marginTop: '0rem',
@@ -43,7 +44,7 @@ const breakpoints = {
   });
 
   const Content = styled.div({
-    color: 'black',
+    color: 'white',
     display: 'grid',
     gap: '3rem',
     marginTop: '3rem',
@@ -56,6 +57,7 @@ const breakpoints = {
   
   const FeedBackContent = styled.div({
     display: 'grid',
+    color: 'white',
     [`@media (min-width: ${breakpoints.md})`]: {
     },
   });

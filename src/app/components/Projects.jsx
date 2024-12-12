@@ -28,6 +28,9 @@ const Title = styled.div({
   fontSize: '25px',
   fontFamily: '"Keania One", sans-serif',
   textAlign: 'center',
+  backgroundColor: '#A100FF',
+  color: 'white',
+  padding: '0.3rem',
   marginBottom: '2rem',
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',

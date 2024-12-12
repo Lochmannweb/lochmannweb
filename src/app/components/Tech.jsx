@@ -19,7 +19,6 @@ const Container = styled.div({
 });
 
 const HeaderContent = styled.div({
-  backgroundColor: 'white',
   margin: 'auto',
   alignContent: 'start',
   padding: '2rem',
@@ -34,8 +33,12 @@ const HeaderContent = styled.div({
 const Title = styled.div({
   fontSize: '25px',
   fontFamily: '"Keania One", sans-serif',
-  color: 'black',
+  backgroundColor: '#A100FF',
+  color: 'white',
   textAlign: 'start',
+  padding: '0.3rem',
+  borderRadius: '0px 70px',
+  marginBottom: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
     textAlign: 'center',
@@ -43,7 +46,7 @@ const Title = styled.div({
 });
 
 const Subheader = styled.div({
-  color: 'black',
+  color: 'white',
   textAlign: 'start',
   [`@media (min-width: ${breakpoints.md})`]: {
   textAlign: 'center',
