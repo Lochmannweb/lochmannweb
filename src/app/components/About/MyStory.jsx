@@ -19,6 +19,7 @@ const Container = styled.div({
     justifyContent: 'center',
     marginTop: '0rem',
     width: '80%',
+    gap: '2rem',
   },
   [`@media (min-width: ${breakpoints.lg})`]: {
     marginTop: '0rem',
@@ -50,11 +51,10 @@ const Title = styled.div({
   borderRadius: '0px 70px',
   color: 'white',
   fontFamily: '"Keania One", sans-serif',
-  // width: '50%',
   margin: 'auto',
   textAlign: 'center',
   marginBottom: '2rem',
-  padding: '1rem',
+  padding: '4rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '80%',
   },
@@ -65,9 +65,8 @@ const Title = styled.div({
 });
 
 const Text = styled.div({
-  fontSize: '10px',
+  fontSize: '15px',
   [`@media (min-width: ${breakpoints.md})`]: {
-    fontSize: '12px',
   },
 });
 
