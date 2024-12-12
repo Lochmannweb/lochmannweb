@@ -14,8 +14,10 @@ const breakpoints = {
 };
 
 const Title = styled.div({
-  backgroundColor: 'white',
-  color: 'black',
+  backgroundColor: '#A100FF',
+  padding: '0.3rem',
+  borderRadius: '0px 70px',
+  color: 'white',
   margin: 'auto',
   fontSize: '25px',
   padding: '1rem',

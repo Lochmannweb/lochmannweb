@@ -44,7 +44,11 @@ const Content = styled.div({
 });
 
 const Title = styled.div({
-  fontSize: '25px',
+  fontSize: '25px',             
+  backgroundColor: '#A100FF',
+  padding: '0.3rem',
+  borderRadius: '0px 70px',
+  color: 'white',
   fontFamily: '"Keania One", sans-serif',
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',
@@ -59,21 +63,23 @@ const Text = styled.div({
 });
 
 const MyStory = () => {
-
-  return (
-    <Container> 
-      <Content>
-        <Title>{AboutData.title}</Title>
-        <Text>
-          {AboutData.subheder1} <br /> <br />
-          {AboutData.subheder2} <br /> <br />
-          {AboutData.subheder3} <br /> <br />
-        </Text>
-      </Content>
-      <ImageContainer>
-        <img src="/pf.jpg" alt="jpg" width={300} />
-      </ImageContainer>
-    </Container>
+  
+  return ( 
+    <>
+      <Title>{AboutData.title}</Title>
+      <Container> 
+        <Content>
+          <Text>
+            {AboutData.subheder1} <br /> <br />
+            {AboutData.subheder2} <br /> <br />
+            {AboutData.subheder3} <br /> <br />
+          </Text>
+        </Content>
+        <ImageContainer>
+          <img src="/pf.jpg" alt="jpg" width={300} />
+        </ImageContainer>
+      </Container>
+    </>
   )
 }
 
