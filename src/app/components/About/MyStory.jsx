@@ -50,7 +50,7 @@ const Title = styled.div({
   borderRadius: '0px 70px',
   color: 'white',
   fontFamily: '"Keania One", sans-serif',
-  width: '50%ø',
+  width: '50%',
   margin: 'auto',
   textAlign: 'center',
   marginBottom: '2rem',
