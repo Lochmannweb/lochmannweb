@@ -57,7 +57,7 @@ const Title = styled.div({
   padding: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     width: '80%',
-    padding: '4rem',
+    marginBottom: '4rem',
   },
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',
