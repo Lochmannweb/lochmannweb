@@ -78,7 +78,7 @@ function Feedback() {
           <Title>{FeedbackData.Title}</Title>
           <Subheader>{FeedbackData.Subheader}</Subheader>
         </div>
-        <Content className='md:pl-52 md:pr-52'>
+        <Content>
           <FeedBackContent>
             <img className='m-auto' src="/settings.svg" alt="svg" width={50} />
             <FeedBackContentTtitle className=' md:text-xl md:mt-5'>{FeedbackData.Tech.title}</FeedBackContentTtitle> 
