@@ -35,21 +35,19 @@ const Title = styled.div({
   fontFamily: '"Keania One", sans-serif',
   backgroundColor: '#A100FF',
   color: 'white',
-  textAlign: 'start',
+  textAlign: 'center',
   padding: '0.3rem',
   borderRadius: '0px 70px',
   marginBottom: '1rem',
   [`@media (min-width: ${breakpoints.md})`]: {
     fontSize: '40px',
-    textAlign: 'center',
   },
 });
 
 const Subheader = styled.div({
   color: 'white',
-  textAlign: 'start',
-  [`@media (min-width: ${breakpoints.md})`]: {
   textAlign: 'center',
+  [`@media (min-width: ${breakpoints.md})`]: {
   },
 })
 
