@@ -50,13 +50,17 @@ const Title = styled.div({
   borderRadius: '0px 70px',
   color: 'white',
   fontFamily: '"Keania One", sans-serif',
-  width: '50%',
+  // width: '50%',
   margin: 'auto',
   textAlign: 'center',
   marginBottom: '2rem',
   padding: '1rem',
+  [`@media (min-width: ${breakpoints.md})`]: {
+    width: '80%',
+  },
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',
+    width: '50%',
   },
 });
 
