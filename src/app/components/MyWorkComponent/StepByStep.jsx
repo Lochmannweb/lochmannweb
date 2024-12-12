@@ -21,7 +21,7 @@ const Container = styled.div({
 
 const Title = styled.div({
     fontSize: '18px',
-    backgroundColor: 'darkslategray',
+    backgroundColor: '#A100FF',
     fontFamily: 'emoji',
     color: 'white',
     padding: '1rem',
