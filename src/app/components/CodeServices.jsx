@@ -28,13 +28,11 @@ const Title = styled.div({
    fontSize: '40px',
    marginTop: '0rem',
    width: '80%',
-   padding: '2rem',
   },
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',
     marginTop: '5rem',
     width: '50%',
-    padding: '2rem',
    },
 });
 
