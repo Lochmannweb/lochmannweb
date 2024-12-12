@@ -32,6 +32,7 @@ const Title = styled.div({
   color: 'white',
   padding: '0.3rem',
   marginBottom: '2rem',
+  borderRadius: '0px 70px',
   [`@media (min-width: ${breakpoints.lg})`]: {
     fontSize: '40px',
     marginTop: '-15rem',

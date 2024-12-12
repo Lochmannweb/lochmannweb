@@ -27,6 +27,7 @@ const breakpoints = {
     backgroundColor: '#A100FF',
     padding: '0.3rem',
     marginBottom: '1rem',
+    borderRadius: '0px 70px',
     [`@media (min-width: ${breakpoints.md})`]: {
       fontSize: '40px',
       marginTop: '0rem',
@@ -36,7 +37,7 @@ const breakpoints = {
   const Subheader = styled.div({
     color: 'white',
     fontSize: '15px',
-    color: 'black',
+    color: 'white',
     [`@media (min-width: ${breakpoints.md})`]: {
       fontSize: '18px',
       marginBottom: '3rem', 
@@ -73,11 +74,11 @@ function Feedback() {
   return (
     <>
       <Container>
-        <div className='md:pl-52 md:pr-52'>
+        <div>
           <Title>{FeedbackData.Title}</Title>
           <Subheader>{FeedbackData.Subheader}</Subheader>
         </div>
-        <Content>
+        <Content className='md:pl-52 md:pr-52'>
           <FeedBackContent>
             <img className='m-auto' src="/settings.svg" alt="svg" width={50} />
             <FeedBackContentTtitle className=' md:text-xl md:mt-5'>{FeedbackData.Tech.title}</FeedBackContentTtitle> 
